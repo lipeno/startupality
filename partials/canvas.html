@@ -1,0 +1,67 @@
+<table id="bizcanvas" class="table">
+    <tr>
+        <td colspan="5">
+            <h4>{{sections[0].title}} <i class="icon-question-sign icon-2x" tooltip-placement="right"
+                                         tooltip="{{sections[0].description}}"></i></h4>
+            <div class="span5 select2-container select2-container-multi input-large" ng-click="openDialog(sections[0])" id="s2id_autogen1">
+                    <ul class="select2-choices">
+                        <li class="select2-search-choice" ng-repeat="tag in sections[0].tags">
+                            <div>{{tag.text}}</div>
+                            <a href="#" onclick="return false;" class="select2-search-choice-close" tabindex="-1"></a></li>
+                        </li>
+                        <li class="select2-search-field"><input type="text" autocomplete="off" class="select2-input"
+                                                                id="s2id_autogen2" style="width: 10px;"></li>
+                    </ul>
+                    <div class="select2-drop select2-drop-multi" style="display:none;">
+                        <ul class="select2-results"></ul>
+                    </div>
+                </div>
+
+        </td>
+        <td colspan="5">
+            <h4>{{sections[1].title}} <i class="icon-lightbulb icon-2x" tooltip-placement="right"
+                                         tooltip="{{sections[1].description}}"></i></h4>
+            <textarea rows="7" class="span6" ng-click="openDialog(sections[1])" ng-model=sections[1].text></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" rowspan="2">
+            <h4>{{sections[2].title}}<i class="icon-trophy icon-2x" tooltip-placement="right"
+                                        tooltip="{{sections[2].description}}"></i></h4>
+            <textarea rows="17" ng-click="openDialog(sections[2])" ng-model=sections[2].text></textarea>
+        </td>
+        <td colspan="2">
+            <h4>{{sections[3].title}} <i class="icon-tasks icon-2x" tooltip-placement="right"
+                                         tooltip="{{sections[3].description}}"></i></h4>
+            <textarea rows="7" ng-click="openDialog(sections[3])" ng-model=sections[3].text></textarea>
+        </td>
+        <td colspan="2" rowspan="2">
+            <h4>{{sections[4].title}}<i class="icon-gift icon-2x" tooltip-placement="right"
+                                        tooltip="{{sections[4].description}}"></i></h4>
+            <textarea rows="17" ng-click="openDialog(sections[4])" ng-model=sections[4].text></textarea>
+        </td>
+        <td colspan="2">
+            <h4>{{sections[5].title}}<i class="icon-heart icon-2x" tooltip-placement="right"
+                                        tooltip="{{sections[5].description}}"></i></h4>
+            <textarea rows="7" ng-click="openDialog(sections[5])" ng-model=sections[5].text></textarea>
+        </td>
+        <td colspan="2" rowspan="2">
+            <h4>{{sections[6].title}} <i class="icon-sitemap icon-2x" tooltip-placement="right"
+                                         tooltip="{{sections[6].description}}"></i></h4>
+            <textarea rows="17" ng-click="openDialog(sections[6])" ng-model=sections[6].text></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <h4>{{sections[7].title}}<i class="icon-bolt icon-2x" tooltip-placement="right"
+                                        tooltip="{{sections[7].description}}"></i></h4>
+            <textarea rows="7" ng-click="openDialog(sections[7])" ng-model=sections[7].text></textarea>
+        </td>
+        <td colspan="2">
+            <h4>{{sections[8].title}}<i class="icon-truck icon-2x" tooltip-placement="right"
+                                        tooltip="{{sections[8].description}}"></i></h4>
+            <textarea rows="7" ng-click="openDialog(sections[8])" ng-model=sections[8].text></textarea>
+        </td>
+
+    </tr>
+</table>

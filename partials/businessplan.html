@@ -1,0 +1,10 @@
+<section id="main">
+
+    <div id="businessplan" ng-repeat="element in elements">
+        <div>
+            <h2>{{element.title}}</h2>
+        </div>
+        <textarea placeholder="{{element.placeholder}}" ng-model="element.data"></textarea>
+    </div>
+
+</section>
