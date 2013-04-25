@@ -1,6 +1,7 @@
 Scriptecology::Application.routes.draw do
   devise_for :users
   root :to => 'scripts#index'
+  match 'angular/angular' => 'angular#angular'
   resources :scripts do
     get :view
     post :review_script, :on => :collection

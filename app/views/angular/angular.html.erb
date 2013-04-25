@@ -1,0 +1,8 @@
+hey there i am in angular app
+<div class="container">
+    <div ng-include src="'<%= asset_path('partials/header.html') %>'">
+    </div>
+    <div id="main" ng-view></div>
+    <div ng-include src="'<%= asset_path('partials/footer.html') %>'">
+    </div>
+</div>

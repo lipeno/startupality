@@ -1,0 +1,48 @@
+<fieldset>
+    <legend>What else did you forget to do?</legend>
+
+    <ul id="todo-list" class="checklist">
+        <h3>Product/Service Vision</h3>
+        <li>
+            <input class="toggle" type="checkbox" ng-model="todo.completed">
+            <label ng-dblclick="editTodo(todo)">Use the Startup Canvas to test initial hypotheses through several different versions of your business summary.</label>
+        </li>
+        <li>
+            <input class="toggle" type="checkbox" ng-model="todo.completed">
+            <label ng-dblclick="editTodo(todo)">What is your short term strategy, including the approximate delivery time of the minimum viable product?</label>
+        </li>
+        <li>
+            <input class="toggle" type="checkbox">
+            <label ng-dblclick="editTodo(todo)">What is your long term strategy, including the 18-month product vision?</label>
+        </li>
+        <li>
+            <input class="toggle" type="checkbox">
+            <label ng-dblclick="editTodo(todo)">What problem or need is it solving? What benefits do users get?</label>
+        </li>
+        <li>
+            <input class="toggle" type="checkbox">
+            <label ng-dblclick="editTodo(todo)">What are the product features? What are the set of feature which will be in the minimum viable version of the product?</label>
+        </li>
+
+        <h3>Market size</h3>
+        <li>
+        <input class="toggle" type="checkbox" name="foo" value="bar">
+        <label for="foo_bar">Estimate target market, total available market and served available market.</label>
+        <li>
+        <input class="toggle" type="checkbox" name="foo" value="baz">
+        <label for="foo_baz">Estimate current product, follow-on products and key performance indicators.</label>
+        </li>
+
+        <h3>Customers</h3>
+        <li>
+        <input class="toggle" type="checkbox" name="foo" value="bar">
+        <label for="foo_bar">Visualize your typical customers and describe them.</label>
+        </li>
+        <li>
+        <input class="toggle" type="checkbox" name="foo" value="baz">
+        <label for="foo_baz">Organize how will you get feedback from them and by what channel will you approach them when selling.</label>
+        </li>
+
+    </ul>
+
+</fieldset>
