@@ -15,6 +15,8 @@ gem "select2-rails"
 gem 'pg'
 gem 'underscore-rails'
 gem 'aws-sdk'
+gem 'jquery-rails'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -43,10 +45,8 @@ end
 
 # GEMS FOR PRODUCTION
 group :production do
-  # gem 'unicorn'
+  gem 'unicorn'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
