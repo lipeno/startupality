@@ -1,0 +1,34 @@
+.script-holder(ng-init="script_id='#{params[:id]}';current_user_id='#{current_user.id}'")
+	%div{"ng-controller"=>"ScriptsCtrl"}
+		.show-file
+			%ul{"ui-if"=>"!!script.script_files"}
+				%li{"ng-repeat"=>"file in script.script_files" ,"ng-cloak"=>true}
+					%a{"ng-href"=>"{{file.get_file_url}}",:target=>"_blank"}
+						{{file.script_file_file_name}} - {{file.created_at | date:'yyyy-MM-dd HH:mm:ss'}}
+						%img{"ng-src"=>"#{asset_path '' }{{file.file_extension}}.gif"}
+					%button{"ng-click"=>"deleteFile(file)"}
+						Delete
+			%ul{}
+				%li{"ng-repeat"=>"coverage in script.scripts_coverages"}
+					%a{"ng-href"=>"{{coverage.get_file_url}}",:target=>"_blank"}
+						{{coverage.script_coverage_file_file_name}} - {{coverage.created_at | date:'yyyy-MM-dd HH:mm:ss'}}
+						%img{"ng-src"=>"#{asset_path '' }{{coverage.file_extension}}.gif"}
+					%button{"ng-click"=>"deleteCoverage(coverage)"}
+						Delete
+		.shared-users
+			%ul{"ng-repeat"=>"user in script.users","ng-cloak"=>true}
+				%li
+					{{user.email}} - {{user.fullname}} 
+					%button{:id=>:button,"ng-click"=>"removeUser(user)"}
+						delete
+		%div.script-upload{"uploaderqq"=>true,"upload-extensions"=>'pdf,txt,text,pdf,doc,docx,pages',"fileis"=>"SCRIPT","upload-destination"=>"/script_files/upload_file/","dataobject"=>"script",:type=>"script",:oncomplete=>"oncomplete"}
+		%div.coverage-upload{"uploaderqq"=>true,"upload-extensions"=>'pdf,txt,text,pdf,doc,docx,pages',"fileis"=>"COVERAGE","upload-destination"=>"/scripts_coverages/upload_file/","dataobject"=>"script",:type=>"script",:oncomplete=>"oncompleteCoverage","ng-show"=>"show","show-me"=>"showCoverage"}
+		.script_form
+			%form{"ng-submit"=>"updateScript()"}
+				%input{:id=>:title,"ng-model"=>"script.title"}
+				%input{:id=>:author,"ng-model"=>"script.author"}
+				%input{:id=>:is_private,:type=>:checkbox,"ng-model"=>"script.is_private"}
+				%input{:id=>:is_overbrook,:type=>:checkbox,"ng-model"=>"script.is_overbrook"}
+				%input{"ui-select2"=>"users1", "ng-model"=>"users1model", "style"=>"width:200px"}
+				%input{:type=>:submit,:value=>:submit}
+				

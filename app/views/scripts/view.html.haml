@@ -1,0 +1,33 @@
+.script-holder(ng-init="script_id='#{params[:script_id]}';current_user_id='#{current_user.id}'")
+	.script-view{"ng-controller"=>"ScriptsCtrl"}
+		%form{"ng-submit"=>"addReview()",:name=>"myForm"}
+			%label
+				{{script.title}}
+			%label
+				{{script.author}}
+			.reviews-holder{"ui-if"=>"!!script.reviews.length"}
+				Reviews
+				%ul{"ng-repeat"=>"review in script.reviews"}
+					%li
+						%label
+							{{review.review_text}}
+						.rating{:raty=>true,:readonly=>1,"datascore"=>"review.rating"}
+			.files-holder
+				Files
+				%ul{"ng-repeat"=>"file in script.script_files", :id=>:script_files}
+					%li
+						%a{:href=>"{{file.get_file_url}}",:target=>"_blank"}
+							{{file.script_file_file_name}} - {{file.created_at | date:'yyyy-MM-dd HH:mm:ss'}}
+							%img{:src=>"#{asset_path 'pdf.gif'}"}
+			.review{"ng-show"=>"script.can_review"}
+				%label
+					Add a review
+				%textarea{"ng-model"=>"newReview.review_text",:required=>true,:name=>:review_text}
+				%span.error{"ng-show" => "myForm.review_text.$error.required"} Required!
+				.rating{:raty=>true,:readonly=>0,"setrating"=>"setrating"}
+
+			%input{:type=>:submit,:value=>"submit review","ng-show"=>"script.can_review"}
+			%a{:href=>"/scripts",:class=>"btn btn-warning cancel"}
+				cancel
+:javascript
+

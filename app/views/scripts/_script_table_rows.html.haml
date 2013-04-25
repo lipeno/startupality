@@ -1,0 +1,29 @@
+%tbody{:id=>"tbscripts"}
+	-@scripts.each do |script|
+		%tr
+			%td
+				=script.id
+			%td
+				=script.title
+			%td
+				=script.author
+			%td
+				-unless script.reviews.blank?
+					-count = script.reviews.count 
+					-res = script.reviews.inject(0){|m, h|m+h.rating}
+					.rating-fixed{"data-score"=>"#{(res/count.to_f).round}" }
+				-else
+					No ratings
+			%td
+				=script.created_at
+			%td
+				%a{:href=>script_view_path(script)}
+					view
+			%td
+				-if can? :edit,script
+					%a{:href=>edit_script_path(script)}
+						edit
+			%td
+				-if can? :edit,script
+					=link_to "Delete", script_path(script), :confirm => 'Are you sure?',:method=>:delete,"data-remote"=>:true, :name=>:delete_script
+						

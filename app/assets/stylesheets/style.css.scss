@@ -1,0 +1,243 @@
+// Variables to customize the look and feel of Bootstrap
+
+$bodyBackground: #f8f6ed;
+$linkColor : #222;
+
+$black : #111;
+$bluedark:#2D83A6;
+$red:  #FD3F55;
+$brownDark: #d2cfc2;
+
+
+$headerHeight:280px;
+
+
+//$btnPrimaryBackground: #333;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+$sansFontFamily: "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
+$serifFontFamily: Georgia, "Times New Roman", Times, serif;
+$baseFontSize: 12px;
+
+$tableBackgroundHover : rgba(#ccc, 0.3);
+
+@import "compass/css3";
+@import "fineuploader";
+@import "compass_twitter_bootstrap_awesome";
+
+body{
+	padding-top: $headerHeight+10;
+}
+// @import "compass_twitter_bootstrap_responsive";
+@import "select2";
+
+img{
+	max-width: auto;
+}
+
+.navbar-inner{
+	background: rgba($bodyBackground, 0.8);
+}
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner{
+	@include box-shadow(none);
+	border: none;
+}
+
+
+.hide{
+	display: none !important;
+
+}
+
+a:hover{
+	text-decoration: none;
+	color: #FD3F55;
+}
+
+// BUTTONS
+
+
+.btn{
+	background: #d2cfc2;
+	border: 1px solid darken(#d2cfc2,3);
+	@include transition-property("all");
+	@include transition-duration(0.2s);
+	@include text-shadow(none);
+
+	&:hover{
+		background: #FD3F55;
+		color:#fff;
+		border: 1px solid darken(#FD3F55, 10);
+		@include text-shadow(rgba(#000, 0.5) 1px 1px 0);
+	}
+}
+
+.btn-round{
+	@include border-radius(20px);
+
+}
+
+.btn-circle-icon{
+	@include border-radius(20px);
+	@include min-width(40px);
+}
+
+
+
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba($bodyBackground,.9);
+	height: $headerHeight - 6px;
+	width: 100%;
+	border-top: 6px solid #222;
+	// border-bottom: 2px solid #333;
+	z-index: 100;
+	@include box-shadow(rgba(#000, 0.15) 0px 2px 10px);
+	@include transition-property("height, box-shadow");
+	@include transition-duration(0.2s);
+
+	.header-links{
+		position: absolute;
+		right: 20px;
+		top: 20px;
+
+		a{
+			color: $black;
+		}
+	}
+
+	.header-logo{
+		height: 100%;
+		width: 100%;
+		display: block;
+		background: url('logo.png') no-repeat center 30%;
+		background-size: 516px;
+		text-indent: -9999px;
+		@include transition-property("background-size");
+		@include transition-duration(0.2s);
+
+	}
+
+	&.minimize{
+		height: 100px;
+		.header-logo{
+			background-size: 0px;
+		}
+	}
+}
+
+.toolbar{
+	// background: darken($bodyBackground, 10);
+	padding: 10px 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+
+	.toolbar-content{
+		@include display-box;
+		@include box-orient(horizontal);
+		@include box-align(stretch);
+
+		.uploader-holder{
+			width: 200px;
+		}
+	}
+
+	.search-scripts{
+		border: 1px solid #ddd;
+		padding: 5px 10px 5px 30px;
+		width: 340px;
+		@include border-radius(15px);
+		font-size: 12px;
+		background: #fff url('magnify.png') no-repeat 10px center;
+
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.sort-holder{
+		.btn{
+			font-size: 10px;
+			font-weight: bold;
+		}
+	}
+}
+
+.content-holder{
+	width: 100%
+}
+
+
+
+.script-item-content{
+
+	.col-data{
+	}
+
+	.col-stars{
+
+		.rating-fixed{
+		margin: 0 auto;
+			img{
+			}
+		}
+	}
+}
+
+
+.scripts-holder{
+	list-style: none;
+	margin: 0;
+
+	.script-item{
+		border-bottom: 1px solid  #d2cfc2;;
+		padding: 20px 0;
+		overflow: hidden;
+
+		.script-title{
+			font-weight: 600;
+		}
+
+		.edit-toolbar{
+
+			font-size: 14px;
+			padding: 10px 0;
+		}
+
+	}
+}
+
+
+.pagination ul > li > a,
+.pagination ul > li > span {
+	background-color: transparent;
+	border: 1px solid #dddddd;
+	border-left-width: 0;
+}
+
+
+.pagination ul > .disabled > span,
+.pagination ul > .disabled > a,
+.pagination ul > .disabled > a:hover {
+	color: #999999;
+}
+
+
+
+.pagination ul > li > a:hover,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+background-color: $brownDark;
+color: #fff;
+}
+
+
+
+
+

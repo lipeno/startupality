@@ -1,0 +1,4 @@
+$('#tbscripts').replaceWith("<%=escape_javascript render "script_table_rows" %>");
+$('div.pagination').html("<%= j will_paginate(@scripts)%>");
+$('.pagination a').attr('data-remote', 'true');
+initRaty();

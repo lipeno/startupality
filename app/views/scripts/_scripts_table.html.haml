@@ -1,0 +1,106 @@
+.scripts{"ng-controller"=>"ScriptsCtrl"}
+	%a{:href=>new_script_path}
+		new script
+	.script-table.table-condensed
+		%table
+			%thead
+				%tr
+					%td id
+					%td title
+					%td author
+					%td date
+					%td
+					%td
+			%tbody
+				%tr{"ng-repeat"=>"script in scripts.rows"}
+					%td
+						{{script.id}}
+					%td
+						{{script.title}}
+					%td
+						{{script.author}}
+					%td
+						{{script.created_at | date:'yyyy-MM-dd HH:mm:ss Z'}}
+					%td
+						%a{:href=>"/scripts/{{script.id}}/view"}
+							view
+					%td
+						%a{:href=>"/scripts/{{script.id}}/edit","ng-show"=>"script.can_edit"}
+							edit
+					%td
+						%button{"ng-click"=>"deleteScript(script,$index)","ng-show"=>"script.can_edit"}
+							delete
+		%pagination{"num-pages"=>"noOfPages", "current-page"=>"currentPage","on-select-page"=>"pageChanged(page)"}
+
+
+	.scriptRB-table.table-condensed
+		%table
+			%thead
+				%tr
+					%td id
+					%td title
+					%td author
+					%td rating
+					%td date
+					%td
+					%td
+				= render 'script_table_rows'
+		= will_paginate @scripts,:params => { :controller => "scripts", :action => "scripts_paged" }
+
+:javascript
+	$(document).ready(function() {
+		$('.pagination a').attr('data-remote', 'true');
+		initRaty();
+
+		});
+	$('[name=delete_script]').bind('ajax:success', function(evt, data, status, xhr){
+	$(this).closest('tr').remove();
+	})
+	function reload_table()
+	{
+
+	$.get('/scripts/scripts_paged?page=1');
+	}
+	function initRaty()
+	{
+		$('.rating-fixed').raty({
+					path:"/assets/raty/",
+					number: 4,
+					hintList: [1, 2, 3, 4],
+					targetKeep: true,
+					readOnly:true,
+					 score: function() {
+						    return $(this).attr('data-score');
+							  }
+
+				});
+
+	}
+
+
+
+
+
+		
+
+------OLD CONTROLLER INDEX METHOD
+	def index
+		#todo paging
+		#include script_files with path
+		
+		if(!params['page'].blank? && !params['limit'].blank?)
+			@scripts=Script.order('created_at').page(params['page'].to_i).per_page(params['limit'].to_i)
+		else
+			@scripts=Script.order('created_at').page(1).per_page(4)
+		end
+		#@scripts.each do |script|
+			#logger.debug("----CACACACN----#{can?(:edit,script)}")
+			#script[:can_edit]=can?(:edit,script)
+		#end
+		#logger.debug("asdasdasd .---------#{@scripts.to_yaml}")
+		respond_to do |format|
+			format.json {render :json =>{:count=>Script.count,:rows=>JSON.parse(@scripts.to_json(:include=>{:script_files=>{:methods=> [ :get_file_url ]}}))}}
+			format.html
+		end
+
+	end

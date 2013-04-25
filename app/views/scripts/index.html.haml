@@ -1,0 +1,51 @@
+.index{"ng-controller"=>"IndexCtrl"}
+	%header
+		= link_to "scriptecology", root_path, :class=> "header-logo"
+		.header-links
+			= link_to destroy_user_session_path, :method => :delete do
+				%i.icon-user
+				Logout
+		.toolbar
+			.container
+				.row
+					%div.uploader-holder.span3{"uploaderqq"=>true,"upload-extensions"=>'pdf,txt,text,pdf,doc,docx,pages',"upload-destination"=>"/scripts/upload_scripts/",:type=>"script",:oncomplete=>"oncomplete"}
+					.script-filter.span5
+						%input.search-scripts{"ng-model"=>"title", :placeholder => "Search Scriptology"}
+					.sort-holder.span3
+						%a.btn.btn-round{"ng-click"=>"sortBy('title')", "ng-class"=> "{active : isSelected('title')}"}
+							%i{"ng-class"=> "{'icon-caret-down': isSelected('title', 'asc'), 'icon-caret-up': isSelected('title', 'desc') }"}
+							TITLE
+						%a.btn.btn-round{"ng-click"=>"sortBy('author')", "ng-class"=> "{active : isSelected('author')}"}
+							%i{"ng-class"=> "{'icon-caret-down': isSelected('author', 'asc'), 'icon-caret-up': isSelected('author', 'desc') }"}
+							AUTHOR
+						%a.btn.btn-round{"ng-click"=>"sortBy('created_at')", "ng-class"=> "{active : isSelected('created_at')}"}
+							%i{"ng-class"=> "{'icon-caret-down': isSelected('created_at', 'asc'), 'icon-caret-up': isSelected('created_at', 'desc')}"}
+							DATE
+						%a.btn.btn-round{"ng-click"=>"onlyOverbrook()", "ng-class"=> "{active : is_overbrook}"}
+							OVERBROOK
+	.content-holder
+		.script-table
+			%ul.scripts-holder
+				%li.script-item{"ng-repeat"=>"script in scripts.rows"}
+					.container
+						.script-item-content
+							.row
+								.col.col-stars.span3
+									.rating-fixed{"raty"=>true,"datascore"=>"script.rating",:readonly=>1 }
+								.col-data.span9
+									%a.script-title{"ng-href"=>"/scripts/{{script.id}}/view"}
+										{{script.title}}
+									.meta-author{"ui-if"=>"!!script.author"}
+										by {{script.author}}
+									.meta-private{"ng-class"=>"{'icon-caret-down':!script.is_private,'icon-caret-up':script.is_private}"}
+										is private {{script.is_private}}
+									.meta-date
+										{{script.created_at | date:'MM-dd-yyyy HH:mm:ss'}}
+									.edit-toolbar
+										%a{:href=>"/scripts/{{script.id}}/edit","ui-if"=>"!!script.can_edit", :title => "Edit Script"}
+											%i.icon-edit
+										%a{"ng-click"=>"deleteScript(script)","ui-if"=>"!!script.can_delete", :title => "Delete Script"}
+											%i.icon-trash
+			.pagination-holder
+				.container
+					%pagination{"num-pages"=>"noOfPages", "current-page"=>"currentPage","on-select-page"=>"pageChanged(page)"}

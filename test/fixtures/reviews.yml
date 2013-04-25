@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rating: 1
+  review_text: MyText
+  pros: MyString
+  cons: MyString
+  user_id: 1
+  reviewable_type: MyString
+
+two:
+  rating: 1
+  review_text: MyText
+  pros: MyString
+  cons: MyString
+  user_id: 1
+  reviewable_type: MyString

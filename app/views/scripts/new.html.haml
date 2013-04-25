@@ -1,0 +1,32 @@
+.script-holder(ng-init="new_script_id='0';current_user_id='#{current_user.id}'")
+	%div{"ng-controller"=>"ScriptsCtrl"}
+		.show-file
+			%ul{"ng-repeat"=>"file in newScript.script_files"}
+				%li
+					%a{:href=>"{{file.get_file_url}}",:target=>"_blank"}
+						{{file.script_file_file_name}} - {{file.created_at | date:'yyyy-MM-dd HH:mm:ss'}}
+						%img{:src=>"#{asset_path 'pdf.gif'}"}
+		%div{"uploaderqq"=>true,"upload-extensions"=>'pdf',"upload-destination"=>"/script_files/upload_file/","dataobject"=>"newScript",:type=>"script",:oncomplete=>"oncomplete"}
+		.script_form{:style=>"display:none"}
+			%form{"ng-submit"=>"addNewScript()"}
+				%input{:id=>:title,"ng-model"=>"newScript.title"}
+				%input{:id=>:author,"ng-model"=>"newScript.author"}
+				%input{:type=>:submit,:value=>:submit}
+=content_for :footer do
+	:javascript
+		$(window).bind('unload', function() {
+			var data={};
+			data.session_id="#{session[:session_id]}"
+			$.ajax({
+				type: 'POST',
+				url: '/script_files/clean_up',
+				async:false,
+				data:data,
+				success:function(data){
+				//console.log("ahahahah");
+					},
+				error: function(){
+					//console.log("A");
+					}
+			});
+		});
