@@ -18,12 +18,9 @@ gem 'aws-sdk'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 group :development, :test do
-    gem 'thin'
+  gem 'thin'
   gem 'meta_request'
-  # gem 'therubyracer'
 end
 
 # Gems used only for assets and not required
