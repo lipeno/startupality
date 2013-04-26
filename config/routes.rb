@@ -1,6 +1,6 @@
 Scriptecology::Application.routes.draw do
   devise_for :users
-  root :to => 'scripts#index'
+  root :to => 'angular#angular'
   match 'angular/angular' => 'angular#angular'
   resources :scripts do
     get :view

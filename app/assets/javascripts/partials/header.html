@@ -1,4 +1,4 @@
-<header id="header">
+<header id="header" ng-controller="HeaderController">
 
     <div class="navbar">
         <div class="navbar-inner">
@@ -10,7 +10,7 @@
                 <div class="navbar-content">
                     <ul class="nav nav-tabs pull-right">
                         <li>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">johnSmith22@gmail.com <i class="icon-user"></i></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{currentUser.email}}<i class="icon-user"></i></a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                                 <li>
                                     <a href="#">Settings</a>
@@ -19,7 +19,7 @@
                                     <a href="#">Help</a>
                                 </li>
                                 <li>
-                                    <a href="#">Logout...</a>
+                                    <a href="/users/sign_out" data-method="delete" rel="nofollow">Logout...</a>
                                 </li>
                             </ul>
                         </li>

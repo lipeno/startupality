@@ -11,5 +11,8 @@
  *= require_self
  *= require angular-ui
  *= require select2
- *= require style
+ *= require bootstrap
+ *= require main
+ *= require font-awesome
+ *= require font-awesome-ie7.min
  */

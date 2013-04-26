@@ -14,14 +14,13 @@
 //= require jquery_ujs
 //= require underscore
 //= require jquery.raty.min
-//= require select2
+//= require lib/select2/select2
 //= require angular
 //= require angular-resource
 //= require angular-ui
-//= require jquery.fineuploader-3.4.1
-//= require scriptecology
+//= require startupality
 //= require_tree ./controllers/
 //= require_tree ./modules/
-//= require ui-bootstrap-tpls-0.2.0.min
+//= require lib/ui-bootstrap-tpls-0.2.0
 //= require waypoints
 //= require init
