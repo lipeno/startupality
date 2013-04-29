@@ -1,7 +1,12 @@
-Scriptecology::Application.routes.draw do
+Startupality::Application.routes.draw do
+  resources :projects
+
+
   devise_for :users
   root :to => 'angular#angular'
   match 'angular/angular' => 'angular#angular'
+  resources :users do
+  end
   resources :scripts do
     get :view
     post :review_script, :on => :collection

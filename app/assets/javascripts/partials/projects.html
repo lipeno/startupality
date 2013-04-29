@@ -8,9 +8,9 @@
 
     <section id="main" ng-show="projects.length" ng-cloak>
         <ul id="todo-list">
-            <li ng-repeat="project in projects | orderBy:dateCreated:false" ng-class="{completed: !project.completed, editing: project == editedProject}">
+            <li ng-repeat="project in projects | reverse" ng-class="{completed: !project.activated, editing: project == editedProject}">
                 <div class="view">
-                    <input class="toggle" type="checkbox" ng-click="activateProject(project)" ng-model="project.completed">
+                    <input class="toggle" type="checkbox" ng-click="activateProject(project)" ng-model="project.activated">
 
                     <label ng-dblclick="editProject(project)">{{project.title}}</label>
                     <button class="destroy" ng-click="removeProject(project)"></button>

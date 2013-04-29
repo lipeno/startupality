@@ -13,6 +13,7 @@
  *= require select2
  *= require bootstrap
  *= require main
- *= require font-awesome
+ *= require font-awesome.min
  *= require font-awesome-ie7.min
+ *= require style
  */

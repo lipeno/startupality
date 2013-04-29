@@ -9,7 +9,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Scriptecology
+module Startupality
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -58,6 +58,7 @@ module Scriptecology
 
     #Needs to be false on Heroku
     config.assets.initialize_on_precompile = false
+
     # Can be set to invalidate the whole cache
     config.assets.version = "1.1"
 
@@ -72,6 +73,12 @@ module Scriptecology
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
 
     # config.logger = Logger.new(STDOUT)
+
+    # Added this to disable automatic js and css creation
+    config.generators do |g|
+      g.stylesheets false
+      g.javascripts false
+    end
 
   end
 end

@@ -26,30 +26,6 @@ app.factory("ScriptCoverage", function($resource) {
 	});
 });
 
-app.factory("CurrentUser", function($http) {
-
-	return {
-		getUser: function(callback) {
-			$http.post('/userutil/fetch_current_user').success(
-
-			function(data, status, headers, config) {
-				callback(data);
-			});
-		},
-		getUsers: function(q, callback) {
-			$http.post('/userutil/fetch_current_user').success(
-
-			function(data, status, headers, config) {
-				console.log(data);
-				callback(data);
-			});
-
-		}
-
-	}
-
-});
-
 function ScriptCtrl($scope, Script, $http) {}
 
 function ScriptsCtrl($scope, Script, ScriptFiles,ScriptCoverage, CurrentUser, $http, $compile) {

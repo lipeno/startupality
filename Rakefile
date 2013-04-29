@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Scriptecology::Application.load_tasks
+Startupality::Application.load_tasks

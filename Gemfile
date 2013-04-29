@@ -33,7 +33,6 @@ group :assets do
   gem 'compass-rails'
   gem 'compass_twitter_bootstrap'
   gem 'yui-compressor'
-  gem 'uglifier', '>= 1.0.3'
   gem 'angularjs-rails'
   gem 'angular-ui-rails'
 

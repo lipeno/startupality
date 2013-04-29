@@ -1,1 +1,1 @@
-// do this on initilaize, some javascript code
+// do this on initialize, some javascript code

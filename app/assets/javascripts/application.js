@@ -10,17 +10,22 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
+//= require lib/jquery.min
 //= require jquery_ujs
 //= require underscore
-//= require jquery.raty.min
 //= require lib/select2/select2
+//= require lib/jquery.raty.min
+//= require lib/waypoints
 //= require angular
 //= require angular-resource
 //= require angular-ui
-//= require startupality
+//= require lib/restangular.min
+//= require app/app
+//= require app/directives
+//= require app/filters
+//= require app/services
+//= require app/models
 //= require_tree ./controllers/
 //= require_tree ./modules/
-//= require lib/ui-bootstrap-tpls-0.2.0
-//= require waypoints
 //= require init
+
