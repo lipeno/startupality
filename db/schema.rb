@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429143134) do
+ActiveRecord::Schema.define(:version => 20130501101253) do
 
   create_table "levels", :force => true do |t|
     t.string "level"
@@ -77,6 +77,25 @@ ActiveRecord::Schema.define(:version => 20130429143134) do
   add_index "scripts_users", ["script_id", "user_id"], :name => "index_scripts_users_on_script_id_and_user_id", :unique => true
   add_index "scripts_users", ["script_id"], :name => "index_scripts_users_on_script_id"
   add_index "scripts_users", ["user_id"], :name => "index_scripts_users_on_user_id"
+
+  create_table "section_types", :force => true do |t|
+    t.text     "title"
+    t.text     "description"
+    t.text     "questions"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "sections", :force => true do |t|
+    t.text     "data"
+    t.integer  "project_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.text     "tags"
+    t.integer  "section_type_id"
+  end
+
+  add_index "sections", ["section_type_id"], :name => "index_sections_on_section_type_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

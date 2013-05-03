@@ -22,6 +22,24 @@ app.factory("CurrentUser", function($http) {
     }
 });
 
+app.factory("CurrentProject", function($resource) {
+    return $resource("/projects/getActivated", {}, {});
+});
+
 app.factory("Project", function($resource) {
     return $resource("/projects/:id", {id: "@id"}, {update: {method: "PUT"}});
+});
+
+// Nested resource
+app.factory("Section", function($resource) {
+    return $resource('/projects/:projectId/sections/:id', {projectId: '@projectId', id: '@id'}, {update: {method: "PUT"}});
+});
+
+app.factory("SectionType", function($resource) {
+    return $resource('/sectiontypes/:id', {id: '@id'}, {update: {method: "PUT"}});
+});
+
+// Nested resource
+app.factory("Tag", function($resource) {
+    return $resource('/projects/:projectId/sections/:sectionId/tags/:id', {projectId: '@projectId', sectionId: '@sectionId', id: '@id'}, {update: {method: "PUT"}});
 });

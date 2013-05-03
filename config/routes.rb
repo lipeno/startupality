@@ -1,5 +1,14 @@
 Startupality::Application.routes.draw do
-  resources :projects
+  resources :section_types
+
+  resources :projects do
+    collection do
+      get 'getActivated'
+    end
+    resources :sections do
+      resources :section_types
+    end
+  end
 
 
   devise_for :users

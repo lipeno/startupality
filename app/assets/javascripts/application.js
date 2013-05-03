@@ -16,10 +16,11 @@
 //= require lib/select2/select2
 //= require lib/jquery.raty.min
 //= require lib/waypoints
+//= require lib/bootstrap.min
+//= require lib/jquery.tagsinput
 //= require angular
 //= require angular-resource
 //= require angular-ui
-//= require lib/restangular.min
 //= require app/app
 //= require app/directives
 //= require app/filters

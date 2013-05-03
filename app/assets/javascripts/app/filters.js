@@ -3,3 +3,10 @@ app.filter('reverse', function() {
         return items.slice().reverse();
     };
 });
+
+//TODO: it is called too many times
+app.filter('stringToArray', function() {
+    return function(items) {
+        return JSON.parse(items);
+    };
+});

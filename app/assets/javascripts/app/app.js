@@ -1,4 +1,4 @@
-var app = angular.module("Startupality", ["ngResource",'ui.bootstrap','ui','restangular']);
+var app = angular.module("Startupality", ["ngResource",'ui.bootstrap','ui']);
 
 // Gets authentication token injected in the DOM
 app.config(["$httpProvider", function(provider) {

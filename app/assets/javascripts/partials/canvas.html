@@ -1,27 +1,38 @@
 <table id="bizcanvas" class="table">
     <tr>
         <td colspan="5">
-            <h4>{{sections[0].title}} <i class="icon-question-sign icon-2x" tooltip-placement="right"
-                                         tooltip="{{sections[0].description}}"></i></h4>
-            <div class="span5 select2-container select2-container-multi input-large" ng-click="openDialog(sections[0])" id="s2id_autogen1">
+            <h4><i class="icon-question-sign icon-2x" tooltip-placement="right"
+                   tooltip="Problems that your solution is solving"></i> Problem</h4>
+
+            <div class="span5 select2-container select2-container-multi input-large" ng-click="openDialog(sections[0])"
+                 id="s2id_autogen1">
+                <div>{{problem.data}}</div>
+            </div>
+            <div id="wrapper">
+                <p>This is a basic tag input:
+                    <input id="tag1" value="alpha,beta,gamma" tags-input=""/>
+                </p>
+                <div ng-click="openDialog(problem) class="select2-container select2-container-multi" id="s2id_autogen3" style="width: 300px;">
                     <ul class="select2-choices">
-                        <li class="select2-search-choice" ng-repeat="tag in sections[0].tags">
-                            <div>{{tag.text}}</div>
-                            <a href="#" onclick="return false;" class="select2-search-choice-close" tabindex="-1"></a></li>
+                        <li ng-repeat="tag in (problem.tags | stringToArray)" class="select2-search-choice">
+                            <div>{{tag}}</div>
                         </li>
-                        <li class="select2-search-field"><input type="text" autocomplete="off" class="select2-input"
-                                                                id="s2id_autogen2" style="width: 10px;"></li>
                     </ul>
-                    <div class="select2-drop select2-drop-multi" style="display:none;">
-                        <ul class="select2-results"></ul>
-                    </div>
                 </div>
+            </div>
+
 
         </td>
         <td colspan="5">
-            <h4>{{sections[1].title}} <i class="icon-lightbulb icon-2x" tooltip-placement="right"
-                                         tooltip="{{sections[1].description}}"></i></h4>
-            <textarea rows="7" class="span6" ng-click="openDialog(sections[1])" ng-model=sections[1].text></textarea>
+            <h4>{{solution.data}} <i class="icon-lightbulb icon-2x" tooltip-placement="right"
+                                     tooltip="{{sections[1].description}}"></i></h4>
+            <div ng-click="openDialog(solution)" class="span6 select2-container select2-container-multi" id="s2id_autogen3">
+                <ul class="select2-choices">
+                    <li ng-repeat="tag in (solution.tags | stringToArray)" class="select2-search-choice">
+                        <div>{{tag}}</div>
+                    </li>
+                </ul>
+            </div>
         </td>
     </tr>
     <tr>

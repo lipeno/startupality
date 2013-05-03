@@ -25,8 +25,13 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   # GET /projects/new.json
   def new
+    # NOT USED, LOOK FOR CREATE
     @project = Project.new
     @project.user_id = current_user.id;
+    # Add all the sections that project should have
+    SectionType.each do |item|
+      @project.sections.create(data:'', tags:'', section_type_id:item.id)
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -45,6 +50,10 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
     # Save for current user
     @project.user_id = current_user.id;
+    # Add all the sections that project should have
+    SectionType.all.each do |item|
+      @project.sections.new(data:nil, section_type_id:item.id)
+    end
 
     respond_to do |format|
       if @project.save
@@ -83,6 +92,16 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to projects_url }
       format.json { head :no_content }
+    end
+  end
+
+  # Get Currently active project
+  def getActivated
+    @project = Project.where("activated = true").where(:user_id => current_user.id)
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @project }
     end
   end
 end
