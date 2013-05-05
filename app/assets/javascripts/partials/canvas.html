@@ -1,8 +1,8 @@
 <table id="bizcanvas" class="table">
     <tr>
-        <td colspan="5">
+        <td colspan="3">
             <h4>{{problemType.title}} <i class="icon-question-sign icon-2x" tooltip-placement="right" tooltip="Problems that your solution is solving"></i></h4>
-            <div ng-click="openDialog(problem, problemType)" class="span5 select2-container select2-container-multi">
+            <div ng-click="openDialog(problem, problemType)" class="span4 select2-container select2-container-multi">
             <ul class="select2-choices">
                 <li ng-repeat="tag in (problem.tags | stringToArray)" class="select2-search-choice">
                     <div>{{tag}}</div>
@@ -10,9 +10,20 @@
             </ul>
             </div>
         </td>
-        <td colspan="5">
+        <td colspan="3">
+            <h4>{{valuePropositionType.title}} <i class="icon-gift icon-2x" tooltip-placement="right"
+                                                 tooltip="{{valuePropositionType.description}}"></i></h4>
+            <div ng-click="openDialog(valueProposition, valuePropositionType)" class="span5 select2-container select2-container-multi">
+                <ul class="select2-choices">
+                    <li ng-repeat="tag in (valueProposition.tags | stringToArray)" class="select2-search-choice">
+                        <div>{{tag}}</div>
+                    </li>
+                </ul>
+            </div>
+        </td>
+        <td colspan="3">
             <h4>{{solutionType.title}} <i class="icon-lightbulb icon-2x" tooltip-placement="right" tooltip="{{solutionType.description}}"></i></h4>
-            <div ng-click="openDialog(solution, solutionType)" class="span5 select2-container select2-container-multi">
+            <div ng-click="openDialog(solution, solutionType)" class="span4 select2-container select2-container-multi">
                 <ul class="select2-choices">
                     <li ng-repeat="tag in (solution.tags | stringToArray)" class="select2-search-choice">
                         <div>{{tag}}</div>
@@ -20,12 +31,13 @@
                 </ul>
             </div>
         </td>
+
     </tr>
     <tr>
         <td colspan="2" rowspan="2">
-            <h4>{{keyPartnersType.title}}<i class="icon-trophy icon-2x" tooltip-placement="right"
+            <h4>{{keyPartnersType.title}} <i class="icon-trophy icon-2x" tooltip-placement="right"
                                         tooltip="{{keyPartnersType.description}}"></i></h4>
-            <div ng-click="openDialog(keyPartners, keyPartnersType)" class="span5 select2-container select2-container-multi">
+            <div ng-click="openDialog(keyPartners, keyPartnersType)" class="span4 select2-container select2-container-multi">
                 <ul class="select2-choices">
                     <li ng-repeat="tag in (keyPartners.tags | stringToArray)" class="select2-search-choice">
                         <div>{{tag}}</div>
@@ -36,7 +48,7 @@
         <td colspan="2">
             <h4>{{keyActivitiesType.title}} <i class="icon-tasks icon-2x" tooltip-placement="right"
                                          tooltip="{{keyActivitiesType.description}}"></i></h4>
-            <div ng-click="openDialog(keyActivities, keyActivitiesType)" class="span5 select2-container select2-container-multi">
+            <div ng-click="openDialog(keyActivities, keyActivitiesType)" class="span4 select2-container select2-container-multi">
                 <ul class="select2-choices">
                     <li ng-repeat="tag in (keyActivities.tags | stringToArray)" class="select2-search-choice">
                         <div>{{tag}}</div>
@@ -44,21 +56,10 @@
                 </ul>
             </div>
         </td>
-        <td colspan="2" rowspan="2">
-            <h4>{{valuePropositionType.title}}<i class="icon-gift icon-2x" tooltip-placement="right"
-                                        tooltip="{{valuePropositionType.description}}"></i></h4>
-            <div ng-click="openDialog(valueProposition, valuePropositionType)" class="span5 select2-container select2-container-multi">
-                <ul class="select2-choices">
-                    <li ng-repeat="tag in (valueProposition.tags | stringToArray)" class="select2-search-choice">
-                        <div>{{tag}}</div>
-                    </li>
-                </ul>
-            </div>
-        </td>
         <td colspan="2">
-            <h4>{{customerRelationshipsType.title}}<i class="icon-heart icon-2x" tooltip-placement="right"
+            <h4>{{customerRelationshipsType.title}} <i class="icon-heart icon-2x" tooltip-placement="right"
                                         tooltip="{{customerRelationshipsType.description}}"></i></h4>
-            <div ng-click="openDialog(customerRelationships, customerRelationshipsType)" class="span5 select2-container select2-container-multi">
+            <div ng-click="openDialog(customerRelationships, customerRelationshipsType)" class="span4 select2-container select2-container-multi">
                 <ul class="select2-choices">
                     <li ng-repeat="tag in (customerRelationships.tags | stringToArray)" class="select2-search-choice">
                         <div>{{tag}}</div>
@@ -69,7 +70,7 @@
         <td colspan="2" rowspan="2">
             <h4>{{customerSegmentsType.title}} <i class="icon-sitemap icon-2x" tooltip-placement="right"
                                          tooltip="{{customerSegmentsType.description}}"></i></h4>
-            <div ng-click="openDialog(customerSegments, customerSegmentsType)" class="span5 select2-container select2-container-multi">
+            <div ng-click="openDialog(customerSegments, customerSegmentsType)" class="span4 select2-container select2-container-multi">
                 <ul class="select2-choices">
                     <li ng-repeat="tag in (customerSegments.tags | stringToArray)" class="select2-search-choice">
                         <div>{{tag}}</div>
@@ -80,9 +81,9 @@
     </tr>
     <tr>
         <td colspan="2">
-            <h4>{{keyResourcesType.title}}<i class="icon-bolt icon-2x" tooltip-placement="right"
+            <h4>{{keyResourcesType.title}} <i class="icon-bolt icon-2x" tooltip-placement="right"
                                         tooltip="{{keyResourcesType.description}}"></i></h4>
-            <div ng-click="openDialog(keyResources, keyResourcesType)" class="span5 select2-container select2-container-multi">
+            <div ng-click="openDialog(keyResources, keyResourcesType)" class="span4 select2-container select2-container-multi">
                 <ul class="select2-choices">
                     <li ng-repeat="tag in (keyResources.tags | stringToArray)" class="select2-search-choice">
                         <div>{{tag}}</div>
@@ -91,9 +92,9 @@
             </div>
         </td>
         <td colspan="2">
-            <h4>{{channelsType.title}}<i class="icon-truck icon-2x" tooltip-placement="right"
+            <h4>{{channelsType.title}} <i class="icon-truck icon-2x" tooltip-placement="right"
                                         tooltip="{{channelsType.description}}"></i></h4>
-            <div ng-click="openDialog(channels, channelsType)" class="span5 select2-container select2-container-multi">
+            <div ng-click="openDialog(channels, channelsType)" class="span4 select2-container select2-container-multi">
                 <ul class="select2-choices">
                     <li ng-repeat="tag in (channels.tags | stringToArray)" class="select2-search-choice">
                         <div>{{tag}}</div>
@@ -104,4 +105,4 @@
 
     </tr>
 </table>
-<h4>Startup Canvas = based on Business Model Canvas with added Problem and Solution sections</h4>
+<h4>Startup Canvas, based on <a href="http://en.wikipedia.org/wiki/Business_Model_Canvas">Business Model Canvas</a> with additional Problem and Solution sections</h4>
