@@ -1,32 +1,18 @@
 <table id="bizcanvas" class="table">
     <tr>
         <td colspan="5">
-            <h4><i class="icon-question-sign icon-2x" tooltip-placement="right"
-                   tooltip="Problems that your solution is solving"></i> Problem</h4>
-
-            <div class="span5 select2-container select2-container-multi input-large" ng-click="openDialog(sections[0])"
-                 id="s2id_autogen1">
-                <div>{{problem.data}}</div>
+            <h4>{{problemType.title}} <i class="icon-question-sign icon-2x" tooltip-placement="right" tooltip="Problems that your solution is solving"></i></h4>
+            <div ng-click="openDialog(problem, problemType)" class="span5 select2-container select2-container-multi">
+            <ul class="select2-choices">
+                <li ng-repeat="tag in (problem.tags | stringToArray)" class="select2-search-choice">
+                    <div>{{tag}}</div>
+                </li>
+            </ul>
             </div>
-            <div id="wrapper">
-                <p>This is a basic tag input:
-                    <input id="tag1" value="alpha,beta,gamma" tags-input=""/>
-                </p>
-                <div ng-click="openDialog(problem) class="select2-container select2-container-multi" id="s2id_autogen3" style="width: 300px;">
-                    <ul class="select2-choices">
-                        <li ng-repeat="tag in (problem.tags | stringToArray)" class="select2-search-choice">
-                            <div>{{tag}}</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-
         </td>
         <td colspan="5">
-            <h4>{{solution.data}} <i class="icon-lightbulb icon-2x" tooltip-placement="right"
-                                     tooltip="{{sections[1].description}}"></i></h4>
-            <div ng-click="openDialog(solution)" class="span6 select2-container select2-container-multi" id="s2id_autogen3">
+            <h4>{{solutionType.title}} <i class="icon-lightbulb icon-2x" tooltip-placement="right" tooltip="{{solutionType.description}}"></i></h4>
+            <div ng-click="openDialog(solution, solutionType)" class="span5 select2-container select2-container-multi">
                 <ul class="select2-choices">
                     <li ng-repeat="tag in (solution.tags | stringToArray)" class="select2-search-choice">
                         <div>{{tag}}</div>
@@ -37,42 +23,85 @@
     </tr>
     <tr>
         <td colspan="2" rowspan="2">
-            <h4>{{sections[2].title}}<i class="icon-trophy icon-2x" tooltip-placement="right"
-                                        tooltip="{{sections[2].description}}"></i></h4>
-            <textarea rows="17" ng-click="openDialog(sections[2])" ng-model=sections[2].text></textarea>
+            <h4>{{keyPartnersType.title}}<i class="icon-trophy icon-2x" tooltip-placement="right"
+                                        tooltip="{{keyPartnersType.description}}"></i></h4>
+            <div ng-click="openDialog(keyPartners, keyPartnersType)" class="span5 select2-container select2-container-multi">
+                <ul class="select2-choices">
+                    <li ng-repeat="tag in (keyPartners.tags | stringToArray)" class="select2-search-choice">
+                        <div>{{tag}}</div>
+                    </li>
+                </ul>
+            </div>
         </td>
         <td colspan="2">
-            <h4>{{sections[3].title}} <i class="icon-tasks icon-2x" tooltip-placement="right"
-                                         tooltip="{{sections[3].description}}"></i></h4>
-            <textarea rows="7" ng-click="openDialog(sections[3])" ng-model=sections[3].text></textarea>
+            <h4>{{keyActivitiesType.title}} <i class="icon-tasks icon-2x" tooltip-placement="right"
+                                         tooltip="{{keyActivitiesType.description}}"></i></h4>
+            <div ng-click="openDialog(keyActivities, keyActivitiesType)" class="span5 select2-container select2-container-multi">
+                <ul class="select2-choices">
+                    <li ng-repeat="tag in (keyActivities.tags | stringToArray)" class="select2-search-choice">
+                        <div>{{tag}}</div>
+                    </li>
+                </ul>
+            </div>
         </td>
         <td colspan="2" rowspan="2">
-            <h4>{{sections[4].title}}<i class="icon-gift icon-2x" tooltip-placement="right"
-                                        tooltip="{{sections[4].description}}"></i></h4>
-            <textarea rows="17" ng-click="openDialog(sections[4])" ng-model=sections[4].text></textarea>
+            <h4>{{valuePropositionType.title}}<i class="icon-gift icon-2x" tooltip-placement="right"
+                                        tooltip="{{valuePropositionType.description}}"></i></h4>
+            <div ng-click="openDialog(valueProposition, valuePropositionType)" class="span5 select2-container select2-container-multi">
+                <ul class="select2-choices">
+                    <li ng-repeat="tag in (valueProposition.tags | stringToArray)" class="select2-search-choice">
+                        <div>{{tag}}</div>
+                    </li>
+                </ul>
+            </div>
         </td>
         <td colspan="2">
-            <h4>{{sections[5].title}}<i class="icon-heart icon-2x" tooltip-placement="right"
-                                        tooltip="{{sections[5].description}}"></i></h4>
-            <textarea rows="7" ng-click="openDialog(sections[5])" ng-model=sections[5].text></textarea>
+            <h4>{{customerRelationshipsType.title}}<i class="icon-heart icon-2x" tooltip-placement="right"
+                                        tooltip="{{customerRelationshipsType.description}}"></i></h4>
+            <div ng-click="openDialog(customerRelationships, customerRelationshipsType)" class="span5 select2-container select2-container-multi">
+                <ul class="select2-choices">
+                    <li ng-repeat="tag in (customerRelationships.tags | stringToArray)" class="select2-search-choice">
+                        <div>{{tag}}</div>
+                    </li>
+                </ul>
+            </div>
         </td>
         <td colspan="2" rowspan="2">
-            <h4>{{sections[6].title}} <i class="icon-sitemap icon-2x" tooltip-placement="right"
-                                         tooltip="{{sections[6].description}}"></i></h4>
-            <textarea rows="17" ng-click="openDialog(sections[6])" ng-model=sections[6].text></textarea>
+            <h4>{{customerSegmentsType.title}} <i class="icon-sitemap icon-2x" tooltip-placement="right"
+                                         tooltip="{{customerSegmentsType.description}}"></i></h4>
+            <div ng-click="openDialog(customerSegments, customerSegmentsType)" class="span5 select2-container select2-container-multi">
+                <ul class="select2-choices">
+                    <li ng-repeat="tag in (customerSegments.tags | stringToArray)" class="select2-search-choice">
+                        <div>{{tag}}</div>
+                    </li>
+                </ul>
+            </div>
         </td>
     </tr>
     <tr>
         <td colspan="2">
-            <h4>{{sections[7].title}}<i class="icon-bolt icon-2x" tooltip-placement="right"
-                                        tooltip="{{sections[7].description}}"></i></h4>
-            <textarea rows="7" ng-click="openDialog(sections[7])" ng-model=sections[7].text></textarea>
+            <h4>{{keyResourcesType.title}}<i class="icon-bolt icon-2x" tooltip-placement="right"
+                                        tooltip="{{keyResourcesType.description}}"></i></h4>
+            <div ng-click="openDialog(keyResources, keyResourcesType)" class="span5 select2-container select2-container-multi">
+                <ul class="select2-choices">
+                    <li ng-repeat="tag in (keyResources.tags | stringToArray)" class="select2-search-choice">
+                        <div>{{tag}}</div>
+                    </li>
+                </ul>
+            </div>
         </td>
         <td colspan="2">
-            <h4>{{sections[8].title}}<i class="icon-truck icon-2x" tooltip-placement="right"
-                                        tooltip="{{sections[8].description}}"></i></h4>
-            <textarea rows="7" ng-click="openDialog(sections[8])" ng-model=sections[8].text></textarea>
+            <h4>{{channelsType.title}}<i class="icon-truck icon-2x" tooltip-placement="right"
+                                        tooltip="{{channelsType.description}}"></i></h4>
+            <div ng-click="openDialog(channels, channelsType)" class="span5 select2-container select2-container-multi">
+                <ul class="select2-choices">
+                    <li ng-repeat="tag in (channels.tags | stringToArray)" class="select2-search-choice">
+                        <div>{{tag}}</div>
+                    </li>
+                </ul>
+            </div>
         </td>
 
     </tr>
 </table>
+<h4>Startup Canvas = based on Business Model Canvas with added Problem and Solution sections</h4>

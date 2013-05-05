@@ -7,6 +7,9 @@ app.filter('reverse', function() {
 //TODO: it is called too many times
 app.filter('stringToArray', function() {
     return function(items) {
-        return JSON.parse(items);
+        if (items){
+            return JSON.parse(items);
+        }
+        return items;
     };
 });

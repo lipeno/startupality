@@ -10,7 +10,6 @@ Startupality::Application.routes.draw do
     end
   end
 
-
   devise_for :users
   root :to => 'angular#angular'
   match 'angular/angular' => 'angular#angular'

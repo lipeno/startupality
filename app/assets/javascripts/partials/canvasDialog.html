@@ -1,11 +1,12 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close(result)">&times;</button>
-    <h1>xxx</h1>
-    </div>
+    <h1><i class="icon-edit"></i> {{itemType.title}}</h1>
+    <p>{{itemType.description}}</p>
+</div>
 <div class="modal-body">
-    <div id="description" class="span6 pull-left">
-        <h4><i><i class="icon-pencil" tooltip-placement="right" tooltip="Write here in more details"></i>Text:</i></h4>
-        <textarea rows="10" ng-model="item.data" class="span6" ui-keydown="{esc: 'keyCallback($event)'}" unfocus="disableEdit()"></textarea>
+    <div id="description" class="span8 pull-left">
+        <h4><i><i class="icon-pencil" tooltip-placement="right" tooltip="Write here in more details"></i>Description</i></h4>
+        <textarea rows="10" ng-model="item.data" placeholder="{{itemType.questions}}" class="span6" ui-keydown="{esc: 'keyCallback($event)'}" unfocus="disableEdit()"></textarea>
     </div>
 
     <div id="tags" class="span4 pull-right">

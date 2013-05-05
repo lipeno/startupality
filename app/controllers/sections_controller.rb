@@ -1,8 +1,14 @@
 class SectionsController < ApplicationController
+  before_filter :load_parent
+
+  def load_parent
+    @project = Project.find(params[:project_id])
+  end
+
   # GET /sections
   # GET /sections.json
   def index
-    @sections = Section.all
+    @sections = @project.sections.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +19,7 @@ class SectionsController < ApplicationController
   # GET /sections/1
   # GET /sections/1.json
   def show
-    @section = Section.find(params[:id])
+    @section = @project.sections.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +30,7 @@ class SectionsController < ApplicationController
   # GET /sections/new
   # GET /sections/new.json
   def new
-    @section = Section.new
+    @section = @project.sections.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +40,13 @@ class SectionsController < ApplicationController
 
   # GET /sections/1/edit
   def edit
-    @section = Section.find(params[:id])
+    @section = @project.sections.find(params[:id])
   end
 
   # POST /sections
   # POST /sections.json
   def create
-    @section = Section.new(params[:section])
+    @section = @project.sections.new(params[:section])
 
     respond_to do |format|
       if @section.save
@@ -56,7 +62,7 @@ class SectionsController < ApplicationController
   # PUT /sections/1
   # PUT /sections/1.json
   def update
-    @section = Section.find(params[:id])
+    @section = @project.sections.find(params[:id])
 
 
     respond_to do |format|
@@ -73,7 +79,7 @@ class SectionsController < ApplicationController
   # DELETE /sections/1
   # DELETE /sections/1.json
   def destroy
-    @section = Section.find(params[:id])
+    @section = @project.sections.find(params[:id])
     @section.destroy
 
     respond_to do |format|

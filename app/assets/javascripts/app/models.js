@@ -36,7 +36,7 @@ app.factory("Section", function($resource) {
 });
 
 app.factory("SectionType", function($resource) {
-    return $resource('/sectiontypes/:id', {id: '@id'}, {update: {method: "PUT"}});
+    return $resource('/section_types/:id', {id: '@id'}, {update: {method: "PUT"}});
 });
 
 // Nested resource

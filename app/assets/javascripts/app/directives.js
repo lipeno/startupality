@@ -68,7 +68,7 @@ app.directive('select2Input', function() {
 app.directive('tagInput', function(){
     return {
         restrict: 'E',
-        template: '<input type="hidden" style="width:300px" placeholder="placeholder...">',
+        template: '<input type="hidden" style="width:300px" placeholder="Input tags here...">',
         replace: true,
         require: '?ngModel',
         link: function ( scope, element, attrs, ngModel ){
@@ -77,7 +77,7 @@ app.directive('tagInput', function(){
 
             $(element).select2({
                 tags: [],
-                tokenSeparators: [",", " "],
+                tokenSeparators: [","],
                 formatNoMatches: function(){ return '';}
             }).on('change', function(e){
                     if (!drivenByModel) {
@@ -91,8 +91,10 @@ app.directive('tagInput', function(){
 
             ngModel.$render = function(){
                 drivenByModel = true;
-                var data = JSON.parse( ngModel.$viewValue );
-                $(element).val(data).trigger('change');
+                if (ngModel.$viewValue){
+                    var data = JSON.parse(ngModel.$viewValue);
+                    $(element).val(data).trigger('change');
+                }
             };
         }
     };

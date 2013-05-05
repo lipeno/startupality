@@ -1,7 +1,10 @@
-app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentProject, Section){
+app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentProject, Section, SectionType){
     // TODO: inject this into $rootscope
     $scope.currentProject = {};
     $scope.sections = {};
+    $scope.sectionTypes = SectionType.query(function(){});
+    // Sort sections by IDs, the order that they are put in the databse should be the same
+    $scope.sectionTypes.sort(function(a, b) {return a.id - b.id})
 
     var currentProject = CurrentProject.query(function(){
         $scope.currentProject = currentProject[0];
@@ -14,30 +17,39 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
                 {
                     case 1:
                         $scope.problem = element;
+                        $scope.problemType = $scope.sectionTypes[element.section_type_id - 1];
                         break;
                     case 2:
                         $scope.solution = element;
+                        $scope.solutionType = $scope.sectionTypes[element.section_type_id - 1];
                         break;
                     case 3:
                         $scope.keyPartners = element;
+                        $scope.keyPartnersType = $scope.sectionTypes[element.section_type_id - 1];
                         break;
                     case 4:
                         $scope.keyActivities = element;
+                        $scope.keyActivitiesType = $scope.sectionTypes[element.section_type_id - 1];
                         break;
                     case 5:
                         $scope.valueProposition = element;
+                        $scope.valuePropositionType = $scope.sectionTypes[element.section_type_id - 1];
                         break;
                     case 6:
                         $scope.customerRelationships = element;
+                        $scope.customerRelationshipsType = $scope.sectionTypes[element.section_type_id - 1];
                         break;
                     case 7:
                         $scope.customerSegments = element;
+                        $scope.customerSegmentsType = $scope.sectionTypes[element.section_type_id - 1];
                         break;
                     case 8:
                         $scope.keyResources = element;
+                        $scope.keyResourcesType = $scope.sectionTypes[element.section_type_id - 1];
                         break;
                     case 9:
                         $scope.channels = element;
+                        $scope.channelsType = $scope.sectionTypes[element.section_type_id - 1];
                         break;
                     default:
                         console.log("Type is different then expected.")
@@ -49,8 +61,7 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
     $scope.enableEdit = function() { $scope.edit = true; }
     $scope.disableEdit = function() { $scope.edit = false;  }
 
-    $scope.openDialog = function(item){
-        var itemToEdit = item;
+    $scope.openDialog = function(section, sectionType){
         $scope.opts = {
             backdrop: true,
             keyboard: true,
@@ -60,7 +71,7 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
             controller: 'CanvasDialogController',
             dialogFade: true,
             backdropFade: true,
-            resolve: {item: function(){ return itemToEdit; }}
+            resolve: {item: function(){ return section; }, itemType: function(){ return sectionType; }}
         };
 
         var d = $dialog.dialog($scope.opts);
@@ -73,8 +84,9 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
     };
 });
 
-app.controller('CanvasDialogController', function ($scope, dialog, item, CurrentProject){
+app.controller('CanvasDialogController', function ($scope, dialog, item, itemType, CurrentProject){
     $scope.item = item;
+    $scope.itemType = itemType;
 
     $scope.$watch('item.tags', function() {
         var currentProject = CurrentProject.query(function(){
@@ -83,6 +95,9 @@ app.controller('CanvasDialogController', function ($scope, dialog, item, Current
     }, true);
 
     $scope.close = function(result){
+        var currentProject = CurrentProject.query(function(){
+            $scope.item.$update({projectId: currentProject[0].id});
+        });
         dialog.close(result);
     };
 });
