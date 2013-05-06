@@ -43,3 +43,18 @@ app.factory("SectionType", function($resource) {
 app.factory("Tag", function($resource) {
     return $resource('/projects/:projectId/sections/:sectionId/tags/:id', {projectId: '@projectId', sectionId: '@sectionId', id: '@id'}, {update: {method: "PUT"}});
 });
+
+app.service('ProjectProperties', function() {
+    this.projectExists = false;
+    return {
+        getProjectExists: function() {
+            return this.projectExists;
+        },
+        setProjectExists: function() {
+            this.projectExists = true;
+        },
+        unsetProjectExists: function() {
+            this.projectExists = false;
+        }
+    }
+});

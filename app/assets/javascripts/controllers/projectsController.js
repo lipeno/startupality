@@ -1,4 +1,4 @@
-app.controller('ProjectsController', function ( $scope, $location, $dialog, StorageService, Project) {
+app.controller('ProjectsController', function ( $scope, $location, $dialog, Project, ProjectProperties) {
     // Define persisted object
     $scope.projects = Project.query();
 
@@ -6,10 +6,10 @@ app.controller('ProjectsController', function ( $scope, $location, $dialog, Stor
     $scope.editedProject = null;
 
     $scope.$watch('projects', function() {
-        $scope.remainingCount = $scope.projects.length;
-        $scope.doneCount = $scope.projects.length - $scope.remainingCount;
-        $scope.allChecked = !$scope.remainingCount;
-        StorageService.put('projects', $scope.projects);
+        if ($scope.projects.length === 0) {ProjectProperties.unsetProjectExists();} else {ProjectProperties.setProjectExists();}
+//        $scope.remainingCount = $scope.projects.length;
+//        $scope.doneCount = $scope.projects.length - $scope.remainingCount;
+//        $scope.allChecked = !$scope.remainingCount;
     }, true);
 
     $scope.addProject = function() {
@@ -20,7 +20,10 @@ app.controller('ProjectsController', function ( $scope, $location, $dialog, Stor
         newProject.title= $scope.newProject;
         newProject.activated = false;
         // If it is first activate it
-        if ($scope.projects.length === 0) {newProject.activated = true;}
+        if ($scope.projects.length === 0) {
+            newProject.activated = true;
+
+        }
 
         $scope.projects.push(newProject);
         newProject.$save(newProject);
@@ -51,13 +54,18 @@ app.controller('ProjectsController', function ( $scope, $location, $dialog, Stor
                 $scope.projects.splice($scope.projects.indexOf(project), 1);
                 console.log(project.id);
                 if (project.activated) {
-                    // Remove and set another one to active
+                    // Remove
                     project.$remove();
                     // sort to find latest added project
                     var projectToActivate =  getLatestAddedProject();
-                    $scope.activateProject(projectToActivate);
+                    // and set another one to active
+                    if (projectToActivate){
+                        $scope.activateProject(projectToActivate);
+                    }
                 }
-                project.$remove();
+                else {
+                    project.$remove();
+                }
             }
         });
     };

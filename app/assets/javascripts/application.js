@@ -14,8 +14,6 @@
 //= require jquery_ujs
 //= require underscore
 //= require lib/select2/select2
-//= require lib/jquery.raty.min
-//= require lib/waypoints
 //= require lib/bootstrap.min
 //= require lib/jquery.tagsinput
 //= require angular

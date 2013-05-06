@@ -88,6 +88,17 @@ app.controller('CanvasDialogController', function ($scope, dialog, item, itemTyp
     $scope.item = item;
     $scope.itemType = itemType;
 
+    $scope.isCollapsed = true;
+    // To load video iframes only when collapse is triggered
+    $scope.loadVideos = function(){
+        if (!$scope.isCollapsed){
+            return  '/assets/partials/canvasVideos.html'
+        }
+        else return ''
+    }
+    // Ratin the section
+    $scope.rate = 7;
+
     $scope.$watch('item.tags', function() {
         var currentProject = CurrentProject.query(function(){
             $scope.item.$update({projectId: currentProject[0].id});

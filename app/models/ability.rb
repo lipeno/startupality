@@ -2,7 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-        if user.role == "partner" or user.role == "senior-executive"
+        if user.role == "partner" or user.role == "admin" or user.role == "normal-user"
              can :manage, :all
         else
             #can :view, Script do |script|

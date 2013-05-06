@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	ROLES = %w[partner senior-executive management-executive creative-executive assistant intern]
+	ROLES = %w[partner admin normal-user premium-user]
 	# Include default devise modules. Others available are:
 	# :token_authenticatable, :confirmable,
 	# :lockable, :timeoutable and :omniauthable
@@ -17,6 +17,12 @@ class User < ActiveRecord::Base
 	before_validation :downcase_email
 		def downcase_email
 			self.email = self.email.downcase if self.email.present?
-		end
+    end
+  after_create :default_role
+
+  def default_role
+    self.role = "normal-user"
+    self.save
+  end
 	# attr_accessible :title, :body
 end

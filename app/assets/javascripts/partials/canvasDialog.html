@@ -1,18 +1,35 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close(result)">&times;</button>
-    <h1><i class="icon-edit"></i> {{itemType.title}}</h1>
-    <p>{{itemType.description}}</p>
+    <div class="row">
+    <div class="span12">
+    <h1><i class="icon-edit"></i> {{itemType.title}} </h1>
+        <p>{{itemType.description}}  </p>
+        <button class="btn" ng-click="isCollapsed = !isCollapsed"><i class="icon-edit"></i>Show more</button>
+    </div>
+    <div class="span12">
+        <div collapse="isCollapsed">
+
+            <div ng-include='loadVideos()'>
+        </div>
+    </div>
+    </div>
+
 </div>
 <div class="modal-body">
     <div id="description" class="span8 pull-left">
         <h4><i><i class="icon-pencil" tooltip-placement="right" tooltip="Write here in more details"></i> Description</i></h4>
-        <textarea rows="10" ng-model="item.data" placeholder="{{itemType.questions}}" class="span6" ui-keydown="{esc: 'keyCallback($event)'}" unfocus="disableEdit()"></textarea>
+        <textarea rows="10" ng-model="item.data" placeholder="{{itemType.questions}}" class="span8" ui-keydown="{esc: 'keyCallback($event)'}" unfocus="disableEdit()"></textarea>
     </div>
 
-    <div id="tags" class="span4 pull-right">
+    <div class="span4 pull-right">
+        <h4><i class="icon-tags" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> Rating</h4>
+        <rating value="rate" max="7" readonly="false"></rating>
         <h4><i class="icon-tags" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> Tags</h4>
         <tag-input class="input-large" ng-model="item.tags"/>
+
     </div>
+
+
 
 </div>
 <div class="modal-footer">

@@ -1,5 +1,10 @@
-div.tagsinput input { width:80px; margin:0px; font-family: helvetica; font-size: 13px; border:1px solid transparent; padding:5px; background: transparent; color: #000; outline:0px;  margin-right:5px; margin-bottom:5px; }
-
+a.disabledLink, a.disabledLink:hover{
+  font-style: italic;
+  color: #7F7F7F;
+}
+div.tagsinput input {
+  width:80px; margin:0px; font-family: helvetica; font-size: 13px; border:1px solid transparent; padding:5px; background: transparent; color: #000; outline:0px;  margin-right:5px; margin-bottom:5px;
+}
 
 .container{
   width:95% !important;
