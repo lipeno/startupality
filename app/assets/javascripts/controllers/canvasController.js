@@ -3,8 +3,18 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
     $scope.currentProject = {};
     $scope.sections = {};
     $scope.sectionTypes = SectionType.query(function(){});
-    // Sort sections by IDs, the order that they are put in the databse should be the same
-    $scope.sectionTypes.sort(function(a, b) {return a.id - b.id})
+    // Sort sections by IDs, the order that they are put in the database should be the same
+
+    function getElementByStringIdentifier(array, value)
+    {
+        for (var i = 0; i < array.length; i++)
+        {
+            if (array[i].stringIdentifier == value)
+            {
+                return array[i];
+            }
+        }
+    }
 
     var currentProject = CurrentProject.query(function(){
         $scope.currentProject = currentProject[0];
@@ -13,43 +23,43 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
             for (var i = 0; i < $scope.sections.length; i++) {
                 var element = $scope.sections[i];
                 // Sections have types with unique IDs
-                switch(element.section_type_id)
+                switch(element.sectionTypeIdentifier)
                 {
-                    case 1:
+                    case "problem":
                         $scope.problem = element;
-                        $scope.problemType = $scope.sectionTypes[element.section_type_id - 1];
+                        $scope.problemType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
                         break;
-                    case 2:
+                    case "solution":
                         $scope.solution = element;
-                        $scope.solutionType = $scope.sectionTypes[element.section_type_id - 1];
+                        $scope.solutionType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
                         break;
-                    case 3:
+                    case "keypartners":
                         $scope.keyPartners = element;
-                        $scope.keyPartnersType = $scope.sectionTypes[element.section_type_id - 1];
+                        $scope.keyPartnersType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
                         break;
-                    case 4:
+                    case "keyactivities":
                         $scope.keyActivities = element;
-                        $scope.keyActivitiesType = $scope.sectionTypes[element.section_type_id - 1];
+                        $scope.keyActivitiesType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
                         break;
-                    case 5:
+                    case "valueproposition":
                         $scope.valueProposition = element;
-                        $scope.valuePropositionType = $scope.sectionTypes[element.section_type_id - 1];
+                        $scope.valuePropositionType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
                         break;
-                    case 6:
+                    case "customerrelationships":
                         $scope.customerRelationships = element;
-                        $scope.customerRelationshipsType = $scope.sectionTypes[element.section_type_id - 1];
+                        $scope.customerRelationshipsType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
                         break;
-                    case 7:
+                    case "customersegments":
                         $scope.customerSegments = element;
-                        $scope.customerSegmentsType = $scope.sectionTypes[element.section_type_id - 1];
+                        $scope.customerSegmentsType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
                         break;
-                    case 8:
+                    case "keyresources":
                         $scope.keyResources = element;
-                        $scope.keyResourcesType = $scope.sectionTypes[element.section_type_id - 1];
+                        $scope.keyResourcesType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
                         break;
-                    case 9:
+                    case "channels":
                         $scope.channels = element;
-                        $scope.channelsType = $scope.sectionTypes[element.section_type_id - 1];
+                        $scope.channelsType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
                         break;
                     default:
                         console.log("Type is different then expected.")
@@ -67,7 +77,7 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
             keyboard: true,
             backdropClick: true,
             dialogClass: "modalSection",
-            templateUrl:  '/assets/partials/canvasDialog.html', // OR: templateUrl: 'path/to/view.html',
+            templateUrl:  '/assets/partials/canvasDialog.html',
             controller: 'CanvasDialogController',
             dialogFade: true,
             backdropFade: true,

@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
     @project.user_id = current_user.id;
     # Add all the sections that project should have
     SectionType.all.each do |item|
-      @project.sections.new(data:nil, section_type_id:item.id)
+      @project.sections.new(data:nil, tags:nil, sectionTypeIdentifier:item.stringIdentifier)
     end
 
     respond_to do |format|

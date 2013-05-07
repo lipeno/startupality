@@ -64,7 +64,6 @@ class SectionsController < ApplicationController
   def update
     @section = @project.sections.find(params[:id])
 
-
     respond_to do |format|
       if @section.update_attributes(params[:section])
         format.html { redirect_to @section, notice: 'Section was successfully updated.' }

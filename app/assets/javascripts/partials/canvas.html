@@ -38,7 +38,7 @@
             <h4>{{keyPartnersType.title}} <i class="icon-trophy icon-2x" tooltip-placement="right"
                                         tooltip="{{keyPartnersType.description}}"></i></h4>
             <div ng-click="openDialog(keyPartners, keyPartnersType)" class="span4 select2-container select2-container-multi">
-                <ul class="select2-choices">
+                <ul class="select2-choices" style="height:420px !important">
                     <li ng-repeat="tag in (keyPartners.tags | stringToArray)" class="select2-search-choice">
                         <div>{{tag}}</div>
                     </li>
@@ -71,7 +71,7 @@
             <h4>{{customerSegmentsType.title}} <i class="icon-sitemap icon-2x" tooltip-placement="right"
                                          tooltip="{{customerSegmentsType.description}}"></i></h4>
             <div ng-click="openDialog(customerSegments, customerSegmentsType)" class="span4 select2-container select2-container-multi">
-                <ul class="select2-choices">
+                <ul class="select2-choices" style="height:420px !important">
                     <li ng-repeat="tag in (customerSegments.tags | stringToArray)" class="select2-search-choice">
                         <div>{{tag}}</div>
                     </li>
