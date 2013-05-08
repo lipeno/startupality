@@ -16,6 +16,10 @@
 //= require lib/select2/select2
 //= require lib/bootstrap.min
 //= require lib/jquery.tagsinput
+
+//= require lib/highcharts/highcharts
+//= require lib/highcharts/exporting
+
 //= require angular
 //= require angular-resource
 //= require angular-ui

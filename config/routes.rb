@@ -1,4 +1,9 @@
 Startupality::Application.routes.draw do
+
+  root :to => 'angular#angular'
+  match 'angular/angular' => 'angular#angular'
+
+  resources :risks
   resources :section_types
 
   resources :projects do
@@ -8,13 +13,15 @@ Startupality::Application.routes.draw do
     resources :sections do
       resources :section_types
     end
+
+    resources :risks
   end
 
   devise_for :users
-  root :to => 'angular#angular'
-  match 'angular/angular' => 'angular#angular'
+
   resources :users do
   end
+
   resources :scripts do
     get :view
     post :review_script, :on => :collection

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507133345) do
+ActiveRecord::Schema.define(:version => 20130507153408) do
 
   create_table "levels", :force => true do |t|
     t.string "level"
@@ -35,6 +35,22 @@ ActiveRecord::Schema.define(:version => 20130507133345) do
     t.integer  "reviewable_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "risks", :force => true do |t|
+    t.string   "strengths"
+    t.string   "weaknesses"
+    t.string   "opportunitiesPolitical"
+    t.string   "opportunitiesEconomical"
+    t.string   "opportunitiesSociological"
+    t.string   "opportunitiesTechnical"
+    t.string   "threatsPolitical"
+    t.string   "threatsEconomical"
+    t.string   "threatsSociological"
+    t.string   "threatsTechnical"
+    t.integer  "project_id"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "script_files", :force => true do |t|

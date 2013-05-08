@@ -6,14 +6,11 @@ app.config(["$httpProvider", function(provider) {
 }]);
 
 app.config(function ($routeProvider) {
-//Check if there was a project created and throw alert with modal, and redirect to dashboard
-//    var currentProject = CurrentProject.query(function(){
-//        alert (currentProject);
-//    });
         $routeProvider.
             when('/dashboard', {templateUrl:"/assets/partials/projects.html", controller: 'ProjectsController'}).
             when('/canvas', {templateUrl:"/assets/partials/canvas.html", controller: 'CanvasController'}).
-            when('/risks', {templateUrl:"/assets/partials/risks.html"}).
+            when('/finance', {templateUrl:"/assets/partials/finance.html", controller: 'FinanceController'}).
+            when('/risks', {templateUrl:"/assets/partials/risks.html", controller: 'RisksController'}).
             when('/checklist', {templateUrl:"/assets/partials/checklist.html"}).
             when('/businessplan', {templateUrl:"/assets/partials/businessplan.html", controller: 'BusinessplanController'}).
             otherwise({redirectTo:'/dashboard'});

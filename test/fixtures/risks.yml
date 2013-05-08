@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  strengths: MyString
+  weaknesses: MyString
+  opportunitiesPolitical: MyString
+  opportunitiesEconomical: MyString
+  opportunitiesSociological: MyString
+  opportunitiesTechnical: MyString
+  threatsPolitical: MyString
+  threatsEconomical: MyString
+  threatsSociological: MyString
+  threatsTechnical: MyString
+  project_id: 
+
+two:
+  strengths: MyString
+  weaknesses: MyString
+  opportunitiesPolitical: MyString
+  opportunitiesEconomical: MyString
+  opportunitiesSociological: MyString
+  opportunitiesTechnical: MyString
+  threatsPolitical: MyString
+  threatsEconomical: MyString
+  threatsSociological: MyString
+  threatsTechnical: MyString
+  project_id: 

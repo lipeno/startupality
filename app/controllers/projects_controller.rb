@@ -24,20 +24,21 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   # GET /projects/new.json
-  def new
-    # NOT USED, LOOK FOR CREATE
-    @project = Project.new
-    @project.user_id = current_user.id;
-    # Add all the sections that project should have
-    SectionType.each do |item|
-      @project.sections.create(data:'', tags:'', section_type_id:item.id)
-    end
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @project }
-    end
-  end
+  #def new
+  #  # NOT USED, LOOK FOR CREATE
+  #  @project = Project.new
+  #  @project.user_id = current_user.id;
+  #  # Add all the sections that project should have
+  #  SectionType.each do |item|
+  #    @project.sections.create(data:'', tags:'', section_type_id:item.id)
+  #  end
+  #  @project.risks.create()
+  #
+  #  respond_to do |format|
+  #    format.html # new.html.erb
+  #    format.json { render json: @project }
+  #  end
+  #end
 
   # GET /projects/1/edit
   def edit
@@ -54,6 +55,8 @@ class ProjectsController < ApplicationController
     SectionType.all.each do |item|
       @project.sections.new(data:nil, tags:nil, sectionTypeIdentifier:item.stringIdentifier)
     end
+
+    @project.risks.new(:opportunitiesEconomical => nil, :opportunitiesPolitical => nil, :opportunitiesSociological=> nil, :opportunitiesTechnical=> nil, :strengths=> nil, :threatsEconomical=> nil, :threatsPolitical=> nil, :threatsSociological=> nil, :threatsTechnical=> nil, :weaknesses=> nil)
 
     respond_to do |format|
       if @project.save
