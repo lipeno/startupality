@@ -2,15 +2,15 @@ app.controller('ProjectsController', function ( $scope, $location, $dialog, Proj
     // Define persisted object
     $scope.projects = Project.query();
 
-    $scope.newProject = "";
-    $scope.editedProject = null;
-
     $scope.$watch('projects', function() {
         if ($scope.projects.length === 0) {ProjectProperties.unsetProjectExists();} else {ProjectProperties.setProjectExists();}
 //        $scope.remainingCount = $scope.projects.length;
 //        $scope.doneCount = $scope.projects.length - $scope.remainingCount;
 //        $scope.allChecked = !$scope.remainingCount;
     }, true);
+
+    $scope.newProject = "";
+    $scope.editedProject = null;
 
     $scope.addProject = function() {
         if ( !$scope.newProject.length ) {

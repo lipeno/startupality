@@ -13,3 +13,9 @@ app.filter('stringToArray', function() {
         return items;
     };
 });
+
+app.filter('capitalize', function() {
+    return function(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+});

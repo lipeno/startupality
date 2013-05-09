@@ -33,16 +33,19 @@ app.directive ('unfocus', function() { return {
 app.directive('todoFocus', function( $timeout ) {
     return function( scope, elem, attrs ) {
         scope.$watch(attrs.todoFocus, function( newval ) {
-            if ( newval ) {
-                $timeout(function() {
+            if ( newval )
+            {
+                $timeout(function()
+                {
                     elem[0].focus();
+
                 }, 0, false);
             }
         });
     };
 });
 
-// you can use it like tags-input, because thats the ways directives work
+// you can use it by calling tags-input
 app.directive('tagsInput', function() {
     return {
         // Restrict it to be an attribute in this case
@@ -213,5 +216,6 @@ app.directive('chart', function () {
             }
         }
 
-    });
+});
+
 

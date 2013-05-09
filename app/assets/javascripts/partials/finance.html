@@ -3,33 +3,40 @@
     <h1>Revenues</h1>
     <table>
         <tr class="column-label">
-            <td colspan="2">2013</td>
-            <td ng-repeat="column in columns">{{column}}</td>
+            <td colspan="2">{{revenues[0].year}}</td>
+            <td ng-repeat="month in months">{{month | capitalize}}</td>
         </tr>
+        <tr ng-repeat="row in revenues">
+            <td>{{row.rowNumber}}</td>
+            <td class="row-label"><input ng-model="row.name" todo-blur="doneEditing(row)"></input></td>
 
-        <tr ng-repeat="row in revenues.rows">
-            <td>{{row.id}}</td>
-            <td class="row-label"><input ng-model="row.name"></input></td>
-            <td class="row-data" ng-repeat="column in columns">
-                <div>
-                    <input ng-model="revenues.cells[column+row.id]"></input>
-                </div>
-            </td>
+            <td class="row-data"><div><input ng-model="row.january" todo-blur="doneEditing(row)"></input></div></td>
+            <td class="row-data"><div><input ng-model="row.february" todo-blur="doneEditing(row)"></input></div></td>
+            <td class="row-data"><div><input ng-model="row.march" todo-blur="doneEditing(row)"></input></div></td>
+            <td class="row-data"><div><input ng-model="row.april" todo-blur="doneEditing(row)"></input></div></td>
+            <td class="row-data"><div><input ng-model="row.may" todo-blur="doneEditing(row)"></input></div></td>
+            <td class="row-data"><div><input ng-model="row.june" todo-blur="doneEditing(row)"></input></div></td>
+            <td class="row-data"><div><input ng-model="row.july" todo-blur="doneEditing(row)"></input></div></td>
+            <td class="row-data"><div><input ng-model="row.august" todo-blur="doneEditing(row)"></input></div></td>
+            <td class="row-data"><div><input ng-model="row.september" todo-blur="doneEditing(row)"></input></div></td>
+            <td class="row-data"><div><input ng-model="row.october" todo-blur="doneEditing(row)"></input></div></td>
+            <td class="row-data"><div><input ng-model="row.november" todo-blur="doneEditing(row)"></input></div></td>
+            <td class="row-data"><div><input ng-model="row.december" todo-blur="doneEditing(row)"></input></div></td>
             <td>
-                <button class="btn btn-danger" ng-click="">Delete Revenue</button>
+                <button class="btn btn-danger" ng-click="deleteRow(revenues, row)">Delete Revenue</button>
             </td>
         </tr>
-
         <tr>
             <td></td>
             <td class="row-label">Total revenues</td>
-            <td class="row-data" ng-repeat="column in columns">
-                <div>{{calculateTotalForColumn(revenues, column)}}</div>
-            </td>
+            <td class="row-data" ng-repeat="month in months"><div>{{calculateRevenueForMonth(month)}}</div></td>
+            <td>{{calculateRevenueForYear()}}</td>
         </tr>
     </table>
-    <button class="btn" ng-click="addRow(revenues.rows)">Add Revenue</button>
+    <button class="btn" ng-click="addRow(revenues)">Add Revenue</button>
     </div>
+
+
     <div>
         <h1>Expenses</h1>
         <table>

@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rowNumber: 1
+  rowName: MyString
+  project_id: 
+  february: 1
+  march: 1
+  april: 1
+  may: 1
+  june: 1
+  july: 1
+  august: 1
+  september: 1
+  october: 1
+  november: 1
+  december: 1
+  year: 1
+
+two:
+  rowNumber: 1
+  rowName: MyString
+  project_id: 
+  february: 1
+  march: 1
+  april: 1
+  may: 1
+  june: 1
+  july: 1
+  august: 1
+  september: 1
+  october: 1
+  november: 1
+  december: 1
+  year: 1

@@ -1,0 +1,51 @@
+<h1>Listing revenues</h1>
+
+<table>
+  <tr>
+    <th>Rownumber</th>
+    <th>Rowname</th>
+    <th>Project</th>
+    <th>February</th>
+    <th>March</th>
+    <th>April</th>
+    <th>May</th>
+    <th>June</th>
+    <th>July</th>
+    <th>August</th>
+    <th>September</th>
+    <th>October</th>
+    <th>November</th>
+    <th>December</th>
+    <th>Year</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @revenues.each do |revenue| %>
+  <tr>
+    <td><%= revenue.rowNumber %></td>
+    <td><%= revenue.rowName %></td>
+    <td><%= revenue.project_id %></td>
+    <td><%= revenue.february %></td>
+    <td><%= revenue.march %></td>
+    <td><%= revenue.april %></td>
+    <td><%= revenue.may %></td>
+    <td><%= revenue.june %></td>
+    <td><%= revenue.july %></td>
+    <td><%= revenue.august %></td>
+    <td><%= revenue.september %></td>
+    <td><%= revenue.october %></td>
+    <td><%= revenue.november %></td>
+    <td><%= revenue.december %></td>
+    <td><%= revenue.year %></td>
+    <td><%= link_to 'Show', revenue %></td>
+    <td><%= link_to 'Edit', edit_revenue_path(revenue) %></td>
+    <td><%= link_to 'Destroy', revenue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Revenue', new_revenue_path %>

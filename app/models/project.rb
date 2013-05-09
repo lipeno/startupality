@@ -3,4 +3,5 @@ class Project < ActiveRecord::Base
   belongs_to :user
   has_many :sections, :dependent => :destroy
   has_many :risks, :dependent => :destroy
+  has_many :revenues, :dependent => :destroy
 end

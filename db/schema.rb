@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507153408) do
+ActiveRecord::Schema.define(:version => 20130509151356) do
 
   create_table "levels", :force => true do |t|
     t.string "level"
@@ -26,6 +26,27 @@ ActiveRecord::Schema.define(:version => 20130507153408) do
   end
 
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
+
+  create_table "revenues", :force => true do |t|
+    t.integer  "rowNumber"
+    t.string   "rowName"
+    t.integer  "project_id"
+    t.integer  "january"
+    t.integer  "february"
+    t.integer  "march"
+    t.integer  "april"
+    t.integer  "may"
+    t.integer  "june"
+    t.integer  "july"
+    t.integer  "august"
+    t.integer  "september"
+    t.integer  "october"
+    t.integer  "november"
+    t.integer  "december"
+    t.integer  "year"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "reviews", :force => true do |t|
     t.integer  "rating"
