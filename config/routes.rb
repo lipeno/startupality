@@ -16,6 +16,7 @@ Startupality::Application.routes.draw do
 
     resources :risks
     resources :revenues
+    resources :expenses
   end
 
   devise_for :users

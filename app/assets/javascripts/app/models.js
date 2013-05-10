@@ -47,6 +47,10 @@ app.factory("Revenue", function($resource) {
     return $resource('/projects/:projectId/revenues/:id', {projectId: '@projectId', id: '@id'}, {update: {method: "PUT"}});
 });
 
+app.factory("Expense", function($resource) {
+    return $resource('/projects/:projectId/expenses/:id', {projectId: '@projectId', id: '@id'}, {update: {method: "PUT"}});
+});
+
 // Nested resource
 app.factory("Tag", function($resource) {
     return $resource('/projects/:projectId/sections/:sectionId/tags/:id', {projectId: '@projectId', sectionId: '@sectionId', id: '@id'}, {update: {method: "PUT"}});

@@ -4,4 +4,5 @@ class Project < ActiveRecord::Base
   has_many :sections, :dependent => :destroy
   has_many :risks, :dependent => :destroy
   has_many :revenues, :dependent => :destroy
+  has_many :expenses, :dependent => :destroy
 end

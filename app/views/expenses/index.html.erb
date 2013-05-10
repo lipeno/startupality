@@ -1,0 +1,53 @@
+<h1>Listing expenses</h1>
+
+<table>
+  <tr>
+    <th>April</th>
+    <th>August</th>
+    <th>December</th>
+    <th>January</th>
+    <th>February</th>
+    <th>July</th>
+    <th>June</th>
+    <th>March</th>
+    <th>May</th>
+    <th>November</th>
+    <th>October</th>
+    <th>Project</th>
+    <th>Rowname</th>
+    <th>Rownumber</th>
+    <th>September</th>
+    <th>Year</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @expenses.each do |expense| %>
+  <tr>
+    <td><%= expense.april %></td>
+    <td><%= expense.august %></td>
+    <td><%= expense.december %></td>
+    <td><%= expense.january %></td>
+    <td><%= expense.february %></td>
+    <td><%= expense.july %></td>
+    <td><%= expense.june %></td>
+    <td><%= expense.march %></td>
+    <td><%= expense.may %></td>
+    <td><%= expense.november %></td>
+    <td><%= expense.october %></td>
+    <td><%= expense.project_id %></td>
+    <td><%= expense.rowName %></td>
+    <td><%= expense.rowNumber %></td>
+    <td><%= expense.september %></td>
+    <td><%= expense.year %></td>
+    <td><%= link_to 'Show', expense %></td>
+    <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
+    <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Expense', new_expense_path %>
