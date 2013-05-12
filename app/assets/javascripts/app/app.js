@@ -1,4 +1,4 @@
-var app = angular.module("Startupality", ["ngResource",'ui.bootstrap','ui']);
+var app = angular.module("Startupality", ["ngResource",'ui.bootstrap','ui', 'ngDragDrop']);
 
 // Gets authentication token injected in the DOM
 app.config(["$httpProvider", function(provider) {
@@ -11,6 +11,7 @@ app.config(function ($routeProvider) {
             when('/canvas', {templateUrl:"/assets/partials/canvas.html", controller: 'CanvasController'}).
             when('/finance', {templateUrl:"/assets/partials/finance.html", controller: 'FinanceController'}).
             when('/risks', {templateUrl:"/assets/partials/risks.html", controller: 'RisksController'}).
+            when('/goals', {templateUrl:"/assets/partials/goals.html", controller: 'GoalsController'}).
             when('/checklist', {templateUrl:"/assets/partials/checklist.html"}).
             when('/businessplan', {templateUrl:"/assets/partials/businessplan.html", controller: 'BusinessplanController'}).
             otherwise({redirectTo:'/dashboard'});

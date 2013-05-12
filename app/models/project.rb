@@ -5,4 +5,5 @@ class Project < ActiveRecord::Base
   has_many :risks, :dependent => :destroy
   has_many :revenues, :dependent => :destroy
   has_many :expenses, :dependent => :destroy
+  has_many :cards, :dependent => :destroy
 end

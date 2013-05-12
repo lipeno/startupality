@@ -1,5 +1,4 @@
 Startupality::Application.routes.draw do
-
   root :to => 'angular#angular'
   match 'angular/angular' => 'angular#angular'
 
@@ -17,27 +16,11 @@ Startupality::Application.routes.draw do
     resources :risks
     resources :revenues
     resources :expenses
+    resources :cards
   end
 
   devise_for :users
-
   resources :users do
-  end
-
-  resources :scripts do
-    get :view
-    post :review_script, :on => :collection
-    get :scripts_paged, :on=> :collection
-    post :upload_scripts, :on=> :collection
-  end
-  resources :script_files do
-    post :upload_file, :on =>:collection
-    post :clean_up, :on =>:collection
-
-  end
-  resources :scripts_coverages do
-    post :upload_file, :on =>:collection
-    post :clean_up, :on =>:collection
   end
   resources :userutil do
     post :fetch_current_user,:on=>:collection

@@ -476,6 +476,7 @@ label[for='toggle-all'] {
 }
 
 // Variables to customize the look and feel of Bootstrap
+$startupalityBlue : #20B6CA;
 
 $bodyBackground: #f8f6ed;
 $linkColor : #222;
@@ -487,7 +488,6 @@ $brownDark: #d2cfc2;
 
 $headerHeight:280px;
 
-//$btnPrimaryBackground: #333;
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 $sansFontFamily: "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -558,25 +558,40 @@ header{
   a{
       color: $bluedark;
   }
-
-  .header-logo{
-    height: 100%;
-    width: 100%;
-    display: block;
-    background: url('logo.png') no-repeat center 30%;
-    background-size: 516px;
-    text-indent: -9999px;
-    @include transition-property("background-size");
-    @include transition-duration(0.2s);
-
-  }
-
 }
-
+// Goals style
 .content-holder{
   width: 100%
 }
 
+.thumbnail {
+  min-height: 280px;
+}
+
+.btn-draggable {
+  width: 270px;
+  min-height: 30px;
+  padding: 10px;
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
+  text-align: left;
+  background-color: $startupalityBlue;
+}
+.cardEditable{
+  width: 221px;
+  min-height: 30px;
+  padding: 10px;
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
+  text-align: left;
+}
+
+.removeCard{
+  width: 42px;
+  min-height: 54px;
+}
 
 
 

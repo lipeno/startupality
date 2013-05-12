@@ -12,6 +12,4 @@ app.controller('RisksController', function ($scope, Risk, Section, CurrentProjec
             $scope.risks.$update({projectId: currentProject[0].id});
         });
     }, true);
-
-
 });

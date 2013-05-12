@@ -13,6 +13,7 @@
 //= require lib/jquery.min
 //= require jquery_ujs
 //= require underscore
+//= require lib/jquery-ui.min
 //= require lib/select2/select2
 //= require lib/bootstrap.min
 //= require lib/jquery.tagsinput

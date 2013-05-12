@@ -6,9 +6,24 @@ app.factory('StorageService', function() {
             var storageItem = localStorage.getItem(APPNAME + storageName);
             return JSON.parse(storageItem || '[]');
         },
-   //   usage like this:      StorageService.put('projects', $scope.projects);
+        //   Usage like this:      StorageService.put('projects', $scope.projects);
         put: function( storageName, objectToStore ) {
             localStorage.setItem(APPNAME + storageName, JSON.stringify(objectToStore));
         }
     };
+});
+
+app.service('ProjectProperties', function() {
+    this.projectExists = false;
+    return {
+        getProjectExists: function() {
+            return this.projectExists;
+        },
+        setProjectExists: function() {
+            this.projectExists = true;
+        },
+        unsetProjectExists: function() {
+            this.projectExists = false;
+        }
+    }
 });
