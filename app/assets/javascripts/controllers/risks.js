@@ -1,5 +1,4 @@
 app.controller('RisksController', function ($scope, Risk, Section, CurrentProject){
-    $scope.risks = {};
     var currentProject = CurrentProject.query(function(){
         $scope.currentProject = currentProject[0];
         var risks = Risk.query({projectId: $scope.currentProject.id}, function() {
@@ -8,8 +7,11 @@ app.controller('RisksController', function ($scope, Risk, Section, CurrentProjec
     });
 
     $scope.$watch('risks', function() {
-        var currentProject = CurrentProject.query(function(){
-            $scope.risks.$update({projectId: currentProject[0].id});
-        });
+        if ($scope.risks){
+            var currentProject = CurrentProject.query(function(){
+                // Update can be called because all the risks are persisted in one row
+                $scope.risks.$update({projectId: currentProject[0].id});
+            });
+        }
     }, true);
 });

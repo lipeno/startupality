@@ -6,4 +6,5 @@ class Project < ActiveRecord::Base
   has_many :revenues, :dependent => :destroy
   has_many :expenses, :dependent => :destroy
   has_many :cards, :dependent => :destroy
+  has_many :project_checklist_steps, :dependent => :destroy
 end

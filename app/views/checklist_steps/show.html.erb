@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @checklist_step.title %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @checklist_step.value %>
+</p>
+
+<p>
+  <b>Done:</b>
+  <%= @checklist_step.done %>
+</p>
+
+<p>
+  <b>Sectiontypeidentifier:</b>
+  <%= @checklist_step.sectionTypeIdentifier %>
+</p>
+
+
+<%= link_to 'Edit', edit_checklist_step_path(@checklist_step) %> |
+<%= link_to 'Back', checklist_steps_path %>

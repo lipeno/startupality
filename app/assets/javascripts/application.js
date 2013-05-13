@@ -16,7 +16,7 @@
 //= require lib/jquery-ui.min
 //= require lib/select2/select2
 //= require lib/bootstrap.min
-//= require lib/jquery.tagsinput
+//= require lib/toastr
 
 //= require lib/highcharts/highcharts
 //= require lib/highcharts/exporting

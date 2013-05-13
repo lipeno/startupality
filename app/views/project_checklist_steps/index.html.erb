@@ -1,0 +1,31 @@
+<h1>Listing project_checklist_steps</h1>
+
+<table>
+  <tr>
+    <th>Value</th>
+    <th>Done</th>
+    <th>Sectiontypeidentifier</th>
+    <th>Project</th>
+    <th>Stepnumber</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @project_checklist_steps.each do |project_checklist_step| %>
+  <tr>
+    <td><%= project_checklist_step.value %></td>
+    <td><%= project_checklist_step.done %></td>
+    <td><%= project_checklist_step.sectionTypeIdentifier %></td>
+    <td><%= project_checklist_step.project_id %></td>
+    <td><%= project_checklist_step.stepNumber %></td>
+    <td><%= link_to 'Show', project_checklist_step %></td>
+    <td><%= link_to 'Edit', edit_project_checklist_step_path(project_checklist_step) %></td>
+    <td><%= link_to 'Destroy', project_checklist_step, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project checklist step', new_project_checklist_step_path %>

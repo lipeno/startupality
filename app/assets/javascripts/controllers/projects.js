@@ -10,7 +10,6 @@ app.controller('ProjectsController', function ( $scope, $location, $dialog, Proj
     }, true);
 
     $scope.newProject = "";
-    $scope.editedProject = null;
 
     $scope.addProject = function() {
         if ( !$scope.newProject.length ) {
@@ -31,7 +30,7 @@ app.controller('ProjectsController', function ( $scope, $location, $dialog, Proj
         $scope.newProject = '';
     };
 
-
+    $scope.editedProject = null;
     $scope.editProject = function( project ) {
         $scope.editedProject = project;
     };

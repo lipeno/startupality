@@ -1,4 +1,6 @@
 Startupality::Application.routes.draw do
+  resources :checklist_steps
+
   root :to => 'angular#angular'
   match 'angular/angular' => 'angular#angular'
 
@@ -17,6 +19,8 @@ Startupality::Application.routes.draw do
     resources :revenues
     resources :expenses
     resources :cards
+
+    resources :project_checklist_steps
   end
 
   devise_for :users

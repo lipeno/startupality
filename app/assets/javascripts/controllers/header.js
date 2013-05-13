@@ -14,4 +14,6 @@ app.controller('HeaderController', function ($scope, $location, CurrentUser, Cur
     $scope.routeIs = function(routeName) {
         return $location.path() === routeName;
     };
+
+    $scope.toastr = toastr;
 });

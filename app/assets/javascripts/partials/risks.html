@@ -1,3 +1,4 @@
+<!--SWOT / PESTLE ANALYSIS-->
 <table class="table table-bordered">
     <tr>
         <th>
@@ -11,19 +12,12 @@
     <tr>
         <td>
             <table class="table table-bordered">
-                <tr><td>
-                    <tag-input class="input-large" ng-model="risks.strengths"/>
-                </td>
-                </tr>
+                <tr><td class="risksTableColumn">All</td><td><tag-input class="tagsRisks" ng-model="risks.strengths"/></td></tr>
             </table>
-
         </td>
         <td>
             <table class="table table-bordered">
-                <tr><td>
-                    <tag-input class="tagsRisks" ng-model="risks.weaknesses"/>
-                </td>
-                </tr>
+                <tr><td class="risksTableColumn">All</td><td><tag-input class="tagsRisks" ng-model="risks.weaknesses"/></td></tr>
             </table>
         </td>
     </tr>
@@ -39,25 +33,25 @@
     <tr>
         <td>
             <table class="table table-bordered">
-                <td><b>P</b>olitical</td><td><tag-input class="tagsRisks" ng-model="risks.opportunitiesPolitical"/></td>
+                <td class="risksTableColumn"><b>P</b>olitical</td><td><tag-input class="tagsRisks" ng-model="risks.opportunitiesPolitical"/></td>
                 </tr>
-                <tr> <td><b>E</b>conomical</td><td><tag-input class="tagsRisks" ng-model="risks.opportunitiesEconomical"/></td>
+                <tr> <td class="risksTableColumn"><b>E</b>conomical</td><td><tag-input class="tagsRisks" ng-model="risks.opportunitiesEconomical"/></td>
                 </tr>
-                <tr> <td><b>S</b>ociological</td><td><tag-input class="tagsRisks" ng-model="risks.opportunitiesSociological"/></td>
+                <tr> <td class="risksTableColumn"><b>S</b>ociological</td><td><tag-input class="tagsRisks" ng-model="risks.opportunitiesSociological"/></td>
                 </tr>
-                <tr> <td><b>T</b>echnical</td><td><tag-input class="tagsRisks" ng-model="risks.opportunitiesTechnical"/></td>
+                <tr> <td class="risksTableColumn"><b>T</b>echnical</td><td><tag-input class="tagsRisks" ng-model="risks.opportunitiesTechnical"/></td>
                 </tr>
             </table>
         </td>
         <td>
             <table class="table table-bordered">
-                <td><b>P</b>olitical</td><td><tag-input class="tagsRisks" ng-model="risks.threatsPolitical"/></td>
+                <td class="risksTableColumn"><b>P</b>olitical</td><td><tag-input class="tagsRisks" ng-model="risks.threatsPolitical"/></td>
                 </tr>
-                <tr> <td><b>E</b>conomical</td><td><tag-input class="tagsRisks" ng-model="risks.threatsEconomical"/></td>
+                <tr> <td class="risksTableColumn"><b>E</b>conomical</td><td><tag-input class="tagsRisks" ng-model="risks.threatsEconomical"/></td>
                 </tr>
-                <tr> <td><b>S</b>ociological</td><td><tag-input class="tagsRisks" ng-model="risks.threatsSociological"/></td>
+                <tr> <td class="risksTableColumn"><b>S</b>ociological</td><td><tag-input class="tagsRisks" ng-model="risks.threatsSociological"/></td>
                 </tr>
-                <tr> <td><b>T</b>echnical</td><td><tag-input class="tagsRisks" ng-model="risks.threatsTechnical"/></td>
+                <tr> <td class="risksTableColumn"><b>T</b>echnical</td><td><tag-input class="tagsRisks" ng-model="risks.threatsTechnical"/></td>
                 </tr>
             </table>
         </td>
@@ -65,23 +59,26 @@
 </table>
 
 <div id="risksMatrix">
-<h2>Risks matrix <button class="btn" ng-click="">Add a risk</button></h2>
+<h3>Risks register <button class="btn" ng-click="">Add a risk</button></h3>
 <table id="bizcanvas" border="1">
     <tr>
         <th>
             <h4>Risk</h4>
         </th>
         <th>
-            <h4>Type</h4>
-        </th>
-        <th>
-            <h4>Level</h4>
-        </th>
-        <th>
             <h4>Priority</h4>
         </th>
         <th>
-            <h4>Who to test</h4>
+            <h4>Probability</h4>
+        </th>
+        <th>
+            <h4>Impact</h4>
+        </th>
+        <th>
+            <h4>Exposure</h4>
+        </th>
+        <th>
+            <h4>Risk owner</h4>
         </th>
         <th>
             <h4>How to test</h4>
@@ -96,14 +93,14 @@
         <td>
         </td>
         <td>
-
         </td>
         <td>
-
         </td>
         <td>
-
         </td>
+        <td>
+        </td>
+
     </tr>
 </table>
 </div>

@@ -1,118 +1,127 @@
 <div>
     <div class='contentWrapper ng-cloak'>
-        <div class='content'>
-            <div class="row-fluid">
+        <table class="table table-bordered">
+            <tr><td></td></tr>
+            <tr><td>
 
-                <ul class="">
-                    <li class="span3">
-                        <h2><i class="icon-rocket"></i>Ideas
-                            <button class="btn" ng-click="addCard(board1, 'board1')">Add a card</button>
-                        </h2>
-                    </li>
-                    <li class="span3">
-                        <h2><i class="icon-check-empty"></i>Todo
-                            <button class="btn" ng-click="addCard(board2, 'board2')">Add a card</button>
-                        </h2>
-                    </li>
-                    <li class="span3">
-                        <h2><i class="icon-check-minus"></i>Doing
-                            <button class="btn" ng-click="addCard(board3, 'board3')">Add a card</button>
-                        </h2>
-                    </li>
-                    <li class="span3">
-                        <h2><i class="icon-check"></i></i>Done
-                            <button class="btn" ng-click="addCard(board4, 'board4')">Add a card</button>
-                        </h2>
-                    </li>
-                </ul>
+                <div class='content'>
+                <div class="row-fluid">
+
+                    <ul class="">
+                        <li class="span3">
+                            <h2><i class="icon-rocket"></i>Ideas
+                                <button class="btn" ng-click="addCard(board1, 'board1')">Add a card</button>
+                            </h2>
+                        </li>
+                        <li class="span3">
+                            <h2><i class="icon-check-empty"></i>Todo
+                                <button class="btn" ng-click="addCard(board2, 'board2')">Add a card</button>
+                            </h2>
+                        </li>
+                        <li class="span3">
+                            <h2><i class="icon-check-minus"></i>Doing
+                                <button class="btn" ng-click="addCard(board3, 'board3')">Add a card</button>
+                            </h2>
+                        </li>
+                        <li class="span3">
+                            <h2><i class="icon-check"></i></i>Done
+                                <button class="btn" ng-click="addCard(board4, 'board4')">Add a card</button>
+                            </h2>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row-fluid">
+                    <ul class="thumbnails">
+                        <li class="span3" style='margin-left:10px;'>
+                            <div class="thumbnail" data-drop="true" ng-model='board1'
+                                 data-jqyoui-options="optionsRestrictSize" jqyoui-droppable="{multiple:true}">
+                                <div class="caption">
+                                    <div ng-repeat="item in board1" ng-dblclick="editCard(item)">
+                                        <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)"
+                                             data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+                                             ng-model="board1" jqyoui-draggable="{index: {{$index}},animate:false}">
+                                            {{item.title}}
+                                        </div>
+                                        <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
+                                            <input class="cardEditable" todo-blur="doneEditing(item)" ng-model="item.title">
+                                            <button ng-click="removeCard(board1, item)" class="removeCard btn" type="button">X</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="span3" style='margin-left:10px;'>
+                            <div class="thumbnail" data-drop="true" ng-model='board2'
+                                 data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=board2])'}"
+                                 jqyoui-droppable="{multiple:true, onDrop: 'onDropCallback'}">
+                                <div class="caption">
+                                    <div ng-repeat="item in board2" ng-dblclick="editCard(item)">
+                                        <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)"
+                                             data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+                                             ng-model="board2" jqyoui-draggable="{index: {{$index}},animate:false}">
+                                            {{item.title}}
+                                        </div>
+                                        <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
+                                            <input class="cardEditable" todo-blur="doneEditing(item)" ng-model="item.title">
+                                            <button ng-click="removeCard(board2, item)" class="removeCard btn" type="button">X</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="span3" style='margin-left:10px;'>
+                            <div class="thumbnail" data-drop="true" ng-model='board3'
+                                 data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=board3])'}"
+                                 jqyoui-droppable="{multiple:true, onDrop: 'onDropCallback'}">
+                                <div class="caption">
+                                    <div ng-repeat="item in board3" ng-dblclick="editCard(item)">
+                                        <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)"
+                                             data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+                                             ng-model="board3" jqyoui-draggable="{index: {{$index}},animate:false}">
+                                            {{item.title}}
+                                        </div>
+                                        <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
+                                            <input class="cardEditable" todo-blur="doneEditing(item)" ng-model="item.title">
+                                            <button ng-click="removeCard(board3, item)" class="removeCard btn" type="button">X</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="span3" style='margin-left:10px;'>
+                            <div class="thumbnail" data-drop="true" ng-model='board4'
+                                 data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=board4])'}"
+                                 jqyoui-droppable="{multiple:true, onDrop: 'onDropCallback'}">
+                                <div class="caption">
+                                    <div ng-repeat="item in board4" ng-dblclick="editCard(item)">
+                                        <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)"
+                                             data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+                                             ng-model="board4" jqyoui-draggable="{index: {{$index}},animate:false}">
+                                            {{item.title}}
+                                        </div>
+                                        <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
+                                            <input class="cardEditable" todo-blur="doneEditing(item)" ng-model="item.title">
+                                            <button ng-click="removeCard(board4, item)" class="removeCard btn" type="button">X</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="row-fluid">
-                <ul class="thumbnails">
-                    <li class="span3" style='margin-left:10px;'>
-                        <div class="thumbnail" data-drop="true" ng-model='board1'
-                             data-jqyoui-options="optionsRestrictSize" jqyoui-droppable="{multiple:true}">
-                            <div class="caption">
-                                <div ng-repeat="item in board1" ng-dblclick="editCard(item)">
-                                    <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)"
-                                         data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
-                                         ng-model="board1" jqyoui-draggable="{index: {{$index}},animate:false}">
-                                        {{item.title}}
-                                    </div>
-                                    <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                        <input class="cardEditable" todo-blur="doneEditing(item)" ng-model="item.title">
-                                        <button ng-click="removeCard(board1, item)" class="removeCard btn" type="button">X</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="span3" style='margin-left:10px;'>
-                        <div class="thumbnail" data-drop="true" ng-model='board2'
-                             data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=board2])'}"
-                             jqyoui-droppable="{multiple:true, onDrop: 'onDropCallback'}">
-                            <div class="caption">
-                                <div ng-repeat="item in board2" ng-dblclick="editCard(item)">
-                                <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)"
-                                     data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
-                                     ng-model="board2" jqyoui-draggable="{index: {{$index}},animate:false}">
-                                    {{item.title}}
-                                </div>
-                                <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                        <input class="cardEditable" todo-blur="doneEditing(item)" ng-model="item.title">
-                                        <button ng-click="removeCard(board2, item)" class="removeCard btn" type="button">X</button>
-                                </form>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="span3" style='margin-left:10px;'>
-                        <div class="thumbnail" data-drop="true" ng-model='board3'
-                             data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=board3])'}"
-                             jqyoui-droppable="{multiple:true, onDrop: 'onDropCallback'}">
-                            <div class="caption">
-                                <div ng-repeat="item in board3" ng-dblclick="editCard(item)">
-                                    <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)"
-                                         data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
-                                         ng-model="board3" jqyoui-draggable="{index: {{$index}},animate:false}">
-                                        {{item.title}}
-                                    </div>
-                                    <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                        <input class="cardEditable" todo-blur="doneEditing(item)" ng-model="item.title">
-                                        <button ng-click="removeCard(board3, item)" class="removeCard btn" type="button">X</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="span3" style='margin-left:10px;'>
-                        <div class="thumbnail" data-drop="true" ng-model='board4'
-                             data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=board4])'}"
-                             jqyoui-droppable="{multiple:true, onDrop: 'onDropCallback'}">
-                            <div class="caption">
-                                <div ng-repeat="item in board4" ng-dblclick="editCard(item)">
-                                    <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)"
-                                         data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
-                                         ng-model="board4" jqyoui-draggable="{index: {{$index}},animate:false}">
-                                        {{item.title}}
-                                    </div>
-                                    <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                        <input class="cardEditable" todo-blur="doneEditing(item)" ng-model="item.title">
-                                        <button ng-click="removeCard(board4, item)" class="removeCard btn" type="button">X</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
+            </td></tr>
+        </table>
+
+
     </div>
 </div>
-{{beingEdited}}<br/><br/>
-{{board1}}<br/><br/>
-{{board2}}<br/><br/>
-{{board3}}<br/> <br/>
-{{board4}}
+<!--{{beingEdited}}<br/><br/>-->
+<!--{{board1}}<br/><br/>-->
+<!--{{board2}}<br/><br/>-->
+<!--{{board3}}<br/> <br/>-->
+<!--{{board4}}-->
 
 <style>
 

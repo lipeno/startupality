@@ -3,18 +3,6 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
     $scope.currentProject = {};
     $scope.sections = {};
     $scope.sectionTypes = SectionType.query(function(){});
-    // Sort sections by IDs, the order that they are put in the database should be the same
-
-    function getElementByStringIdentifier(array, value)
-    {
-        for (var i = 0; i < array.length; i++)
-        {
-            if (array[i].stringIdentifier == value)
-            {
-                return array[i];
-            }
-        }
-    }
 
     var currentProject = CurrentProject.query(function(){
         $scope.currentProject = currentProject[0];
@@ -27,39 +15,39 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
                 {
                     case "problem":
                         $scope.problem = element;
-                        $scope.problemType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
+                        $scope.problemType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "solution":
                         $scope.solution = element;
-                        $scope.solutionType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
+                        $scope.solutionType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "keypartners":
                         $scope.keyPartners = element;
-                        $scope.keyPartnersType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
+                        $scope.keyPartnersType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "keyactivities":
                         $scope.keyActivities = element;
-                        $scope.keyActivitiesType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
+                        $scope.keyActivitiesType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "valueproposition":
                         $scope.valueProposition = element;
-                        $scope.valuePropositionType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
+                        $scope.valuePropositionType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "customerrelationships":
                         $scope.customerRelationships = element;
-                        $scope.customerRelationshipsType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
+                        $scope.customerRelationshipsType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "customersegments":
                         $scope.customerSegments = element;
-                        $scope.customerSegmentsType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
+                        $scope.customerSegmentsType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "keyresources":
                         $scope.keyResources = element;
-                        $scope.keyResourcesType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
+                        $scope.keyResourcesType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "channels":
                         $scope.channels = element;
-                        $scope.channelsType = getElementByStringIdentifier($scope.sectionTypes, element.sectionTypeIdentifier);
+                        $scope.channelsType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     default:
                         console.log("Type is different then expected.")
@@ -106,12 +94,22 @@ app.controller('CanvasDialogController', function ($scope, dialog, item, itemTyp
         }
         else return ''
     }
+
+    $scope.isCollapsedExperiments = true;
+    // To load video iframes only when collapse is triggered
+    $scope.loadExperiments = function(){
+        if (!$scope.isCollapsedExperiments){
+            return  '/assets/partials/canvasExperiments.html'
+        }
+        else return ''
+    }
+
     // Ratin the section
-    $scope.rate = 7;
+    $scope.rating = 7;
 
     $scope.$watch('item.tags', function() {
-        var currentProject = CurrentProject.query(function(){
-            $scope.item.$update({projectId: currentProject[0].id});
+        $scope.currentProject = CurrentProject.query(function(){
+            $scope.item.$update({projectId: $scope.currentProject[0].id});
         });
     }, true);
 
@@ -120,5 +118,26 @@ app.controller('CanvasDialogController', function ($scope, dialog, item, itemTyp
             $scope.item.$update({projectId: currentProject[0].id});
         });
         dialog.close(result);
+    };
+});
+
+app.controller('TestExperimentsDialogController', function ($scope, ProjectChecklistStep, ChecklistStep){
+    // get steps specific for section
+    var checklistStep = ChecklistStep.query({}, function(){
+        $scope.checklistSteps = _.where(checklistStep, {sectionTypeIdentifier: $scope.itemType.stringIdentifier});
+    });
+
+    $scope.getChecklistStepQuestion = function (item){
+        var question = _.where($scope.checklistSteps, {stepNumber: item.stepNumber})[0];
+        return question.title;
+    }
+
+    var projectChecklistStep = ProjectChecklistStep.query({projectId: $scope.currentProject[0].id}, function() {
+            $scope.projectChecklistSteps = _.where(projectChecklistStep, {sectionTypeIdentifier: $scope.itemType.stringIdentifier});
+            $scope.projectChecklistSteps = $scope.projectChecklistSteps.sort(function(a, b){return a.stepNumber-b.stepNumber});
+    });
+
+    $scope.editChecklistStep = function( checklistStep ) {
+        checklistStep.$update({projectId: $scope.currentProject[0].id});
     };
 });

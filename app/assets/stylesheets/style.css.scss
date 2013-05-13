@@ -33,6 +33,12 @@ div.tagsinput input {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box;
+  overflow:auto;
+}
+
+.modalSection .modal-body{
+  overflow:auto;
+
 }
 
 #projectProgress{
@@ -576,10 +582,14 @@ header{
   color: #000000;
   font-weight: bold;
   text-align: left;
-  background-color: $startupalityBlue;
+  background-color: #f5f5f5;
+}
+.btn-draggable:hover{
+  background-color: $bluedark;
+  border-color: #d2cfc2;
 }
 .cardEditable{
-  width: 221px;
+  width: 220px;
   min-height: 30px;
   padding: 10px;
   font-size: 14px;
@@ -591,6 +601,37 @@ header{
 .removeCard{
   width: 42px;
   min-height: 54px;
+}
+
+.tagsRisks{
+  width: 570px;
+}
+
+.tagsRisks .select2-choices{
+  min-height: 100px;
+}
+
+.tagsCanvas{
+  width: 300px;
+}
+
+.risksTableColumn{
+  width:85px;
+}
+.canvasBlock:hover{
+  border-width: 1px;
+  border-style: dotted;
+  border-color: $red;
+  background-color: #ffffff;
+}
+.canvasModalBody{
+  position: relative;
+  max-height: 800px;
+  padding: 15px;
+  overflow-y: auto;
+}
+.userManagement{
+  text-align: center;
 }
 
 

@@ -1,0 +1,33 @@
+<%= form_for(@checklist_step) do |f| %>
+  <% if @checklist_step.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@checklist_step.errors.count, "error") %> prohibited this checklist_step from being saved:</h2>
+
+      <ul>
+      <% @checklist_step.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :done %><br />
+    <%= f.check_box :done %>
+  </div>
+  <div class="field">
+    <%= f.label :sectionTypeIdentifier %><br />
+    <%= f.text_field :sectionTypeIdentifier %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

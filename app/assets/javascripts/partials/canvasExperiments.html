@@ -1,0 +1,12 @@
+<div ng-controller="TestExperimentsDialogController">
+    <!--<fieldset>-->
+        <!--<legend>Did you do all of this?</legend>-->
+        <ul id="todo-list" class="checklist">
+            <li ng-repeat="item in projectChecklistSteps">
+                <input class="toggle" type="checkbox" ng-model="item.done" ng-change="editChecklistStep(item)">
+                <label>{{getChecklistStepQuestion(item)}}</label>
+                <!--<input ng-model="item.value"></input>-->
+            </li>
+        </ul>
+    <!--</fieldset>-->
+</div>

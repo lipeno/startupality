@@ -31,16 +31,19 @@
                 <li ng-class="{active: routeIs('/dashboard')}">
                     <a href="#/dashboard"><i class="icon-home"></i> Dashboard</a>
                 </li>
+                <li ng-class="{active: routeIs('/checklist')}">
+                    <a  href="{{buildUrl('#/checklist')}}"><i class="icon-ok-sign"></i> Checklist</a>
+                </li>
                 <li ng-class="{active: routeIs('/canvas')}">
                     <a ng-href="{{buildUrl('#/canvas')}}" ng-class=isDisabled()><i class="icon-credit-card"></i> Canvas</a>
                 </li>
                 <li ng-class="{active: routeIs('/experiments')}">
-                    <a ng-href="{{buildUrl('#/experiments')}}" ng-class=isDisabled()><i class="icon-beaker"></i> Experiments</a>
+                    <a  ng-click="toastr.info('Thank you for your interest. We are working on this!', 'Coming soon!')" ng-class=isDisabled()><i class="icon-beaker"></i> Experiments</a>
                 </li>
 
-                <li ng-class="{active: routeIs('/businessplan')}" >
-                    <a ng-href="{{buildUrl('#/businessplan')}}" ng-class=isDisabled()><i class="icon-align-justify"></i> Business plan</a>
-                </li>
+                <!--<li ng-class="{active: routeIs('/businessplan')}" >-->
+                    <!--<a ng-href="{{buildUrl('#/businessplan')}}" ng-class=isDisabled()><i class="icon-align-justify"></i> Business plan</a>-->
+                <!--</li>-->
                 <li ng-class="{active: routeIs('/finance')}" >
                     <a ng-href="{{buildUrl('#/finance')}}" ng-class=isDisabled()><i class="icon-signal"></i> Finance</a>
                 </li>
@@ -53,13 +56,13 @@
             </ul>
         </div>
         <div class="span5">
-            <div class="offset1 pull-right">
+            <div class="pull-right">
 
                 <ul class="breadcrumb nav nav-tabs pull-right">
-                    <li ng-class="{active: routeIs('/checklist')}"><a  href="#/checklist"><i class="icon-ok-sign"></i> Checklist</a>
+                    <li ng-class="{active: routeIs('/help')}"><a  ng-click="toastr.info('Thank you for your interest. We are working on this!', 'Coming soon!')"><i class="icon-question-sign"></i> Help</a>
                     </li>
-                    <li ng-class="{active: routeIs('/help')}"><a  href="#/help"><i class="icon-question-sign"></i> Help</a>
-                    </li>
+                    <!--<li ng-class="{active: routeIs('/help')}"><a  href="#/help"><i class="icon-question-sign"></i> Help</a>-->
+                    <!--</li>-->
                     <li ng-class="{active: routeIs('/export')}"><a  href="#/export"><i class="icon-share"></i> Export</a>
                     </li>
 

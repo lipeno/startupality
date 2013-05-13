@@ -56,6 +56,10 @@ class ProjectsController < ApplicationController
       @project.sections.new(data:nil, tags:nil, sectionTypeIdentifier:item.stringIdentifier)
     end
 
+    ChecklistStep.all.each do |item|
+      @project.project_checklist_steps.new(sectionTypeIdentifier:item.sectionTypeIdentifier, stepNumber:item.stepNumber,done:false,value:nil)
+    end
+
     @project.risks.new(:opportunitiesEconomical => nil, :opportunitiesPolitical => nil, :opportunitiesSociological=> nil, :opportunitiesTechnical=> nil, :strengths=> nil, :threatsEconomical=> nil, :threatsPolitical=> nil, :threatsSociological=> nil, :threatsTechnical=> nil, :weaknesses=> nil)
 
     respond_to do |format|

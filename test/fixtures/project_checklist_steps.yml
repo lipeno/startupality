@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  value: MyString
+  done: false
+  sectionTypeIdentifier: MyString
+  project_id: 1
+  stepNumber: 1
+
+two:
+  value: MyString
+  done: false
+  sectionTypeIdentifier: MyString
+  project_id: 1
+  stepNumber: 1

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Value:</b>
+  <%= @project_checklist_step.value %>
+</p>
+
+<p>
+  <b>Done:</b>
+  <%= @project_checklist_step.done %>
+</p>
+
+<p>
+  <b>Sectiontypeidentifier:</b>
+  <%= @project_checklist_step.sectionTypeIdentifier %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%= @project_checklist_step.project_id %>
+</p>
+
+<p>
+  <b>Stepnumber:</b>
+  <%= @project_checklist_step.stepNumber %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_checklist_step_path(@project_checklist_step) %> |
+<%= link_to 'Back', project_checklist_steps_path %>

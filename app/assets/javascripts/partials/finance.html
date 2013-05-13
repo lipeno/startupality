@@ -8,7 +8,7 @@
         </tr>
         <tr ng-repeat="row in revenues">
             <td>{{row.rowNumber}}</td>
-            <td class="row-label"><input ng-model="row.name" todo-blur="doneEditing(row)"></input></td>
+            <td class="row-label"><input ng-model="row.rowName" todo-blur="doneEditing(row)"></input></td>
 
             <td class="row-data"><div><input ng-model="row.january" todo-blur="doneEditing(row)"></input></div></td>
             <td class="row-data"><div><input ng-model="row.february" todo-blur="doneEditing(row)"></input></div></td>
@@ -45,7 +45,7 @@
             </tr>
             <tr ng-repeat="row in expenses">
                 <td>{{row.rowNumber}}</td>
-                <td class="row-label"><input ng-model="row.name" todo-blur="doneEditing(row)"></input></td>
+                <td class="row-label"><input ng-model="row.rowName" todo-blur="doneEditing(row)"></input></td>
 
                 <td class="row-data"><div><input ng-model="row.january" todo-blur="doneEditing(row)"></input></div></td>
                 <td class="row-data"><div><input ng-model="row.february" todo-blur="doneEditing(row)"></input></div></td>

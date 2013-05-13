@@ -4,28 +4,38 @@
     <div class="span12">
     <h1><i class="icon-edit"></i> {{itemType.title}} </h1>
         <p>{{itemType.description}}  </p>
-        <button class="btn" ng-click="isCollapsed = !isCollapsed"><i class="icon-edit"></i>Show more</button>
+        <button class="btn" ng-click="isCollapsed = !isCollapsed"><i class="icon-expand-alt"></i> More information</button>
+        <button class="btn" ng-click="isCollapsedExperiments = !isCollapsedExperiments"><i class="icon-ok-sign"></i> Checklist</button>
     </div>
     <div class="span12">
         <div collapse="isCollapsed">
              <br/>
-            <div ng-include='loadVideos()'>
+            <div ng-include='loadVideos()'></div>
+         </div>
         </div>
-    </div>
-    </div>
 
+</div>
 </div>
 <div class="modal-body">
     <div id="description" class="span8 pull-left">
+        <div class="row">
+        <div class="span8">
+            <div collapse="isCollapsedExperiments">
+                <br/>
+                <div ng-include='loadExperiments()'>
+                </div>
+            </div>
+        </div>
+            </div>
         <h4><i><i class="icon-pencil" tooltip-placement="right" tooltip="Write here in more details"></i> Description</i></h4>
         <textarea rows="10" ng-model="item.data" placeholder="{{itemType.questions}}" class="span8" ui-keydown="{esc: 'keyCallback($event)'}" unfocus="disableEdit()"></textarea>
     </div>
 
     <div class="span4 pull-right">
-        <h4><i class="icon-tags" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> Rating</h4>
-        <rating value="rate" max="7" readonly="false"></rating>
+        <h4><i class="icon-pencil" tooltip-placement="right" tooltip="Rate this section"></i> Rating</h4>
+        <rating value="rating" max="7" readonly="false"></rating>
         <h4><i class="icon-tags" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> Tags</h4>
-        <tag-input class="input-large" ng-model="item.tags"/>
+        <tag-input class="tagsCanvas" ng-model="item.tags"/>
 
     </div>
 
