@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e28ad45f-3507-499d-88a6-034e23718427" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Sites\startupality\app\assets\javascripts\partials\template.html" afterPath="" />
-      <change type="MOVED" beforePath="C:\Sites\startupality\app\assets\javascripts\controllers\businessplanController.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/businessplan.js" />
-      <change type="MOVED" beforePath="C:\Sites\startupality\app\assets\javascripts\controllers\canvasController.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/canvas.js" />
-      <change type="MOVED" beforePath="C:\Sites\startupality\app\assets\javascripts\controllers\financeController.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/finance.js" />
-      <change type="MOVED" beforePath="C:\Sites\startupality\app\assets\javascripts\controllers\goalsController.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/goals.js" />
-      <change type="MOVED" beforePath="C:\Sites\startupality\app\assets\javascripts\controllers\headerController.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/header.js" />
-      <change type="MOVED" beforePath="C:\Sites\startupality\app\assets\javascripts\controllers\projectsController.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/projects.js" />
-      <change type="MOVED" beforePath="C:\Sites\startupality\app\assets\javascripts\controllers\risksController.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/risks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/app/app.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/canvasDialog.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/canvasDialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/canvasVideos.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/canvasVideos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/checklist.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/checklist.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/app/directives.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/app/directives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/finance.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/finance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/goals.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/goals.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/header.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/app/models.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/app/models.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/sessions/new.html.erb" afterPath="$PROJECT_DIR$/app/views/users/sessions/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/project.rb" afterPath="$PROJECT_DIR$/app/models/project.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/projects_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/projects_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/devise/registrations.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/devise/registrations.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/risks.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/risks.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/app/services.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/app/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/devise/sessions.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/devise/sessions.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/style.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/style.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/devise.rb" afterPath="$PROJECT_DIR$/config/initializers/devise.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="startupality.iws" />
@@ -202,24 +172,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userutil_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/userutil_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="29" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="export.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/export.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="checklist.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/checklist.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -256,19 +208,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="goals.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="goals.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/goals.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="17" selection-start="7584" selection-end="7584" vertical-scroll-proportion="0.52878463">
+            <state line="117" column="17" selection-start="7584" selection-end="7584" vertical-scroll-proportion="-9.538462">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="revenue.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/revenue.rb">
+      <file leaf-file-name="application.html.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="137" selection-start="165" selection-end="172" vertical-scroll-proportion="0.0">
+            <state line="10" column="89" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="devise.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="235" column="13" selection-start="11429" selection-end="11429" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="40" selection-start="407" selection-end="409" vertical-scroll-proportion="0.65217394">
               <folding />
             </state>
           </provider>
@@ -292,8 +262,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/layouts/devise/registrations.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/controllers/risks.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/partials/checklist.html" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/toastr.css" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/app/app.js" />
@@ -308,6 +276,8 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/controllers/finance.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/partials/canvasDialog.html" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/partials/goals.html" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
+        <option value="$PROJECT_DIR$/config/initializers/devise.rb" />
       </list>
     </option>
   </component>
@@ -597,7 +567,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="initializers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -612,10 +586,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1144,27 +1114,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1324" selection-end="2325" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="13" selection-start="9700" selection-end="9700" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/canvasVideos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="69" selection-start="609" selection-end="609" vertical-scroll-proportion="-7.8461537">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/experiments.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="60" selection-start="330" selection-end="330" vertical-scroll-proportion="0.0">
@@ -1251,7 +1200,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/goals.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="17" selection-start="7584" selection-end="7584" vertical-scroll-proportion="0.52878463">
+        <state line="117" column="17" selection-start="7584" selection-end="7584" vertical-scroll-proportion="-9.538462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="89" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="235" column="13" selection-start="11429" selection-end="11429" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="40" selection-start="407" selection-end="409" vertical-scroll-proportion="0.65217394">
           <folding />
         </state>
       </provider>
