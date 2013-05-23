@@ -51,7 +51,7 @@ class ProjectChecklistStepsController < ApplicationController
     respond_to do |format|
       if @project_checklist_step.save
         format.html { redirect_to @project_checklist_step, notice: 'Project checklist step was successfully created.' }
-        format.json { render json: @project_checklist_step, status: :created, location: @project_checklist_step }
+        format.json { render json: @project_checklist_step, status: :created}
       else
         format.html { render action: "new" }
         format.json { render json: @project_checklist_step.errors, status: :unprocessable_entity }

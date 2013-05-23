@@ -50,7 +50,7 @@ class ExpensesController < ApplicationController
     respond_to do |format|
       if @expense.save
         format.html { redirect_to @expense, notice: 'Expense was successfully created.' }
-        format.json { render json: @expense, status: :created, location: @expense }
+        format.json { render json: @expense}
       else
         format.html { render action: "new" }
         format.json { render json: @expense.errors, status: :unprocessable_entity }

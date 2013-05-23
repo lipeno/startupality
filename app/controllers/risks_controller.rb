@@ -51,7 +51,7 @@ class RisksController < ApplicationController
     respond_to do |format|
       if @risk.save
         format.html { redirect_to @risk, notice: 'Section was successfully created.' }
-        format.json { render json: @risk, status: :created, location: @risk }
+        format.json { render json: @risk, status: :created}
       else
         format.html { render action: "new" }
         format.json { render json: @risk.errors, status: :unprocessable_entity }
