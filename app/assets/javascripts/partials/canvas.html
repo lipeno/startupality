@@ -3,7 +3,7 @@
         <td colspan="3">
             <h4>{{problemType.title}} <i class="icon-question-sign icon-2x" tooltip-placement="right" tooltip="Problems that your solution is solving"></i></h4>
             <div ng-click="openDialog(problem, problemType)" class="span4 canvasBlock select2-container canvasBlock select2-container-multi">
-            <ul class="select2-choices">
+                <ul class="select2-choices">
                 <li ng-repeat="tag in (problem.tags | stringToArray)" class="select2-search-choice">
                     <div>{{tag}}</div>
                 </li>

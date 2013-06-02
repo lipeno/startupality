@@ -23,6 +23,7 @@ gem 'jquery-rails'
 group :development, :test do
   gem 'thin'
   gem 'meta_request'
+  gem 'rails-erd' # for generating er diagrams
 end
 
 # Gems used only for assets and not required

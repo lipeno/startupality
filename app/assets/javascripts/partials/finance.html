@@ -3,7 +3,7 @@
     <h2><i class="icon-list"></i> Revenues</h2>
     <table>
         <tr class="column-label">
-            <td colspan="2">{{revenues[0].year}}</td>
+            <td colspan="2"><b>{{revenues[0].year}}</b></td>
             <td ng-repeat="month in months">{{month | capitalize}}</td>
         </tr>
         <tr ng-repeat="row in revenues">
@@ -40,7 +40,7 @@
         <h2><i class="icon-list icon-small"></i> Expenses</h2>
         <table>
             <tr class="column-label">
-                <td colspan="2">{{expenses[0].year}}</td>
+                <td colspan="2"><b>{{expenses[0].year}}</b></td>
                 <td ng-repeat="month in months">{{month | capitalize}}</td>
             </tr>
             <tr ng-repeat="row in expenses">

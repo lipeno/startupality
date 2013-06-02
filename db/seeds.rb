@@ -77,15 +77,3 @@ if ChecklistStep.count == 0
 
 
 end
-
-@project = Project.find(70)
-
-ChecklistStep.all.each do |item|
-  @project.project_checklist_steps.new(sectionTypeIdentifier:item.sectionTypeIdentifier, stepNumber:item.stepNumber,done:false,value:nil)
-end
-
-  if @project.save
-    puts "Saved"
-  else
-    puts @project.errors
-  end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512182202) do
+ActiveRecord::Schema.define(:version => 20130528222515) do
 
   create_table "cards", :force => true do |t|
     t.string   "title"
@@ -48,10 +48,6 @@ ActiveRecord::Schema.define(:version => 20130512182202) do
     t.integer  "year"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "levels", :force => true do |t|
-    t.string "level"
   end
 
   create_table "project_checklist_steps", :force => true do |t|
@@ -95,16 +91,6 @@ ActiveRecord::Schema.define(:version => 20130512182202) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "reviews", :force => true do |t|
-    t.integer  "rating"
-    t.text     "review_text"
-    t.integer  "user_id"
-    t.string   "reviewable_type"
-    t.integer  "reviewable_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
   create_table "risks", :force => true do |t|
     t.string   "strengths"
     t.string   "weaknesses"
@@ -120,47 +106,6 @@ ActiveRecord::Schema.define(:version => 20130512182202) do
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
   end
-
-  create_table "script_files", :force => true do |t|
-    t.integer  "script_id"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
-    t.string   "script_file_file_name"
-    t.string   "script_file_content_type"
-    t.integer  "script_file_file_size"
-    t.datetime "script_file_updated_at"
-  end
-
-  create_table "scripts", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "title"
-    t.string   "author"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
-    t.boolean  "is_overbrook", :default => false
-    t.boolean  "is_private",   :default => false
-  end
-
-  add_index "scripts", ["user_id"], :name => "index_scripts_on_user_id"
-
-  create_table "scripts_coverages", :force => true do |t|
-    t.integer  "script_id"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.string   "script_coverage_file_file_name"
-    t.string   "script_coverage_file_content_type"
-    t.integer  "script_coverage_file_file_size"
-    t.datetime "script_coverage_file_updated_at"
-  end
-
-  create_table "scripts_users", :force => true do |t|
-    t.integer "script_id"
-    t.integer "user_id"
-  end
-
-  add_index "scripts_users", ["script_id", "user_id"], :name => "index_scripts_users_on_script_id_and_user_id", :unique => true
-  add_index "scripts_users", ["script_id"], :name => "index_scripts_users_on_script_id"
-  add_index "scripts_users", ["user_id"], :name => "index_scripts_users_on_user_id"
 
   create_table "section_types", :force => true do |t|
     t.text     "title"
