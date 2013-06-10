@@ -1,74 +1,28 @@
-<div class="row">
-    <div class="span11">
-        <h3 class="offset1">Progress: </h3> <progress value="progressValue" class="progress-striped active"></progress>
-    </div>
-</div>
-
-<div ng-repeat="sectionType in sectionTypes">
-    <h3 class="offset1">{{sectionType.title}}</h3>
+<div ng-controller="ChecklistController">
     <div class="row">
         <div class="span11">
-            <ul id="todo-list" class="checklist">
-                <li ng-repeat="item in getProjectChecklistSteps(sectionType.stringIdentifier)">
-                    <input class="toggle" type="checkbox" ng-model="item.done" ng-change="editChecklistStep(item)">
-                    <label>{{getChecklistStepQuestion(item)}}</label>
-                </li>
-            </ul>
+            <h3 class="offset1">Progress: </h3> <progress value="progressValue" class="progress-striped active"></progress>
         </div>
-        <div class="span4">
-            <h4><i class="icon-tags" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> {{sectionType.title}}</h4>
-            <tag-input class="tagsCanvas" ng-model="getProjectSection(sectionType.stringIdentifier).tags"/>
+    </div>
+
+    <div ng-repeat="sectionType in sectionTypes">
+        <h3 class="offset1">{{sectionType.title}}</h3>
+        <div class="row">
+            <div class="span11">
+                <ul id="todo-list" class="checklist">
+                    <li ng-repeat="item in getProjectChecklistSteps(sectionType.stringIdentifier)">
+                        <input class="toggle" type="checkbox" ng-model="item.done" ng-change="editChecklistStep(item)">
+                        <label>{{getChecklistStepQuestion(item)}}</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="span4">
+                <h4><i class="icon-tags" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> {{sectionType.title}}</h4>
+                <tag-input class="tagsCanvas" ng-model="getProjectSection(sectionType.stringIdentifier).tags"/>
+            </div>
         </div>
+
     </div>
 
 </div>
 
-
-<!--<fieldset>-->
-    <!--<legend>What else did you forget to do?</legend>-->
-
-    <!--<ul id="todo-list" class="checklist">-->
-        <!--<h3>Vision and Conception</h3>-->
-        <!--<li>-->
-            <!--<input class="toggle" type="checkbox" ng-model="todo.completed">-->
-            <!--<label ng-dblclick="editTodo(todo)">Use the Startup Canvas to test initial hypotheses through several different versions of your business summary.</label>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<input class="toggle" type="checkbox" ng-model="todo.completed">-->
-            <!--<label ng-dblclick="editTodo(todo)">What is your short term strategy, including the approximate delivery time of the minimum viable product?</label>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<input class="toggle" type="checkbox">-->
-            <!--<label ng-dblclick="editTodo(todo)">What is your long term strategy, including the 18-month product vision?</label>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<input class="toggle" type="checkbox">-->
-            <!--<label ng-dblclick="editTodo(todo)">What problem or need is it solving? What benefits do users get?</label>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<input class="toggle" type="checkbox">-->
-            <!--<label ng-dblclick="editTodo(todo)">What are the product features? What are the set of feature which will be in the minimum viable version of the product?</label>-->
-        <!--</li>-->
-
-        <!--<h3>Market and Trends</h3>-->
-        <!--<li>-->
-        <!--<input class="toggle" type="checkbox" name="foo" value="bar">-->
-        <!--<label for="foo_bar">Estimate target market, total available market and served available market.</label>-->
-        <!--<li>-->
-        <!--<input class="toggle" type="checkbox" name="foo" value="baz">-->
-        <!--<label for="foo_baz">Estimate current product, follow-on products and key performance indicators.</label>-->
-        <!--</li>-->
-
-        <!--<h3>Customers</h3>-->
-        <!--<li>-->
-        <!--<input class="toggle" type="checkbox" name="foo" value="bar">-->
-        <!--<label for="foo_bar">Visualize your typical customers and describe them.</label>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<input class="toggle" type="checkbox" name="foo" value="baz">-->
-        <!--<label for="foo_baz">Organize how will you get feedback from them and by what channel will you approach them when selling.</label>-->
-        <!--</li>-->
-
-    <!--</ul>-->
-
-<!--</fieldset>-->

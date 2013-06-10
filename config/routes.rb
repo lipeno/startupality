@@ -16,7 +16,7 @@ Startupality::Application.routes.draw do
     end
 
     resources :risks
-    resources :revenues
+    resources :revenueOrExpenses
     resources :expenses
     resources :cards
 

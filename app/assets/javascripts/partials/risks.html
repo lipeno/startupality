@@ -1,106 +1,21 @@
-<!--SWOT / PESTLE ANALYSIS-->
-<table class="table table-bordered">
-    <tr>
-        <th>
-            <h4>Strengths</h4>
-        </th>
-        <th>
-            <h4>Weaknesses</h4>
-        </th>
-    </tr>
+<secondaryheader id="secondaryheader">
+    <div class="row">
+        <div class="span5 center">
+            <ul class="breadcrumb nav nav-tabs">
+                <li>
+                    <a ng-class="{active: isCurrentView('swotpestle')}"
+                       ng-click="changeView('swotpestle')"><i class="icon-home"></i> SWOT/PESTLE Analysis</a>
+                </li>
+                <li>
+                    <a ng-class="{active: isCurrentView('risksregister')}"
+                       ng-click="changeView('risksregister')"><i class="icon-signal"></i> Risks Register</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</secondaryheader>
 
-    <tr>
-        <td>
-            <table class="table table-bordered">
-                <tr><td class="risksTableColumn">All</td><td><tag-input class="tagsRisks" ng-model="risks.strengths"/></td></tr>
-            </table>
-        </td>
-        <td>
-            <table class="table table-bordered">
-                <tr><td class="risksTableColumn">All</td><td><tag-input class="tagsRisks" ng-model="risks.weaknesses"/></td></tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <th>
-            <h4>Opportunities</h4>
-        </th>
-        <th>
-            <h4>Threats</h4>
-        </th>
-    </tr>
-
-    <tr>
-        <td>
-            <table class="table table-bordered">
-                <td class="risksTableColumn"><b>P</b>olitical</td><td><tag-input class="tagsRisks" ng-model="risks.opportunitiesPolitical"/></td>
-                </tr>
-                <tr> <td class="risksTableColumn"><b>E</b>conomical</td><td><tag-input class="tagsRisks" ng-model="risks.opportunitiesEconomical"/></td>
-                </tr>
-                <tr> <td class="risksTableColumn"><b>S</b>ociological</td><td><tag-input class="tagsRisks" ng-model="risks.opportunitiesSociological"/></td>
-                </tr>
-                <tr> <td class="risksTableColumn"><b>T</b>echnical</td><td><tag-input class="tagsRisks" ng-model="risks.opportunitiesTechnical"/></td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table class="table table-bordered">
-                <td class="risksTableColumn"><b>P</b>olitical</td><td><tag-input class="tagsRisks" ng-model="risks.threatsPolitical"/></td>
-                </tr>
-                <tr> <td class="risksTableColumn"><b>E</b>conomical</td><td><tag-input class="tagsRisks" ng-model="risks.threatsEconomical"/></td>
-                </tr>
-                <tr> <td class="risksTableColumn"><b>S</b>ociological</td><td><tag-input class="tagsRisks" ng-model="risks.threatsSociological"/></td>
-                </tr>
-                <tr> <td class="risksTableColumn"><b>T</b>echnical</td><td><tag-input class="tagsRisks" ng-model="risks.threatsTechnical"/></td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
-
-<div id="risksMatrix">
-<h3>Risks register <button class="btn" ng-click="">Add a risk</button></h3>
-<table id="bizcanvas" border="1">
-    <tr>
-        <th>
-            <h4>Risk</h4>
-        </th>
-        <th>
-            <h4>Priority</h4>
-        </th>
-        <th>
-            <h4>Probability</h4>
-        </th>
-        <th>
-            <h4>Impact</h4>
-        </th>
-        <th>
-            <h4>Exposure</h4>
-        </th>
-        <th>
-            <h4>Risk owner</h4>
-        </th>
-        <th>
-            <h4>How to test</h4>
-        </th>
-    </tr>
-
-    <tr>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-
-    </tr>
-</table>
+<div class="risks" ng-include='getCurrentView()'>
 </div>
+
+

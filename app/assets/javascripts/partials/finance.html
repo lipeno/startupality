@@ -1,124 +1,21 @@
-<div>
-    <div id="revenues">
-    <h2><i class="icon-list"></i> Revenues</h2>
-    <table>
-        <tr class="column-label">
-            <td colspan="2"><b>{{revenues[0].year}}</b></td>
-            <td ng-repeat="month in months">{{month | capitalize}}</td>
-        </tr>
-        <tr ng-repeat="row in revenues">
-            <td>{{row.rowNumber}}</td>
-            <td class="row-label"><input ng-model="row.rowName" todo-blur="doneEditing(row)"></input></td>
-
-            <td class="row-data"><div><input ng-model="row.january" todo-blur="doneEditing(row)"></input></div></td>
-            <td class="row-data"><div><input ng-model="row.february" todo-blur="doneEditing(row)"></input></div></td>
-            <td class="row-data"><div><input ng-model="row.march" todo-blur="doneEditing(row)"></input></div></td>
-            <td class="row-data"><div><input ng-model="row.april" todo-blur="doneEditing(row)"></input></div></td>
-            <td class="row-data"><div><input ng-model="row.may" todo-blur="doneEditing(row)"></input></div></td>
-            <td class="row-data"><div><input ng-model="row.june" todo-blur="doneEditing(row)"></input></div></td>
-            <td class="row-data"><div><input ng-model="row.july" todo-blur="doneEditing(row)"></input></div></td>
-            <td class="row-data"><div><input ng-model="row.august" todo-blur="doneEditing(row)"></input></div></td>
-            <td class="row-data"><div><input ng-model="row.september" todo-blur="doneEditing(row)"></input></div></td>
-            <td class="row-data"><div><input ng-model="row.october" todo-blur="doneEditing(row)"></input></div></td>
-            <td class="row-data"><div><input ng-model="row.november" todo-blur="doneEditing(row)"></input></div></td>
-            <td class="row-data"><div><input ng-model="row.december" todo-blur="doneEditing(row)"></input></div></td>
-            <td>
-                <button class="btn btn-danger" ng-click="deleteRow(revenues, row)">Delete Revenue</button>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td class="row-label">Total revenues</td>
-            <td class="row-data" ng-repeat="month in months"><div>{{calculateRevenueForMonth(month)}}</div></td>
-            <td>{{calculateRevenueForYear()}}</td>
-        </tr>
-    </table>
-    <button class="btn" ng-click="addRevenueRow(revenues)">Add Revenue</button>
-    </div>
-
-    <div id="expenses">
-        <h2><i class="icon-list icon-small"></i> Expenses</h2>
-        <table>
-            <tr class="column-label">
-                <td colspan="2"><b>{{expenses[0].year}}</b></td>
-                <td ng-repeat="month in months">{{month | capitalize}}</td>
-            </tr>
-            <tr ng-repeat="row in expenses">
-                <td>{{row.rowNumber}}</td>
-                <td class="row-label"><input ng-model="row.rowName" todo-blur="doneEditing(row)"></input></td>
-
-                <td class="row-data"><div><input ng-model="row.january" todo-blur="doneEditing(row)"></input></div></td>
-                <td class="row-data"><div><input ng-model="row.february" todo-blur="doneEditing(row)"></input></div></td>
-                <td class="row-data"><div><input ng-model="row.march" todo-blur="doneEditing(row)"></input></div></td>
-                <td class="row-data"><div><input ng-model="row.april" todo-blur="doneEditing(row)"></input></div></td>
-                <td class="row-data"><div><input ng-model="row.may" todo-blur="doneEditing(row)"></input></div></td>
-                <td class="row-data"><div><input ng-model="row.june" todo-blur="doneEditing(row)"></input></div></td>
-                <td class="row-data"><div><input ng-model="row.july" todo-blur="doneEditing(row)"></input></div></td>
-                <td class="row-data"><div><input ng-model="row.august" todo-blur="doneEditing(row)"></input></div></td>
-                <td class="row-data"><div><input ng-model="row.september" todo-blur="doneEditing(row)"></input></div></td>
-                <td class="row-data"><div><input ng-model="row.october" todo-blur="doneEditing(row)"></input></div></td>
-                <td class="row-data"><div><input ng-model="row.november" todo-blur="doneEditing(row)"></input></div></td>
-                <td class="row-data"><div><input ng-model="row.december" todo-blur="doneEditing(row)"></input></div></td>
-                <td>
-                    <button class="btn btn-danger" ng-click="deleteRow(expenses, row)">Delete Expense</button>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td class="row-label">Total expenses</td>
-                <td class="row-data" ng-repeat="month in months"><div>{{calculateExpenseForMonth(month)}}</div></td>
-                <td>{{calculateExpenseForYear()}}</td>
-            </tr>
-        </table>
-        <button class="btn" ng-click="addExpenseRow(expenses)">Add Expense</button>
-    </div>
-
+<secondaryheader id="secondaryheader">
     <div class="row">
-        <div><br></div>
-        <div class="span8 offset3">
-            <chart value='{{chartData}}' type="area" style="width: 100%; height: 300px; margin: 0 auto"></chart>
-        </div>
-        <div class="span4 offset1">
-            <h4>Discount rate:</h4>
-            <input name="discountRate" type="text" placeholder="0.1">
-                <h4>Net Present Value (NPV):</h4><p>562333</p>
-                <h4>Return On Investment (ROI):</h4><p>40230</p>
-                <h4>Internal Rate of Return (IRR)</h4><p>13.19%</p>
+        <div class="span4 center">
+            <ul class="breadcrumb nav nav-tabs">
+                <li>
+                    <a ng-class="{active: isCurrentView('revenuesandexpenses')}"
+                       ng-click="changeView('revenuesandexpenses')"><i class="icon-home"></i> Revenues and Expenses</a>
+                </li>
+                <li>
+                    <a ng-class="{active: isCurrentView('financialIndicators')}"
+                       ng-click="changeView('financialIndicators')"><i class="icon-signal"></i> Graph</a>
+                </li>
+            </ul>
         </div>
     </div>
+</secondaryheader>
 
 
+<div class="finance" ng-include='getCurrentView()'>
 </div>
 
-<style>
-    .row-label input{
-        background: #EEE;
-        width: 150px;
-    }
-    .row-label{
-        width: 200px;
-        text-align: left;
-        background: #EEE;
-    }
-    .row-data input {
-        font-size: 10pt;
-        position: absolute;
-        height: 1.2em;
-        width: 50pt;
-        height: 16pt;
-        overflow: hidden;
-        padding-left: 4pt;
-    }
-    input { border: none;}
-    table { border-collapse: collapse; }
-    td > div {
-        width: 55pt;
-        height: 16pt;
-    }
-    td { border: 1px solid #EEE; }
-    .column-label  > td{
-        text-align: center;
-        background: #EEE;
-    }
-
-</style>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528222515) do
+ActiveRecord::Schema.define(:version => 20130603133519) do
 
   create_table "cards", :force => true do |t|
     t.string   "title"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(:version => 20130528222515) do
 
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
 
-  create_table "revenues", :force => true do |t|
+  create_table "revenue_or_expenses", :force => true do |t|
     t.integer  "rowNumber"
     t.string   "rowName"
     t.integer  "project_id"
@@ -87,8 +87,9 @@ ActiveRecord::Schema.define(:version => 20130528222515) do
     t.integer  "november"
     t.integer  "december"
     t.integer  "year"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "isExpense",  :default => false
   end
 
   create_table "risks", :force => true do |t|

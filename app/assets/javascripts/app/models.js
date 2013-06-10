@@ -43,12 +43,8 @@ app.factory("Risk", function($resource) {
     return $resource('/projects/:projectId/risks/:id', {projectId: '@projectId', id: '@id'}, {update: {method: "PUT"}});
 });
 
-app.factory("Revenue", function($resource) {
-    return $resource('/projects/:projectId/revenues/:id', {projectId: '@projectId', id: '@id'}, {update: {method: "PUT"}});
-});
-
-app.factory("Expense", function($resource) {
-    return $resource('/projects/:projectId/expenses/:id', {projectId: '@projectId', id: '@id'}, {update: {method: "PUT"}});
+app.factory("RevenueOrExpense", function($resource) {
+    return $resource('/projects/:projectId/revenueOrExpenses/:id', {projectId: '@projectId', id: '@id'}, {update: {method: "PUT"}});
 });
 
 app.factory("Tag", function($resource) {

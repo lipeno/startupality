@@ -14,4 +14,27 @@ app.controller('RisksController', function ($scope, Risk, Section, CurrentProjec
             });
         }
     }, true);
+
+
+    $scope.currentView = 'swotpestle';
+    $scope.isCurrentView = function(view){
+        if (view === $scope.currentView){
+            return true;
+        }
+        return false;
+    }
+    $scope.changeView = function(view){
+        if (view === 'swotpestle' || 'risksregister'){
+            $scope.currentView =  view;
+        }
+    }
+    $scope.getCurrentView = function(){
+        if ($scope.currentView === 'swotpestle'){
+            return  '/assets/partials/swotpestle.html'
+        }
+        if ($scope.currentView === 'risksregister'){
+            return  '/assets/partials/risksregister.html'
+        }
+        else return ''
+    }
 });

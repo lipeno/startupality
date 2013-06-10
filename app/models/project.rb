@@ -3,8 +3,7 @@ class Project < ActiveRecord::Base
   belongs_to :user
   has_many :sections, :dependent => :destroy
   has_many :risks, :dependent => :destroy
-  has_many :revenues, :dependent => :destroy
-  has_many :expenses, :dependent => :destroy
+  has_many :revenue_or_expenses, :dependent => :destroy
   has_many :cards, :dependent => :destroy
   has_many :project_checklist_steps, :dependent => :destroy
 end
