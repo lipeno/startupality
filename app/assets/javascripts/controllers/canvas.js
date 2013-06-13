@@ -2,7 +2,7 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
     // TODO: inject this into $rootscope
     $scope.currentProject = {};
     $scope.sections = {};
-    $scope.sectionTypes = SectionType.query(function(){});
+//    $scope.sectionTypes = SectionType.query(function(){});
 
     var currentProject = CurrentProject.query(function(){
         $scope.currentProject = currentProject[0];
@@ -11,43 +11,34 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
             for (var i = 0; i < $scope.sections.length; i++) {
                 var element = $scope.sections[i];
                 // Sections have types with unique IDs
-                switch(element.sectionTypeIdentifier)
+                switch(element.section_type.stringIdentifier)
                 {
                     case "problem":
                         $scope.problem = element;
-                        $scope.problemType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "solution":
                         $scope.solution = element;
-                        $scope.solutionType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "keypartners":
                         $scope.keyPartners = element;
-                        $scope.keyPartnersType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "keyactivities":
                         $scope.keyActivities = element;
-                        $scope.keyActivitiesType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "valueproposition":
                         $scope.valueProposition = element;
-                        $scope.valuePropositionType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "customerrelationships":
                         $scope.customerRelationships = element;
-                        $scope.customerRelationshipsType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "customersegments":
                         $scope.customerSegments = element;
-                        $scope.customerSegmentsType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "keyresources":
                         $scope.keyResources = element;
-                        $scope.keyResourcesType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     case "channels":
                         $scope.channels = element;
-                        $scope.channelsType = _.where($scope.sectionTypes, {stringIdentifier: element.sectionTypeIdentifier})[0];
                         break;
                     default:
                         console.log("Type is different then expected.")
@@ -59,7 +50,7 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
     $scope.enableEdit = function() { $scope.edit = true; }
     $scope.disableEdit = function() { $scope.edit = false;  }
 
-    $scope.openDialog = function(section, sectionType){
+    $scope.openDialog = function(section){
         $scope.opts = {
             backdrop: true,
             keyboard: true,
@@ -69,7 +60,7 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
             controller: 'CanvasDialogController',
             dialogFade: true,
             backdropFade: true,
-            resolve: {item: function(){ return section; }, itemType: function(){ return sectionType; }}
+            resolve: {item: function(){ return section; }}
         };
 
         var d = $dialog.dialog($scope.opts);
@@ -82,9 +73,9 @@ app.controller('CanvasController', function ($scope, $dialog, $modal, CurrentPro
     };
 });
 
-app.controller('CanvasDialogController', function ($scope, dialog, item, itemType, CurrentProject){
+app.controller('CanvasDialogController', function ($scope, dialog, item, CurrentProject){
     $scope.item = item;
-    $scope.itemType = itemType;
+    $scope.itemType = item.section_type;
 
     $scope.isCollapsed = true;
     // To load video iframes only when collapse is triggered

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603133519) do
+ActiveRecord::Schema.define(:version => 20130610185737) do
 
   create_table "cards", :force => true do |t|
     t.string   "title"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20130603133519) do
     t.integer  "stepNumber"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
+    t.integer  "section_type_id"
   end
 
   create_table "expenses", :force => true do |t|
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20130603133519) do
     t.integer  "stepNumber"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
+    t.integer  "checklist_step_id"
   end
 
   create_table "projects", :force => true do |t|
@@ -124,6 +126,7 @@ ActiveRecord::Schema.define(:version => 20130603133519) do
     t.datetime "updated_at",            :null => false
     t.text     "tags"
     t.string   "sectionTypeIdentifier"
+    t.integer  "section_type_id"
   end
 
   create_table "users", :force => true do |t|

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e28ad45f-3507-499d-88a6-034e23718427" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/revenue_or_expenses_controller.rb" />
       <change type="DELETED" beforePath="C:\Sites\startupality\app\controllers\expenses_controller.rb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\startupality\app\controllers\revenues_controller.rb" afterPath="" />
       <change type="DELETED" beforePath="C:\Sites\startupality\app\helpers\expenses_helper.rb" afterPath="" />
       <change type="DELETED" beforePath="C:\Sites\startupality\app\models\expense.rb" afterPath="" />
       <change type="DELETED" beforePath="C:\Sites\startupality\app\views\expenses\_form.html.erb" afterPath="" />
@@ -13,42 +11,32 @@
       <change type="DELETED" beforePath="C:\Sites\startupality\app\views\expenses\new.html.erb" afterPath="" />
       <change type="DELETED" beforePath="C:\Sites\startupality\app\views\expenses\show.html.erb" afterPath="" />
       <change type="DELETED" beforePath="C:\Sites\startupality\db\migrate\20130510154422_create_expenses.rb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\startupality\doc\scriptecology roles_gpedits.numbers\Contents\PkgInfo" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\startupality\doc\scriptecology roles_gpedits.numbers\QuickLook\Thumbnail.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\startupality\doc\scriptecology roles_gpedits.numbers\document-thumbnail.tiff" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\startupality\doc\scriptecology roles_gpedits.numbers\index.xml.gz" afterPath="" />
-      <change type="DELETED" beforePath="C:\Sites\startupality\lib\qq_file.rb" afterPath="" />
       <change type="DELETED" beforePath="C:\Sites\startupality\test\fixtures\expenses.yml" afterPath="" />
       <change type="DELETED" beforePath="C:\Sites\startupality\test\functional\expenses_controller_test.rb" afterPath="" />
       <change type="DELETED" beforePath="C:\Sites\startupality\test\unit\expense_test.rb" afterPath="" />
       <change type="DELETED" beforePath="C:\Sites\startupality\test\unit\helpers\expenses_helper_test.rb" afterPath="" />
-      <change type="MOVED" beforePath="C:\Sites\startupality\app\models\revenue.rb" afterPath="$PROJECT_DIR$/app/models/revenue_or_expense.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/erd.pdf" afterPath="$PROJECT_DIR$/erd.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/app/app.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/controllers/canvas.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/canvas.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/checklist.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/checklist.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/export.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/export.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/finance.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/finance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/controllers/finance.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/finance.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/header.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/init.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/app/models.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/app/models.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/controllers/checklist.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/checklist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/checklist_step.rb" afterPath="$PROJECT_DIR$/app/models/checklist_step.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/controllers/experiments.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/experiments.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/project.rb" afterPath="$PROJECT_DIR$/app/models/project.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/projects.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/projects.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/risks.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/risks.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/controllers/risks.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/risks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/project_checklist_step.rb" afterPath="$PROJECT_DIR$/app/models/project_checklist_step.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/projects_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/projects_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/style.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/style.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/section.rb" afterPath="$PROJECT_DIR$/app/models/section.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/section_type.rb" afterPath="$PROJECT_DIR$/app/models/section_type.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sections_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sections_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="startupality.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370785070023" ignored="false" />
+    <file path="/Dummy.txt" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1371138125488" ignored="false" />
     <file path="/home.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1366906652748" ignored="false" />
-    <file path="/a.dummy" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370609145842" ignored="false" />
+    <file path="/a.dummy" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370889990813" ignored="false" />
     <file path="/angular_controller.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1366927517211" ignored="false" />
     <file path="/angular.html.erb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370013481483" ignored="false" />
     <file path="/routes.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370183860513" ignored="false" />
@@ -76,27 +64,27 @@
     <file path="/app.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368214524199" ignored="false" />
     <file path="/models.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367876515673" ignored="false" />
     <file path="/20130428213206_change_column_on_projects.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367184779465" ignored="false" />
-    <file path="/project.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370209289233" ignored="false" />
+    <file path="/project.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370949881945" ignored="false" />
     <file path="/20130429130736_connect_users_projects.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367241010039" ignored="false" />
     <file path="/20130429143134_add_user_ref_to_project.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367246145800" ignored="false" />
-    <file path="/projects_controller.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368386073103" ignored="false" />
-    <file path="/fragment.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370209899958" ignored="false" />
+    <file path="/projects_controller.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370951834163" ignored="false" />
+    <file path="/fragment.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370950701108" ignored="false" />
     <file path="/new.html.erb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367260674012" ignored="false" />
-    <file path="/canvas.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370610270930" ignored="false" />
-    <file path="/section.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367494609367" ignored="false" />
+    <file path="/canvas.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370889804625" ignored="false" />
+    <file path="/section.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370887500527" ignored="false" />
     <file path="/20130501101253_add_attributes_to_sections.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367403317415" ignored="false" />
-    <file path="/seeds.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368475777697" ignored="false" />
+    <file path="/seeds.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370892965592" ignored="false" />
     <file path="/tag.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367498695446" ignored="false" />
     <file path="/canvasDialog.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368478259985" ignored="false" />
     <file path="/other.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367488066703" ignored="false" />
-    <file path="/sections_controller.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367780800053" ignored="false" />
+    <file path="/sections_controller.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370892296755" ignored="false" />
     <file path="/20130502124333_rename_column_tag.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367498645045" ignored="false" />
     <file path="/select2.css" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367670404318" ignored="false" />
     <file path="/section_types_controller.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367671148688" ignored="false" />
     <file path="/style.css.scss" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370557577405" ignored="false" />
     <file path="/ability.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367849263783" ignored="false" />
     <file path="/user.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367850194048" ignored="false" />
-    <file path="/section_type.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367932456804" ignored="false" />
+    <file path="/section_type.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370890620829" ignored="false" />
     <file path="/20130507133345_add_column_to_sections.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367933679006" ignored="false" />
     <file path="/risks_controller.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367941823303" ignored="false" />
     <file path="/risksController.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1367960847428" ignored="false" />
@@ -113,12 +101,12 @@
     <file path="/scheduler.rake" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368363699150" ignored="false" />
     <file path="/experiments.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368389481320" ignored="false" />
     <file path="/exprimentsDialog.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368379411470" ignored="false" />
-    <file path="/checklist_step.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368382796391" ignored="false" />
+    <file path="/checklist_step.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370890584934" ignored="false" />
     <file path="/20130512181045_create_checklist_steps.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368382815094" ignored="false" />
-    <file path="/project_checklist_step.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368383116881" ignored="false" />
+    <file path="/project_checklist_step.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370894220371" ignored="false" />
     <file path="/project_checklist_steps_controller.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368385026184" ignored="false" />
     <file path="/experimentsDialog.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368389179903" ignored="false" />
-    <file path="/canvas.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368403899306" ignored="false" />
+    <file path="/canvas.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370886190387" ignored="false" />
     <file path="/canvasExperiments.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368402415329" ignored="false" />
     <file path="/header.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368443907990" ignored="false" />
     <file path="/toastr.css" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368444255635" ignored="false" />
@@ -126,7 +114,7 @@
     <file path="/registrations.html.erb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368449522541" ignored="false" />
     <file path="/sessions.html.erb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368449514288" ignored="false" />
     <file path="/_links.erb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368449330897" ignored="false" />
-    <file path="/checklist.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368475405889" ignored="false" />
+    <file path="/checklist.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370894788341" ignored="false" />
     <file path="/export.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370797048723" ignored="false" />
     <file path="/20130528221609_drop_scripts_table.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1369779632651" ignored="false" />
     <file path="/20130528222515_drop_levels_table.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1369779934045" ignored="false" />
@@ -145,9 +133,12 @@
     <file path="/*.regexp" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370443716834" ignored="false" />
     <file path="/financialIndicators.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370532770338" ignored="false" />
     <file path="/finance.css.scss" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370525571397" ignored="false" />
-    <file path="/fragment.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370599593841" ignored="false" />
+    <file path="/fragment.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370885008380" ignored="false" />
     <file path="/vision.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370626197860" ignored="false" />
     <file path="/revenuesandexpenses.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370819324689" ignored="false" />
+    <file path="/20130610152027_add_fk_to_section.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370877710920" ignored="false" />
+    <file path="/20130610154824_add_fk_to_project_checklist_step.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370879347908" ignored="false" />
+    <file path="/20130610185737_add_fk_to_check_list_step.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370890685993" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,55 +204,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="canvas.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html">
+      <file leaf-file-name="sections_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/sections_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="9" selection-start="0" selection-end="39" vertical-scroll-proportion="-0.0">
+            <state line="72" column="61" selection-start="1887" selection-end="1887" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="canvasDialog.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/canvasDialog.html">
+      <file leaf-file-name="project_checklist_steps_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/project_checklist_steps_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vision.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/vision.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="104" selection-start="464" selection-end="464" vertical-scroll-proportion="-5.8846154">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="canvas.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/canvas.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="8" selection-start="5778" selection-end="5778" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="financialIndicators.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/financialIndicators.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="64" selection-start="595" selection-end="595" vertical-scroll-proportion="-7.1923075">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/project.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="72" column="51" selection-start="2368" selection-end="2368" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -270,14 +225,14 @@
       <file leaf-file-name="projects_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="32" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.0">
+            <state line="62" column="160" selection-start="1876" selection-end="1894" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checklist_steps_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/checklist_steps_controller.rb">
+      <file leaf-file-name="section_types_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/section_types_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -285,19 +240,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checklist_step.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/checklist_step.rb">
+      <file leaf-file-name="checklist.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/checklist.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="48" selection-start="84" selection-end="89" vertical-scroll-proportion="0.033203125">
+            <state line="10" column="68" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="section_type.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/section_type.rb">
+      <file leaf-file-name="project.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/project.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="58" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
+            <state line="9" column="21" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project_checklist_step.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/project_checklist_step.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="24" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="section.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/section.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="50" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checklist_step.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/checklist_step.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="33" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -321,22 +312,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="localhost:3000/assets/controllers/finance.js?body=1" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/partials/finance.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/partials/swotpestle.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/partials/risksregister.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/controllers/risks.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/controllers/vision.js" />
+        <option value="localhost:3000/assets/controllers/canvas.js?body=1" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/controllers/canvas.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/controllers/experiments.js" />
+        <option value="$PROJECT_DIR$/app/models/section_type.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20130610185737_add_fk_to_check_list_step.rb" />
+        <option value="$PROJECT_DIR$/db/seeds.rb" />
+        <option value="$PROJECT_DIR$/app/models/checklist_step.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/partials/checklist.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/app/app.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/partials/header.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/partials/risks.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/partials/vision.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/partials/export.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/controllers/finance.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/partials/financialIndicators.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/partials/revenuesandexpenses.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/controllers/checklist.js" />
+        <option value="$PROJECT_DIR$/app/models/section.rb" />
+        <option value="$PROJECT_DIR$/app/models/project.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/sections_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/projects_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/project_checklist_steps_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/project_checklist_step.rb" />
       </list>
     </option>
   </component>
@@ -350,7 +341,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1475" />
+    <option name="width" value="1480" />
     <option name="height" value="916" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -425,7 +416,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -746,8 +736,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
       <pane id="PackagesPane" />
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -764,11 +755,11 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -1047,7 +1038,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1475" height="916" extended-state="6" />
+    <frame x="-8" y="-8" width="1480" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1056,7 +1047,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32806325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13963328" sideWeight="0.6745718" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25406936" sideWeight="0.7364954" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26022568" sideWeight="0.7364954" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26350462" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3992095" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1065,7 +1056,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33596838" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33596838" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32806325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32806325" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1148,125 +1139,117 @@
           <line>1</line>
           <option name="timeStamp" value="118" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/assets/javascripts/app/models.js</url>
+          <line>38</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="123" />
+      <option name="time" value="142" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/finance.html">
+    <entry file="file://$PROJECT_DIR$/app/models/model.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="66" selection-start="409" selection-end="409" vertical-scroll-proportion="-5.230769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/finance.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="232" column="85" selection-start="10180" selection-end="10180" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/revenuesandexpenses.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="16" selection-start="5673" selection-end="5673" vertical-scroll-proportion="-11.769231">
-          <folding>
-            <element signature="tag#div#0" expanded="false" />
-            <element signature="tag#div#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/revenue_or_expenses_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/revenue_or_expense.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/risk.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/section_type.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="58" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="2" column="35" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="15" selection-start="3446" selection-end="3446" vertical-scroll-proportion="-3.7843137" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="9" selection-start="0" selection-end="39" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/canvasDialog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/canvas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="8" selection-start="5778" selection-end="5778" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/checklist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="69" selection-start="1544" selection-end="1544" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/vision.html">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/checklist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="104" selection-start="464" selection-end="464" vertical-scroll-proportion="-5.8846154">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/financialIndicators.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="64" selection-start="595" selection-end="595" vertical-scroll-proportion="-7.1923075">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/project.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="32" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/checklist_steps_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="10" column="68" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/checklist_step.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="48" selection-start="84" selection-end="89" vertical-scroll-proportion="0.033203125">
+        <state line="5" column="33" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/section.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="50" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/project.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="21" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/sections_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="61" selection-start="1887" selection-end="1887" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/section_types_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/project_checklist_steps_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="51" selection-start="2368" selection-end="2368" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/projects_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="160" selection-start="1876" selection-end="1894" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/project_checklist_step.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="24" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

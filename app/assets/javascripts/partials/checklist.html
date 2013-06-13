@@ -10,7 +10,7 @@
         <div class="row">
             <div class="span11">
                 <ul id="todo-list" class="checklist">
-                    <li ng-repeat="item in getProjectChecklistSteps(sectionType.stringIdentifier)">
+                    <li ng-repeat="item in getProjectChecklistSteps(sectionType)">
                         <input class="toggle" type="checkbox" ng-model="item.done" ng-change="editChecklistStep(item)">
                         <label>{{getChecklistStepQuestion(item)}}</label>
                     </li>

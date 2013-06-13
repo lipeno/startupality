@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :activated, :title
+  attr_accessible :activated, :title, :id
   belongs_to :user
   has_many :sections, :dependent => :destroy
   has_many :risks, :dependent => :destroy

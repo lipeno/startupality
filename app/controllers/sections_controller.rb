@@ -65,6 +65,7 @@ class SectionsController < ApplicationController
     @section = @project.sections.find(params[:id])
 
     respond_to do |format|
+      # Because nested attributes were received, except them from the update to not have different model type when updating
       if @section.update_attributes(params[:section])
         format.html { redirect_to @section, notice: 'Section was successfully updated.' }
         format.json { head :no_content }

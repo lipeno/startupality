@@ -51,13 +51,17 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
     # Save for current user
     @project.user_id = current_user.id;
+
     # Add all the sections that project should have
-    SectionType.all.each do |item|
-      @project.sections.new(data:nil, tags:nil, sectionTypeIdentifier:item.stringIdentifier)
+    SectionType.all.each do |sectionType|
+      #@project.sections.new(data:nil, tags:nil, sectionTypeIdentifier:item.stringIdentifier)
+      @project.sections.new(data:nil, tags:nil, :section_type_id => sectionType.id)
     end
 
     ChecklistStep.all.each do |item|
-      @project.project_checklist_steps.new(sectionTypeIdentifier:item.sectionTypeIdentifier, stepNumber:item.stepNumber,done:false,value:nil)
+      #@project.project_checklist_steps.new(sectionTypeIdentifier:item.sectionTypeIdentifier, stepNumber:item.stepNumber,done:false,value:nil)
+      @project.project_checklist_steps.new(sectionTypeIdentifier:item.sectionTypeIdentifier, stepNumber:item.stepNumber,done:false,value:nil, :checklist_step_id => item.id)
+      #ProjectChecklistStep.create(sectionTypeIdentifier:item.sectionTypeIdentifier, stepNumber:item.stepNumber,done:false,value:nil, :project => @project, :checklist_step => item)
     end
 
     @project.risks.new(:opportunitiesEconomical => nil, :opportunitiesPolitical => nil, :opportunitiesSociological=> nil, :opportunitiesTechnical=> nil, :strengths=> nil, :threatsEconomical=> nil, :threatsPolitical=> nil, :threatsSociological=> nil, :threatsTechnical=> nil, :weaknesses=> nil)

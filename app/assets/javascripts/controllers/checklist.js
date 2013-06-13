@@ -28,8 +28,8 @@ app.controller('ChecklistController', function ($scope, SectionType, CurrentProj
         });
     });
 
-    $scope.getProjectChecklistSteps = function (identifier) {
-        return _.where($scope.projectChecklistSteps, {sectionTypeIdentifier: identifier});
+    $scope.getProjectChecklistSteps = function (sctType) {
+        return _.where($scope.projectChecklistSteps, {sectionType: sctType});
     }
 
     $scope.getProjectSection = function (identifier) {
