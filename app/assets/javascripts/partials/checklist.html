@@ -12,7 +12,7 @@
                 <ul id="todo-list" class="checklist">
                     <li ng-repeat="item in getProjectChecklistSteps(sectionType)">
                         <input class="toggle" type="checkbox" ng-model="item.done" ng-change="editChecklistStep(item)">
-                        <label>{{getChecklistStepQuestion(item)}}</label>
+                        <label>{{item.checklist_step.title}}</label>
                     </li>
                 </ul>
             </div>

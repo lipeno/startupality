@@ -1,13 +1,5 @@
 app.controller('ChecklistController', function ($scope, SectionType, CurrentProject, ProjectChecklistStep, ChecklistStep, Section) {
-    $scope.sectionTypes = SectionType.query(function () {
-    });
-    $scope.checklistSteps = ChecklistStep.query(function () {
-    });
-
-    $scope.getChecklistStepQuestion = function (item) {
-        var checklistStepQuestion = _.where($scope.checklistSteps, {stepNumber: item.stepNumber, sectionTypeIdentifier: item.sectionTypeIdentifier})[0];
-        return checklistStepQuestion.title;
-    }
+    $scope.sectionTypes = SectionType.query(function () {});
 
     var currentProject = CurrentProject.query(function () {
         $scope.currentProject = currentProject[0];
@@ -29,17 +21,21 @@ app.controller('ChecklistController', function ($scope, SectionType, CurrentProj
     });
 
     $scope.getProjectChecklistSteps = function (sctType) {
-        return _.where($scope.projectChecklistSteps, {sectionType: sctType});
+        var projectSteps = [];
+        if ($scope.projectChecklistSteps.length !== 0){
+            _.each($scope.projectChecklistSteps, function (projectChecklistStep) {
+                if (projectChecklistStep.checklist_step.section_type.id === sctType.id){
+                    projectSteps.push(projectChecklistStep);
+                }
+            });
+            return projectSteps;
+        }
     }
 
     $scope.getProjectSection = function (identifier) {
         var section = _.where($scope.sections, {sectionTypeIdentifier: identifier})[0];
             return section;
-
     }
-
-
-
 
     $scope.editChecklistStep = function (checklistStep) {
         checklistStep.$update({projectId: $scope.currentProject.id});

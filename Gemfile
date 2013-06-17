@@ -3,19 +3,17 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'devise'
 gem 'cancan'
+
 gem "paperclip", "~> 3.0"
 gem "haml"
-gem 'will_paginate', '~> 3.0'
-gem "select2-rails"
+
 gem 'jquery-rails'
-gem 'simple_form'
-gem "friendly_id"
-gem 'bootstrap-datepicker-rails'
 gem "select2-rails"
 gem 'pg'
 gem 'underscore-rails'
 gem 'aws-sdk'
-gem 'jquery-rails'
+
+gem 'pdfkit', :require => 'pdfkit'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
