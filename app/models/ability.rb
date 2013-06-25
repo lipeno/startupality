@@ -5,9 +5,6 @@ class Ability
         if user.role == "partner" or user.role == "admin" or user.role == "normal-user"
              can :manage, :all
         else
-            #can :view, Script do |script|
-            #    script.user_id==user.id
-            #end
             can :edit, Script do |script|
                 script.user_id==user.id
             end

@@ -1,34 +1,42 @@
 Startupality::Application.routes.draw do
-  resources :checklist_steps
 
   root :to => 'angular#angular'
   match 'angular/angular' => 'angular#angular'
 
-  resources :risks
-  resources :section_types
-
-  resources :projects do
-    collection do
-      get 'getActivated'
-    end
-    resources :sections do
-      resources :section_types
-    end
-
-    resources :risks
-    resources :revenueOrExpenses
-    resources :expenses
-    resources :cards
-
-    resources :project_checklist_steps
-  end
-
   devise_for :users
   resources :users do
   end
-  resources :userutil do
-    post :fetch_current_user,:on=>:collection
-    get :get_users_select2, :on=>:collection
+
+  namespace :api do
+
+    resources :instructional_videos
+
+    resources :section_types
+    resources :checklist_steps
+
+    resources :projects do
+      collection do
+        get 'getActivated'
+      end
+      resources :sections do
+        resources :section_types
+      end
+
+      resources :risks
+      resources :revenueOrExpenses
+      resources :expenses
+      resources :cards
+
+      resources :project_checklist_steps
+      resources :register_risks
+    end
+
+
+    resources :userutil do
+      post :fetch_current_user, :on => :collection
+      get :get_users_select2, :on => :collection
+    end
+
   end
 
   # The priority is based upon order of creation:

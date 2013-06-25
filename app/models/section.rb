@@ -13,6 +13,4 @@ class Section < ActiveRecord::Base
         :section_type => self.section_type
     }
   end
-
-
 end

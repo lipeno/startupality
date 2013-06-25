@@ -1,4 +1,4 @@
-class ChecklistStepsController < ApplicationController
+class Api::ChecklistStepsController < ApplicationController
   # GET /checklist_steps
   # GET /checklist_steps.json
   def index

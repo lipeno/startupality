@@ -1,12 +1,11 @@
-<div id="risksMatrix">
-    <h3>Risks register <button class="btn" ng-click="">Add a risk</button></h3>
-    <table id="bizcanvas" border="1">
+<div id="risksRegister" ng-controller="RisksRegisterController">
+    <table border="1">
         <tr>
             <th>
-                <h4>Risk</h4>
+                <h4>ID</h4>
             </th>
             <th>
-                <h4>Priority</h4>
+                <h4>Risk</h4>
             </th>
             <th>
                 <h4>Probability</h4>
@@ -18,29 +17,38 @@
                 <h4>Exposure</h4>
             </th>
             <th>
-                <h4>Risk owner</h4>
-            </th>
-            <th>
-                <h4>How to test</h4>
+                <h4>Response action</h4>
             </th>
         </tr>
 
-        <tr>
-            <td>
+        <tr ng-repeat="registerRisk in registerRisks">
+            <td>{{registerRisk.id}}
+            </td>
+            <td><input ng-model="registerRisk.name" todo-blur="doneEditing(registerRisk)" />
             </td>
             <td>
+                <select ng-model="registerRisk.probability" ng-options="probabilityValue for probabilityValue in [0.1, 0.3, 0.5, 0.7, 0.9]" todo-blur="doneEditing(registerRisk)"></select>
             </td>
             <td>
+                <select ng-model="registerRisk.impact" ng-options="probabilityValue for probabilityValue in [0.1, 0.3, 0.5, 0.7, 0.9]" todo-blur="doneEditing(registerRisk)"></select>
+            </td>
+            <td ng-class="appliedClass(registerRisk)">{{calculateExposure(registerRisk)}}
+            </td>
+            <td><input ng-model="registerRisk.responseAction" todo-blur="doneEditing(registerRisk)" />
             </td>
             <td>
+                <button class="btn btn-danger" ng-click="deleteRegisterRisk(registerRisks, registerRisk)">Remove Risk</button>
             </td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
-
         </tr>
+        <tr><td>
+            <button class="btn" ng-click="addRegisterRisk(registerRisks)">Add a risk</button>
+
+
+        </td></tr>
+
     </table>
+
 </div>
+        <p><span class="label label-success">Green</span>	These risks are not very big. Acknowledge green risks, and continue to monitor them, but dedicate fewer resources to mitigating them than the yellow risks. </p>
+        <p><span class="label label-warning">Yellow</span>  	Yellow risks are in  between green and red risks and depending on the case they can be very important or not.</p>
+        <p><span class="label label-important">Red</span>	These type of risks are important and the plan to deal with them should be done immediately.</p>

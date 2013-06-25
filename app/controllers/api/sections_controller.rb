@@ -1,4 +1,4 @@
-class SectionsController < ApplicationController
+class Api::SectionsController < ApplicationController
   before_filter :load_parent
 
   def load_parent

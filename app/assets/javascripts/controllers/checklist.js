@@ -22,7 +22,7 @@ app.controller('ChecklistController', function ($scope, SectionType, CurrentProj
 
     $scope.getProjectChecklistSteps = function (sctType) {
         var projectSteps = [];
-        if ($scope.projectChecklistSteps.length !== 0){
+        if ($scope.projectChecklistSteps && ($scope.projectChecklistSteps.length !== 0)){
             _.each($scope.projectChecklistSteps, function (projectChecklistStep) {
                 if (projectChecklistStep.checklist_step.section_type.id === sctType.id){
                     projectSteps.push(projectChecklistStep);
@@ -32,9 +32,15 @@ app.controller('ChecklistController', function ($scope, SectionType, CurrentProj
         }
     }
 
-    $scope.getProjectSection = function (identifier) {
-        var section = _.where($scope.sections, {sectionTypeIdentifier: identifier})[0];
-            return section;
+    $scope.getProjectSection = function (sctType) {
+        if ($scope.sections && ($scope.sections.length !== 0)){
+            _.each($scope.sections, function (section) {
+                if (section.section_type.id === sctType.id){
+                    return section;
+                }
+            });
+        }
+        return null;
     }
 
     $scope.editChecklistStep = function (checklistStep) {

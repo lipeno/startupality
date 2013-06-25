@@ -1,4 +1,4 @@
-class CardsController < ApplicationController
+class Api::CardsController < ApplicationController
   before_filter :load_parent
 
   def load_parent

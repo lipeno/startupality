@@ -658,4 +658,20 @@ header{
   text-align: center;
 }
 
+#risksRegister, #risksRegister th {
+  border: 1px solid lightgrey;
+  width: 100%;
+}
+
+#risksRegister td, #risksRegister th {
+  text-align: center;
+  vertical-align: top;
+  width: 200px;
+  padding: 6px;
+}
+
+#secondaryheader a{
+  cursor: pointer;
+}
+
 

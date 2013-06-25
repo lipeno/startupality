@@ -1,4 +1,4 @@
-class UserutilController < ApplicationController
+class Api::UserutilController < ApplicationController
 	respond_to :html, :xml, :js, :json
 	before_filter :authenticate_user!
 	skip_before_filter :verify_authenticity_token

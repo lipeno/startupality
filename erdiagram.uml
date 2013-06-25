@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>d4e95e85-592f-485b-90ff-06f1db61693d.schema:startupality.public</OriginalElement>
+  <nodes>
+    <node x="509.79683252777204" y="103.68565635023992">d4e95e85-592f-485b-90ff-06f1db61693d.table:startupality.public.sections</node>
+    <node x="476.7372739099417" y="497.6402492760923">d4e95e85-592f-485b-90ff-06f1db61693d.table:startupality.public.section_types</node>
+    <node x="472.33727810650885" y="1051.9349112426034">d4e95e85-592f-485b-90ff-06f1db61693d.table:startupality.public.checklist_steps</node>
+    <node x="472.0035460992906" y="839.985815602837">d4e95e85-592f-485b-90ff-06f1db61693d.table:startupality.public.cards</node>
+    <node x="692.1218892945573" y="491.3325569683999">d4e95e85-592f-485b-90ff-06f1db61693d.table:startupality.public.register_risks</node>
+    <node x="679.2011834319526" y="1045.6272189349118">d4e95e85-592f-485b-90ff-06f1db61693d.table:startupality.public.project_checklist_steps</node>
+    <node x="0.1183431952661067" y="835.7988165680471">d4e95e85-592f-485b-90ff-06f1db61693d.table:startupality.public.revenue_or_expenses</node>
+    <node x="514.4659697761618" y="284.3530805065865">d4e95e85-592f-485b-90ff-06f1db61693d.table:startupality.public.instructional_videos</node>
+    <node x="0.0" y="494.0">d4e95e85-592f-485b-90ff-06f1db61693d.table:startupality.public.risks</node>
+    <node x="513.5124218389358" y="4.69671408787616">d4e95e85-592f-485b-90ff-06f1db61693d.table:startupality.public.schema_migrations</node>
+    <node x="697.0035460992906" y="839.985815602837">d4e95e85-592f-485b-90ff-06f1db61693d.table:startupality.public.projects</node>
+    <node x="0.0" y="0.0">d4e95e85-592f-485b-90ff-06f1db61693d.table:startupality.public.users</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.49911504424778763" x="558.5035460992907" y="333.7996453900709" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+

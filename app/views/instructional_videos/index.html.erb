@@ -1,0 +1,23 @@
+<h1>Listing instructional_videos</h1>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @instructional_videos.each do |instructional_video| %>
+  <tr>
+    <td><%= instructional_video.url %></td>
+    <td><%= link_to 'Show', instructional_video %></td>
+    <td><%= link_to 'Edit', edit_instructional_video_path(instructional_video) %></td>
+    <td><%= link_to 'Destroy', instructional_video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Instructional video', new_instructional_video_path %>

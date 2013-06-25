@@ -1,5 +1,5 @@
 class ProjectChecklistStep < ActiveRecord::Base
-  attr_accessible :done, :project_id, :sectionTypeIdentifier, :stepNumber, :value, :checklist_step_id
+  attr_accessible :done, :project_id, :stepNumber, :value, :checklist_step_id
   belongs_to :project
   belongs_to :checklist_step
 
@@ -14,5 +14,4 @@ class ProjectChecklistStep < ActiveRecord::Base
         :checklist_step => self.checklist_step
     }
   end
-
 end

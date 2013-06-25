@@ -1,4 +1,4 @@
-class RevenueOrExpensesController < ApplicationController
+class Api::RevenueOrExpensesController < ApplicationController
   before_filter :load_parent
 
   def load_parent

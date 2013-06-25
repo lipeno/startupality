@@ -1,4 +1,4 @@
-class SectionTypesController < ApplicationController
+class Api::SectionTypesController < ApplicationController
   def index
     @sectionTypes = SectionType.all
 

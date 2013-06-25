@@ -1,4 +1,4 @@
-class RisksController < ApplicationController
+class Api::RisksController < ApplicationController
   before_filter :load_parent
 
   def load_parent

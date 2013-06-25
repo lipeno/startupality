@@ -1,4 +1,4 @@
-class ProjectChecklistStepsController < ApplicationController
+class Api::ProjectChecklistStepsController < ApplicationController
   before_filter :load_parent
 
   def load_parent

@@ -21,5 +21,4 @@ class User < ActiveRecord::Base
     self.role = "normal-user"
     self.save
   end
-	# attr_accessible :title, :body
 end

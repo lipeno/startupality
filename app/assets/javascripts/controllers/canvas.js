@@ -112,20 +112,30 @@ app.controller('CanvasDialogController', function ($scope, dialog, item, Current
     };
 });
 
-app.controller('TestExperimentsDialogController', function ($scope, ProjectChecklistStep, ChecklistStep){
+app.controller('ExperimentsDialogController', function ($scope, ProjectChecklistStep, ChecklistStep){
     // get steps specific for section
-    var checklistStep = ChecklistStep.query({}, function(){
-        $scope.checklistSteps = _.where(checklistStep, {sectionTypeIdentifier: $scope.itemType.stringIdentifier});
-    });
+
+//    var checklistStep = ChecklistStep.query({}, function(){
+//        $scope.checklistSteps = _.where(checklistStep, {sectionTypeIdentifier: $scope.itemType.stringIdentifier});
+//    });
 
     $scope.getChecklistStepQuestion = function (item){
         var question = _.where($scope.checklistSteps, {stepNumber: item.stepNumber})[0];
         return question.title;
     }
 
-    var projectChecklistStep = ProjectChecklistStep.query({projectId: $scope.currentProject[0].id}, function() {
-            $scope.projectChecklistSteps = _.where(projectChecklistStep, {sectionTypeIdentifier: $scope.itemType.stringIdentifier});
-            $scope.projectChecklistSteps = $scope.projectChecklistSteps.sort(function(a, b){return a.stepNumber-b.stepNumber});
+    var projectChecklistSteps = ProjectChecklistStep.query({projectId: $scope.currentProject[0].id}, function() {
+
+        if (projectChecklistSteps.length !== 0){
+            _.each(projectChecklistSteps, function (projectChecklistStep) {
+                if (projectChecklistStep.checklist_step.section_type.id === sctType.id){
+                    $scope.projectChecklistSteps.push(projectChecklistStep);
+                }
+            });
+        }
+        $scope.projectChecklistSteps = $scope.projectChecklistSteps.sort(function(a, b){return a.stepNumber-b.stepNumber});
+
+//            $scope.projectChecklistSteps = _.where(projectChecklistStep, {sectionTypeIdentifier: $scope.itemType.stringIdentifier});
     });
 
     $scope.editChecklistStep = function( checklistStep ) {

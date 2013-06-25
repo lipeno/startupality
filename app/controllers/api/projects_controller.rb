@@ -1,4 +1,4 @@
-class ProjectsController < ApplicationController
+class Api::ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
@@ -60,7 +60,7 @@ class ProjectsController < ApplicationController
 
     ChecklistStep.all.each do |item|
       #@project.project_checklist_steps.new(sectionTypeIdentifier:item.sectionTypeIdentifier, stepNumber:item.stepNumber,done:false,value:nil)
-      @project.project_checklist_steps.new(sectionTypeIdentifier:item.sectionTypeIdentifier, stepNumber:item.stepNumber,done:false,value:nil, :checklist_step_id => item.id)
+      @project.project_checklist_steps.new(stepNumber:item.stepNumber,done:false,value:nil, :checklist_step_id => item.id)
       #ProjectChecklistStep.create(sectionTypeIdentifier:item.sectionTypeIdentifier, stepNumber:item.stepNumber,done:false,value:nil, :project => @project, :checklist_step => item)
     end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610185737) do
+ActiveRecord::Schema.define(:version => 20130623203216) do
 
   create_table "cards", :force => true do |t|
     t.string   "title"
@@ -23,10 +23,9 @@ ActiveRecord::Schema.define(:version => 20130610185737) do
 
   create_table "checklist_steps", :force => true do |t|
     t.string   "title"
-    t.string   "sectionTypeIdentifier"
     t.integer  "stepNumber"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "section_type_id"
   end
 
@@ -51,14 +50,19 @@ ActiveRecord::Schema.define(:version => 20130610185737) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "instructional_videos", :force => true do |t|
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "project_checklist_steps", :force => true do |t|
     t.string   "value"
     t.boolean  "done"
-    t.string   "sectionTypeIdentifier"
     t.integer  "project_id"
     t.integer  "stepNumber"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.integer  "checklist_step_id"
   end
 
@@ -71,6 +75,16 @@ ActiveRecord::Schema.define(:version => 20130610185737) do
   end
 
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
+
+  create_table "register_risks", :force => true do |t|
+    t.integer  "project_id"
+    t.text     "name"
+    t.float    "probability"
+    t.float    "impact"
+    t.text     "responseAction"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "revenue_or_expenses", :force => true do |t|
     t.integer  "rowNumber"
@@ -122,10 +136,9 @@ ActiveRecord::Schema.define(:version => 20130610185737) do
   create_table "sections", :force => true do |t|
     t.text     "data"
     t.integer  "project_id"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.text     "tags"
-    t.string   "sectionTypeIdentifier"
     t.integer  "section_type_id"
   end
 
