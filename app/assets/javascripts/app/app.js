@@ -1,12 +1,13 @@
-var app = angular.module("Startupality", ["ngResource",'ui.bootstrap','ui', 'ngDragDrop']);
+var app = angular.module("Startupality", ["ngResource",'ui.bootstrap','ui', 'ngDragDrop', 'angularytics']);
 
 // Gets authentication token injected in the DOM
 app.config(["$httpProvider", function(provider) {
   provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 }]);
 
-app.config(function ($routeProvider) {
-        $routeProvider.
+app.config(function ($routeProvider, AngularyticsProvider) {
+    AngularyticsProvider.setEventHandlers(['Console', 'Google']);
+    $routeProvider.
             when('/dashboard', {templateUrl:"/assets/partials/projects.html", controller: 'ProjectsController'}).
             when('/vision', {templateUrl:"/assets/partials/vision.html", controller: 'VisionController'}).
             when('/experiments', {templateUrl:"/assets/partials/canvas.html", controller: 'ExperimentsController'}).
@@ -16,4 +17,6 @@ app.config(function ($routeProvider) {
             when('/businessplan', {templateUrl:"/assets/partials/businessplan.html", controller: 'BusinessplanController'}).
             when('/export', {templateUrl:"/assets/partials/export.html", controller: 'ExportController'}).
             otherwise({redirectTo:'/dashboard'});
-});
+}).run(function(Angularytics) {
+        Angularytics.init();
+    });
