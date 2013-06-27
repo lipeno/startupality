@@ -30,4 +30,7 @@ after_fork do |server, worker|
     Resque.redis = ENV['REDIS_URI']
     Rails.logger.info('Connected to Redis')
   end
+
+  # Need to do this for Segmentio analytics to work on Rails
+  defined?(Analytics) and Analytics.init(secret: '7hkiv43bw3tqasyearcu')
 end

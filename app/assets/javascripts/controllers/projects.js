@@ -1,4 +1,4 @@
-app.controller('ProjectsController', function ( $scope, $location, $dialog, Project, ProjectProperties) {
+app.controller('ProjectsController', function ( $scope, $location, $dialog, Project, ProjectProperties, segmentio) {
     // Define persisted object
     $scope.projects = Project.query();
 
@@ -26,6 +26,12 @@ app.controller('ProjectsController', function ( $scope, $location, $dialog, Proj
 
         $scope.projects.push(newProject);
         newProject.$save(newProject);
+
+        // Track project add event
+        segmentio.track('Added a Project', {
+            projectTitle        : newProject.title,
+            user_id: $scope.currentUser.id
+        });
 
         $scope.newProject = '';
     };

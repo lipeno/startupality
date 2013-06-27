@@ -15,10 +15,42 @@ class User < ActiveRecord::Base
 		def downcase_email
 			self.email = self.email.downcase if self.email.present?
     end
-  after_create :default_role
+
+  after_create :default_role, :register_hook
+  before_save :login_hook
 
   def default_role
     self.role = "normal-user"
     self.save
   end
+
+  def register_hook
+    @just_signed_up = true
+    Analytics.identify(
+        user_id: self.id,
+        traits: { email: self.email, name: self.full_name}
+    )
+    Analytics.track(
+        user_id: self.id,
+        event: 'Registered'
+    )
+  end
+
+  def login_hook
+    if (Time.new - self.last_sign_in_at) < 600 # seconds, so 10 minutes
+      @just_signed_in = true
+      Analytics.identify(
+          user_id: self.id,
+          traits: { email: self.email, name: self.full_name}
+      )
+      Analytics.track(
+          user_id: self.id,
+          event: 'Signed in'
+      )
+    else
+      # do other stuff, probably a redirect
+      # possibly  sign_out_and_redirect(resource_name)
+    end
+  end
+
 end

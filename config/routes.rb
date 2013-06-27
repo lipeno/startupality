@@ -4,8 +4,7 @@ Startupality::Application.routes.draw do
   match 'angular/angular' => 'angular#angular'
 
   devise_for :users
-  resources :users do
-  end
+  resources :users
 
   namespace :api do
 
