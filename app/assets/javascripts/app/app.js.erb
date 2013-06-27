@@ -21,6 +21,7 @@ app.config(function ($routeProvider) {
 app.run(function (segmentio, CurrentUser, $rootScope) {
     // Load analytics with segmentio
     <% if Rails.env.production? %>
+    segmentio.load('ph1stgzvwp');
     <% else %>
     segmentio.load('0czjc2pjn3');
      <% end %>
