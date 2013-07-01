@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	# :token_authenticatable, :confirmable,
 	# :lockable, :timeoutable and :omniauthable
   has_many :projects, :dependent => :destroy
-	devise :database_authenticatable, :registerable,
+	devise :database_authenticatable, :registerable, :confirmable,
 				 :recoverable, :rememberable, :trackable, :validatable
 
 	# Setup accessible (or protected) attributes for your model
@@ -16,8 +16,12 @@ class User < ActiveRecord::Base
 			self.email = self.email.downcase if self.email.present?
     end
 
-  after_create :default_role, :register_hook
-  before_save :login_hook
+  #after_create :default_role, :register_hook
+
+  def confirm!
+    super
+    default_role
+  end
 
   def default_role
     self.role = "normal-user"
@@ -38,15 +42,6 @@ class User < ActiveRecord::Base
 
   def login_hook
     if (Time.new - self.last_sign_in_at) < 600 # seconds, so 10 minutes
-      @just_signed_in = true
-      Analytics.identify(
-          user_id: self.id,
-          traits: { email: self.email, name: self.full_name}
-      )
-      Analytics.track(
-          user_id: self.id,
-          event: 'Signed in'
-      )
     else
       # do other stuff, probably a redirect
       # possibly  sign_out_and_redirect(resource_name)

@@ -1,0 +1,7 @@
+<h2>Please confirm your e-mail</h2>
+
+<p>You can confirm your account by checking the given e-mail address and clicking on the link inside it.</p>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+<% end -%>

@@ -86,15 +86,21 @@ Startupality::Application.configure do
   config.action_controller.asset_host = ENV['ASSET_HOST']
 
   # Disable delivery errors, bad email addresses will be ignored
-  #config.action_mailer.raise_delivery_errors = true
-  #config.action_mailer.delivery_method = :smtp
-  #config.action_mailer.default_url_options = { :host => 'startupalityapp.heroku.com' }
-  #ActionMailer::Base.smtp_settings = {
-  #    :address    => "smtp.sendgrid.net",
-  #    :port       => 25,
-  #    :user_name  => ENV['SENDGRID_USERNAME'],
-  #    :password   => ENV['SENDGRID_PASSWORD'],
-  #    :domain     => ENV['SENDGRID_DOMAIN'],
-  #    :authentication  => :plain
-  #}
+  # ActionMailer Config
+  config.action_mailer.default_url_options = { :host => 'www.startupality.com' }
+  config.action_mailer.delivery_method = :smtp
+  # change to true to allow email to be sent during development
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.smtp_settings = {
+      :address   => "smtp.mandrillapp.com",
+      :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
+      :enable_starttls_auto => true, # detects and uses STARTTLS
+      :user_name => "andrejdragisic@gmail.com",
+      :password  => "jo1Z5VdO1EH7oWrsHhAqZg", # SMTP password is any valid API key
+      :authentication => 'login', # Mandrill supports 'plain' or 'login'
+      :domain => 'www.startupality.com', # your domain to identify your server when connecting
+  }
+
 end
