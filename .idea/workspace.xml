@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e28ad45f-3507-499d-88a6-034e23718427" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
     </list>
     <ignored path="startupality.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -257,7 +256,7 @@
       <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.33552632">
+            <state line="23" column="40" selection-start="394" selection-end="394" vertical-scroll-proportion="0.5153509">
               <folding />
             </state>
           </provider>
@@ -1335,7 +1334,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.33552632">
+        <state line="23" column="40" selection-start="394" selection-end="394" vertical-scroll-proportion="0.5153509">
           <folding />
         </state>
       </provider>
