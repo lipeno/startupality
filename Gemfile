@@ -7,7 +7,6 @@ gem 'analytics-ruby'
 
 
 gem 'simple_form'
-gem "paperclip", "~> 3.0"
 gem "haml"
 
 gem 'jquery-rails'
@@ -32,7 +31,6 @@ group :assets do
   gem 'coffee-rails'
   gem 'compass-rails'
   gem 'compass_twitter_bootstrap'
-  gem 'yui-compressor'
   gem 'angularjs-rails'
   gem 'angular-ui-rails'
 
