@@ -69,7 +69,7 @@ class Api::ProjectsController < ApplicationController
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render json: @project, status: :created, location: @project }
+        format.json { render json: @project, status: :created}
       else
         format.html { render action: "new" }
         format.json { render json: @project.errors, status: :unprocessable_entity }
