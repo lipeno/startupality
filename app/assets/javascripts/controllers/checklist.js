@@ -20,6 +20,12 @@ app.controller('ChecklistController', function ($scope, SectionType, CurrentProj
         });
     });
 
+    $scope.tagsChanged = function(section) {
+        if ($scope.currentProject){
+            section.$update({projectId: $scope.currentProject});
+        }
+    }
+
     $scope.getProjectChecklistSteps = function (sctType) {
         var projectSteps = [];
         if ($scope.projectChecklistSteps && ($scope.projectChecklistSteps.length !== 0)){

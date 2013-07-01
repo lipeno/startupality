@@ -7,12 +7,6 @@ Startupality::Application.routes.draw do
   #Notice for confirmation of e-mail
   devise_scope :user do get "/registrations/notification" => "registrations#notification" end
 
-  #
-  #devise_for :devise_users , :controllers => {:registrations => "registrations"}
-  #devise_scope :devise_users do
-  #  match "/devise_users/index" => "registrations#index", :controllers => {:registrations => "registrations"}, :as => "index_devise_user_registration", :via => :get
-  #end
-
   resources :users
 
   namespace :api do

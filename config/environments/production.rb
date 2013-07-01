@@ -91,7 +91,7 @@ Startupality::Application.configure do
       :user_name => "andrejdragisic@gmail.com",
       :password  => "jo1Z5VdO1EH7oWrsHhAqZg", # SMTP password is any valid API key
       :authentication => 'login', # Mandrill supports 'plain' or 'login'
-      :domain => 'www.startupality.com', # your domain to identify your server when connecting
+      :domain => 'app.startupality.com', # your domain to identify your server when connecting
   }
 
 end

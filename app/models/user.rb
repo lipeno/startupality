@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 			self.email = self.email.downcase if self.email.present?
     end
 
-  #after_create :default_role, :register_hook
+  after_create :register_hook
 
   def confirm!
     super
