@@ -32,5 +32,5 @@ after_fork do |server, worker|
   end
 
   # Need to do this for Segmentio analytics to work on Rails
-  defined?(Analytics) and Analytics.init(secret: '7hkiv43bw3tqasyearcu')
+  defined?(Analytics) and Analytics.init(secret: 'k5xl9xj1786ynb9z3z88')
 end

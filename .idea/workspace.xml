@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e28ad45f-3507-499d-88a6-034e23718427" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/app/app.js.erb" afterPath="$PROJECT_DIR$/app/assets/javascripts/app/app.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/finance.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/finance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/goals.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/goals.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/header.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/export.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/export.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/unicorn.rb" afterPath="$PROJECT_DIR$/config/unicorn.rb" />
     </list>
     <ignored path="startupality.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1372524540699" ignored="false" />
     <file path="/home.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1366906652748" ignored="false" />
-    <file path="/a.dummy" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1372724370983" ignored="false" />
+    <file path="/a.dummy" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1372726602501" ignored="false" />
     <file path="/angular_controller.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1366927517211" ignored="false" />
     <file path="/angular.html.erb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370013481483" ignored="false" />
     <file path="/routes.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1372711643221" ignored="false" />
@@ -92,7 +88,7 @@
     <file path="/sessions.html.erb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368449514288" ignored="false" />
     <file path="/_links.erb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1368449330897" ignored="false" />
     <file path="/checklist.js" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1372717698301" ignored="false" />
-    <file path="/export.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1370797048723" ignored="false" />
+    <file path="/export.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1372726502669" ignored="false" />
     <file path="/20130528221609_drop_scripts_table.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1369779632651" ignored="false" />
     <file path="/20130528222515_drop_levels_table.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1369779934045" ignored="false" />
     <file path="/Gemfile" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1372343741169" ignored="false" />
@@ -140,6 +136,7 @@
     <file path="/registrations_controller.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1372711046469" ignored="false" />
     <file path="/notification.html.erb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1372711707642" ignored="false" />
     <file path="/experiments.html" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1372725151285" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1372726648412" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,15 +202,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/app/app.js.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="96" selection-start="980" selection-end="1009" vertical-scroll-proportion="-9.153846">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="experiments.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/experiments.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -223,37 +211,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="init.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/init.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="16" selection-start="761" selection-end="761" vertical-scroll-proportion="0.3534884">
+            <state line="19" column="75" selection-start="768" selection-end="768" vertical-scroll-proportion="-12.423077">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="experiments.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/experiments.js">
+      <file leaf-file-name="projects.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/projects.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="27" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
+            <state line="33" column="21" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/header.js">
+      <file leaf-file-name="export.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/export.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="18" selection-start="732" selection-end="760" vertical-scroll-proportion="0.0">
+            <state line="13" column="66" selection-start="450" selection-end="450" vertical-scroll-proportion="-6.5384617">
               <folding />
             </state>
           </provider>
@@ -286,6 +265,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="analytics-ruby.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/initializers/analytics-ruby.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="37" selection-end="164" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unicorn.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/unicorn.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="58" selection-start="633" selection-end="633" vertical-scroll-proportion="0.44078946">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="goals.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/goals.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -313,8 +310,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/registrations/notification.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
@@ -329,6 +324,8 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/partials/finance.html" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/partials/header.html" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/partials/experiments.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/partials/export.html" />
+        <option value="$PROJECT_DIR$/config/unicorn.rb" />
       </list>
     </option>
   </component>
@@ -781,46 +778,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="startupality" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="startupality" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="startupality" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="startupality" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1240,7 +1197,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1480" height="916" extended-state="7" />
+    <frame x="-8" y="-8" width="1480" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938075" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1379,34 +1336,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/checklist_steps/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="261" selection-end="261" vertical-scroll-proportion="-8.692307">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/checklist_steps/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="8" selection-start="113" selection-end="113" vertical-scroll-proportion="-4.576923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/checklist_steps/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="17" selection-start="705" selection-end="705" vertical-scroll-proportion="-17.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/projects_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="69" selection-start="2675" selection-end="2675" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="12" selection-start="624" selection-end="624" vertical-scroll-proportion="-7.16">
@@ -1486,7 +1415,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="16" selection-start="761" selection-end="761" vertical-scroll-proportion="0.3534884">
+        <state line="19" column="75" selection-start="768" selection-end="768" vertical-scroll-proportion="-12.423077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/projects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="21" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/export.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="66" selection-start="450" selection-end="450" vertical-scroll-proportion="-6.5384617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/analytics-ruby.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="37" selection-end="164" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/unicorn.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="58" selection-start="633" selection-end="633" vertical-scroll-proportion="0.44078946">
           <folding />
         </state>
       </provider>
