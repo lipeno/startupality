@@ -78,7 +78,7 @@ Startupality::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'www.startupality.com' }
+  config.action_mailer.default_url_options = { :host => 'app.startupality.com' }
   config.action_mailer.delivery_method = :smtp
   # change to true to allow email to be sent during development
   config.action_mailer.perform_deliveries = true
