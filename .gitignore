@@ -7,6 +7,11 @@
 /.idea
 
 
+*.psd
+*.pdf
+/test
+/spec
+
 # Ignore bundler config
 /.bundle
 

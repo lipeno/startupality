@@ -5,7 +5,7 @@
             <div class="container">
                 <a class="brand" href="#"><img src="/assets/220logoWide.png" style="width:180px; height:64px"></a>
                 <div class="navbar-content">
-                    <ul class="nav nav-tabs pull-left">
+                    <ul class="nav nav-tabs pull-left offset2">
                         <li ng-class="{active: routeIs('/dashboard')}">
                             <a href="#/dashboard"><i class="icon-home icon-large"></i> Dashboard</a>
                         </li>
@@ -13,8 +13,11 @@
                             <a ng-href="{{buildUrl('#/vision')}}" ng-class=isDisabled()><i class="icon-credit-card icon-large"></i> Vision</a>
                         </li>
                         <li ng-class="{active: routeIs('/experiments')}">
-                            <a  ng-click="toastr.info('Thank you for your interest. We are working on this!', 'Coming soon!')" ng-class=isDisabled()><i class="icon-beaker icon-large"></i> Experiments</a>
+                            <a ng-href="{{buildUrl('#/experiments')}}" ng-class=isDisabled()><i class="icon-beaker icon-large"></i> Experiments</a>
                         </li>
+                        <!--<li ng-class="{active: routeIs('/experiments')}">-->
+                            <!--<a  ng-click="toastr.info('Thank you for your interest. We are working on this!', 'Coming soon!')" ng-class=isDisabled()><i class="icon-beaker icon-large"></i> Experiments</a>-->
+                        <!--</li>-->
 
                         <!--<li ng-class="{active: routeIs('/businessplan')}" >-->
                         <!--<a ng-href="{{buildUrl('#/businessplan')}}" ng-class=isDisabled()><i class="icon-align-justify"></i> Business plan</a>-->
@@ -25,9 +28,9 @@
                         <li ng-class="{active: routeIs('/risks')}" >
                             <a ng-href="{{buildUrl('#/risks')}}" ng-class=isDisabled()><i class="icon-road icon-large"></i> Risks</a>
                         </li>
-                        <li ng-class="{active: routeIs('/goals')}" >
-                            <a ng-href="{{buildUrl('#/goals')}}" ng-class=isDisabled()><i class="icon-tasks icon-large"></i> Goals</a>
-                        </li>
+                        <!--<li ng-class="{active: routeIs('/goals')}" >-->
+                            <!--<a ng-href="{{buildUrl('#/goals')}}" ng-class=isDisabled()><i class="icon-tasks icon-large"></i> Goals</a>-->
+                        <!--</li>-->
                     </ul>
 
 
