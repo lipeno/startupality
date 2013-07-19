@@ -1,5 +1,5 @@
 app.controller('VisionController', function ($scope, $dialog, $modal, CurrentProject, Section, SectionType){
-    $scope.currentView = 'canvas';
+    $scope.currentView = 'newcanvas';
     $scope.isCurrentView = function(view){
         if (view === $scope.currentView){
             return true;
@@ -7,13 +7,13 @@ app.controller('VisionController', function ($scope, $dialog, $modal, CurrentPro
         return false;
     }
     $scope.changeView = function(view){
-        if (view === 'canvas' || 'checklist'){
+        if (view === 'newcanvas' || 'checklist'){
             $scope.currentView =  view;
         }
     }
     $scope.getCurrentView = function(){
         if ($scope.currentView === 'canvas'){
-            return  '/assets/partials/canvas.html'
+            return  '/assets/partials/newcanvas.html'
         }
         if ($scope.currentView === 'checklist'){
             return  '/assets/partials/checklist.html'

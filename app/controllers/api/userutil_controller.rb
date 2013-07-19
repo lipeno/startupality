@@ -6,7 +6,35 @@ class Api::UserutilController < ApplicationController
 	def fetch_current_user
 		#current_user.slice(:id,:role)
 		render :json => current_user
-	end
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	def get_users_select2
 

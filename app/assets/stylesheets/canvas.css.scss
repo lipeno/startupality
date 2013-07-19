@@ -1,0 +1,40 @@
+#bizcanvas {
+    width: 100%;
+    border: 2px solid lightgrey;
+}
+
+#bizcanvas td {
+    vertical-align: top;
+    /*height: 200px;*/
+    /*width: 200px;*/
+    padding: 6px;
+    border: 1px solid lightgrey;
+}
+
+
+#bizcanvas H4 {
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.canvasTagsLong .select2-choices{
+    width: 240px;
+    min-height: 460px;
+    max-height: 460px;
+    overflow-y: auto;
+}
+
+.canvasTagsShort .select2-choices{
+    width: 240px;
+    min-height: 200px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.canvasTagsWide .select2-choices{
+    width: 620px;
+    min-height: 140px;
+    max-height: 140px;
+    overflow-y: auto;
+}

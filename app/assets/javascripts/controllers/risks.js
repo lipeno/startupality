@@ -24,7 +24,7 @@ app.controller('RisksController', function ($scope, Risk, Section, CurrentProjec
         return false;
     }
     $scope.changeView = function(view){
-        if (view === 'swotpestle' || 'risksregister'){
+        if (view === 'swotpestle' || 'risksregister' || 'revenuesandexpenses' || 'financialIndicators'){
             $scope.currentView =  view;
         }
     }
@@ -34,6 +34,12 @@ app.controller('RisksController', function ($scope, Risk, Section, CurrentProjec
         }
         if ($scope.currentView === 'risksregister'){
             return  '/assets/partials/risksregister.html'
+        }
+        if ($scope.currentView === 'revenuesandexpenses'){
+            return  '/assets/partials/revenuesandexpenses.html'
+        }
+        if ($scope.currentView === 'financialIndicators'){
+            return  '/assets/partials/financialIndicators.html'
         }
         else return ''
     }

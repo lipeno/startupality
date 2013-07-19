@@ -1,14 +1,22 @@
 <secondaryheader id="secondaryheader">
     <div class="row">
-        <div class="span5 center">
+        <div class="span9 center">
             <ul class="breadcrumb nav nav-tabs">
                 <li>
                     <a ng-class="{active: isCurrentView('swotpestle')}"
-                       ng-click="changeView('swotpestle')"><i class="icon-cogs"></i> SWOT/PESTLE Analysis</a>
+                       ng-click="changeView('swotpestle')"><i class="icon-cogs"></i> SWOT/PEST Analysis</a>
                 </li>
                 <li>
                     <a ng-class="{active: isCurrentView('risksregister')}"
-                       ng-click="changeView('risksregister')"><i class="icon-credit-card"></i> Risks Register</a>
+                       ng-click="changeView('risksregister')"><i class="icon-credit-card"></i> Risks</a>
+                </li>
+                <li>
+                    <a ng-class="{active: isCurrentView('revenuesandexpenses')}"
+                       ng-click="changeView('revenuesandexpenses')"><i class="icon-signal"></i> Finance</a>
+                </li>
+                <li>
+                    <a ng-class="{active: isCurrentView('financialIndicators')}"
+                       ng-click="changeView('financialIndicators')"><i class="icon-bar-chart"></i> Financial indicators</a>
                 </li>
             </ul>
         </div>

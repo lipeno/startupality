@@ -98,7 +98,7 @@ app.controller('CanvasDialogController', function ($scope, dialog, item, Current
     // Ratin the section
     $scope.rating = 7;
 
-    $scope.$watch('item.tags', function() {
+    $scope.$watch('item.tags.length', function() {
         $scope.currentProject = CurrentProject.query(function(){
             $scope.item.$update({projectId: $scope.currentProject[0].id});
         });
