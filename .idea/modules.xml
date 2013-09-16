@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../devex/front-end/front-end.iml" filepath="$PROJECT_DIR$/../devex/front-end/front-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../devex/old/old.iml" filepath="$PROJECT_DIR$/../devex/old/old.iml" />
       <module fileurl="file://$PROJECT_DIR$/startupality.iml" filepath="$PROJECT_DIR$/startupality.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../devex/ui-toolbox/ui-toolbox.iml" filepath="$PROJECT_DIR$/../devex/ui-toolbox/ui-toolbox.iml" />
     </modules>
   </component>
 </project>

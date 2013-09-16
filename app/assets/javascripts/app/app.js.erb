@@ -11,10 +11,10 @@ app.config(function ($routeProvider) {
         when('/vision', {templateUrl:"/assets/partials/vision.html", controller: 'VisionController'}).
         when('/experiments', {templateUrl:"/assets/partials/experiments.html", controller: 'ExperimentsController'}).
         when('/finance', {templateUrl:"/assets/partials/finance.html", controller: 'FinanceController'}).
-        when('/risks', {templateUrl:"/assets/partials/risks.html", controller: 'RisksController'}).
+        when('/strategy', {templateUrl:"/assets/partials/strategy.html", controller: 'StrategyController'}).
         when('/goals', {templateUrl:"/assets/partials/goals.html", controller: 'GoalsController'}).
         when('/businessplan', {templateUrl:"/assets/partials/businessplan.html", controller: 'BusinessplanController'}).
-        when('/newcanvas', {templateUrl:"/assets/partials/newcanvas.html", controller: 'NewcanvasController'}).
+        when('/canvas', {templateUrl:"/assets/partials/canvas.html", controller: 'NewcanvasController'}).
         when('/export', {templateUrl:"/assets/partials/export.html", controller: 'ExportController'}).
         otherwise({redirectTo:'/dashboard'});
 });

@@ -3,6 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../angularRailsStarter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../devex/front-end" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../devex/ui-toolbox" vcs="Git" />
   </component>
 </project>
 
