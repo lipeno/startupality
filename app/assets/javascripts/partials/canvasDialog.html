@@ -2,8 +2,8 @@
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close(result)">&times;</button>
     <div class="row">
     <div class="span12">
-    <h1><i class="icon-edit"></i> {{itemType.title}} </h1>
-        <p>{{itemType.description}}  </p>
+    <h1><i class="icon-edit"></i> {{itemType.section_type.title}} </h1>
+        <p>{{itemType.section_type.description}}  </p>
         <button class="btn" ng-click="isCollapsed = !isCollapsed"><i class="icon-question-sign"></i> More About {{itemType.title}}</button>
         <button class="btn" ng-click="isCollapsedExperiments = !isCollapsedExperiments"><i class="icon-ok-sign"></i> Checklist</button>
     </div>
@@ -28,7 +28,7 @@
         </div>
             </div>
         <h4><i><i class="icon-pencil" tooltip-placement="right" tooltip="Write here in more details"></i> Description</i></h4>
-        <textarea rows="10" ng-model="item.data" placeholder="{{itemType.questions}}" class="span8" ui-keydown="{esc: 'keyCallback($event)'}" unfocus="disableEdit()"></textarea>
+        <textarea rows="10" ng-model="itemType.data" placeholder="{{itemType.section_type.questions}}" class="span8" ui-keydown="{esc: 'keyCallback($event)'}" unfocus="disableEdit()"></textarea>
     </div>
 
     <div class="span4 pull-right">

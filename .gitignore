@@ -21,11 +21,11 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/config/database.ymls
+/config/database.yml
 /public/system/script_files/script_files/*
 
 /config/databaseCpy.yml
 /.DS_Store
 /app/assets/.DS_Store
 /public/system/scripts_coverages/
-
+/.idea

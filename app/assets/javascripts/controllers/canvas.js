@@ -255,7 +255,7 @@ app.controller('ChecklistDialogController', function ($scope, dialog, currentSec
 
 
     $scope.changeSection = function (number) {
-        $scope.currentSection = $scope.sections[number].section_type;
+        $scope.currentSection = $scope.sections[number];
     };
 
 

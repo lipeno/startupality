@@ -2,29 +2,33 @@
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close(result)">&times;</button>
     <div class="row">
         <div class="span12">
-            <h1><i class="icon-question-sign icon-2x"></i> {{currentSection.title}} </h1>
+            <h1><i class="icon-question-sign icon-2x"></i> {{currentSection.section_type.title}} </h1>
+        </div>
+        <div class="span7">
+            <h4><i class="icon-tags" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> {{sectionType.title}}</h4>
+            <tag-input class="tagsCanvas" ng-model="currentSection.tags"/>
+        </div>
+
+        <div class="span11 pull-right">
+            <ul id="todo-list" class="checklist">
+                <li ng-repeat="item in getProjectChecklistSteps(currentSection.section_type)">
+                    <input class="toggle" type="checkbox" ng-model="item.done" ng-change="editChecklistStep(item)">
+                    <label>{{item.checklist_step.title}}</label>
+                </li>
+            </ul>
         </div>
 
             <div class="span11">
                 <h3 class="offset1">Progress: </h3> <progress value="progressValue" class="progress-striped active"></progress>
             </div>
     </div>
+
 </div>
 <div class="modal-body">
     <div>
             <div class="row">
-                <div class="span11">
-                    <ul id="todo-list" class="checklist">
-                        <li ng-repeat="item in getProjectChecklistSteps(currentSection)">
-                            <input class="toggle" type="checkbox" ng-model="item.done" ng-change="editChecklistStep(item)">
-                            <label>{{item.checklist_step.title}}</label>
-                        </li>
-                    </ul>
-                </div>
-                <div class="span4">
-                    <h4><i class="icon-tags" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> {{sectionType.title}}</h4>
-                    <tag-input class="tagsCanvas" ng-model="getProjectSection(currentSection).tags"/>
-                </div>
+
+
             </div>
     </div>
 
