@@ -25,7 +25,9 @@
 /public/system/script_files/script_files/*
 
 /config/databaseCpy.yml
-/.DS_Store
+.DS_Store
 /app/assets/.DS_Store
 /public/system/scripts_coverages/
 /.idea
+
+/vendor/bundle
