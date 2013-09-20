@@ -29,27 +29,6 @@ ActiveRecord::Schema.define(:version => 20130920153544) do
     t.integer  "section_type_id"
   end
 
-  create_table "expenses", :force => true do |t|
-    t.integer  "april"
-    t.integer  "august"
-    t.integer  "december"
-    t.integer  "january"
-    t.integer  "february"
-    t.integer  "july"
-    t.integer  "june"
-    t.integer  "march"
-    t.integer  "may"
-    t.integer  "november"
-    t.integer  "october"
-    t.integer  "project_id"
-    t.string   "rowName"
-    t.integer  "rowNumber"
-    t.integer  "september"
-    t.integer  "year"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "instructional_videos", :force => true do |t|
     t.string   "url"
     t.datetime "created_at", :null => false

@@ -156,6 +156,10 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, Current
             }
         });
     };
+	
+	$scope.printCanvas = function() {
+		window.print();
+	}
 
 
 });

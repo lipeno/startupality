@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e28ad45f-3507-499d-88a6-034e23718427" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/controllers/canvas.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/controllers/canvas.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/checklistDialog.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/checklistDialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/partials/header.html" afterPath="$PROJECT_DIR$/app/assets/javascripts/partials/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/section_type.rb" afterPath="$PROJECT_DIR$/app/models/section_type.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/style.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/style.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="startupality.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -190,6 +181,7 @@
     <file path="/update_4.html.slim" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1379678190439" ignored="false" />
     <file path="/config.yml" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1379685589022" ignored="false" />
     <file path="/20130920151930_add_order_to_section_type.rb" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1379692050398" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="e28ad45f-3507-499d-88a6-034e23718427" time="1379698330389" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,15 +256,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20130501100742_create_section_types.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20130501100742_create_section_types.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="18" selection-start="0" selection-end="211" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="section_type.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/section_type.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -294,7 +277,18 @@
       <file leaf-file-name="canvas.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="32" column="21" selection-start="2575" selection-end="2575" vertical-scroll-proportion="-9.884615">
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css.scss" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/style.css.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="659" column="35" selection-start="11803" selection-end="11803" vertical-scroll-proportion="0.43724138">
               <folding />
             </state>
           </provider>
@@ -303,7 +297,7 @@
       <file leaf-file-name="canvas.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/canvas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="276" column="70" selection-start="10839" selection-end="10839" vertical-scroll-proportion="0.0">
+            <state line="280" column="70" selection-start="10897" selection-end="10897" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -320,10 +314,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checklistDialog.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="checklistDialog.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/checklistDialog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="47" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.6595136">
+            <state line="47" column="47" selection-start="1771" selection-end="1771" vertical-scroll-proportion="-17.73077">
               <folding />
             </state>
           </provider>
@@ -332,7 +326,7 @@
       <file leaf-file-name="schema.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/schema.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="104" selection-start="4231" selection-end="4231" vertical-scroll-proportion="-13.56">
+            <state line="108" column="104" selection-start="3650" selection-end="3650" vertical-scroll-proportion="-13.56">
               <folding />
             </state>
           </provider>
@@ -365,8 +359,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="C:/Dropbox/Projects/rails-dev-box/devex/ui-toolbox/scss/main.scss" />
-        <option value="C:/Dropbox/Projects/rails-dev-box/devex/front-end/app/views/layouts/application.html.slim" />
         <option value="C:/Dropbox/Projects/rails-dev-box/devex/ui-toolbox/scss/progress.scss" />
         <option value="C:/Dropbox/Projects/rails-dev-box/devex/front-end/config/routes.rb" />
         <option value="C:/Dropbox/Projects/rails-dev-box/devex/ui-toolbox/Guardfile" />
@@ -381,6 +373,8 @@
         <option value="$PROJECT_DIR$/app/models/section_type.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/controllers/canvas.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/partials/checklistDialog.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/style.css.scss" />
       </list>
     </option>
   </component>
@@ -578,6 +572,10 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -676,6 +674,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="startupality" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="startupality" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1007,7 +1023,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1460" height="916" extended-state="7" />
+    <frame x="-8" y="-8" width="1460" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33427164" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1135,13 +1151,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Dropbox/Projects/rails-dev-box/devex/ui-toolbox/build/dist/toolbox-ie-fix.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="874" selection-start="2026" selection-end="2026" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Dropbox/Projects/rails-dev-box/devex/ui-toolbox/scss/progress.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="14" selection-start="176" selection-end="195" vertical-scroll-proportion="0.0">
@@ -1207,7 +1216,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="104" selection-start="4231" selection-end="4231" vertical-scroll-proportion="-13.56">
+        <state line="108" column="104" selection-start="3650" selection-end="3650" vertical-scroll-proportion="-13.56">
           <folding />
         </state>
       </provider>
@@ -1226,16 +1235,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/controllers/canvas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="276" column="70" selection-start="10839" selection-end="10839" vertical-scroll-proportion="0.0">
+        <state line="280" column="70" selection-start="10897" selection-end="10897" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -1244,7 +1246,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/checklistDialog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="47" selection-start="1771" selection-end="1771" vertical-scroll-proportion="0.6595136">
+        <state line="47" column="47" selection-start="1771" selection-end="1771" vertical-scroll-proportion="-17.73077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/partials/canvas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="21" selection-start="2575" selection-end="2575" vertical-scroll-proportion="-9.884615">
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/style.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="659" column="35" selection-start="11803" selection-end="11803" vertical-scroll-proportion="0.43724138">
           <folding />
         </state>
       </provider>
