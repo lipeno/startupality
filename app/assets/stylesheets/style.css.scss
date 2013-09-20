@@ -662,4 +662,12 @@ a:hover img.grayscale {
   display: block;
 }
 
-
+@media print {
+	#secondaryheader,
+	#mainFooter,
+	#printButton,
+	#wizardButton, 
+	.navbar-content {
+		display: none;
+	}
+}
