@@ -170,7 +170,11 @@ app.controller('ChecklistDialogController', function ($scope, dialog, currentSec
         dialog.close(result);
     };
 
-    $scope.sectionTypes = SectionType.query(function () {});
+    $scope.sectionTypes = SectionType.query(function () {
+        $scope.sectionTypes = $scope.sectionTypes.sort(function (a, b) {
+            return a.order - b.order
+        });
+    });
 
     var currentProject = CurrentProject.query(function () {
         $scope.currentProject = currentProject[0];
@@ -183,11 +187,11 @@ app.controller('ChecklistDialogController', function ($scope, dialog, currentSec
         var sections = Section.query({projectId: $scope.currentProject.id}, function(){
             $scope.sections = sections;
 //            TODO:update only one
-            $scope.$watch('sections', function() {
-                for (var i=0; i < $scope.sections.length; i++){
-                    $scope.sections[i].$update({projectId: currentProject[0].id});
-                }
-            }, true);
+//            $scope.$watch('sections', function() {
+//                for (var i=0; i < $scope.sections.length; i++){
+//                    $scope.sections[i].$update({projectId: currentProject[0].id});
+//                }
+//            }, true);
         });
     });
 
@@ -254,10 +258,26 @@ app.controller('ChecklistDialogController', function ($scope, dialog, currentSec
     };
 
 
-    $scope.changeSection = function (number) {
-        $scope.currentSection = $scope.sections[number];
+    $scope.changeSection = function (orderOfSection) {
+        $scope.currentSection = _.find($scope.sections, function(section){ return section.section_type.order == orderOfSection; })
     };
 
+    $scope.changeToPreviousSection = function () {
+        if ($scope.currentSection.section_type.order !== 1){
+            $scope.currentSection = _.find($scope.sections, function(section){
+                return section.section_type.order == $scope.currentSection.section_type.order - 1;
+            })
+        }
+    };
+
+    $scope.changeToNextSection = function () {
+        var sectionWithMaxOrder = _.max($scope.sections, function(section){ return section.section_type.order; });
+        if ($scope.currentSection.section_type.order !== sectionWithMaxOrder.section_type.order){
+            $scope.currentSection = _.find($scope.sections, function(section){
+                return section.section_type.order == $scope.currentSection.section_type.order + 1;
+            })
+        }
+    };
 
     $scope.close = function (result) {
         var currentProject = CurrentProject.query(function () {

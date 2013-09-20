@@ -4,38 +4,57 @@
         <div class="span12">
             <h1><i class="icon-question-sign icon-2x"></i> {{currentSection.section_type.title}} </h1>
         </div>
-        <div class="span7">
-            <h4><i class="icon-tags" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> {{sectionType.title}}</h4>
-            <tag-input class="tagsCanvas" ng-model="currentSection.tags"/>
-        </div>
-
-        <div class="span11 pull-right">
-            <ul id="todo-list" class="checklist">
-                <li ng-repeat="item in getProjectChecklistSteps(currentSection.section_type)">
-                    <input class="toggle" type="checkbox" ng-model="item.done" ng-change="editChecklistStep(item)">
-                    <label>{{item.checklist_step.title}}</label>
-                </li>
-            </ul>
-        </div>
-
-            <div class="span11">
-                <h3 class="offset1">Progress: </h3> <progress value="progressValue" class="progress-striped active"></progress>
-            </div>
     </div>
 
 </div>
 <div class="modal-body">
     <div>
-            <div class="row">
-
-
+        <div class="row">
+            <div class="span5 pull-left">
+                <h4><i class="icon-tags" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> Tags</h4>
+                <tag-input class="tagsCanvas" ng-model="currentSection.tags"/>
             </div>
+
+            <div class="span7 pull-left">
+                <h4><i class="icon-question-sign" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> Questions</h4>
+                <ul id="todo-list" class="checklist">
+                    <li ng-repeat="item in getProjectChecklistSteps(currentSection.section_type)">
+                        <input class="toggle" type="checkbox" ng-model="item.done" ng-change="editChecklistStep(item)">
+                        <label>{{item.checklist_step.title}}</label>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
     </div>
 
 </div>
 <div class="modal-footer">
-    <div class="span11">
-        <button ng-repeat="sectionType in sectionTypes" ng-click="changeSection($index)" class="btn btn-primary" tooltip-placement="top" tooltip="{{sectionType.title}}">{{$index + 1}}</button>
+    <div class="row-fluid">
+        <div class="span3">
+            <div class="row-fluid">
+                <div class="span6">
+                    <progress value="progressValue" class="progress-striped active"></progress>
+                </div>
+                <div class="span3">
+                    {{ progressValue.value  | number:0 }}% done
+                </div>
+        </div>
+
+        </div>
+
+        <div class="span6 offset1">
+            <button ng-click="changeToPreviousSection()" class="btn btn-primary">Previous</button>
+            <button ng-repeat="sectionType in sectionTypes" ng-click="changeSection(sectionType.order)" class="btn btn-primary" tooltip-placement="top" tooltip="{{sectionType.title}}">{{$index + 1}}</button>
+            <button ng-click="changeToNextSection()" class="btn btn-primary">Next</button>
+        </div>
+
+        <div class="span2">
+            <button ng-click="close(result)" class="btn btn-primary">Close</button>
+        </div>
     </div>
-    <button ng-click="close(result)" class="btn btn-primary">Save & Close</button>
+
+
 </div>

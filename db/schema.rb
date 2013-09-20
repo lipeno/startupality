@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701153238) do
+ActiveRecord::Schema.define(:version => 20130920153544) do
 
   create_table "cards", :force => true do |t|
     t.string   "title"
@@ -128,9 +128,8 @@ ActiveRecord::Schema.define(:version => 20130701153238) do
     t.text     "title"
     t.text     "description"
     t.text     "questions"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.string   "stringIdentifier"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "sections", :force => true do |t|

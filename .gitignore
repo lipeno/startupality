@@ -5,7 +5,8 @@
 #   git config --global core.excludesfile ~/.gitignore_global
 
 /.idea
-
+/.idea/*
+.idea
 
 *.psd
 *.pdf
@@ -28,6 +29,6 @@
 .DS_Store
 /app/assets/.DS_Store
 /public/system/scripts_coverages/
-/.idea
+
 
 /vendor/bundle
