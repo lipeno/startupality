@@ -36,7 +36,7 @@
         <div class="span3">
             <div class="row-fluid">
                 <div class="span6">
-                    <progress value="progressValue" class="progress-striped active"></progress>
+                    <progress value="progressValue" class="progress-striped progress-success active"></progress>
                 </div>
                 <div class="span3">
                     {{ progressValue.value  | number:0 }}% done
@@ -46,13 +46,9 @@
         </div>
 
         <div class="span6 offset1">
-            <button ng-click="changeToPreviousSection()" class="btn btn-primary">Previous</button>
+            <button ng-click="changeToPreviousSection()" class="btn btn-primary"><i class="icon-hand-left"></i> Previous</button>
             <button ng-repeat="sectionType in sectionTypes" ng-click="changeSection(sectionType.order)" class="btn btn-primary" tooltip-placement="top" tooltip="{{sectionType.title}}">{{$index + 1}}</button>
-            <button ng-click="changeToNextSection()" class="btn btn-primary">Next</button>
-        </div>
-
-        <div class="span2">
-            <button ng-click="close(result)" class="btn btn-primary">Close</button>
+            <button ng-click="changeToNextSection()" class="btn btn-primary">Next <i class="icon-hand-right"></i></button>
         </div>
     </div>
 
