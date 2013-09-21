@@ -157,8 +157,16 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, Current
         });
     };
 	
-	$scope.printCanvas = function() {
-		window.print();
+	$scope.exportImage = function(section) {
+		html2canvas(document.getElementById(section), {
+			onrendered: function(canvas) {
+				var img = canvas.toDataURL("image/png");
+				window.location.href=img;
+				
+				//window.open(img);
+				//window.open("data:text/html," + encodeURIComponent('<img src="'+img+'"/>'), "_blank");
+			}
+		});
 	}
 
 
