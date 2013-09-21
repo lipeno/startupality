@@ -1,11 +1,32 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close(result)">&times;</button>
     <div class="row">
-        <div class="span12">
-            <h1><i class="icon-question-sign icon-2x"></i> {{currentSection.section_type.title}} </h1>
+        <div class="span1">
+            <h1><i class="icon-edit icon-2x"></i> </h1>
         </div>
-    </div>
+        <div class="span11">
+              <div class="row">
+                  <div class="span5">
+                      <h1>{{currentSection.section_type.title}} </h1>
+                  </div>
+                  <div class="span6">
+                      <div class="wizard-navigation">
+                          <button ng-click="changeToPreviousSection()" class="btn btn-primary"><i class="icon-hand-left"></i> Previous</button>
+                          <button ng-repeat="sectionType in sectionTypes" ng-click="changeSection(sectionType.order)" ng-class="{true:'active', false:''}[$index==currentSection.section_type.order - 1]" class="btn btn-primary" tooltip-placement="bottom" tooltip="{{sectionType.title}}">{{$index + 1}}</button>
+                          <button ng-click="changeToNextSection()" class="btn btn-primary">Next <i class="icon-hand-right"></i></button>
+                      </div>
 
+                  </div>
+              </div>
+            <div class="row">
+                <div class="span12">
+                    <h4><em> {{ currentSection.section_type.description }} </em></h4>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 </div>
 <div class="modal-body">
     <div>
@@ -16,7 +37,7 @@
             </div>
 
             <div class="span7 pull-left">
-                <h4><i class="icon-question-sign" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> Questions</h4>
+                <h4><i class="icon-question-sign" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> Questions & Tasks</h4>
                 <ul id="todo-list" class="checklist">
                     <li ng-repeat="item in getProjectChecklistSteps(currentSection.section_type)">
                         <input class="toggle" type="checkbox" ng-model="item.done" ng-change="editChecklistStep(item)">
@@ -43,12 +64,6 @@
                 </div>
         </div>
 
-        </div>
-
-        <div class="span6 offset1">
-            <button ng-click="changeToPreviousSection()" class="btn btn-primary"><i class="icon-hand-left"></i> Previous</button>
-            <button ng-repeat="sectionType in sectionTypes" ng-click="changeSection(sectionType.order)" class="btn btn-primary" tooltip-placement="top" tooltip="{{sectionType.title}}">{{$index + 1}}</button>
-            <button ng-click="changeToNextSection()" class="btn btn-primary">Next <i class="icon-hand-right"></i></button>
         </div>
     </div>
 
