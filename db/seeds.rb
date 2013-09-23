@@ -12,17 +12,39 @@
 
 if SectionType.count == 0
   puts "Creating section types"
-  SectionType.create(:order => 1, :title => 'Problem', :stringIdentifier => "problem", :description => 'Problems that our solution is solving', :questions => 'What are the 3 most important problems? What are the particular paint points that your target audience is having?');
-  SectionType.create(:order => 2, :title => 'Solution', :stringIdentifier => "solution", :description => 'Possible solution for each of the problems we are trying to solve', :questions => 'How do you plan to solve the problems that your target audience has currently? Why and how you plan to implement this solution?');
-  SectionType.create(:order => 3, :title => 'Key Partners', :stringIdentifier => "keypartners", :description => 'Partners, suppliers and others that are helping us', :questions => 'Who are our Key Partners? Who are our key suppliers? Which Key Resources are we acquiring from partners? Which Key Activities do partners perform?');
-  SectionType.create(:order => 4, :title => 'Key Activities', :stringIdentifier => "keyactivities", :description => 'Key activities that are required for our value propositions', :questions => 'What Key Activities do our Value Propositions require? Our Distribution Channels? Customer Relationships? Revenue streams?');
-  SectionType.create(:order => 5, :title => 'Value Proposition', :stringIdentifier => "valueproposition", :description => 'Clear and compelling message that tries to turn our visitor into an interested prospect', :questions => 'What value do we deliver to the customer? Which one of our customer’s problems are we helping to solve? What bundles of products and services are we offering to each Customer Segment? Which customer needs are we satisfying?');
-  SectionType.create(:order => 6, :title => 'Customer Relationships', :stringIdentifier => "customerrelationships", :description => 'How we interact with to our customers', :questions => 'What type of relationship does each of our Customer Segments expect us to establish and maintain with them? Which ones have we established? How are they integrated with the rest of our business model? How costly are they?');
-  SectionType.create(:order => 7, :title => 'Customer Segments', :stringIdentifier => "customersegments", :description => 'Our target audience', :questions => 'For whom are we creating value? Who are our most important customers?');
-  SectionType.create(:order => 8, :title => 'Key Resources', :stringIdentifier => "keyresources", :description => 'Key resources that are required by our value propositions', :questions => 'What Key Resources do our Value Propositions require? Our Distribution Channels? Customer Relationships? Revenue Streams?');
-  SectionType.create(:order => 9, :title => 'Channels', :stringIdentifier => "channels", :description => 'Path through which our target customer segments are reached', :questions => 'Through which Channels do our Customer Segments want to be reached? How are we reaching them now? How are our Channels integrated? Which ones work best? Which ones are most cost-efficient? How are we integrating them with customer routines?');
-  SectionType.create(:order => 10, :title => 'Revenue Streams', :stringIdentifier => "revenuestreams", :description => 'The money which you generate from each of your target customer segments.', :questions => 'Through which Channels do our Customer Segments want to be reached? How are we reaching them now? How are our Channels integrated? Which ones work best? Which ones are most cost-efficient? How are we integrating them with customer routines?');
-  SectionType.create(:order => 11, :title => 'Cost Structure', :stringIdentifier => "coststructure", :description => 'List of all the costs incurred by your business', :questions => 'Through which Channels do our Customer Segments want to be reached? How are we reaching them now? How are our Channels integrated? Which ones work best? Which ones are most cost-efficient? How are we integrating them with customer routines?');
+  SectionType.create(:order => 1, :title => 'Problem', :stringIdentifier => "problem", :description => 'Problems that our solution is solving',
+                     :questions => 'What are the 3 most important problems? What are the particular paint points that your target audience is having?',
+                     :examples => 'Apple: people, marketing/sales, manufacturing Starbucks: people, coffee beans, retail stores');
+  SectionType.create(:order => 2, :title => 'Solution', :stringIdentifier => "solution", :description => 'Possible solution for each of the problems we are trying to solve',
+                     :questions => 'How do you plan to solve the problems that your target audience has currently? Why and how you plan to implement this solution?',
+                     :examples => 'Apple: people, marketing/sales, manufacturing Starbucks: people, coffee beans, retail stores');
+  SectionType.create(:order => 3, :title => 'Key Partners', :stringIdentifier => "keypartners", :description => 'Partners, suppliers and others that are helping us',
+                     :questions => 'Who are our Key Partners? Who are our key suppliers? Which Key Resources are we acquiring from partners? Which Key Activities do partners perform?',
+                     :examples => 'Microsoft: resellers Apple: record labels, hardware manufacturers Zynga: Facebook');
+  SectionType.create(:order => 4, :title => 'Key Activities', :stringIdentifier => "keyactivities", :description => 'Key activities that are required for our value propositions',
+                     :questions => 'What Key Activities do our Value Propositions require? Our Distribution Channels? Customer Relationships? Revenue streams?',
+                     :examples => 'Google: recruit top engineering talent Apple: hardware design, marketing Nike: endorse superstars');
+  SectionType.create(:order => 5, :title => 'Value Proposition', :stringIdentifier => "valueproposition", :description => 'Clear and compelling message that tries to turn our visitor into an interested prospect',
+                     :questions => 'What value do we deliver to the customer? Which one of our customer’s problems are we helping to solve? What bundles of products and services are we offering to each Customer Segment? Which customer needs are we satisfying?',
+                     :examples => 'Google: Fast accurate search results, targeted ads LinkedIn: make it easy to network with other professionals Amazon: buy anything online');
+  SectionType.create(:order => 6, :title => 'Customer Relationships', :stringIdentifier => "customerrelationships", :description => 'How we interact with to our customers',
+                     :questions => 'What type of relationship does each of our Customer Segments expect us to establish and maintain with them? Which ones have we established? How are they integrated with the rest of our business model? How costly are they?',
+                     :examples => 'Google: google.com Apple: retails stores, Apple stores, apple.com, iTunes Salesforce: salesforce.com, direct sales Microsoft: resellers, microsoft.com, retail stores');
+  SectionType.create(:order => 7, :title => 'Customer Segments', :stringIdentifier => "customersegments", :description => 'Our target audience',
+                     :questions => 'For whom are we creating value? Who are our most important customers?',
+                     :examples => 'GOOGLE: Internet users, advertisers LINKEDIN: Professionals, Recruiters, Advertisers AMAZON: Online shoppers, retailers');
+  SectionType.create(:order => 8, :title => 'Key Resources', :stringIdentifier => "keyresources", :description => 'Key resources that are required by our value propositions',
+                     :questions => 'What Key Resources do our Value Propositions require? Our Distribution Channels? Customer Relationships? Revenue Streams?',
+                     :examples => 'Google: top engineering talent Walmart: distribution centers Nike: Nike Brand');
+  SectionType.create(:order => 9, :title => 'Channels', :stringIdentifier => "channels", :description => 'Path through which our target customer segments are reached',
+                     :questions => 'Through which Channels do our Customer Segments want to be reached? How are we reaching them now? How are our Channels integrated? Which ones work best? Which ones are most cost-efficient? How are we integrating them with customer routines?',
+                     :examples => 'Google: google.com Apple: retails stores, Apple stores, apple.com, iTunes Microsoft: resellers, microsoft.com, retail stores');
+  SectionType.create(:order => 10, :title => 'Revenue Streams', :stringIdentifier => "revenuestreams", :description => 'The money which you generate from each of your target customer segments.',
+                     :questions => 'Through which Channels do our Customer Segments want to be reached? How are we reaching them now? How are our Channels integrated? Which ones work best? Which ones are most cost-efficient? How are we integrating them with customer routines?',
+                     :examples => 'Google: google.com Apple: retails stores, Apple stores, apple.com, iTunes Salesforce: salesforce.com, direct sales Microsoft: resellers, microsoft.com, retail stores');
+  SectionType.create(:order => 11, :title => 'Cost Structure', :stringIdentifier => "coststructure", :description => 'List of all the costs incurred by your business',
+                     :questions => 'Through which Channels do our Customer Segments want to be reached? How are we reaching them now? How are our Channels integrated? Which ones work best? Which ones are most cost-efficient? How are we integrating them with customer routines?',
+                     :examples => 'Apple: people, marketing/sales, manufacturing Starbucks: people, coffee beans, retail stores');
 end
 
 if ChecklistStep.count == 0
