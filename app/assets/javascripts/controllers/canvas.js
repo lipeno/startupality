@@ -298,6 +298,10 @@ app.controller('ChecklistDialogController', function ($scope, dialog, currentSec
         dialog.close(result);
     };
 
+    $scope.handleArrowKeys = function (){
+        alert("key pressed");
+    }
+
 });
 
 
