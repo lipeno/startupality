@@ -55,7 +55,7 @@ class Api::ProjectsController < ApplicationController
     # Add all the sections that project should have
     SectionType.all.each do |sectionType|
       #@project.sections.new(data:nil, tags:nil, sectionTypeIdentifier:item.stringIdentifier)
-      @project.sections.new(data:nil, tags:nil, :section_type_id => sectionType.id)
+      @project.sections.new(data:nil, tags:"[]", :section_type_id => sectionType.id)
     end
 
     ChecklistStep.all.each do |item|
