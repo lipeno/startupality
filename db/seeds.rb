@@ -40,11 +40,11 @@ if SectionType.count == 0
                      :questions => 'Through which Channels do our Customer Segments want to be reached? How are we reaching them now? How are our Channels integrated? Which ones work best? Which ones are most cost-efficient? How are we integrating them with customer routines?',
                      :examples => 'Google: google.com Apple: retails stores, Apple stores, apple.com, iTunes Microsoft: resellers, microsoft.com, retail stores');
   SectionType.create(:order => 10, :title => 'Revenue Streams', :stringIdentifier => "revenuestreams", :description => 'The money which you generate from each of your target customer segments.',
-                     :questions => 'Through which Channels do our Customer Segments want to be reached? How are we reaching them now? How are our Channels integrated? Which ones work best? Which ones are most cost-efficient? How are we integrating them with customer routines?',
-                     :examples => 'Google: google.com Apple: retails stores, Apple stores, apple.com, iTunes Salesforce: salesforce.com, direct sales Microsoft: resellers, microsoft.com, retail stores');
+                     :questions => 'Through which activities, services and products are we gaining revenue?',
+                     :examples => 'Skype: Skypeout subscription, hardware sales Gillete: handle purchase, frequent blade replacements Flickr: free limited accounts, paid pro accounts');
   SectionType.create(:order => 11, :title => 'Cost Structure', :stringIdentifier => "coststructure", :description => 'List of all the costs incurred by your business',
-                     :questions => 'Through which Channels do our Customer Segments want to be reached? How are we reaching them now? How are our Channels integrated? Which ones work best? Which ones are most cost-efficient? How are we integrating them with customer routines?',
-                     :examples => 'Apple: people, marketing/sales, manufacturing Starbucks: people, coffee beans, retail stores');
+                     :questions => 'What are the most important costs in running our business?',
+                     :examples => 'Skype: software development, complaint management Gillete: Marketing, logistics, manufacturing, R&D Flickr: platform development, storage cost');
 end
 
 if ChecklistStep.count == 0
@@ -110,5 +110,21 @@ if ChecklistStep.count == 0
   ChecklistStep.create(:stepNumber => 1, :title => 'How defined are features of our solution and are they aligned with insights from potential customers?', :section_type => sectionType);
   ChecklistStep.create(:stepNumber => 2, :title => 'Are there any value propositions which could be removed?', :section_type => sectionType);
   ChecklistStep.create(:stepNumber => 3, :title => 'Rate value propositions in the order of importance if possible.', :section_type => sectionType);
+
+  sectionType = SectionType.where(:stringIdentifier => "revenuestreams")[0]
+
+  ChecklistStep.create(:stepNumber => 1, :title => 'For what value are your customers willing to pay?', :section_type => sectionType);
+  ChecklistStep.create(:stepNumber => 2, :title => 'Identify the products and services that are the source of your revenue.', :section_type => sectionType);
+  ChecklistStep.create(:stepNumber => 3, :title => 'How much will we charge and what will be our pricing tactics for each?', :section_type => sectionType);
+  ChecklistStep.create(:stepNumber => 4, :title => 'What is the revenue model (upsell, leasing, subscriptions, referalls) for each and how does it work combined?', :section_type => sectionType);
+  ChecklistStep.create(:stepNumber => 5, :title => 'What is the strategy that we are using to sell our products and services?', :section_type => sectionType);
+
+  sectionType = SectionType.where(:stringIdentifier => "coststructure")[0]
+
+  ChecklistStep.create(:stepNumber => 1, :title => 'Which key resources and activities are most expensive?', :section_type => sectionType);
+  ChecklistStep.create(:stepNumber => 1, :title => 'What are the costs of running the business and the infrastructure?', :section_type => sectionType);
+  ChecklistStep.create(:stepNumber => 2, :title => 'What are the costs involved in producing our products and providing our services?', :section_type => sectionType);
+  ChecklistStep.create(:stepNumber => 3, :title => 'What are the costs involved in marketing our product or service?', :section_type => sectionType);
+  ChecklistStep.create(:stepNumber => 4, :title => 'What are the costs of compensation with our partners?', :section_type => sectionType);
 
 end
