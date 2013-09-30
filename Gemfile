@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+ruby '1.9.3'
+gem 'rails', "3.2.14"
 gem 'devise'
 gem 'cancan'
 gem 'analytics-ruby'
@@ -28,7 +29,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails'
+  gem 'sass-rails', "~> 3.2.3"
   gem 'coffee-rails'
   gem 'compass-rails'
   gem 'compass_twitter_bootstrap'
@@ -46,6 +47,7 @@ end
 group :production do
   # Use unicorn as the app server
   gem 'unicorn'
+  gem 'rails_12factor'
 end
 
 # To use ActiveModel has_secure_password

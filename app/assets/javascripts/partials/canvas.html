@@ -1,10 +1,40 @@
 <div ng-controller="NewcanvasController">
-	<button id="printButton" ng-click="exportImage('bizcanvas')" class="btn btn-secondary">
-        <i class="icon-print icon-2x"></i> Export image
-    </button>
-    <button id="wizardButton" ng-click="openDialog(problem)" class="btn btn-secondary">
-        <i class="icon-question-sign icon-2x"></i> Get help with a wizard
-    </button>
+
+    <secondaryheader id="secondaryheader">
+        <div class="row">
+            <div class="span7">
+
+            </div>
+            <div class="span4">
+                <ul class="breadcrumb nav nav-tabs">
+<li>
+    <h4>
+        <i class="icon-credit-card"></i> Business Model Canvas
+    </h4>
+</li>
+
+            </div>
+            <div class="span6">
+                <ul class="breadcrumb nav nav-tabs">
+                    <li>
+                        <a id="wizardButton" ng-click="openDialog(problem)" class="btn-info">
+                            <i class="icon-question-sign icon-2x"></i> Get help with a wizard
+                        </a>
+                    </li>
+                    <li>
+                        <a id="printButton" ng-click="exportImage('bizcanvas')">
+                            <i class="icon-print icon-2x"></i> Export to image (.PNG)
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </secondaryheader>
+
+
+
+
 
     <table id="bizcanvas" border="1">
             <tr>
@@ -41,12 +71,12 @@
             </tr>
             <tr>
                 <td colspan="5">
-                    <h4>{{problem.section_type.title}} <i class="icon-question-sign icon-2x" tooltip-placement="right" tooltip="{{problem.section_type.description}}"></i></h4>
-                    <tag-input class="canvasTagsWide" ng-model="problem.tags"/>
+                    <h4>{{coststructure.section_type.title}} <i class="icon-lightbulb icon-2x" tooltip-placement="right" tooltip="{{coststructure.section_type.description}}"></i></h4>
+                    <tag-input class="canvasTagsWide" ng-model="coststructure.tags"/>
                 </td>
                 <td colspan="5">
-                    <h4>{{solution.section_type.title}} <i class="icon-lightbulb icon-2x" tooltip-placement="right" tooltip="{{solution.section_type.description}}"></i></h4>
-                    <tag-input class="canvasTagsWide" ng-model="solution.tags"/>
+                    <h4>{{revenuestreams.section_type.title}} <i class="icon-question-sign icon-2x" tooltip-placement="right" tooltip="{{revenuestreams.section_type.description}}"></i></h4>
+                    <tag-input class="canvasTagsWide" ng-model="revenuestreams.tags"/>
                 </td>
             </tr>
         </table>

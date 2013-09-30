@@ -115,6 +115,12 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
                     case "channels":
                         $scope.channels = element;
                         break;
+                    case "revenuestreams":
+                        $scope.revenuestreams = element;
+                        break;
+                    case "coststructure":
+                        $scope.coststructure = element;
+                        break;
                     default:
                         console.log("Type is different then expected.")
                 }
