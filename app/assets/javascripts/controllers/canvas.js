@@ -164,11 +164,20 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, Current
     };
 	
 	$scope.exportImage = function(section) {
-		html2canvas(document.getElementById(section), {
+
+		var doc = document.getElementById(section);
+		
+		var img = document.createElement("img");
+		img.src = "/assets/220logoWide.png";
+		img.setAttribute("style", "width:180px; height:64px");
+		
+		doc.insertBefore(img, doc.firstChild);
+		
+		html2canvas(doc, {
 			onrendered: function(canvas) {
 				var img = canvas.toDataURL("image/png");
-				window.location.href=img;
-				
+				window.location.href = img;
+				//indow.location.href = "data:text/html," + encodeURIComponent('<img class="grayscale" src="/assets/220logoWide2.png" style="width:180px; height:64px" /> <br /> <img src="'+img+'"/>');
 				//window.open(img);
 				//window.open("data:text/html," + encodeURIComponent('<img src="'+img+'"/>'), "_blank");
 			}
