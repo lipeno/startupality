@@ -169,31 +169,17 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
 			onrendered: function(canvas) {
 
 				var img = canvas.toDataURL("image/png");
-				
-				//download(img);
-				
-				if (button == 'test') {
-					var elem = document.getElementById("download");
-					elem.href = img;
-					elem.download = "aa.png"
-					elem.click();
-				}
 
-				//window.location.href = img;
-				
-				//window.location.href = "data:text/html," + encodeURIComponent('<img class="grayscale" src="/assets/220logoWide2.png" style="width:180px; height:64px" /> <br /> <img src="'+img+'"/>');
-				//window.open(img);
-				//window.open("data:text/html," + encodeURIComponent('<img src="'+img+'"/>'), "_blank");
+				var elem = document.getElementById(button);
+				elem.href = img;
+				elem.download = "canvas.png"
+				elem.click();
+
 			}
-			
 		});
 
-		function download(img) {
-			
-			
-		}
-
 	}
+
 
 });
 
