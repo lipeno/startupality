@@ -22,7 +22,7 @@
                         </a>
                     </li>
                     <li>
-                        <a id="printButton" ng-click="exportImage('bizcanvas')">
+                        <a id="printButton" ng-click="exportImage('bizcanvas', 'downloadCanvas')">
                             <i class="icon-print icon-2x"></i> Export to image (.PNG)
                         </a>
                     </li>
@@ -32,9 +32,7 @@
         </div>
     </secondaryheader>
 
-
-
-
+	<a hidden="true" target="_blank" id="downloadCanvas" />
 
     <table id="bizcanvas" border="1">
             <tr>

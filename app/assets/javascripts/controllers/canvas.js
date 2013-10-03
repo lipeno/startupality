@@ -73,7 +73,7 @@
 //    };
 //});
 
-app.controller('NewcanvasController', function ($scope, $dialog, $modal, CurrentProject, Section, SectionType){
+app.controller('NewcanvasController', function ($scope, $dialog, $modal, $element, CurrentProject, Section, SectionType){
     // TODO: inject this into $rootscope
     $scope.currentProject = {};
     $scope.sections = {};
@@ -163,25 +163,21 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, Current
         });
     };
 	
-	$scope.exportImage = function(section) {
-
-		var doc = document.getElementById(section);
+	$scope.exportImage = function(section, button) {
 		
-		var img = document.createElement("img");
-		img.src = "/assets/220logoWide.png";
-		img.setAttribute("style", "width:180px; height:64px");
-		
-		doc.insertBefore(img, doc.firstChild);
-		
-		html2canvas(doc, {
+		html2canvas(document.getElementById(section), {
 			onrendered: function(canvas) {
+
 				var img = canvas.toDataURL("image/png");
-				window.location.href = img;
-				//indow.location.href = "data:text/html," + encodeURIComponent('<img class="grayscale" src="/assets/220logoWide2.png" style="width:180px; height:64px" /> <br /> <img src="'+img+'"/>');
-				//window.open(img);
-				//window.open("data:text/html," + encodeURIComponent('<img src="'+img+'"/>'), "_blank");
+
+				var elem = document.getElementById(button);
+				elem.href = img;
+				elem.download = "canvas.png"
+				elem.click();
+
 			}
 		});
+
 	}
 
 
