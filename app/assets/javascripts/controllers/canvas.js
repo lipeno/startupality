@@ -165,19 +165,26 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
 	
 	$scope.exportImage = function(section, button) {
 		
+		var logo = new Image();
+		logo.src = "/assets/startupalityLogoBig.png";
+		
 		html2canvas(document.getElementById(section), {
 			onrendered: function(canvas) {
 
+				var context = canvas.getContext("2d");
+				context.globalAlpha = 0.02;
+				context.drawImage(logo, 0, 0);
+				
 				var img = canvas.toDataURL("image/png");
-
+				
 				var elem = document.getElementById(button);
 				elem.href = img;
 				elem.download = "canvas.png"
 				elem.click();
-
+				
 			}
 		});
-
+		
 	}
 
 
