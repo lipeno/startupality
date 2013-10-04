@@ -163,24 +163,21 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
         });
     };
 	
-	$scope.exportImage = function(section, button) {
-		
-		var logo = new Image();
-		logo.src = "/assets/startupalityLogoBig.png";
-		
-		html2canvas(document.getElementById(section), {
+	$scope.exportImage = function(businessCanvas, downloadLink, logo) {
+
+		html2canvas(document.getElementById(businessCanvas), {
 			onrendered: function(canvas) {
 
 				var context = canvas.getContext("2d");
 				context.globalAlpha = 0.02;
-				context.drawImage(logo, 0, 0);
-				
-				var img = canvas.toDataURL("image/png");
-				
-				var elem = document.getElementById(button);
-				elem.href = img;
-				elem.download = "canvas.png"
-				elem.click();
+				context.drawImage(document.getElementById(logo), 0, 0);
+
+				var canvasImage = canvas.toDataURL("image/png");
+
+				var link = document.getElementById(downloadLink);
+				link.href = canvasImage;
+				link.download = "canvas.png"
+				link.click();
 				
 			}
 		});

@@ -22,7 +22,7 @@
                         </a>
                     </li>
                     <li>
-                        <a id="printButton" ng-click="exportImage('bizcanvas', 'downloadCanvas')">
+                        <a id="printButton" ng-click="exportImage('bizcanvas', 'canvasDownloadLink', 'canvasLogo')">
                             <i class="icon-print icon-2x"></i> Export to image (.PNG)
                         </a>
                     </li>
@@ -32,7 +32,8 @@
         </div>
     </secondaryheader>
 
-	<a hidden="true" target="_blank" id="downloadCanvas" />
+	<a hidden="true" target="_blank" id="canvasDownloadLink" />
+	<img hidden="true" src="/assets/startupalityLogoBig.png" id="canvasLogo" />
 
     <table id="bizcanvas" border="1">
             <tr>
