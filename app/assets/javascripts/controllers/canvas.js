@@ -1,78 +1,3 @@
-//app.controller('OldCanvasController', function ($scope, $dialog, $modal, CurrentProject, Section, SectionType){
-//    // TODO: inject this into $rootscope
-//    $scope.currentProject = {};
-//    $scope.sections = {};
-////    $scope.sectionTypes = SectionType.query(function(){});
-//
-//    var currentProject = CurrentProject.query(function(){
-//        $scope.currentProject = currentProject[0];
-//
-//        $scope.sections = Section.query({projectId: $scope.currentProject.id}, function() {
-//            for (var i = 0; i < $scope.sections.length; i++) {
-//                var element = $scope.sections[i];
-//                // Sections have types with unique IDs
-//                switch(element.section_type.stringIdentifier)
-//                {
-//                    case "problem":
-//                        $scope.problem = element;
-//                        break;
-//                    case "solution":
-//                        $scope.solution = element;
-//                        break;
-//                    case "keypartners":
-//                        $scope.keyPartners = element;
-//                        break;
-//                    case "keyactivities":
-//                        $scope.keyActivities = element;
-//                        break;
-//                    case "valueproposition":
-//                        $scope.valueProposition = element;
-//                        break;
-//                    case "customerrelationships":
-//                        $scope.customerRelationships = element;
-//                        break;
-//                    case "customersegments":
-//                        $scope.customerSegments = element;
-//                        break;
-//                    case "keyresources":
-//                        $scope.keyResources = element;
-//                        break;
-//                    case "channels":
-//                        $scope.channels = element;
-//                        break;
-//                    default:
-//                        console.log("Type is different then expected.")
-//                }
-//            }
-//        });
-//    });
-//
-//    $scope.enableEdit = function() { $scope.edit = true; }
-//    $scope.disableEdit = function() { $scope.edit = false;  }
-//
-//    $scope.openDialog = function(section){
-//        $scope.opts = {
-//            backdrop: true,
-//            keyboard: true,
-//            backdropClick: true,
-//            dialogClass: "modalSection",
-//            templateUrl:  '/assets/partials/checklistDialog.html',
-//            controller: 'ChecklistDialogController',
-//            dialogFade: true,
-//            backdropFade: true,
-//            resolve: {item: function(){ return section; }}
-//        };
-//
-//        var d = $dialog.dialog($scope.opts);
-//        d.open().then(function(result){
-//            if(result)
-//            {
-//                alert('dialog closed with result: ' + result);
-//            }
-//        });
-//    };
-//});
-
 app.controller('NewcanvasController', function ($scope, $dialog, $modal, $element, CurrentProject, Section, SectionType){
     // TODO: inject this into $rootscope
     $scope.currentProject = {};
@@ -190,12 +115,17 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
 app.controller('ChecklistDialogController', function ($scope, dialog, currentSection, CurrentProject, SectionType, ProjectChecklistStep, ChecklistStep, Section){
     $scope.currentSection = currentSection;
 
+    $scope.editTag = function (item) {
+        $scope.currentSection.$update({projectId: $scope.currentProject.id});
+    };
+
     $scope.close = function(result){
         var currentProject = CurrentProject.query(function(){
             $scope.item.$update({projectId: currentProject[0].id});
         });
         dialog.close(result);
     };
+
 
     $scope.sectionTypes = SectionType.query(function () {
         $scope.sectionTypes = $scope.sectionTypes.sort(function (a, b) {
@@ -304,13 +234,6 @@ app.controller('ChecklistDialogController', function ($scope, dialog, currentSec
                 return section.section_type.order == $scope.currentSection.section_type.order + 1;
             })
         }
-    };
-
-    $scope.close = function (result) {
-        var currentProject = CurrentProject.query(function () {
-            $scope.item.$update({projectId: currentProject[0].id});
-        });
-        dialog.close(result);
     };
 
     $scope.handleArrowKeys = function (){

@@ -34,7 +34,7 @@
             <div class="span5 pull-left">
                 <h4><i class="icon-tags" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> Tags</h4>
                 <div>
-                    <tag-input class="tagsCanvas" ng-model="currentSection.tags"/>
+                    <tag-input class="tagsCanvas" ng-model="currentSection.tags" ng-change="editTag(item)"/>
                 </div>
 
                 <div class="row">
