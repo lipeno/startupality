@@ -16,7 +16,7 @@ app.controller('StrategyController', function ($scope, Risk, Section, CurrentPro
     }, true);
 
 
-    $scope.currentView = 'swotpestle';
+    $scope.currentView = 'revenuesandexpenses';
     $scope.isCurrentView = function(view){
         if (view === $scope.currentView){
             return true;
@@ -24,7 +24,7 @@ app.controller('StrategyController', function ($scope, Risk, Section, CurrentPro
         return false;
     }
     $scope.changeView = function(view){
-        if (view === 'swotpestle' || 'risksregister' || 'revenuesandexpenses' || 'financialIndicators'){
+        if (view === 'swotpestle' || 'risksregister' || 'revenuesandexpenses'){
             $scope.currentView =  view;
         }
     }
