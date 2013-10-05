@@ -169,7 +169,7 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
 			onrendered: function(canvas) {
 
 				var context = canvas.getContext("2d");
-				context.globalAlpha = 0.02;
+				context.globalAlpha = 0.03;
 				context.drawImage(document.getElementById(logo), 0, 0);
 
 				var canvasImage = canvas.toDataURL("image/png");
