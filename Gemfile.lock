@@ -206,7 +206,7 @@ DEPENDENCIES
   coffee-rails
   compass-rails
   compass_twitter_bootstrap
-  devise
+  devise (= 3.1.0)
   haml
   jquery-rails
   meta_request

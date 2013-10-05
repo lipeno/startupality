@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 gem 'rails', "3.2.14"
-gem 'devise'
+gem 'devise', "3.1.0"
 gem 'cancan'
 gem 'analytics-ruby'
 
