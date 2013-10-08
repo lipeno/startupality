@@ -1,24 +1,511 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+  <!--<title>Startupality</title>-->
+  <!--<%= stylesheet_link_tag    "application" %>-->
+  <!--<%= javascript_include_tag "http://use.typekit.com/dpo4vyi.js" %>-->
+  <!--<%= csrf_meta_tags %>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div id="content">-->
+
+	<!--<div class="container userManagement">-->
+        <!--<br />-->
+        <!--<img src="/assets/logoNarrow.png" style="width:250px">-->
+        <!--<br /><br />-->
+
+        <!--<%= yield %>-->
+	<!--</div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
-<html>
+<!--[if IE 8]> <html class="no-js lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-  <title>Startupality</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "http://use.typekit.com/dpo4vyi.js" %>
-  <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+
+    <title>Startupality</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <%= stylesheet_link_tag    "landingpage" %>
+    <%= csrf_meta_tags %>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <style type="text/css">
+        .gradient {
+            filter: none;
+        }
+    </style>
+    <![endif]-->
+
+    <!-- Web fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
 
-<div id="content">
+<div id="preloader"></div>
 
-	<div class="container userManagement">
-        <br />
-        <img src="/assets/logoNarrow.png" style="width:250px">
-        <br /><br />
+<header class="animatedHeader transparent">
 
-        <%= yield %>
-	</div>
+    <div id="logo-wrapper">
+        <a href="#" class="logo"><img src="/assets/logoWideBlue.png"></a>
+    </div>
+
+    <div class="span3 pull-right header-cta">
+        <a href="#signup-form" class="modal-form signup btn transparent pull-right">Sign up</a>
+        <a href="#login-form" class="modal-form login btn transparent pull-right">Login</a>
+    </div>
+
+    <nav id="main" class="span9">
+        <ul>
+            <li class="current hidden-tablet"><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#footer-cta">Contact</a></li>
+        </ul>
+
+    </nav>
+
+</header>
+
+<section id="home" class="text-center">
+
+    <!-- background icons -->
+    <span aria-hidden="true" class="icon-cloud-3 dark first animated fadeInLeftBig"></span>
+    <span aria-hidden="true" class="icon-phone-5 light second animated fadeInLeftBig"></span>
+    <span aria-hidden="true" class="icon-bulb dark third animated fadeInLeftBig"></span>
+    <span aria-hidden="true" class="icon-bubble light fourth animated fadeInLeftBig"></span>
+    <span aria-hidden="true" class="icon-calendar-5 dark fifth animated fadeInLeftBig"></span>
+    <span aria-hidden="true" class="icon-heart-5 light sixth animated fadeInRightBig"></span>
+    <span aria-hidden="true" class="icon-lock-2 dark seventh animated fadeInRightBig"></span>
+    <span aria-hidden="true" class="icon-mail light eighth animated fadeInRightBig"></span>
+    <span aria-hidden="true" class="icon-star-2 dark ninth animated fadeInRightBig"></span>
+    <span aria-hidden="true" class="icon-data light tenth animated fadeInRightBig"></span>
+
+    <div class="container">
+        <div class="row">
+            <div class="span 12 hero-content">
+
+                <form id="nl-form" class="nl-form">
+                    <h1>
+
+                        We help you
+
+                        <select id="option-1">
+                            <option value="1 selected>launch</option>
+                            <option value="2">plan</option>
+                            <option value="3">organize</option>
+                            <option value="4">analyze</option>
+                        </select>
+
+                        your startup.
+
+                    </h1>
+                </form>
+
+                <a href="#about" class="btn btn-large cta scroll">Show me how</a>
+
+            </div>
+
+            <div class="span12 featured-image">
+                <ul class="featuredSlider">
+                    <li><img src="/assets/featured-ipad.png" id="fi-1" class="slideUp" alt="" /></li>
+                    <li><img src="/assets/featured-macs.png" id="fi-2" class="slideUp" alt="" /></li>
+                    <li><img src="/assets/featured-maciphone.png" id="fi-3" class="slideUp" alt="" /></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <div class="row">
+
+            <div class="span12">
+                <h1><span class="colorHighlight1">Startupality</span> is a <span class="underline">beautiful</span> app which helps you turn your idea or your current startup into a successful company.</h1>
+            </div>
+            <div class="feature span6">
+                <div><img src="/assets/icon-calendar.png" alt="" /></div>
+                <h3>Track appointments</h3>
+                <p>Proin ut quam eros. Donec sed lobortis diam. Nulla nec odio lacus. Quisque porttitor egestas dolor in placerat. Nunc vehicula dapibus ipsum. Duis venenatis risus non nunc fermentum dapibus.</p>
+            </div>
+
+            <div class="feature span6">
+                <div><img src="/assets/icon-document.png" alt="" /></div>
+                <h3>Clean & simple reporting</h3>
+                <p>Proin ut quam eros. Donec sed lobortis diam. Nulla nec odio lacus. Quisque porttitor egestas dolor in placerat. Nunc vehicula dapibus ipsum. Duis venenatis risus non nunc fermentum dapibus.</p>
+            </div>
+
+            <div class="feature span6">
+                <div><img src="/assets/icon-social.png" alt="" /></div>
+                <h3>Social integration</h3>
+                <p>Proin ut quam eros. Donec sed lobortis diam. Nulla nec odio lacus. Quisque porttitor egestas dolor in placerat. Nunc vehicula dapibus ipsum. Duis venenatis risus non nunc fermentum dapibus.</p>
+            </div>
+
+            <div class="feature span6">
+                <div><img src="/assets/icon-clipboard.png" alt="" /></div>
+                <h3>Create checklists</h3>
+                <p>Proin ut quam eros. Donec sed lobortis diam. Nulla nec odio lacus. Quisque porttitor egestas dolor in placerat. Nunc vehicula dapibus ipsum. Duis venenatis risus non nunc fermentum dapibus.</p>
+            </div>
+
+            <div class="feature span6">
+                <div><img src="/assets/icon-time.png" alt="" /></div>
+                <h3>Schedule deadlines</h3>
+                <p>Proin ut quam eros. Donec sed lobortis diam. Nulla nec odio lacus. Quisque porttitor egestas dolor in placerat. Nunc vehicula dapibus ipsum. Duis venenatis risus non nunc fermentum dapibus.</p>
+            </div>
+
+            <div class="feature span6">
+                <div><img src="/assets/icon-tick.png" alt="" /></div>
+                <h3>Deliver exceptional results</h3>
+                <p>Proin ut quam eros. Donec sed lobortis diam. Nulla nec odio lacus. Quisque porttitor egestas dolor in placerat. Nunc vehicula dapibus ipsum. Duis venenatis risus non nunc fermentum dapibus.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="">
+    <div class="banner">
+        <ul style="">
+            <li class="slide slide1">
+                <h1>Connect with your customers</h1>
+                <p>Proin ut quam eros. Donec sed lobortis diam. Nulla nec odio lacus.</p>
+                <img src="/assets/features-img1.png" class="slideUp fi-1" alt="" />
+            </li>
+
+            <li class="slide slide2">
+                <h1>Speed up your workflow.</h1>
+                <p>Proin ut quam eros. Donec sed lobortis diam. Nulla nec odio lacus.</p>
+                <img src="/assets/features-img2.png" class="slideUp fi-1" alt="" />
+            </li>
+
+            <li class="slide slide3">
+                <h1>Wow your audience.</h1>
+                <p>Proin ut quam eros. Donec sed lobortis diam. Nulla nec odio lacus.</p>
+                <img src="/assets/features-img3.png" class="slideUp fi-1" alt="" />
+            </li>
+
+        </ul>
+
+        <div class="unslider-arrow-container">
+            <a class="unslider-arrow prev"><span aria-hidden="true" class="icon-angle-left"></span></a>
+            <a class="unslider-arrow next"><span aria-hidden="true" class="icon-angle-right"></span></a>
+        </div>
+
+    </div>
+</section>
+
+<section id="testimonials" class="padding lightest window">
+    <div class="container">
+        <div class="row text-center">
+
+            <div class="span12">
+                <h1>Testimonials</h1>
+            </div>
+
+            <div class="span4">
+                <blockquote class="twitter-tweet"><p>Sync Google Fonts to your Desktop with SkyFonts! <a href="http://t.co/9cbBBZZ7a7" title="http://www.fonts.com/web-fonts/google">fonts.com/web-fonts/goog…</a> <a href="https://twitter.com/search/%23fonts">#fonts</a> <a href="https://twitter.com/search/%23webfonts">#webfonts</a> <a href="https://twitter.com/search/%23google">#google</a> <a href="https://twitter.com/search/%23webdesign">#webdesign</a></p>&mdash; David Parrelli (@dparrelli) <a href="https://twitter.com/dparrelli/status/329660467310108673">May 1, 2013</a></blockquote>
+            </div>
+
+            <div class="span4">
+                <blockquote class="twitter-tweet"><p>What's the most important thing in life? To me, it's FAMILY...If you take away the fame &amp; fortune they're the ones that will always be there</p>&mdash; Derrick Rose (@drose) <a href="https://twitter.com/drose/status/309792098662612992">March 7, 2013</a></blockquote>
+            </div>
+
+            <div class="span4">
+                <blockquote class="twitter-tweet"><p>Blessed to play at <a href="https://twitter.com/search/%23mufc">#mufc</a> all these years. Being part of this clubs history is something I am proud of! Special shout to the dinner ladies!</p>&mdash; Rio Ferdinand (@rioferdy5) <a href="https://twitter.com/rioferdy5/status/341555094912892929">June 3, 2013</a></blockquote>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="clients" class="text-center">
+    <div class="container">
+        <div class="row">
+
+            <div class="span4 clients" style="background-image: url(/assets/envato.png);">
+                <a href="http://www.envato.com/" target="_blank">Envato</a>
+            </div>
+
+            <div class="span4 clients" style="background-image: url(/assets/envato.png);">
+                <a href="http://www.envato.com/" target="_blank">Envato</a>
+            </div>
+
+            <div class="span4 clients" style="background-image: url(/assets/envato.png);">
+                <a href="http://www.envato.com/" target="_blank">Envato</a>
+            </div>
+
+            <div class="span4 clients" style="background-image: url(/assets/envato.png);">
+                <a href="http://www.envato.com/" target="_blank">Envato</a>
+            </div>
+
+            <div class="span4 clients" style="background-image: url(/assets/envato.png);">
+                <a href="http://www.envato.com/" target="_blank">Envato</a>
+            </div>
+
+            <div class="span4 clients" style="background-image: url(/assets/envato.png);">
+                <a href="http://www.envato.com/" target="_blank">Envato</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="pricing" class="white padding text-center">
+    <div class="container">
+        <div class="row">
+
+            <div class="span12">
+                <h1>Pricing</h1>
+            </div>
+
+            <div class="plans">
+                <div class="plan span4">
+                    <div class="plan-title">
+                        <h2>Beginner<br /><span>Starter Plan</span></h2>
+                        <div class="hidden-tablet hidden-ie"><input type="text" value="25" class="dial pull-right" data-thickness=".2" data-readOnly="true" data-width="75" data-height="75" data-fgColor="#f24d35"></div>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li><strong>1</strong> user</li>
+                        <li><strong>5</strong> projects</li>
+                        <li><strong>2GB</strong> storage</li>
+                    </ul>
+                    <div class="plan-cta">
+                        <p class="plan-price pull-left">$9<span>/mo</span></p>
+                        <p class="plan-buy pull-right"><a href="index.html" class="btn">Select plan</a></p>
+                    </div>
+                </div>
+
+                <div class="plan large span4">
+                    <div class="plan-title">
+                        <h2>Value<br /><span>Power Plan</span></h2>
+                        <div class="hidden-tablet hidden-ie"><input type="text" value="75" class="dial pull-right" data-thickness=".2" data-readOnly="true" data-width="75" data-height="75" data-fgColor="#e67e22" data-skin="tron"></div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><strong>10</strong> users</li>
+                        <li><strong>20</strong> projects</li>
+                        <li><strong>30GB</strong> storage</li>
+                    </ul>
+                    <div class="plan-cta">
+                        <p class="plan-price pull-left">$29<span>/mo</span></p>
+                        <p class="plan-buy pull-right"><a href="index.html" class="btn">Select plan</a></p>
+                    </div>
+                </div>
+
+                <div class="plan span4">
+                    <div class="plan-title">
+                        <h2>Enterprise<br /><span>All Included Plan</span></h2>
+                        <div class="hidden-tablet hidden-ie"><input type="text" value="100" class="dial pull-right" data-thickness=".2" data-readOnly="true" data-width="75" data-height="75" data-fgColor="#2ecc71" data-skin="tron"></div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><strong>Unlimited</strong> users</li>
+                        <li><strong>Unlimited</strong> projects</li>
+                        <li><strong>Unlimited</strong> storage</li>
+                    </ul>
+                    <div class="plan-cta">
+                        <p class="plan-price pull-left">$49<span>/mo</span></p>
+                        <p class="plan-buy pull-right"><a href="index.html" class="btn">Select plan</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="footer-cta" class="color bottom padding-mini">
+    <div class="container">
+        <div class="row">
+            <div class="circle"><span aria-hidden="true" class="icon-like"></span></div>
+
+            <div class="span12 try-now">
+                <h1>Why not give it a try, <span class="colorHighlight1">for free.</span></h1>
+                <a href="#" class="btn btn-large cta">Try it out</a>
+            </div>
+
+            <div class="span8 chat">
+                <h3>Need to chat?</h3>
+                <span class="fs1 icomoon-comment" aria-hidden="true"><a href="mailto:support@yourapp.com">support@yourapp.com</a>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                <span class="fs1 icomoon-phone-2" aria-hidden="true">+1 (234) 5678 901</span>
+            </div>
+
+            <div class="span4 social">
+                <a href="#" target="_blank"><img src="/assets/icon-facebook.png" alt="" /></a>
+                <a href="https://twitter.com/dparrelli" target="_blank"><img src="/assets/icon-twitter.png" alt="" /></a>
+                <a href="#" target="_blank"><img src="/assets/icon-vimeo.png" alt="" /></a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="padding">
+    <div class="container">
+        <div class="row">
+
+            <div class="span6">
+                Created by <a href="http://www.davidparrelli.com/" class="color" target="_blank">Parrelli Interactive</a>
+            </div>
+
+            <div class="span6 text-right">
+                <nav>
+                    <a href="https://www.tumblr.com/" target="_blank">Blog</a>
+                    <a href="#newsletter-modal" class="modal-form">Newsletter</a>
+                    <a href="#privacy-modal" class="modal-form">Privacy</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- ADD MAILCHIMP INTEGRATION CODE HERE -->
+<form id="newsletter-modal" class="mfp-hide white-popup-block zoom-anim-dialog validate" action="http://quriocityapp.us2.list-manage.com/subscribe/post?u=ca387a961456870f8bfeb1559&amp;id=2300f150a3" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+    <h2>Subscribe to our mailing list</h2>
+    <div class="mc-field-group">
+        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter your email address">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">
+    </div>
+    <div id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>
+</form>
+
+<!-- PRIVACY MODAL -->
+<div id="privacy-modal" class="mfp-hide white-popup-block zoom-anim-dialog">
+    <h2>Privacy Policy</h2>
+    <p>Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people. Like pit bulls. The dog of dogs. Pit bull can be the right man's best friend... or the wrong man's worst enemy. You going to give me a dog for a pet, give me a pit bull. Give me... Raoul. Right, Omar? Give me Raoul.</p>
+
 </div>
 
+<!-- SIGN UP FORM MODAL -->
+<!--<form id="signup-form" class="mfp-hide white-popup-block zoom-anim-dialog user-form">-->
+    <!--<h2>Sign up for an account</h2>-->
+
+
+    <!--<a href="#" class="btn facebook">Sign up with Facebook</a>-->
+    <!--<a href="#" class="btn twitter">Sign up with Twitter</a>-->
+    <!--<a href="#" class="btn google">Sign up with Google+</a>-->
+
+
+
+    <!--<div class="divider"><span class="dashed-line"></span>or<span class="dashed-line"></span></div>-->
+
+    <!--<input type="text" name="name" class="name" maxlength="50" pattern="^.+$" required placeholder="Enter your full name" />-->
+
+    <!--<input type="email" name="email" class="email" placeholder="Enter your email" maxlength="320" pattern="^[a-z0-9!#$%\x26'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%\x26'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required />-->
+
+    <!--<input type="password" placeholder="Enter your password" class="password" title="Can contain any character. The length may vary between seven and hundred characters" maxlength="100" pattern=".{7,100}" required />-->
+
+    <!--<input type="submit" class="submit btn cta" value="Sign up" />-->
+
+    <!--<div class="form-text">By clicking 'Sign up' you agree to the our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</div>-->
+
+<!--</form>-->
+<div id="login-form" class="mfp-hide white-popup-block zoom-anim-dialog user-form">
+<h2>Login to your account</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div class="input email required user_email">
+  <label class="">Email</label>
+  <input autofocus="autofocus" class="string email required" id="user_email" maxlength="255" name="user[email]" required="required" size="50" type="email" value="">
+  </div>
+    <!--<%= f.input :email, :required => false, :autofocus => true %>-->
+    <%= f.input :password, :required => false %>
+    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+
+          <%= f.button :submit, "Sign in" , :class => 'submit btn cta'%>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+
+<!-- LOGIN POPOVER -->
+<!--<div id="login-form" class="" style="display: none">-->
+    <!--<form class="user-form">-->
+        <!--<h2>Login to your account</h2>-->
+        <!--<a href="#" class="btn facebook">Login with Facebook</a>-->
+        <!--<a href="#" class="btn twitter">Login with Twitter</a>-->
+        <!--<a href="#" class="btn google">Login with Google+</a>-->
+
+        <!--<div class="divider"><span class="dashed-line"></span>or<span class="dashed-line"></span></div>-->
+
+        <!--<input type="email" name="email" class="email" placeholder="Enter your email" maxlength="320" pattern="^[a-z0-9!#$%\x26'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%\x26'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required />-->
+
+        <!--<input type="password" placeholder="Enter your password" class="password" title="Can contain any character. The length may vary between seven and hundred characters" maxlength="100" pattern=".{7,100}" required />-->
+
+        <!--<input id="check1" type="checkbox" name="check" value="check1">-->
+        <!--<label class="checkbox" for="check1">Keep me logged in</label>-->
+
+        <!--<input type="submit" class="submit btn cta" value="Submit" />-->
+
+        <!--<div class="form-text"><a href="#">Forgot your password?</a></div>-->
+
+    <!--</form>-->
+<!--</div>-->
+
+<div id="signup-form" class="mfp-hide white-popup-block zoom-anim-dialog user-form">
+<h2>Sign up for an account</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+<div class="input email required user_email">
+<label class="required" for="user_email"><abbr title="required">*</abbr> Email</label>
+<input autofocus="autofocus" class="string email required" id="user_email" maxlength="255" name="user[email]" required="required" size="50" type="email" value="">
+</div>
+
+    <!--<%= f.input :email, :required => true, :autofocus => true %>-->
+    <%= f.input :password, :required => true %>
+    <%= f.input :password_confirmation, :required => true %>
+    <!--<%= f.collection_select :role, User::ROLES, :to_s, :humanize %>-->
+
+     <%= f.button :submit, "Sign up" , :class => 'submit btn cta'%>
+
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+
+
+
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+
+<%= javascript_include_tag "landingpage" %>
+
+
+<script type="text/javascript" src="http://use.typekit.net/ump8und.js">
+</script>
+< script type = "text/javascript" >try {
+    Typekit.load();
+} catch (e) {
+}
+</script>
+    <!-- PRELOADER -->
+    <script type="text/javascript">
+    // <![CDATA[
+    $(window).load(function() { $("#preloader").fadeOut("fast"); })
+    // ]]>
+    </script>
 
 
 </body>
