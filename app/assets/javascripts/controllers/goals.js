@@ -3,7 +3,6 @@ app.controller('GoalsController', function ($scope, CurrentProject, Card){
     $scope.board2 = [];
     $scope.board3 = [];
     $scope.board4 = [];
-	$scope.startedDragging = false;
 
     var currentProject = CurrentProject.query(function(){
         $scope.currentProject = currentProject[0];
