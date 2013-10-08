@@ -3,6 +3,7 @@ app.controller('GoalsController', function ($scope, CurrentProject, Card){
     $scope.board2 = [];
     $scope.board3 = [];
     $scope.board4 = [];
+	$scope.startedDragging = false;
 
     var currentProject = CurrentProject.query(function(){
         $scope.currentProject = currentProject[0];
@@ -62,6 +63,7 @@ app.controller('GoalsController', function ($scope, CurrentProject, Card){
         return false;
     };
 
+
     $scope.editCard = function(card){
         if (!$scope.isBeingEdited(card) && $scope.beingEdited.length < 1){
             $scope.beingEdited.push(card);
@@ -69,6 +71,7 @@ app.controller('GoalsController', function ($scope, CurrentProject, Card){
     }
 
     $scope.doneEditing = function(card){
+		
         card.$update({projectId: $scope.currentProject.id});
         $scope.beingEdited.splice($scope.beingEdited.indexOf(card), 1);
     }
@@ -78,7 +81,16 @@ app.controller('GoalsController', function ($scope, CurrentProject, Card){
     };
 
     $scope.onDropCallback = function(event, ui) {
-        console.log('dropped',event, ui);
+		
+		var newBoardName = event.target.getAttribute('ng-model');
+		var board = $scope[newBoardName];
+		
+		var cardNumber = board.length - 1;
+		var card = board[cardNumber];
+		
+		card.board = newBoardName;
+		card.$update({projectId: $scope.currentProject.id});
+		
     };
 
 });
