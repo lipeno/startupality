@@ -81,7 +81,10 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
 
         var d = $dialog.dialog($scope.opts);
         d.open().then(function(result){
-            if(result)
+//            $scope.loadSections();
+//            $scope.keypartners = Section.query({projectId: $scope.currentProject.id}, function() {})
+//            $scope.sections = Section.query({projectId: $scope.currentProject.id}, function() {});
+                if(result)
             {
                 alert('dialog closed with result: ' + result);
             }
@@ -116,14 +119,25 @@ app.controller('ChecklistDialogController', function ($scope, dialog, currentSec
     $scope.currentSection = currentSection;
 
     $scope.editTag = function (item) {
-        $scope.currentSection.$update({projectId: $scope.currentProject.id});
+        if ($scope.currentProject){
+            $scope.currentSection.$update({projectId: $scope.currentProject.id});
+//            section.$update({projectId: $scope.currentProject});
+
+            for(var i=0;i<$scope.sections.length;++i) {
+                var sect = $scope.sections[i];
+                if ( sect.id === $scope.currentSection.id) {
+                    sect.$update({projectId: $scope.currentProject});
+                    break;
+                }
+            }
+        }
     };
 
     $scope.close = function(result){
         var currentProject = CurrentProject.query(function(){
-            $scope.item.$update({projectId: currentProject[0].id});
+            $scope.currentSection.$update({projectId: currentProject[0].id});
         });
-        dialog.close(result);
+        dialog.close($scope.currentSection);
     };
 
 
@@ -144,19 +158,19 @@ app.controller('ChecklistDialogController', function ($scope, dialog, currentSec
         var sections = Section.query({projectId: $scope.currentProject.id}, function(){
             $scope.sections = sections;
 //            TODO:update only one
-//            $scope.$watch('sections', function() {
-//                for (var i=0; i < $scope.sections.length; i++){
-//                    $scope.sections[i].$update({projectId: currentProject[0].id});
-//                }
+            $scope.$watch('sections', function() {
+                for (var i=0; i < $scope.sections.length; i++){
+                    $scope.sections[i].$update({projectId: currentProject[0].id});
+                }
+            }, true);
+
+            $scope.$apply();
+
+//            $scope.$watch('currentSection', function() {
+//                    $scope.currentSection.$update({projectId: currentProject[0].id});
 //            }, true);
         });
     });
-
-    $scope.tagsChanged = function(section) {
-        if ($scope.currentProject){
-            section.$update({projectId: $scope.currentProject});
-        }
-    }
 
     $scope.getProjectChecklistSteps = function (sctType) {
         var projectSteps = [];
