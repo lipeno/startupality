@@ -89,9 +89,7 @@
                             </div>
                         </li>
                         <li class="span3" style='margin-left:10px;'>
-                            <div class="thumbnail" data-drop="true" ng-model='board4'
-                                 data-jqyoui-options="{accept:'.btn-draggable:not([ng-model=board4])'}"
-                                 jqyoui-droppable="{multiple:true, onDrop: 'onDropCallback'}">
+                            <div class="thumbnail" ng-model='board4'>
                                 <div class="caption">
                                     <div ng-repeat="item in board4" ng-dblclick="editCard(item)">
                                         <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)"
@@ -113,9 +111,42 @@
 
             </td></tr>
         </table>
+		
+		<div class="span4 offset2">
+		            <div id="sourceList" class="aaaaa"
+		                dnd-between-list="board1,targetList,treciList"
+		                ng-class="{'minimalList':sourceEmpty()}">
+		                <li class="alert alert-error nomargin"
+		                    ng-repeat="item in board1">{{item.title}}</li>
+		            </div>
+		        </div>
+				
+		        <div class="span4">
+ 
+		            <div id="treciList" class="aaaaa"
+		                dnd-between-list="board2,sourceList,targetList"
+		                ng-class="{'minimalList':sourceEmpty()}">
+		                <li class="alert alert-info nomargin"
+		                    ng-repeat="item in board2" ng-dblclick="editCard(item)">{{item.title}}</li>
+		            </div>
+		        </div>
+				
+		        <div class="span4">
+ 
+		            <div id="targetList" class="aaaaa"
+		                dnd-between-list="board3,treciList,sourceList"
+		                ng-class="{'minimalList':sourceEmpty()}">
+		                <li class="alert alert-info nomargin"
+		                    ng-repeat="item in board3" ng-dblclick="editCard(item)">{{item.title}}</li>
+		            </div>
+		        </div>
+		        
 
 
     </div>
+	
+	
+	
 </div>
 <!--{{beingEdited}}<br/><br/>-->
 <!--{{board1}}<br/><br/>-->
