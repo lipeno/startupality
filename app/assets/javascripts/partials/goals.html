@@ -111,35 +111,30 @@
 
             </td></tr>
         </table>
-		
-		<div class="span4 offset2">
-		            <div id="sourceList" class="aaaaa"
-		                dnd-between-list="board1,targetList,treciList"
-		                ng-class="{'minimalList':sourceEmpty()}">
-		                <li class="alert alert-error nomargin"
-		                    ng-repeat="item in board1">{{item.title}}</li>
-		            </div>
-		        </div>
-				
-		        <div class="span4">
- 
-		            <div id="treciList" class="aaaaa"
-		                dnd-between-list="board2,sourceList,targetList"
-		                ng-class="{'minimalList':sourceEmpty()}">
-		                <li class="alert alert-info nomargin"
-		                    ng-repeat="item in board2" ng-dblclick="editCard(item)">{{item.title}}</li>
-		            </div>
-		        </div>
-				
-		        <div class="span4">
- 
-		            <div id="targetList" class="aaaaa"
-		                dnd-between-list="board3,treciList,sourceList"
-		                ng-class="{'minimalList':sourceEmpty()}">
-		                <li class="alert alert-info nomargin"
-		                    ng-repeat="item in board3" ng-dblclick="editCard(item)">{{item.title}}</li>
-		            </div>
-		        </div>
+
+
+        <div class="row">
+
+                <ul class="column span3" sortable-selector="ul.column" sortable ng-model="board1">
+                    <li ng-repeat="item in board1">
+                        <a href="#" ng-click="doStuff(this)">{{item}}</a>
+                    </li>
+                </ul>
+
+            <ul class="column span3" sortable-selector="ul.column" sortable ng-model="board2">
+                <li ng-repeat="item in board2">
+                    <a href="#" ng-click="doStuff(this)">{{item}}</a>
+                </li>
+            </ul>
+
+            <ul class="column span3" sortable-selector="ul.column" sortable ng-model="board3">
+                <li ng-repeat="item in board3">
+                    <a href="#" ng-click="doStuff(this)">{{item}}</a>
+                </li>
+            </ul>
+
+        </div>
+
 		        
 
 
@@ -155,5 +150,9 @@
 <!--{{board4}}-->
 
 <style>
+    ul { margin: 0px; padding: 0px;}
+    ul.column { background-color:#dddddd; height: 300px;}
+    ul.column li { background-color:#aaa; margin: 5px; border: 1px dotted red; list-style: none;}
 
+    ul.column li a { color: black; }
 </style>
