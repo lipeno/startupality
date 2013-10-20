@@ -184,8 +184,9 @@ app.directive('sortable', function(){
                     if (ui.item.sortable.resort && !ui.item.sortable.relocate){
                         var end, start;
                         start = ui.item.sortable.index;
+                        console.log("start Index", start)
                         end = ui.item.index();
-
+                        console.log("end Index", end)
                         ui.item.sortable.resort.$modelValue.splice(end, 0, ui.item.sortable.resort.$modelValue.splice(start, 1)[0]);
                     }
                     if (ui.item.sortable.resort || ui.item.sortable.relocate) {
