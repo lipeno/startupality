@@ -129,13 +129,6 @@ app.controller('FinanceController', function ($scope, RevenueOrExpense, CurrentP
 			credits: {
 				enabled: false
 			},
-			exporting: {
-			        buttons: {
-			            contextButton: {
-			                menuItems: Highcharts.getOptions().exporting.buttons.contextButton.menuItems.splice(0,5)
-			            }
-			        }
-			    },
             series: [{
                 name: 'Revenues',
                 data: [$scope.calculateRevenueForMonth($scope.months[0]), $scope.calculateRevenueForMonth($scope.months[1]), $scope.calculateRevenueForMonth($scope.months[2]), $scope.calculateRevenueForMonth($scope.months[3]), $scope.calculateRevenueForMonth($scope.months[4]), $scope.calculateRevenueForMonth($scope.months[5]), $scope.calculateRevenueForMonth($scope.months[6]), $scope.calculateRevenueForMonth($scope.months[7]), $scope.calculateRevenueForMonth($scope.months[8]), $scope.calculateRevenueForMonth($scope.months[9]), $scope.calculateRevenueForMonth($scope.months[10]), $scope.calculateRevenueForMonth($scope.months[11])]
@@ -147,7 +140,7 @@ app.controller('FinanceController', function ($scope, RevenueOrExpense, CurrentP
                 data: [$scope.calculateRevenueForMonth($scope.months[0]) - $scope.calculateExpenseForMonth($scope.months[0]), $scope.calculateRevenueForMonth($scope.months[1]) - $scope.calculateExpenseForMonth($scope.months[1]), $scope.calculateRevenueForMonth($scope.months[2]) - $scope.calculateExpenseForMonth($scope.months[2]), $scope.calculateRevenueForMonth($scope.months[3]) - $scope.calculateExpenseForMonth($scope.months[3]), $scope.calculateRevenueForMonth($scope.months[4]) - $scope.calculateExpenseForMonth($scope.months[4]), $scope.calculateRevenueForMonth($scope.months[5]) - $scope.calculateExpenseForMonth($scope.months[5]), $scope.calculateRevenueForMonth($scope.months[6])  - $scope.calculateExpenseForMonth($scope.months[6]), $scope.calculateRevenueForMonth($scope.months[7]) - $scope.calculateExpenseForMonth($scope.months[7]), $scope.calculateRevenueForMonth($scope.months[8]) - $scope.calculateExpenseForMonth($scope.months[8]), $scope.calculateRevenueForMonth($scope.months[9]) - $scope.calculateExpenseForMonth($scope.months[9]), $scope.calculateRevenueForMonth($scope.months[10]) - $scope.calculateExpenseForMonth($scope.months[10]), $scope.calculateRevenueForMonth($scope.months[11]) - $scope.calculateExpenseForMonth($scope.months[11])]
             }]
         };
-
+		Highcharts.getOptions().exporting.buttons.contextButton.menuItems.splice(5,1)
     };
 
     $scope.doneEditing = function( row ) {
