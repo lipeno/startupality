@@ -70,7 +70,7 @@ Startupality::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
    # Compressor for JavaScript
-  config.assets.js_compressor = Sprockets::LazyCompressor.new { Uglifier.new(:mangle => false) }
+  config.assets.js_compressor = Sprockets::LazyCompressor.new { Uglifier.new(:mangle => false) } # because of mangle false, when minimising, dependencies in angular don't have to be put in array
 
   # User cloudfront as deployment asset host
   # SET THIS AT THE END OF THIS GUIDE,
