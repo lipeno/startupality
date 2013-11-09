@@ -148,6 +148,7 @@ app.directive('calendarYear', function () {
 });
 
 
+// Directive for drag'n'drop element
 app.directive('sortable', function(){
     return {
         restrict: 'A',
@@ -155,43 +156,55 @@ app.directive('sortable', function(){
         link: function(scope, element, attrs, ngModel){
             if (ngModel){
                 ngModel.$render = function(){
-                    element.sortable( 'refresh' );
+                    element.sortable( 'refresh' ); // Triggers the reloading of all sortable items, causing new items to be recognized.
                 };
             }
 
             element.sortable({
-                connectWith: attrs.sortableSelector,
-                cancel: 'a',
-                revert: true,
-                remove: function(e, ui){
-                    if (ngModel.$modelValue.length === 1) {
+                connectWith: attrs.sortableSelector, // Define target element to drop to
+                cancel: 'a', // Prevents sorting if you start on elements matching the selector
+                revert: true, // The sortable items should revert to their new positions using a smooth animation
+                remove: function(e, ui){ // Triggered when a sortable item has been dragged out from the list and into another.
+                    if (ngModel.$modelValue.length === 1) { // If ng-model is list of size 1 then just save that element
                         ui.item.sortable.moved = ngModel.$modelValue.splice(0, 1)[0];
-                    } else {
+                    } else { // Otherwise find the dragged element and save it
                         ui.item.sortable.moved =  ngModel.$modelValue.splice(ui.item.sortable.index, 1)[0];
                     }
                 },
-                receive: function(e, ui){
+                receive: function(e, ui){ // When a connected sortable list has received an item from another list.
                     ui.item.sortable.relocate = true;
-                    ngModel.$modelValue.splice(ui.item.index(), 0, ui.item.sortable.moved);
+                    ngModel.$modelValue.splice(ui.item.index(), 0, ui.item.sortable.moved);  // Add new element at the dragged position.
                 },
-                update: function(e, ui){
+                update: function(e, ui){ // The user stopped sorting and the DOM position has changed.
                     ui.item.sortable.resort = ngModel;
                 },
-                start: function(e, ui){
-                    ui.item.sortable = { index: ui.item.index(), resort: ngModel };
+                start: function(e, ui){ // when sorting starts.
+                    ui.item.sortable = { index: ui.item.index(), resort: ngModel }; // Save the dragged element
                 },
-                stop: function(e, ui){
-                    if (ui.item.sortable.resort && !ui.item.sortable.relocate){
+                stop: function(e, ui){ // when sorting has stopped.
+
+                    if (ui.item.sortable.resort && !ui.item.sortable.relocate){ // When item has been dropped in the same column.
                         var end, start;
                         start = ui.item.sortable.index;
                         console.log("start Index", start)
                         end = ui.item.index();
                         console.log("end Index", end)
+                        // Remove element from old location and insert into new one
                         ui.item.sortable.resort.$modelValue.splice(end, 0, ui.item.sortable.resort.$modelValue.splice(start, 1)[0]);
                     }
                     if (ui.item.sortable.resort || ui.item.sortable.relocate) {
                         scope.$apply();
                     }
+
+                    console.log("current ng-model", ui.item.sortable.resort.$modelValue)
+                    // Update target list with updated order of elements
+                    _.each(ui.item.sortable.resort.$modelValue, function(item){
+                        var currentIndex = _.indexOf(ui.item.sortable.resort.$modelValue, item)
+                        item.order = currentIndex;
+                    });
+
+                    // Update source with updated order of elements
+
                     setTimeout()
                 }
             });
