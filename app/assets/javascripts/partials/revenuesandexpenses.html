@@ -1,9 +1,10 @@
  <div class="finance"  ng-controller= "FinanceController">
     <div id="revenues">
+        <h4>Year: <input ng-model="testing" placeholder="2013" type="year" calendar-year></h4>
         <h2><i class="icon-list"></i> Revenues</h2>
         <table>
             <tr class="column-label">
-                <td colspan="2"><b>{{revenues[0].year}}</b></td>
+                <td colspan="2"></td>
                 <td ng-repeat="month in months">{{month | capitalize}}</td>
             </tr>
             <tr ng-repeat="row in revenues">
@@ -40,7 +41,7 @@
         <h2><i class="icon-list icon-small"></i> Expenses</h2>
         <table>
             <tr class="column-label">
-                <td colspan="2"><b>{{expenses[0].year}}</b></td>
+                <td colspan="2"></td>
                 <td ng-repeat="month in months">{{month | capitalize}}</td>
             </tr>
             <tr ng-repeat="row in expenses">

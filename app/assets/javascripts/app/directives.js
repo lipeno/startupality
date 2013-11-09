@@ -132,4 +132,19 @@ app.directive('chart', function () {
 
 });
 
+// Calendar with year only picker
+app.directive('calendarYear', function () {
+  return {
+    restrict: 'A',
+    link: function (scope, element, attrs) {
+      element.datepicker( {
+        format: " yyyy",
+        viewMode: "years",
+        minViewMode: "years"
+      });
+    }
+  }
+
+});
+
 
