@@ -162,14 +162,15 @@
             <div class="feature span6">
                 <div><img src="/assets/icon-infinity-loop.png" alt="" /></div>
                 <h3>Lean startup methodology</h3>
-                <p>Use customer development to learn from your customers. Use the learn-measure-build loop to quickly improve your business and get to product-market fit.</p>
+                <p>Quickly get to product-market fit. Spend less money on building and running your startup. Improve your changes of getting to success by eliminating waste.
+</p>
             </div>
 
             <div class="feature span6">
                 <div><img src="/assets/icon-gift-box.png" alt="" /></div>
                 <h3>Launch your prototype</h3>
                 <p>
-                Launch your prototype and use the collective intelligence in our community forums to get advices, testers, feedback and maybe even your first clients.
+                Launch your prototype and use the collective intelligence in our community forums to get advices, feedback and maybe even your first clients.
             </div>
 
 
@@ -353,7 +354,7 @@
             <div class="circle"><span aria-hidden="true" class="icon-like"></span></div>
 
             <div class="span12 try-now">
-                <h1>Why not give it a try, <span class="colorHighlight1">for free.</span></h1>
+                <h1>Why not give it a try, it is <span class="colorHighlight1">free</span> for early adopters.</h1>
                 <a href="#" class="btn btn-large cta">Try it out</a>
             </div>
 
@@ -436,12 +437,12 @@ By using our website, you hereby consent to our privacy policy and agree to its 
   <label class="">Email</label>
   <input autofocus="autofocus" class="string email required" id="user_email" maxlength="255" name="user[email]" required="required" size="50" type="email" value="">
   </div>
+
     <!--<%= f.input :email, :required => false, :autofocus => true %>-->
     <%= f.input :password, :required => false %>
     <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-
-          <%= f.button :submit, "Sign in" , :class => 'submit btn cta'%>
-<% end %>
+    <%= f.button :submit, "Sign in" , :class => 'submit btn cta'%>
+    <% end %>
 
 <%= render "devise/shared/links" %>
 </div>
@@ -449,20 +450,19 @@ By using our website, you hereby consent to our privacy policy and agree to its 
 <div id="signup-form" class="mfp-hide white-popup-block zoom-anim-dialog user-form">
 <h2>Sign up for an account</h2>
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-<div class="input email required user_email">
-<label class="required" for="user_email"> Email</label>
-<input autofocus="autofocus" class="string email required" id="user_email" maxlength="255" name="user[email]" required="required" size="50" type="email" value="">
-</div>
+    <div class="input email required user_email">
+    <label class="required" for="user_email"> Email</label>
+    <input autofocus="autofocus" class="string email required" id="user_email" maxlength="255" name="user[email]" required="required" size="50" type="email" value="">
+    </div>
 
     <!--<%= f.input :email, :required => true, :autofocus => true %>-->
     <%= f.input :password, :required => true %>
     <%= f.input :password_confirmation, :required => true %>
     <!--<%= f.collection_select :role, User::ROLES, :to_s, :humanize %>-->
-
-     <%= f.button :submit, "Sign up" , :class => 'submit btn cta'%>
+    <%= f.button :submit, "Sign up" , :class => 'submit btn cta'%>
 
 <% end %>
 
