@@ -144,7 +144,6 @@ app.controller('FinanceController', function ($scope, RevenueOrExpense, CurrentP
     };
 
     $scope.doneEditing = function( row ) {
-        console.log(Highcharts);
         row.$update({projectId: $scope.currentProject.id});
 		
 		Highcharts.charts[0].series[0].setData([$scope.calculateRevenueForMonth($scope.months[0]), $scope.calculateRevenueForMonth($scope.months[1]), $scope.calculateRevenueForMonth($scope.months[2]), $scope.calculateRevenueForMonth($scope.months[3]), $scope.calculateRevenueForMonth($scope.months[4]), $scope.calculateRevenueForMonth($scope.months[5]), $scope.calculateRevenueForMonth($scope.months[6]), $scope.calculateRevenueForMonth($scope.months[7]), $scope.calculateRevenueForMonth($scope.months[8]), $scope.calculateRevenueForMonth($scope.months[9]), $scope.calculateRevenueForMonth($scope.months[10]), $scope.calculateRevenueForMonth($scope.months[11])],true);
