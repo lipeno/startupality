@@ -59,6 +59,9 @@ module Startupality
     #Needs to be false on Heroku
     config.assets.initialize_on_precompile = false
 
+    # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+    config.assets.precompile += ['landingpage.css']
+
     # Can be set to invalidate the whole cache
     config.assets.version = "1.1"
 
