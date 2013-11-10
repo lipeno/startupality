@@ -13,7 +13,7 @@
                             <!--<a href="#/dashboard"><i class="icon-home icon-large"></i> Dashboard</a>-->
                         <!--</li>-->
                         <li ng-class="{active: routeIs('/vision')}">
-                            <a ng-href="{{buildUrl('#/vision')}}" ng-class=isDisabled()><i class="icon-credit-card icon-large"></i> Business Model</a>
+                            <a ng-href="{{buildUrl('#/vision')}}" ng-class=isDisabled()><i class="icon-credit-card icon-large"></i> Strategy</a>
                         </li>
                         <!--<li ng-class="{active: routeIs('/experiments')}">-->
                             <!--<a  ng-click="toastr.info('Thank you for your interest. We are working on this!', 'Coming soon!')" ng-class=isDisabled()><i class="icon-beaker icon-large"></i> Experiments</a>-->
@@ -26,14 +26,18 @@
                             <!--<a ng-href="{{buildUrl('#/finance')}}" ng-class=isDisabled()><i class="icon-bar-chart icon-large"></i> Finance</a>-->
                         <!--</li>-->
                         <li ng-class="{active: routeIs('/strategy')}" >
-                            <a ng-href="{{buildUrl('#/strategy')}}" ng-class=isDisabled()><i class="icon-road icon-large"></i> Business Strategy</a>
+                            <a ng-href="{{buildUrl('#/strategy')}}" ng-class=isDisabled()><i class="icon-bar-chart icon-large"></i> Money</a>
+                        </li>
+
+                        <li ng-class="{active: routeIs('/risksregister')}" >
+                            <a ng-href="{{buildUrl('#/risksregister')}}" ng-class=isDisabled()><i class="icon-list icon-large"></i> Risks</a>
                         </li>
                         <!--<li ng-class="{active: routeIs('/goals')}" >-->
                             <!--<a ng-href="{{buildUrl('#/goals')}}" ng-class=isDisabled()><i class="icon-tasks icon-large"></i> Goals</a>-->
                         <!--</li>-->
 
                         <li ng-class="{active: routeIs('/experiments')}">
-                            <a ng-href="{{buildUrl('#/experiments')}}" ng-class=isDisabled()><i class="icon-beaker icon-large"></i> Track Progress</a>
+                            <a ng-href="{{buildUrl('#/experiments')}}" ng-class=isDisabled()><i class="icon-beaker icon-large"></i> Tasks</a>
                         </li>
                     </ul>
 

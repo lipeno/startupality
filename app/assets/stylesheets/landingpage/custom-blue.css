@@ -350,8 +350,9 @@ div.subnav .nav > .active > a:hover {
 .user-form div.form-text a:hover {
   color: #444;
 }
-#signup-form {
+#signup-form, #login-form {
   width: 320px;
+  padding: 15px;
   background: #fafafa;
   padding-bottom: 2.5em;
   -webkit-border-radius: 7px;
@@ -361,7 +362,8 @@ div.subnav .nav > .active > a:hover {
   -moz-box-shadow: 0 6px #dddddd;
   box-shadow: 0 6px #dddddd;
 }
-#signup-form h2 {
+
+#signup-form h2, #login-form h2 {
   font-size: 1.8em;
   font-weight: 300;
   margin-bottom: 1em;
@@ -2455,10 +2457,6 @@ footer nav a {
   }
   #pricing .plan .plan-cta .plan-price {
     width: 40% !important;
-  }
-  #signup-form {
-    width: 240px;
-    padding: 15px;
   }
   .popover {
     padding: 10px;

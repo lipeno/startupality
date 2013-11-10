@@ -1,25 +1,25 @@
-<secondaryheader id="secondaryheader">
-    <div class="row">
-        <div class="span3 center">
-            <ul class="breadcrumb nav nav-tabs">
+<!--<secondaryheader id="secondaryheader">-->
+    <!--<div class="row">-->
+        <!--<div class="span3 center">-->
+            <!--<ul class="breadcrumb nav nav-tabs">-->
+                <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<a ng-class="{active: isCurrentView('swotpestle')}"&ndash;&gt;-->
+                       <!--&lt;!&ndash;ng-click="changeView('swotpestle')"><i class="icon-cogs"></i> SWOT/PEST Analysis</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
                 <!--<li>-->
-                    <!--<a ng-class="{active: isCurrentView('swotpestle')}"-->
-                       <!--ng-click="changeView('swotpestle')"><i class="icon-cogs"></i> SWOT/PEST Analysis</a>-->
+                    <!--<a ng-class="{active: isCurrentView('revenuesandexpenses')}"-->
+                       <!--ng-click="changeView('revenuesandexpenses')"><i class="icon-bar-chart"></i> Finance</a>-->
                 <!--</li>-->
-                <li>
-                    <a ng-class="{active: isCurrentView('revenuesandexpenses')}"
-                       ng-click="changeView('revenuesandexpenses')"><i class="icon-bar-chart"></i> Finance</a>
-                </li>
-                <li>
-                    <a ng-class="{active: isCurrentView('risksregister')}"
-                       ng-click="changeView('risksregister')"><i class="icon-credit-card"></i> Risks</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</secondaryheader>
+                <!--<li>-->
+                    <!--<a ng-class="{active: isCurrentView('risksregister')}"-->
+                       <!--ng-click="changeView('risksregister')"><i class="icon-credit-card"></i> Risks</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</secondaryheader>-->
 
-<div class="risks" ng-include='getCurrentView()'>
+<div class="row center risks" ng-include='getCurrentView()'>
 </div>
 
 
