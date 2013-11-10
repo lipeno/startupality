@@ -198,7 +198,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  analytics-ruby
+  analytics-ruby (< 1.0)
   angular-ui-rails
   angularjs-rails
   aws-sdk

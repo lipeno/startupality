@@ -4,8 +4,7 @@ ruby '1.9.3'
 gem 'rails', "3.2.14"
 gem 'devise', "3.1.0"
 gem 'cancan'
-gem 'analytics-ruby'
-
+gem 'analytics-ruby', '<1.0'
 
 gem 'simple_form'
 gem "paperclip", "~> 3.0"
