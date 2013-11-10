@@ -90,35 +90,39 @@ app.controller('GoalsController', function ($scope, CurrentProject, Card){
     $scope.columnsWithItems = {'Column 1':{'items':['Item 1', 'Item 2']}, 'Column 2':{ 'items': ['Item 3', 'Item 4'] }, 'Column 3':{ 'items': ['Item 5', 'Item 6']}};
 
     $scope.$watch('board1', function(newvalue) {
-        var newElement = _.find(newvalue, function(item){ return item.board !== "board1"; });
-        if (newElement) {
-            newElement.board = "board1";
-            newElement.$update({projectId: $scope.currentProject.id});
-        }
+      _.each($scope.board1, function(item) {
+        item.board = "board1";
+        item.$update({projectId: $scope.currentProject.id}, function(data) {
+              console.log("Received ", data)
+        });
+      });
     }, true);
 
     $scope.$watch('board2', function(newvalue) {
-        var newElement = _.find(newvalue, function(item){ return item.board !== "board2"; });
-        if (newElement) {
-            newElement.board = "board2";
-            newElement.$update({projectId: $scope.currentProject.id});
-        }
+      _.each($scope.board2, function(item) {
+        item.board = "board2";
+        item.$update({projectId: $scope.currentProject.id}, function(data) {
+          console.log("Received ", data)
+        });
+      });
     }, true);
 
     $scope.$watch('board3', function(newvalue) {
-        var newElement = _.find(newvalue, function(item){ return item.board !== "board3"; });
-        if (newElement) {
-            newElement.board = "board3";
-            newElement.$update({projectId: $scope.currentProject.id});
-        }
+      _.each($scope.board3, function(item) {
+        item.board = "board3";
+        item.$update({projectId: $scope.currentProject.id}, function(data) {
+          console.log("Received ", data)
+        });
+      });
     }, true);
 
     $scope.$watch('board4', function(newvalue) {
-        var newElement = _.find(newvalue, function(item){ return item.board !== "board4"; });
-        if (newElement) {
-            newElement.board = "board4";
-            newElement.$update({projectId: $scope.currentProject.id});
-        }
+      _.each($scope.board4, function(item) {
+        item.board = "board4";
+        item.$update({projectId: $scope.currentProject.id}, function(data) {
+          console.log("Received ", data)
+        });
+      });
     }, true);
 	
 	

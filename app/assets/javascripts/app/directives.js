@@ -200,8 +200,10 @@ app.directive('sortable', function(){
                     // Update target list with updated order of elements
                     _.each(ui.item.sortable.resort.$modelValue, function(item){
                         var currentIndex = _.indexOf(ui.item.sortable.resort.$modelValue, item)
-                        item.order = currentIndex;
+                        item.order = currentIndex + 1;
                     });
+
+
 
                     // Update source with updated order of elements
 
