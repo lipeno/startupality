@@ -304,18 +304,17 @@ label[for='toggle-all'] {
 }
 
 #todo-list li .toggle:after {
-  content: '✔';
+  content: "\f10c"; /* this is the Unicode for the icon */
+  font-family: FontAwesome;
   line-height: 43px; /* 40 + a couple of pixels visual adjustment */
-  font-size: 20px;
+  font-size: 25px;
   color: #d9d9d9;
-  text-shadow: 0 -1px 0 #bfbfbf;
 }
 
 #todo-list li .toggle:checked:after {
-  color: #85ada7;
-  text-shadow: 0 1px 0 #669991;
-  bottom: 1px;
-  position: relative;
+  content: '\f135'; /* this is the Unicode for the icon */
+  color: #00aeef;
+  font-size: 35px;
 }
 
 #todo-list li label {
