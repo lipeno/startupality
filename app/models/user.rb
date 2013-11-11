@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
 
   def register_hook
     @just_signed_up = true
+
     Analytics.identify(
         user_id: self.id,
         traits: { email: self.email, name: self.full_name}
