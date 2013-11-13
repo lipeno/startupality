@@ -32,8 +32,6 @@ GEM
       faraday (>= 0.8, < 0.10)
       faraday_middleware (>= 0.8, < 0.10)
       multi_json (~> 1.0)
-    angular-ui-rails (0.4.0.2)
-    angularjs-rails (1.2.0)
     arel (3.0.2)
     atomic (1.1.14)
     aws-sdk (1.25.0)
@@ -87,9 +85,6 @@ GEM
     hike (1.2.3)
     i18n (0.6.5)
     journey (1.0.4)
-    jquery-rails (3.0.4)
-      railties (>= 3.0, < 5.0)
-      thor (>= 0.14, < 2.0)
     json (1.8.1)
     kgio (2.8.1)
     mail (2.5.4)
@@ -182,7 +177,6 @@ GEM
     uglifier (2.3.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    underscore-rails (1.5.2)
     unicorn (4.7.0)
       kgio (~> 2.6)
       rack
@@ -198,8 +192,6 @@ PLATFORMS
 
 DEPENDENCIES
   analytics-ruby (< 1.0)
-  angular-ui-rails
-  angularjs-rails
   aws-sdk
   cancan
   coffee-rails
@@ -207,7 +199,6 @@ DEPENDENCIES
   compass_twitter_bootstrap
   devise (= 3.1.0)
   haml
-  jquery-rails
   meta_request
   paperclip (~> 3.0)
   pg
@@ -219,6 +210,5 @@ DEPENDENCIES
   simple_form
   thin
   uglifier (>= 1.0.3)
-  underscore-rails
   unicorn
   yui-compressor

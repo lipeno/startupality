@@ -9,11 +9,8 @@ gem 'analytics-ruby', '<1.0'
 gem 'simple_form'
 gem "paperclip", "~> 3.0"
 gem "haml"
-
-gem 'jquery-rails'
 gem "select2-rails"
 gem 'pg'
-gem 'underscore-rails'
 gem 'aws-sdk'
 
 # Bundle edge Rails instead:
@@ -33,9 +30,6 @@ group :assets do
   gem 'compass-rails'
   gem 'compass_twitter_bootstrap'
   gem 'yui-compressor'
-  gem 'angularjs-rails'
-  gem 'angular-ui-rails'
-
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
