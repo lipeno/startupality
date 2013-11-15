@@ -723,3 +723,7 @@ ul.column li a { color: black; }
 .project-list li .toggle {
 	margin: 14px 0 !important;
 }
+
+.project-list input[type="checkbox"]:focus {
+	outline: none;
+}
