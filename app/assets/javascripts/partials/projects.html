@@ -1,13 +1,13 @@
 <section id="todoapp">
 
     <header id="header">
-        <form id="todo-form" ng-submit="addProject()">
+        <form id="todo-form" class="project-title" ng-submit="addProject()">
             <input id="new-todo" placeholder="Type here an idea or a project..." ng-model="newProject" autofocus>
         </form>
     </header>
 
     <section id="main" ng-show="projects.length" ng-cloak>
-        <ul id="todo-list">
+        <ul id="todo-list" class="project-list">
             <li ng-repeat="project in projects | reverse" ng-class="{completed: !project.activated, editing: project == editedProject}">
                 <div class="view">
                     <input class="toggle" type="checkbox" ng-click="activateProject(project)" ng-model="project.activated">

@@ -132,8 +132,8 @@ body {
 
 #todoapp:before {
   content: '';
-  border-left: 1px solid #f5d6d6;
-  border-right: 1px solid #f5d6d6;
+  //border-left: 1px solid #f7f7f7;
+  border-right: 3px solid #f7f7f7;
   width: 2px;
   position: absolute;
   top: 0;
@@ -214,7 +214,7 @@ body {
 #new-todo {
   padding: 16px 16px 16px 60px;
   border: none;
-  background: rgba(0, 0, 0, 0.02);
+  background: #f7f7f7;
   z-index: 2;
   box-shadow: none;
 }
@@ -684,4 +684,16 @@ a:hover img.grayscale {
 
 .wizard-navigation{
     margin-top:3%;
+}
+
+.project-title {
+	margin: 0 0 5px;
+}
+*
+.project-list li label {
+	padding: 20px 0 0 15px !important;
+}
+
+.project-list li .toggle {
+	margin: 14px 0 !important;
 }
