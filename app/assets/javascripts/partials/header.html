@@ -39,6 +39,10 @@
                         <li ng-class="{active: routeIs('/experiments')}">
                             <a ng-href="{{buildUrl('#/experiments')}}" ng-class=isDisabled()><i class="icon-beaker icon-large"></i> Tasks</a>
                         </li>
+
+                        <li ng-class="{active: routeIs('/customers')}">
+                            <a  ng-click="toastr.info('Thank you for your interest. We are working on this!', 'Coming soon!')"><i class="icon-group icon-large"></i> Market</a>
+                        </li>
                     </ul>
 
 
