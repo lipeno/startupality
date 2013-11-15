@@ -5,13 +5,13 @@ gem 'rails', "3.2.14"
 gem 'devise', "3.1.0"
 gem 'cancan'
 gem 'analytics-ruby', '<1.0'
-
+gem 'jquery-rails'
 gem 'simple_form'
 gem "paperclip", "~> 3.0"
 gem "haml"
 gem "select2-rails"
 gem 'pg'
-gem 'aws-sdk'
+#gem 'aws-sdk'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -30,9 +30,6 @@ group :assets do
   gem 'compass-rails'
   gem 'compass_twitter_bootstrap'
   gem 'yui-compressor'
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -42,15 +39,3 @@ group :production do
   gem 'unicorn'
   gem 'rails_12factor'
 end
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
