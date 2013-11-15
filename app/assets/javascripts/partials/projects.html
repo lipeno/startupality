@@ -7,7 +7,7 @@
     </header>
 
     <section id="main" ng-show="projects.length" ng-cloak>
-        <ul id="todo-list" class="project-list">
+        <ul class="todo-list project-list">
             <li ng-repeat="project in projects | reverse" ng-class="{completed: !project.activated, editing: project == editedProject}">
                 <div class="view">
                     <input class="toggle" type="checkbox" ng-click="activateProject(project)" ng-model="project.activated">

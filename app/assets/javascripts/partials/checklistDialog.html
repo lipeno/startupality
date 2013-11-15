@@ -49,7 +49,7 @@
             <div class="span7 pull-left">
 
                     <h4><i class="icon-question-sign" tooltip-placement="right" tooltip="Add shorts tags to summarize the concept"></i> Questions & Tasks</h4>
-                    <ul id="todo-list" class="checklist">
+                    <ul class="todo-list checklist">
                         <li ng-repeat="item in getProjectChecklistSteps(currentSection.section_type)">
                             <input class="toggle" type="checkbox" ng-model="item.done" ng-change="editChecklistStep(item)">
                             <label>{{item.checklist_step.title}}</label>

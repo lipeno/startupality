@@ -254,39 +254,39 @@ label[for='toggle-all'] {
   color: #737373;
 }
 
-#todo-list {
+.todo-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-#todo-list li {
+.todo-list li {
   position: relative;
   font-size: 24px;
   border-bottom: 1px dotted #ccc;
 }
 
-#todo-list li:last-child {
+.todo-list li:last-child {
   border-bottom: none;
 }
 
-#todo-list li.editing {
+.todo-list li.editing {
   border-bottom: none;
   padding: 0;
 }
 
-#todo-list li.editing .edit {
+.todo-list li.editing .edit {
   display: block;
   width: 506px;
   padding: 13px 17px 12px 17px;
   margin: 0 0 0 43px;
 }
 
-#todo-list li.editing .view {
+.todo-list li.editing .view {
   display: none;
 }
 
-#todo-list li .toggle {
+.todo-list li .toggle {
   text-align: center;
   width: 40px;
   /* auto, since non-WebKit browsers doesn't support input styling */
@@ -303,21 +303,22 @@ label[for='toggle-all'] {
   appearance: none;
 }
 
-#todo-list li .toggle:after {
-  content: "\f10c"; /* this is the Unicode for the icon */
-  font-family: FontAwesome;
+.todo-list li .toggle:after {
+  content: '✔';
   line-height: 43px; /* 40 + a couple of pixels visual adjustment */
-  font-size: 25px;
+  font-size: 20px;
   color: #d9d9d9;
+  text-shadow: 0 -1px 0 #bfbfbf;
 }
 
-#todo-list li .toggle:checked:after {
-  content: '\f135'; /* this is the Unicode for the icon */
-  color: #00aeef;
-  font-size: 35px;
+.todo-list li .toggle:checked:after {
+	color: #85ada7;
+	text-shadow: 0 1px 0 #669991;
+	bottom: 1px;
+	position: relative;
 }
 
-#todo-list li label {
+.todo-list li label {
   word-break: break-word;
   font-size: 24px;
   cursor: default;
@@ -332,11 +333,11 @@ label[for='toggle-all'] {
   transition: color 0.4s;
 }
 
-#todo-list li.completed label {
+.todo-list li.completed label {
   color: #a9a9a9;
 }
 
-#todo-list li .destroy {
+.todo-list li .destroy {
   display: none;
   position: absolute;
   top: 0;
@@ -354,7 +355,7 @@ label[for='toggle-all'] {
   transition: all 0.2s;
 }
 
-#todo-list li .destroy:hover {
+.todo-list li .destroy:hover {
   text-shadow: 0 0 1px #000,
   0 0 10px rgba(199, 107, 107, 0.8);
   -webkit-transform: scale(1.3);
@@ -364,23 +365,23 @@ label[for='toggle-all'] {
   transform: scale(1.3);
 }
 
-#todo-list li .destroy:after {
+.todo-list li .destroy:after {
   content: '✖';
 }
 
-#todo-list li:hover .destroy {
+.todo-list li:hover .destroy {
   display: block;
 }
 
-#todo-list li .edit {
+.todo-list li .edit {
   display: none;
 }
 
-#todo-list li.editing:last-child {
+.todo-list li.editing:last-child {
   margin-bottom: -1px;
 }
 
-#todo-count {
+.todo-count {
   float: left;
   text-align: left;
 }
@@ -443,11 +444,11 @@ label[for='toggle-all'] {
 */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   #toggle-all,
-  #todo-list li .toggle {
+  .todo-list li .toggle {
     background: none;
   }
 
-  #todo-list li .toggle {
+  .todo-list li .toggle {
     height: 40px;
   }
 
@@ -716,14 +717,30 @@ ul.column li a { color: black; }
 	margin: 0 0 5px;
 }
 
+.project-list li .toggle:after {
+  content: "\f10c"; /* this is the Unicode for the icon */
+  font-family: FontAwesome;
+  line-height: 43px; /* 40 + a couple of pixels visual adjustment */
+  font-size: 25px;
+  color: #d9d9d9;
+}
+
+.project-list li .toggle:checked:after {
+  content: '\f135'; /* this is the Unicode for the icon */
+  color: #00aeef;
+  font-size: 35px;
+}
+
+.project-list li .toggle, 
+.project-list li:hover .destroy {
+	margin: 14px 0;
+}
+
 .project-list li label {
-	padding: 20px 0 0 15px !important;
+	padding: 25px 0 0 15px;
 }
 
-.project-list li .toggle {
-	margin: 14px 0 !important;
-}
-
-.project-list input[type="checkbox"]:focus {
+.todo-list input[type="checkbox"]:focus,
+.project-list .destroy {
 	outline: none;
 }
