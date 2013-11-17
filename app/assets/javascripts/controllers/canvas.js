@@ -87,6 +87,8 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
                 if(result)
             {
                 alert('dialog closed with result: ' + result);
+				
+				angular.copy(result, $scope.keypartners);
             }
         });
     };
