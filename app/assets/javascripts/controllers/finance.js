@@ -1,5 +1,5 @@
 app.controller('FinanceController', function ($scope, RevenueOrExpense, CurrentProject){
-    $scope.months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+    $scope.months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
     $scope.discountRate = 0.04;
     $scope.activeYear = new Date().getFullYear(); // Get current year
 
