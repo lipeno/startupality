@@ -182,7 +182,6 @@ app.controller('ChecklistDialogController', function ($scope, dialog, selectedSe
     };
 
     $scope.changeToNextSection = function () {
-		alert("aaa");
         var sectionWithMaxOrder = _.max(selectedSections, function(section){ return section.section_type.order; });
         if ($scope.currentSection.section_type.order !== sectionWithMaxOrder.section_type.order){
             $scope.currentSection = _.find(selectedSections, function(section){
