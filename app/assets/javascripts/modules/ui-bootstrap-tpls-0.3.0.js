@@ -3,14 +3,14 @@ angular.module("ui.bootstrap.tpls", ["template/accordion/accordion-group.html","
 angular.module('ui.bootstrap.transition', [])
 
 /**
- * $transition service provides a consistent interface to trigger CSS 3 transitions and to be informed when they complete.
- * @param  {DOMElement} element  The DOMElement that will be animated.
- * @param  {string|object|function} trigger  The thing that will cause the transition to start:
- *   - As a string, it represents the css class to be added to the element.
- *   - As an object, it represents a hash of style attributes to be applied to the element.
- *   - As a function, it represents a function to be called that will cause the transition to occur.
- * @return {Promise}  A promise that is resolved when the transition finishes.
- */
+* $transition service provides a consistent interface to trigger CSS 3 transitions and to be informed when they complete.
+* @param  {DOMElement} element  The DOMElement that will be animated.
+* @param  {string|object|function} trigger  The thing that will cause the transition to start:
+*   - As a string, it represents the css class to be added to the element.
+*   - As an object, it represents a hash of style attributes to be applied to the element.
+*   - As a function, it represents a function to be called that will cause the transition to occur.
+* @return {Promise}  A promise that is resolved when the transition finishes.
+*/
     .factory('$transition', ['$q', '$timeout', '$rootScope', function($q, $timeout, $rootScope) {
 
         var $transition = function(element, trigger, options) {
@@ -414,16 +414,16 @@ angular.module('ui.bootstrap.buttons', [])
         };
     }]);
 /*
- *
- *    AngularJS Bootstrap Carousel
- *
- *      A pure AngularJS carousel.
- *
- *      For no interval set the interval to non-number, or milliseconds of desired interval
- *      Template: <carousel interval="none"><slide>{{anything}}</slide></carousel>
- *      To change the carousel's active slide set the active attribute to true
- *      Template: <carousel interval="none"><slide active="someModel">{{anything}}</slide></carousel>
- */
+*
+*    AngularJS Bootstrap Carousel
+*
+*      A pure AngularJS carousel.
+*
+*      For no interval set the interval to non-number, or milliseconds of desired interval
+*      Template: <carousel interval="none"><slide>{{anything}}</slide></carousel>
+*      To change the carousel's active slide set the active attribute to true
+*      Template: <carousel interval="none"><slide active="someModel">{{anything}}</slide></carousel>
+*/
 angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
     .controller('CarouselController', ['$scope', '$timeout', '$transition', '$q', function ($scope, $timeout, $transition, $q) {
         var self = this,
@@ -901,18 +901,18 @@ dialogModule.provider("$dialog", function(){
 });
 
 /*
- * dropdownToggle - Provides dropdown menu functionality in place of bootstrap js
- * @restrict class or attribute
- * @example:
- <li class="dropdown">
- <a class="dropdown-toggle">My Dropdown Menu</a>
- <ul class="dropdown-menu">
- <li ng-repeat="choice in dropChoices">
- <a ng-href="{{choice.href}}">{{choice.text}}</a>
- </li>
- </ul>
- </li>
- */
+* dropdownToggle - Provides dropdown menu functionality in place of bootstrap js
+* @restrict class or attribute
+* @example:
+<li class="dropdown">
+<a class="dropdown-toggle">My Dropdown Menu</a>
+<ul class="dropdown-menu">
+<li ng-repeat="choice in dropChoices">
+<a ng-href="{{choice.href}}">{{choice.text}}</a>
+</li>
+</ul>
+</li>
+*/
 
 angular.module('ui.bootstrap.dropdownToggle', []).directive('dropdownToggle',
     ['$document', '$location', '$window', function ($document, $location, $window) {
@@ -1106,11 +1106,11 @@ angular.module('ui.bootstrap.pagination', [])
 angular.module('ui.bootstrap.position', [])
 
 /**
- * A set of utility methods that can be use to retrieve position of DOM elements.
- * It is meant to be used where we need to absolute-position DOM elements in
- * relation to other, existing elements (this is the case for tooltips, popovers,
- * typeahead suggestions etc.).
- */
+* A set of utility methods that can be use to retrieve position of DOM elements.
+* It is meant to be used where we need to absolute-position DOM elements in
+* relation to other, existing elements (this is the case for tooltips, popovers,
+* typeahead suggestions etc.).
+*/
     .factory('$position', ['$document', '$window', function ($document, $window) {
 
         function getStyle(el, cssprop) {
@@ -1184,16 +1184,16 @@ angular.module('ui.bootstrap.position', [])
     }]);
 
 /**
- * The following features are still outstanding: animation as a
- * function, placement as a function, inside, support for more triggers than
- * just mouse enter/leave, html tooltips, and selector delegation.
- */
+* The following features are still outstanding: animation as a
+* function, placement as a function, inside, support for more triggers than
+* just mouse enter/leave, html tooltips, and selector delegation.
+*/
 angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position' ] )
 
 /**
- * The $tooltip service creates tooltip- and popover-like directives as well as
- * houses global options for them.
- */
+* The $tooltip service creates tooltip- and popover-like directives as well as
+* houses global options for them.
+*/
     .provider( '$tooltip', function () {
         // The default options tooltip and popover.
         var defaultOptions = {
@@ -1487,10 +1487,10 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position' ] )
 
 
 /**
- * The following features are still outstanding: popup delay, animation as a
- * function, placement as a function, inside, support for more triggers than
- * just mouse enter/leave, html popovers, and selector delegatation.
- */
+* The following features are still outstanding: popup delay, animation as a
+* function, placement as a function, inside, support for more triggers than
+* just mouse enter/leave, html popovers, and selector delegatation.
+*/
 angular.module( 'ui.bootstrap.popover', [ 'ui.bootstrap.tooltip' ] )
     .directive( 'popoverPopup', function () {
         return {
@@ -1743,9 +1743,9 @@ angular.module('ui.bootstrap.tabs', [])
 angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position'])
 
 /**
- * A helper service that can parse typeahead's syntax (string provided by users)
- * Extracted to a separate service for ease of unit testing
- */
+* A helper service that can parse typeahead's syntax (string provided by users)
+* Extracted to a separate service for ease of unit testing
+*/
     .factory('typeaheadParser', ['$parse', function ($parse) {
 
         //                      00000111000000000000022200000000000000003333333333333330000000000044000
