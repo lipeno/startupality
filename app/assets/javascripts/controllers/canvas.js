@@ -2,7 +2,6 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
     // TODO: inject this into $rootscope
     $scope.currentProject = {};
     $scope.sections = {};
-//    $scope.sectionTypes = SectionType.query(function(){});
 
     var currentProject = CurrentProject.query(function(){
         $scope.currentProject = currentProject[0];
@@ -66,7 +65,7 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
     $scope.enableEdit = function() { $scope.edit = true; }
     $scope.disableEdit = function() { $scope.edit = false;  }
 
-    $scope.openDialog = function(section){
+    $scope.openDialog = function(sections){
         $scope.opts = {
             backdrop: true,
             keyboard: true,
@@ -76,21 +75,11 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
             controller: 'ChecklistDialogController',
             dialogFade: true,
             backdropFade: true,
-            resolve: {currentSection: function(){ return section; }}
+            resolve: {selectedSections: function(){ return sections; }}
         };
 
         var d = $dialog.dialog($scope.opts);
-        d.open().then(function(result){
-//            $scope.loadSections();
-//            $scope.keypartners = Section.query({projectId: $scope.currentProject.id}, function() {})
-//            $scope.sections = Section.query({projectId: $scope.currentProject.id}, function() {});
-                if(result)
-            {
-                alert('dialog closed with result: ' + result);
-				
-				angular.copy(result, $scope.keypartners);
-            }
-        });
+        d.open();
     };
 	
 	$scope.exportImage = function(businessCanvas, downloadLink, logo) {
@@ -111,37 +100,16 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
 				
 			}
 		});
-		
 	}
-
 
 });
 
-app.controller('ChecklistDialogController', function ($scope, dialog, currentSection, CurrentProject, SectionType, ProjectChecklistStep, ChecklistStep, Section){
-    $scope.currentSection = currentSection;
-
-    $scope.editTag = function (item) {
-        if ($scope.currentProject){
-            $scope.currentSection.$update({projectId: $scope.currentProject.id});
-//            section.$update({projectId: $scope.currentProject});
-
-            for(var i=0;i<$scope.sections.length;++i) {
-                var sect = $scope.sections[i];
-                if ( sect.id === $scope.currentSection.id) {
-                    sect.$update({projectId: $scope.currentProject});
-                    break;
-                }
-            }
-        }
-    };
-
+app.controller('ChecklistDialogController', function ($scope, dialog, selectedSections, CurrentProject, SectionType, ProjectChecklistStep){
+    $scope.currentSection = selectedSections[0];
+	
     $scope.close = function(result){
-        var currentProject = CurrentProject.query(function(){
-            $scope.currentSection.$update({projectId: currentProject[0].id});
-        });
-        dialog.close($scope.currentSection);
+        dialog.close();
     };
-
 
     $scope.sectionTypes = SectionType.query(function () {
         $scope.sectionTypes = $scope.sectionTypes.sort(function (a, b) {
@@ -157,21 +125,6 @@ app.controller('ChecklistDialogController', function ($scope, dialog, currentSec
             });
             calculateProgress();
         });
-        var sections = Section.query({projectId: $scope.currentProject.id}, function(){
-            $scope.sections = sections;
-//            TODO:update only one
-            $scope.$watch('sections', function() {
-                for (var i=0; i < $scope.sections.length; i++){
-                    $scope.sections[i].$update({projectId: currentProject[0].id});
-                }
-            }, true);
-
-            $scope.$apply();
-
-//            $scope.$watch('currentSection', function() {
-//                    $scope.currentSection.$update({projectId: currentProject[0].id});
-//            }, true);
-        });
     });
 
     $scope.getProjectChecklistSteps = function (sctType) {
@@ -184,20 +137,6 @@ app.controller('ChecklistDialogController', function ($scope, dialog, currentSec
             });
             return projectSteps;
         }
-    }
-
-    $scope.getProjectSection = function (sctType) {
-        if ($scope.sections && ($scope.sections.length !== 0)){
-            _.each($scope.sections, function (section) {
-                if (sctType && sctType.id){
-
-                    if (section.section_type.id === sctType.id){
-                    return section;
-                }
-                }
-            });
-        }
-        return null;
     }
 
     $scope.editChecklistStep = function (checklistStep) {
@@ -230,102 +169,35 @@ app.controller('ChecklistDialogController', function ($scope, dialog, currentSec
         }
     };
 
-
     $scope.changeSection = function (orderOfSection) {
-        $scope.currentSection = _.find($scope.sections, function(section){ return section.section_type.order == orderOfSection; })
+        $scope.currentSection = _.find(selectedSections, function(section){ return section.section_type.order == orderOfSection; })
     };
 
     $scope.changeToPreviousSection = function () {
         if ($scope.currentSection.section_type.order !== 1){
-            $scope.currentSection = _.find($scope.sections, function(section){
+            $scope.currentSection = _.find(selectedSections, function(section){
                 return section.section_type.order == $scope.currentSection.section_type.order - 1;
             })
         }
     };
 
     $scope.changeToNextSection = function () {
-        var sectionWithMaxOrder = _.max($scope.sections, function(section){ return section.section_type.order; });
+		alert("aaa");
+        var sectionWithMaxOrder = _.max(selectedSections, function(section){ return section.section_type.order; });
         if ($scope.currentSection.section_type.order !== sectionWithMaxOrder.section_type.order){
-            $scope.currentSection = _.find($scope.sections, function(section){
+            $scope.currentSection = _.find(selectedSections, function(section){
                 return section.section_type.order == $scope.currentSection.section_type.order + 1;
             })
         }
     };
-
-    $scope.handleArrowKeys = function (){
-        alert("key pressed");
-    }
-
-});
-
-
-
-//app.controller('CanvasDialogController', function ($scope, dialog, item, CurrentProject){
-//    $scope.item = item;
-//    $scope.itemType = item.section_type;
-//
-//    $scope.isCollapsed = true;
-//    // To load video iframes only when collapse is triggered
-//    $scope.loadVideos = function(){
-//        if (!$scope.isCollapsed){
-//            return  '/assets/partials/canvasVideos.html'
-//        }
-//        else return ''
-//    }
-//
-//    $scope.isCollapsedExperiments = true;
-//    // To load video iframes only when collapse is triggered
-//    $scope.loadExperiments = function(){
-//        if (!$scope.isCollapsedExperiments){
-//            return  '/assets/partials/canvasExperiments.html'
-//        }
-//        else return ''
-//    }
-//
-//    // Ratin the section
-//    $scope.rating = 7;
-//
-//    $scope.$watch('item.tags.length', function() {
-//        $scope.currentProject = CurrentProject.query(function(){
-//            $scope.item.$update({projectId: $scope.currentProject[0].id});
-//        });
-//    }, true);
-//
-//    $scope.close = function(result){
-//        var currentProject = CurrentProject.query(function(){
-//            $scope.item.$update({projectId: currentProject[0].id});
-//        });
-//        dialog.close(result);
-//    };
-//});
-
-app.controller('ExperimentsDialogController', function ($scope, ProjectChecklistStep, ChecklistStep){
-    // get steps specific for section
-
-//    var checklistStep = ChecklistStep.query({}, function(){
-//        $scope.checklistSteps = _.where(checklistStep, {sectionTypeIdentifier: $scope.itemType.stringIdentifier});
-//    });
-
-    $scope.getChecklistStepQuestion = function (item){
-        var question = _.where($scope.checklistSteps, {stepNumber: item.stepNumber})[0];
-        return question.title;
-    }
-
-    var projectChecklistSteps = ProjectChecklistStep.query({projectId: $scope.currentProject[0].id}, function() {
-
-        if (projectChecklistSteps.length !== 0){
-            _.each(projectChecklistSteps, function (projectChecklistStep) {
-                if (projectChecklistStep.checklist_step.section_type.id === sctType.id){
-                    $scope.projectChecklistSteps.push(projectChecklistStep);
-                }
-            });
-        }
-        $scope.projectChecklistSteps = $scope.projectChecklistSteps.sort(function(a, b){return a.stepNumber-b.stepNumber});
-
-//            $scope.projectChecklistSteps = _.where(projectChecklistStep, {sectionTypeIdentifier: $scope.itemType.stringIdentifier});
-    });
-
-    $scope.editChecklistStep = function( checklistStep ) {
-        checklistStep.$update({projectId: $scope.currentProject[0].id});
-    };
+	
+	$scope.keyPressed = function(e) {
+		// allowing arrow keys only
+		if (e.which == 37) {
+			$scope.changeToPreviousSection();
+		} else if (e.which == 39) {
+			$scope.changeToNextSection();
+		}
+	};
+	
 });

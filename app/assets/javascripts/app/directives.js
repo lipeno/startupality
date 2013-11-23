@@ -148,6 +148,21 @@ app.directive('calendarYear', function () {
 });
 
 
+// Directive for detecting pressed keys
+app.directive('shortcut', function() {
+	return {
+		restrict: 'E',
+		replace: true,
+		scope: true,
+		link: function postLink(scope, iElement, iAttrs) {
+			jQuery(document).on('keydown', function(e) {
+				scope.$apply(scope.keyPressed(e));
+			});
+		}
+	}
+});
+
+
 // Directive for drag'n'drop element
 app.directive('sortable', function(){
     return {
