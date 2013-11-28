@@ -1,19 +1,19 @@
-<secondaryheader id="secondaryheader">
-    <div class="row">
-        <div class="span6 center">
-            <ul class="breadcrumb nav nav-tabs">
-                <li>
-                    <a ng-class="{active: isCurrentView('goals')}"
-                       ng-click="changeView('goals')"><i class="icon-tasks"></i> Business development</a>
-                </li>
-                <li>
-                    <a ng-class="{active: isCurrentView('financialIndicators')}"
-                       ng-click="toastr.info('Thank you for your interest. We are working on this!', 'Coming soon!')" ng-class=isDisabled()><i class="icon-group"></i> Customer Development</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</secondaryheader>
+<!--<secondaryheader id="secondaryheader">-->
+    <!--<div class="row">-->
+        <!--<div class="span6 center">-->
+            <!--<ul class="breadcrumb nav nav-tabs">-->
+                <!--<li>-->
+                    <!--<a ng-class="{active: isCurrentView('goals')}"-->
+                       <!--ng-click="changeView('goals')"><i class="icon-tasks"></i> Business development</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a ng-class="{active: isCurrentView('financialIndicators')}"-->
+                       <!--ng-click="toastr.info('Thank you for your interest. We are working on this!', 'Coming soon!')" ng-class=isDisabled()><i class="icon-group"></i> Customer Development</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</secondaryheader>-->
 
 <div class="experiments" ng-include='getCurrentView()'>
 </div>

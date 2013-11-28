@@ -162,7 +162,6 @@ app.controller('FinanceController', function ($scope, RevenueOrExpense, CurrentP
     $scope.doneEditing = function( row ) {
         row.$update({projectId: $scope.currentProject.id});
         $scope.redrawGraph();
-		
 		};
 
     $scope.addRevenueRow = function(rowsToAdd){

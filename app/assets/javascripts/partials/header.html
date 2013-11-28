@@ -27,11 +27,14 @@
                         <!--</li>-->
 
                         <li ng-class="{active: routeIs('/experiments')}">
-                            <a ng-click="buildUrl('/experiments')"><i class="icon-beaker icon-large"></i> Tasks</a>
+                            <a ng-click="buildUrl('/experiments')"><i class="icon-tasks icon-large"></i> Tasks</a>
                         </li>
 
                         <li ng-class="{active: routeIs('/customers')}">
-                            <a ng-click="toastr.info('Thank you for your interest. We are working on this!', 'Coming soon!')"><i class="icon-group icon-large"></i> Market</a>
+                            <a ng-click="toastr.info('Thank you for your interest. We are working on this!', 'Coming soon!')"><i class="icon-beaker icon-large"></i> Hypotheses</a>
+                        </li>
+                        <li ng-class="{active: routeIs('/customers')}">
+                            <a ng-click="toastr.info('Thank you for your interest. We are working on this!', 'Coming soon!')"><i class="icon-group icon-large"></i> Interviews</a>
                         </li>
                     </ul>
 
