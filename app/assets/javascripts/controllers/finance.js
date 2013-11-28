@@ -5,7 +5,6 @@ app.controller('FinanceController', function ($scope, RevenueOrExpense, CurrentP
 
     $scope.$watch("activeYear", function(){
       loadExpenses();
-      $scope.redrawGraph();
     })
 
     loadExpenses();
@@ -19,7 +18,10 @@ app.controller('FinanceController', function ($scope, RevenueOrExpense, CurrentP
           $scope.revenues = $scope.revenues.sort(function(a, b){return a.rowNumber-b.rowNumber});
           $scope.expenses = $scope.expenses.sort(function(a, b){return a.rowNumber-b.rowNumber});
 
-          $scope.drawGraph();
+          if (Highcharts.charts[1])
+            $scope.redrawGraph();
+          else
+            $scope.drawGraph();
         });
       });
     }
@@ -154,9 +156,9 @@ app.controller('FinanceController', function ($scope, RevenueOrExpense, CurrentP
     };
 
     $scope.redrawGraph = function (){
-      Highcharts.charts[0].series[0].setData([$scope.calculateRevenueForMonth($scope.months[0]), $scope.calculateRevenueForMonth($scope.months[1]), $scope.calculateRevenueForMonth($scope.months[2]), $scope.calculateRevenueForMonth($scope.months[3]), $scope.calculateRevenueForMonth($scope.months[4]), $scope.calculateRevenueForMonth($scope.months[5]), $scope.calculateRevenueForMonth($scope.months[6]), $scope.calculateRevenueForMonth($scope.months[7]), $scope.calculateRevenueForMonth($scope.months[8]), $scope.calculateRevenueForMonth($scope.months[9]), $scope.calculateRevenueForMonth($scope.months[10]), $scope.calculateRevenueForMonth($scope.months[11])],true);
-      Highcharts.charts[0].series[1].setData([$scope.calculateExpenseForMonth($scope.months[0]), $scope.calculateExpenseForMonth($scope.months[1]), $scope.calculateExpenseForMonth($scope.months[2]), $scope.calculateExpenseForMonth($scope.months[3]), $scope.calculateExpenseForMonth($scope.months[4]), $scope.calculateExpenseForMonth($scope.months[5]), $scope.calculateExpenseForMonth($scope.months[6]), $scope.calculateExpenseForMonth($scope.months[7]), $scope.calculateExpenseForMonth($scope.months[8]), $scope.calculateExpenseForMonth($scope.months[9]), $scope.calculateExpenseForMonth($scope.months[10]), $scope.calculateExpenseForMonth($scope.months[11])],true);
-      Highcharts.charts[0].series[2].setData([$scope.calculateRevenueForMonth($scope.months[0]) - $scope.calculateExpenseForMonth($scope.months[0]), $scope.calculateRevenueForMonth($scope.months[1]) - $scope.calculateExpenseForMonth($scope.months[1]), $scope.calculateRevenueForMonth($scope.months[2]) - $scope.calculateExpenseForMonth($scope.months[2]), $scope.calculateRevenueForMonth($scope.months[3]) - $scope.calculateExpenseForMonth($scope.months[3]), $scope.calculateRevenueForMonth($scope.months[4]) - $scope.calculateExpenseForMonth($scope.months[4]), $scope.calculateRevenueForMonth($scope.months[5]) - $scope.calculateExpenseForMonth($scope.months[5]), $scope.calculateRevenueForMonth($scope.months[6])  - $scope.calculateExpenseForMonth($scope.months[6]), $scope.calculateRevenueForMonth($scope.months[7]) - $scope.calculateExpenseForMonth($scope.months[7]), $scope.calculateRevenueForMonth($scope.months[8]) - $scope.calculateExpenseForMonth($scope.months[8]), $scope.calculateRevenueForMonth($scope.months[9]) - $scope.calculateExpenseForMonth($scope.months[9]), $scope.calculateRevenueForMonth($scope.months[10]) - $scope.calculateExpenseForMonth($scope.months[10]), $scope.calculateRevenueForMonth($scope.months[11]) - $scope.calculateExpenseForMonth($scope.months[11])],true);
+      Highcharts.charts[1].series[0].setData([$scope.calculateRevenueForMonth($scope.months[0]), $scope.calculateRevenueForMonth($scope.months[1]), $scope.calculateRevenueForMonth($scope.months[2]), $scope.calculateRevenueForMonth($scope.months[3]), $scope.calculateRevenueForMonth($scope.months[4]), $scope.calculateRevenueForMonth($scope.months[5]), $scope.calculateRevenueForMonth($scope.months[6]), $scope.calculateRevenueForMonth($scope.months[7]), $scope.calculateRevenueForMonth($scope.months[8]), $scope.calculateRevenueForMonth($scope.months[9]), $scope.calculateRevenueForMonth($scope.months[10]), $scope.calculateRevenueForMonth($scope.months[11])],true);
+      Highcharts.charts[1].series[1].setData([$scope.calculateExpenseForMonth($scope.months[0]), $scope.calculateExpenseForMonth($scope.months[1]), $scope.calculateExpenseForMonth($scope.months[2]), $scope.calculateExpenseForMonth($scope.months[3]), $scope.calculateExpenseForMonth($scope.months[4]), $scope.calculateExpenseForMonth($scope.months[5]), $scope.calculateExpenseForMonth($scope.months[6]), $scope.calculateExpenseForMonth($scope.months[7]), $scope.calculateExpenseForMonth($scope.months[8]), $scope.calculateExpenseForMonth($scope.months[9]), $scope.calculateExpenseForMonth($scope.months[10]), $scope.calculateExpenseForMonth($scope.months[11])],true);
+      Highcharts.charts[1].series[2].setData([$scope.calculateRevenueForMonth($scope.months[0]) - $scope.calculateExpenseForMonth($scope.months[0]), $scope.calculateRevenueForMonth($scope.months[1]) - $scope.calculateExpenseForMonth($scope.months[1]), $scope.calculateRevenueForMonth($scope.months[2]) - $scope.calculateExpenseForMonth($scope.months[2]), $scope.calculateRevenueForMonth($scope.months[3]) - $scope.calculateExpenseForMonth($scope.months[3]), $scope.calculateRevenueForMonth($scope.months[4]) - $scope.calculateExpenseForMonth($scope.months[4]), $scope.calculateRevenueForMonth($scope.months[5]) - $scope.calculateExpenseForMonth($scope.months[5]), $scope.calculateRevenueForMonth($scope.months[6])  - $scope.calculateExpenseForMonth($scope.months[6]), $scope.calculateRevenueForMonth($scope.months[7]) - $scope.calculateExpenseForMonth($scope.months[7]), $scope.calculateRevenueForMonth($scope.months[8]) - $scope.calculateExpenseForMonth($scope.months[8]), $scope.calculateRevenueForMonth($scope.months[9]) - $scope.calculateExpenseForMonth($scope.months[9]), $scope.calculateRevenueForMonth($scope.months[10]) - $scope.calculateExpenseForMonth($scope.months[10]), $scope.calculateRevenueForMonth($scope.months[11]) - $scope.calculateExpenseForMonth($scope.months[11])],true);
     };
 
     $scope.doneEditing = function( row ) {
