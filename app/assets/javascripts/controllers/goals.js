@@ -24,16 +24,21 @@ app.controller('GoalsController', function ($scope, CurrentProject, Card){
 
     // Limit items to be dropped in board1
     $scope.addCard = function(board, boardString){
-        var newCard = new Card({ 'title': 'Edit me', board: boardString, order: $scope[boardString].length + 1});
-        board.push(newCard);
-        newCard.$save({projectId: $scope.currentProject.id});
-//        $scope.editCard(newCard);
+        var elementsWithEmptyName = _.find(board, function(card){ return card.title === ""; });
+        if (!elementsWithEmptyName) {
+          var newCard = new Card({ 'title': '', board: boardString, order: $scope[boardString].length + 1});
+          board.push(newCard);
+          newCard.$save({projectId: $scope.currentProject.id});
+          $scope.editCard(newCard);
+        }
     };
 
     $scope.removeCard = function(board, card){
-          $scope.doneEditing(card);
+//          $scope.doneEditing(card);
+          boardName = card.board;
+          board = $scope[boardName];
           board.splice(board.indexOf(card), 1);
-        card.$delete({projectId: $scope.currentProject.id, id: card.id});
+          card.$delete({projectId: $scope.currentProject.id, id: card.id});
     };
 
     // Limit items to be dropped in board3
@@ -64,27 +69,9 @@ app.controller('GoalsController', function ($scope, CurrentProject, Card){
     }
 
     $scope.doneEditing = function(card){
-		
         card.$update({projectId: $scope.currentProject.id});
         $scope.beingEdited.splice($scope.beingEdited.indexOf(card), 1);
     }
-
-//    $scope.stopDragCallback = function(event, ui) {
-//        console.log('Why did you stop draggin me?',event, ui);
-//    };
-//
-//    $scope.onDropCallback = function(event, ui) {
-//
-//		var newBoardName = event.target.getAttribute('ng-model');
-//		var board = $scope[newBoardName];
-//
-//		var cardNumber = board.length - 1;
-//		var card = board[cardNumber];
-//
-//		card.board = newBoardName;
-//		card.$update({projectId: $scope.currentProject.id});
-//
-//    };
 
 
     $scope.columnsWithItems = {'Column 1':{'items':['Item 1', 'Item 2']}, 'Column 2':{ 'items': ['Item 3', 'Item 4'] }, 'Column 3':{ 'items': ['Item 5', 'Item 6']}};

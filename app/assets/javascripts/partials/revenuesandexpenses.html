@@ -13,6 +13,7 @@
             <tr class="column-label">
                 <td colspan="2"></td>
                 <td ng-repeat="month in months">{{month | capitalize}}</td>
+                <td>Total</td>
             </tr>
             <tr ng-repeat="row in revenues">
                 <td>{{row.rowNumber}}</td>
@@ -49,6 +50,7 @@
             <tr class="column-label">
                 <td colspan="2"></td>
                 <td ng-repeat="month in months">{{month | capitalize}}</td>
+                <td>Total</td>
             </tr>
             <tr ng-repeat="row in expenses">
                 <td>{{row.rowNumber}}</td>

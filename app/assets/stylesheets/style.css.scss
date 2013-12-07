@@ -571,12 +571,6 @@ header{
   border-bottom: 1px dotted #adadad;
 }
 
-
-.removeCard{
-  width: 42px;
-  min-height: 54px;
-}
-
 .tagsRisks{
   width: 570px;
 }
@@ -661,7 +655,7 @@ a:hover img.grayscale {
 }
 
 .btn-draggable {
-  width: 80%;
+  width: 90%;
   min-height: 30px;
   padding: 10px;
   font-size: 14px;
@@ -674,8 +668,15 @@ a:hover img.grayscale {
   background-color: $bluedark;
   border-color: #d2cfc2;
 }
+
+
+.removeCard{
+  width: 20%;
+  min-height: 54px;
+}
+
 .cardEditable{
-  width: 220px;
+  width: 70%;
   min-height: 30px;
   padding: 10px;
   font-size: 14px;
