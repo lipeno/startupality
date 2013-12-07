@@ -1,32 +1,30 @@
 <div ng-controller="RisksRegisterController">
-    <div class="table table-bordered">
-        <h2><i class="icon-list"></i> Risks</h2>
-
-        <div id="risksRegister">
-            <table border="1">
-                <tr>
-                    <th>
+        <div class="businessTable">
+            <h2><i class="icon-list"></i> Risks</h2>
+            <table class="table table-bordered">
+                <tr class="column-label">
+                    <td>
                         <h4>ID</h4>
-                    </th>
-                    <th>
-                        <h4>Risk name</h4>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
+                        <h4>Description</h4>
+                    </td>
+                    <td>
                         <h4>Probability</h4>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <h4>Impact</h4>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <h4>Exposure*</h4>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <h4>Response action</h4>
-                    </th>
+                    </td>
                 </tr>
 
                 <tr ng-repeat="registerRisk in registerRisks">
-                    <td>{{registerRisk.id}}
+                    <td class="row-label">{{registerRisk.id}}
                     </td>
                     <td><input ng-model="registerRisk.name" todo-blur="doneEditing(registerRisk)"/>
                     </td>
@@ -40,7 +38,7 @@
                                 ng-options="probabilityValue for probabilityValue in [0.1, 0.3, 0.5, 0.7, 0.9]"
                                 todo-blur="doneEditing(registerRisk)"></select>
                     </td>
-                    <td ng-class="appliedClass(registerRisk)">{{calculateExposure(registerRisk)}}
+                    <td><div ng-class="appliedClass(registerRisk)">{{calculateExposure(registerRisk)}}</div>
                     </td>
                     <td><input ng-model="registerRisk.responseAction" todo-blur="doneEditing(registerRisk)"/>
                     </td>
@@ -50,39 +48,32 @@
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-
-
-                    </td>
-                </tr>
 
             </table>
+            <button class="btn" ng-click="addRegisterRisk(registerRisks)">Add Risk</button>
+
 
         </div>
-        <div class="row">
-            <div class="span12">
-                <button class="btn" ng-click="addRegisterRisk(registerRisks)">Add a risk</button>
-            </div>
-        </div>
-        <div class="row">
 
-            <div class="center span8">
+    <div class="row">
 
-                <h4>*Risks by exposure:</h4>
+        <div class="center span8">
 
-                <p><span class="label label-success">Green</span> risks are not very big. Acknowledge green risks, and
-                    continue to monitor them, but dedicate fewer resources to mitigating them than the yellow risks.
-                </p>
+            <h4>*Risks by exposure:</h4>
 
-                <p><span class="label label-warning">Yellow</span> risks are in between green and red risks and
-                    depending on the case they can be very important or not.</p>
+            <p><span class="label label-success">Green</span> risks are not very big. Acknowledge green risks, and
+                continue to monitor them, but dedicate fewer resources to mitigating them than the yellow risks.
+            </p>
 
-                <p><span class="label label-important">Red</span> risks are important and the plan to deal with them
-                    should be done immediately.</p>
+            <p><span class="label label-warning">Yellow</span> risks are in between green and red risks and
+                depending on the case they can be very important or not.</p>
 
-            </div>
+            <p><span class="label label-important">Red</span> risks are important and the plan to deal with them
+                should be done immediately.</p>
 
         </div>
+
     </div>
+
+
 </div>
