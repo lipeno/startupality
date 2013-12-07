@@ -36,12 +36,16 @@
                 </td>
             </tr>
             <tr>
+                <td class="row-label" colspan="2"><button class="btn" ng-click="addRevenueRow(revenues)">Add Revenue</button></td>                </td>
+                <td class="row-data" ng-repeat="month in months"><div></div></td>
+                <td></td>
+            </tr>
+            <tr>
                 <td class="row-label" colspan="2">Total revenues</td>
                 <td class="row-data" ng-repeat="month in months"><div>{{calculateRevenueForMonth(month)}}</div></td>
                 <td>{{calculateRevenueForYear()}}</td>
             </tr>
         </table>
-        <button class="btn" ng-click="addRevenueRow(revenues)">Add Revenue</button>
     </div>
 
     <div class="businessTable">
@@ -73,12 +77,16 @@
                 </td>
             </tr>
             <tr>
+                <td class="row-label" colspan="2"><button class="btn" ng-click="addExpenseRow(expenses)">Add Expense</button></td>
+                <td class="row-data" ng-repeat="month in months"><div></div></td>
+                <td></td>
+            </tr>
+            <tr>
                 <td class="row-label" colspan="2">Total expenses</td>
                 <td class="row-data" ng-repeat="month in months"><div>{{calculateExpenseForMonth(month)}}</div></td>
                 <td>{{calculateExpenseForYear()}}</td>
             </tr>
         </table>
-        <button class="btn" ng-click="addExpenseRow(expenses)">Add Expense</button>
     </div>
 
     <div class="businessTable">
