@@ -715,7 +715,7 @@ ul.column li a { color: black; }
 
 .project-title {
 	margin: 0 0 5px;
-}
+} 
 
 .project-list li .toggle:after {
   content: "\f10c"; /* this is the Unicode for the icon */
@@ -739,6 +739,30 @@ ul.column li a { color: black; }
 .project-list li label {
 	padding: 23px 0 0 15px;
 }
+
+
+
+
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + .checkboxIcon[for]:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  cursor: pointer;
+}
+
+input[type=checkbox] + .checkboxIcon:before { 
+	content: "\f10c"; /* unchecked icon */
+	letter-spacing: 10px; /* space between checkbox and label */
+} 
+input[type=checkbox]:checked + .checkboxIcon:before { 
+	content: "\f135"; /* checked icon */
+	letter-spacing: 5px; /* allow space for check mark */
+	font-size: 35px;
+} 
+
+
+
 
 .todo-list input[type="checkbox"]:focus,
 .project-list .destroy {

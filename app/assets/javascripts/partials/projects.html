@@ -10,16 +10,14 @@
         <ul class="todo-list project-list">
             <li ng-repeat="project in projects | reverse" ng-class="{completed: !project.activated, editing: project == editedProject}">
                 <div class="view">
-                    <input class="toggle" type="checkbox" ng-click="activateProject(project)" ng-model="project.activated">
-
-                    <label ng-dblclick="editProject(project)">{{project.title}}</label>
+                    <input id="project{{$index}}" type="checkbox" ng-click="activateProject(project)" ng-model="project.activated">
+                    <label for="project{{$index}}" class="checkboxIcon" ng-dblclick="editProject(project)">{{project.title}}</label>
                     <button class="destroy" ng-click="removeProject(project)"></button>
                 </div>
                 <form ng-submit="doneEditing(project)">
                     <input class="edit" ng-model="project.title" todo-blur="doneEditing(project)" todo-focus="project == editedProject">
                 </form>
             </li>
-
         </ul>
     </section>
 
