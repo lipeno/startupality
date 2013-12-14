@@ -571,12 +571,6 @@ header{
   border-bottom: 1px dotted #adadad;
 }
 
-
-.removeCard{
-  width: 42px;
-  min-height: 54px;
-}
-
 .tagsRisks{
   width: 570px;
 }
@@ -606,18 +600,6 @@ header{
 }
 .userManagement{
   text-align: center;
-}
-
-#risksRegister, #risksRegister th {
-  border: 1px solid lightgrey;
-  width: 100%;
-}
-
-#risksRegister td, #risksRegister th {
-  text-align: center;
-  vertical-align: top;
-  width: 200px;
-  padding: 6px;
 }
 
 #secondaryheader a{
@@ -661,7 +643,7 @@ a:hover img.grayscale {
 }
 
 .btn-draggable {
-  width: 80%;
+  width: 90%;
   min-height: 30px;
   padding: 10px;
   font-size: 14px;
@@ -674,8 +656,15 @@ a:hover img.grayscale {
   background-color: $bluedark;
   border-color: #d2cfc2;
 }
+
+
+.removeCard{
+  width: 20%;
+  min-height: 54px;
+}
+
 .cardEditable{
-  width: 220px;
+  width: 70%;
   min-height: 30px;
   padding: 10px;
   font-size: 14px;
@@ -717,30 +706,6 @@ ul.column li a { color: black; }
 	margin: 0 0 5px;
 } 
 
-.project-list li .toggle:after {
-  content: "\f10c"; /* this is the Unicode for the icon */
-  font-family: FontAwesome;
-  line-height: 43px; /* 40 + a couple of pixels visual adjustment */
-  font-size: 25px;
-  color: #d9d9d9;
-}
-
-.project-list li .toggle:checked:after {
-  content: '\f135'; /* this is the Unicode for the icon */
-  color: #00aeef;
-  font-size: 35px;
-}
-
-.project-list li .toggle, 
-.project-list li:hover .destroy {
-	margin: 16px 0;
-}
-
-.project-list li label {
-	padding: 23px 0 0 15px;
-}
-
-
 
 .projects {
 	height: 73px;
@@ -760,7 +725,10 @@ input[type=checkbox] + .checkboxIcon {
 	margin-left: 0px;
 }
 
-input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+.project-list .view input[type=checkbox] { 
+	display:none; /* to hide the checkbox itself */
+} 
+
 input[type=checkbox] + .checkboxIcon:before {
   font-family: FontAwesome;
   display: inline-block;
@@ -780,9 +748,7 @@ input[type=checkbox]:checked + .checkboxIcon:before {
 	padding-right: 20px;
 	margin-left: 5px;
 	padding-top: 13px;
-} 
-
-
+}
 
 
 .todo-list input[type="checkbox"]:focus,
@@ -791,3 +757,44 @@ input[type=checkbox]:checked + .checkboxIcon:before {
 }
 
 .input-small { width: 70px }
+
+table input{
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-size: 14px;
+}
+
+
+.businessTable, .businessTable td, .businessTable th {
+  text-align: center;
+  vertical-align: top;
+  padding: 6px;
+}
+
+.row-label input{
+  background: #EEE;
+  text-align: center;
+
+}
+.row-label{
+  text-align: left;
+  background: #EEE;
+}
+.row-data input {
+  font-size: 10pt;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+td { border: 1px solid #EEE; }
+.column-label  > td{
+  text-align: center;
+  background: #EEE;
+}
+
+.badge{
+  width: 70%;
+  height: 90%;
+}

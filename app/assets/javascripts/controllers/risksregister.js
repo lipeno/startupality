@@ -36,13 +36,13 @@ app.controller('RisksRegisterController', function ($scope, RegisterRisk, Curren
         var exposure = $scope.calculateExposure(risk);
 //        If it is a green risk
         if (exposure < 0.1) {
-            return "label label-success";
+            return "badge label label-success";
         }
         // Or if it is a red risk
         if (exposure > 0.15) {
-            return "label label-important";
+            return "badge label label-important";
         } else {
-            return "label label-warning";
+            return "badge label label-warning";
         }
     };
 
