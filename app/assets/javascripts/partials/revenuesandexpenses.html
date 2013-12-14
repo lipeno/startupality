@@ -16,8 +16,8 @@
                 <td>Total</td>
             </tr>
             <tr ng-repeat="row in revenues">
-                <td class="row-label">{{row.rowNumber}}</td>
-                <td class="row-label"><input ng-model="row.rowName" todo-blur="doneEditing(row)"></input></td>
+                <td >{{row.rowNumber}}</td>
+                <td ><input ng-model="row.rowName" todo-blur="doneEditing(row)"></input></td>
 
                 <td class="row-data"><input ng-model="row.january" todo-blur="doneEditing(row)"></input></td>
                 <td class="row-data"><input ng-model="row.february" todo-blur="doneEditing(row)"></input></td>
@@ -36,12 +36,12 @@
                 </td>
             </tr>
             <tr>
-                <td class="row-label" colspan="2"><button class="btn" ng-click="addRevenueRow(revenues)">Add Revenue</button></td>                </td>
+                <td colspan="2"><button class="btn" ng-click="addRevenueRow(revenues)">Add Revenue</button></td>                </td>
                 <td class="row-data" ng-repeat="month in months"><div></div></td>
                 <td></td>
             </tr>
             <tr>
-                <td class="row-label" colspan="2">Total revenues</td>
+                <td colspan="2">Total revenues</td>
                 <td class="row-data" ng-repeat="month in months"><div>{{calculateRevenueForMonth(month)}}</div></td>
                 <td>{{calculateRevenueForYear()}}</td>
             </tr>
@@ -57,8 +57,8 @@
                 <td>Total</td>
             </tr>
             <tr ng-repeat="row in expenses">
-                <td class="row-label">{{row.rowNumber}}</td>
-                <td class="row-label"><input ng-model="row.rowName" todo-blur="doneEditing(row)"></input></td>
+                <td >{{row.rowNumber}}</td>
+                <td ><input ng-model="row.rowName" todo-blur="doneEditing(row)"></input></td>
 
                 <td class="row-data"><input ng-model="row.january" todo-blur="doneEditing(row)"></input></td>
                 <td class="row-data"><input ng-model="row.february" todo-blur="doneEditing(row)"></input></td>
@@ -77,12 +77,12 @@
                 </td>
             </tr>
             <tr>
-                <td class="row-label" colspan="2"><button class="btn" ng-click="addExpenseRow(expenses)">Add Expense</button></td>
+                <td colspan="2"><button class="btn" ng-click="addExpenseRow(expenses)">Add Expense</button></td>
                 <td class="row-data" ng-repeat="month in months"><div></div></td>
                 <td></td>
             </tr>
             <tr>
-                <td class="row-label" colspan="2">Total expenses</td>
+                <td colspan="2">Total expenses</td>
                 <td class="row-data" ng-repeat="month in months"><div>{{calculateExpenseForMonth(month)}}</div></td>
                 <td>{{calculateExpenseForYear()}}</td>
             </tr>
@@ -97,7 +97,7 @@
                 <td ng-repeat="month in months">{{month | capitalize}}</td>
             </tr>
             <tr>
-                <td class="row-label" colspan="2">Total Income</td>
+                <td colspan="2">Total Income</td>
                 <td class="row-data" ng-repeat="month in months"><div>{{calculateRevenueForMonth(month) - calculateExpenseForMonth(month)}}</div></td>
                 <td>{{calculateRevenueForYear() - calculateExpenseForYear()}}</td>
             </tr>
