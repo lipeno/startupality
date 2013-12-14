@@ -1,13 +1,13 @@
-<div ng-controller ="GoalsController">
+<div ng-controller ="HypothesesController">
     <div class='contentWrapper ng-cloak'>
                 <div class='content'>
 
                 <div class="row-fluid">
-                    <div class="columnContainer tasksContainer">
+                    <div class="columnContainer hypothesesContainer">
 
                     <div class="columnHeader">
-                        <h2><i class="icon-rocket"></i> Ideas
-                        <button class="btn" ng-click="addCard(board1, 'board1')">Add Task</button>
+                        <h2><i class="icon-rocket"></i> In Progress
+                        <button class="btn" ng-click="addHypothesis(board1, 'board1')">Add Hypothesis</button>
                         </h2>
                     </div>
                     <ul class="column" sortable-selector="ul.column" sortable ng-model="board1">
@@ -18,15 +18,15 @@
                             </div>
                             <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
                                 <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" ng-model="item.title">
-                                <button ng-click="removeCard(board1, item)" class="removeCard btn" type="button">X</button>
+                                <button ng-click="removeHypothesis(board1, item)" class="removeHypothesis btn" type="button">X</button>
                             </form>
                         </li>
                     </ul>
                 </div>
-                    <div class="columnContainer tasksContainer">
+                    <div class="columnContainer hypothesesContainer">
                     <div class="columnHeader">
-                        <h2><i class="icon-check-empty"></i> Todo
-                            <!--<button class="btn" ng-click="addCard(board2, 'board2')">Add a card</button>-->
+                        <h2><i class="icon-check-empty"></i> Validated
+                            <!--<button class="btn" ng-click="addHypothesis(board2, 'board2')">Add a card</button>-->
                         </h2>
                     </div>
                     <ul class="column" sortable-selector="ul.column" sortable ng-model="board2">
@@ -36,15 +36,15 @@
                             </div>
                             <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
                                 <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" placeholder="Edit Me" ng-model="item.title">
-                                <button ng-click="removeCard(board2, item)" class="removeCard btn" type="button">X</button>
+                                <button ng-click="removeHypothesis(board2, item)" class="removeHypothesis btn" type="button">X</button>
                             </form>
                         </li>
                     </ul>
                 </div>
-                    <div class="columnContainer tasksContainer">
+                    <div class="columnContainer hypothesesContainer">
                     <div class="columnHeader">
                         <h2><i class="icon-check-minus"></i> Doing
-                            <!--<button class="btn" ng-click="addCard(board3, 'board3')">Add a card</button>-->
+                            <!--<button class="btn" ng-click="addHypothesis(board3, 'board3')">Add a card</button>-->
                         </h2>
                     </div>
                     <ul class="column" sortable-selector="ul.column" sortable ng-model="board3">
@@ -54,31 +54,11 @@
                             </div>
                             <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
                                 <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" ng-model="item.title">
-                                <button ng-click="removeCard(board3, item)" class="removeCard btn" type="button">X</button>
+                                <button ng-click="removeHypothesis(board3, item)" class="removeHypothesis btn" type="button">X</button>
                             </form>
                         </li>
                     </ul>
                     </div>
-                    <div class="columnContainer tasksContainer">
-                    <div class="columnHeader">
-                        <h2><i class="icon-check"></i></i> Done
-                            <!--<button class="btn" ng-click="addCard(board4, 'board4')">Add a card</button>-->
-                        </h2>
-                    </div>
-                    <ul class="column" sortable-selector="ul.column" sortable ng-model="board4">
-                        <li ng-repeat="item in board4" ng-dblclick="editCard(item)">
-                            <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)">
-                                {{item.title}}
-                            </div>
-                            <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" ng-model="item.title">
-                                <button ng-click="removeCard(board4, item)" class="removeCard btn" type="button">X</button>
-                            </form>
-                        </li>
-                    </ul>
-
-                    </div>
-
                 </div>
 
             </div>

@@ -691,8 +691,15 @@ ul.column{
 }
 .columnContainer{
   float: left;
-  width:24%;
-  margin-left:10px;
+  margin-left: 10px;
+}
+
+.tasksContainer{
+  width: 24%;
+}
+
+.hypothesesContainer{
+  width: 32%;
 }
 
 .columnHeader{

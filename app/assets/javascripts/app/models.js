@@ -55,7 +55,10 @@ app.factory("Card", function($resource) {
     return $resource('/api/projects/:projectId/cards/:id', {projectId: '@projectId', id: '@id'}, {update: {method: "PUT"}});
 });
 
-// Nested resource
+app.factory("Hypothesis", function($resource) {
+  return $resource('/api/projects/:projectId/hypotheses/:id', {projectId: '@projectId', id: '@id'}, {update: {method: "PUT"}});
+});
+
 app.factory("ProjectChecklistStep", function($resource) {
     return $resource('/api/projects/:projectId/project_checklist_steps/:id', {projectId: '@projectId', id: '@id'}, {update: {method: "PUT"}});
 });

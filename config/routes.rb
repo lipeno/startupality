@@ -1,5 +1,4 @@
 Startupality::Application.routes.draw do
-
   root :to => 'angular#angular'
   match 'angular/angular' => 'angular#angular'
 
@@ -10,12 +9,9 @@ Startupality::Application.routes.draw do
   resources :users
 
   namespace :api do
-
     resources :instructional_videos
-
     resources :section_types
     resources :checklist_steps
-
     resources :projects do
       collection do
         get 'getActivated'
@@ -23,12 +19,11 @@ Startupality::Application.routes.draw do
       resources :sections do
         resources :section_types
       end
-
       resources :risks
       resources :revenueOrExpenses
       resources :expenses
       resources :cards
-
+      resources :hypotheses
       resources :project_checklist_steps
       resources :register_risks
     end
