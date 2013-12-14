@@ -742,23 +742,44 @@ ul.column li a { color: black; }
 
 
 
+.projects {
+	height: 73px;
+}
 
+.ng-scope .completed .view .checkboxIcon {
+	padding-top: 23px;
+}
+
+.ng-scope .view .checkboxIcon {
+	padding-top: 0px;
+}
+
+input[type=checkbox] + .checkboxIcon {
+	cursor: pointer;
+	padding-left: 0px;
+	margin-left: 0px;
+}
 
 input[type=checkbox] { display:none; } /* to hide the checkbox itself */
-input[type=checkbox] + .checkboxIcon[for]:before {
+input[type=checkbox] + .checkboxIcon:before {
   font-family: FontAwesome;
   display: inline-block;
-  cursor: pointer;
 }
 
 input[type=checkbox] + .checkboxIcon:before { 
 	content: "\f10c"; /* unchecked icon */
-	letter-spacing: 10px; /* space between checkbox and label */
+	font-size: 25px;
+	color: #d9d9d9;
+	padding-right: 25px;
+	margin-left: 12px;
 } 
 input[type=checkbox]:checked + .checkboxIcon:before { 
 	content: "\f135"; /* checked icon */
-	letter-spacing: 5px; /* allow space for check mark */
+	color: #00aeef;
 	font-size: 35px;
+	padding-right: 20px;
+	margin-left: 5px;
+	padding-top: 13px;
 } 
 
 
