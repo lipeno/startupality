@@ -55,9 +55,6 @@ div.tagsinput input {
   border:1px solid #08c;
 }
 
-.checklist label{
-  font-size: 14px !important;
-}
 #secondNavigation{
   display:none;
 }
@@ -277,7 +274,7 @@ label[for='toggle-all'] {
 
 .todo-list li.editing .edit {
   display: block;
-  width: 506px;
+  width: 90%;
   padding: 13px 17px 12px 17px;
   margin: 0 0 0 43px;
 }
@@ -322,8 +319,7 @@ label[for='toggle-all'] {
   word-break: break-word;
   font-size: 24px;
   cursor: default;
-  padding: 15px;
-  margin-left: 45px;
+  padding: 15px 15px 15px 0px;
   display: block;
   line-height: 1.2;
   -webkit-transition: color 0.4s;
@@ -718,15 +714,7 @@ ul.column li a { color: black; }
 	height: 73px;
 }
 
-.ng-scope .completed .view .checkboxIcon {
-	padding-top: 23px;
-}
-
-.ng-scope .view .checkboxIcon {
-	padding-top: 0px;
-}
-
-input[type=checkbox] + .checkboxIcon {
+input[type=checkbox] + label .checkboxIcon {
 	cursor: pointer;
 	padding-left: 0px;
 	margin-left: 0px;
@@ -736,27 +724,44 @@ input[type=checkbox] + .checkboxIcon {
 	display:none; /* to hide the checkbox itself */
 } 
 
-input[type=checkbox] + .checkboxIcon:before {
+input[type=checkbox] + label .checkboxIcon:before {
   font-family: FontAwesome;
   display: inline-block;
 }
 
-input[type=checkbox] + .checkboxIcon:before { 
+input[type=checkbox] + label .checkboxIcon:before {
 	content: "\f10c"; /* unchecked icon */
 	font-size: 25px;
 	color: #d9d9d9;
 	padding-right: 25px;
 	margin-left: 12px;
+  padding-top: 10px;
+
 } 
-input[type=checkbox]:checked + .checkboxIcon:before { 
+input[type=checkbox]:checked + label .checkboxIcon:before {
 	content: "\f135"; /* checked icon */
 	color: #00aeef;
 	font-size: 35px;
 	padding-right: 20px;
 	margin-left: 5px;
-	padding-top: 13px;
+    padding-top: 0px;
 }
 
+.wizard-list li label {
+  word-break: break-word;
+  font-size: 24px;
+  cursor: default;
+  padding: 15px 15px 15px 15px;
+  margin-left: 45px;
+  display: block;
+  line-height: 1.2;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -ms-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+  font-size: 14px !important;
+}
 
 .todo-list input[type="checkbox"]:focus,
 .project-list .destroy {
