@@ -833,7 +833,9 @@ dialogModule.provider("$dialog", function(){
                 this.modalEl.remove();
 
                 if(this.options.backdrop) {
-                    activeBackdrops.value--;
+					if (activeBackdrops.value > 0) {
+						activeBackdrops.value--;
+					}
                     if (activeBackdrops.value === 0) {
                         this.backdropEl.remove();
                     }
