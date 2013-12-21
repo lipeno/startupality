@@ -833,9 +833,11 @@ dialogModule.provider("$dialog", function(){
                 this.modalEl.remove();
 
                 if(this.options.backdrop) {
-					if (activeBackdrops.value > 0) {
-						activeBackdrops.value--;
-					}
+                    // Changed / edited because of https://github.com/angular-ui/bootstrap/issues/379#issuecomment-17302953
+                    if (activeBackdrops.value > 0) {
+                      activeBackdrops.value--;
+                    }
+                    // End of change
                     if (activeBackdrops.value === 0) {
                         this.backdropEl.remove();
                     }
