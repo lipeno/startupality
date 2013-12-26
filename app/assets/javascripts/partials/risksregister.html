@@ -16,7 +16,7 @@
                         <h4>Impact</h4>
                     </td>
                     <td>
-                        <h4>Exposure*</h4>
+                        <h4>Exposure</h4>
                     </td>
                     <td>
                         <h4>Response action</h4>
@@ -29,13 +29,17 @@
                     <td><input ng-model="registerRisk.name" todo-blur="doneEditing(registerRisk)"/>
                     </td>
                     <td>
+                        <!--array = [{ "value": 0.1, "text": "very low" }, { "value": 0.3, "text": "low" }, { "value": 0.5, "text": "average" }];-->
+
+                        <!--<select ng-options="obj.value as obj.text for obj in array"></select>-->
+
                         <select ng-model="registerRisk.probability"
-                                ng-options="probabilityValue for probabilityValue in [0.1, 0.3, 0.5, 0.7, 0.9]"
+                                ng-options='probabilityValue.value as probabilityValue.text for probabilityValue in [{ "value": 0.1, "text": "very low (0.1)" }, { "value": 0.3, "text": "low (0.3)" }, { "value": 0.5, "text": "average (0.5)" }, { "value": 0.7, "text": "high (0.7)" }, { "value": 0.9, "text": "very high (0.9)" }]'
                                 todo-blur="doneEditing(registerRisk)"></select>
                     </td>
                     <td>
                         <select ng-model="registerRisk.impact"
-                                ng-options="probabilityValue for probabilityValue in [0.1, 0.3, 0.5, 0.7, 0.9]"
+                                ng-options='impactValue.value as impactValue.text for impactValue in [{ "value": 0.1, "text": "very low (0.1)" }, { "value": 0.3, "text": "low (0.3)" }, { "value": 0.5, "text": "average (0.5)" }, { "value": 0.7, "text": "high (0.7)" }, { "value": 0.9, "text": "very high (0.9)" }]'
                                 todo-blur="doneEditing(registerRisk)"></select>
                     </td>
                     <td><div ng-class="appliedClass(registerRisk)">{{calculateExposure(registerRisk)}}</div>
@@ -65,7 +69,7 @@
 
         <div class="center span8">
 
-            <h4>*Risks by exposure:</h4>
+            <h4>Risks by exposure:</h4>
 
             <p><span class="label label-success">Green</span> risks are not very big. Acknowledge green risks, and
                 continue to monitor them, but dedicate fewer resources to mitigating them than the yellow risks.
