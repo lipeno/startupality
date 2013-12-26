@@ -27,7 +27,7 @@ app.service('ProjectProperties', function() {
         }
     }
 });
-
+/*
 app.factory('$modal', function($rootScope, $compile, $http, $timeout, $q, $templateCache) {
     'use strict';
 
@@ -108,7 +108,7 @@ app.factory('$modal', function($rootScope, $compile, $http, $timeout, $q, $templ
     return ModalFactory;
 
 });
-
+*/
 app.factory("FlashNotification", function($rootScope) {
     var queue = [], currentMessage = {};
 

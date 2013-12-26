@@ -1,4 +1,4 @@
-app.controller('ProjectsController', function ( $scope, $location, $dialog, Project, ProjectProperties, segmentio) {
+app.controller('ProjectsController', function ( $scope, $location, $modal, Project, ProjectProperties, segmentio) {
     // Define persisted object
     $scope.projects = Project.query();
 
@@ -51,8 +51,45 @@ app.controller('ProjectsController', function ( $scope, $location, $dialog, Proj
         }
         console.log("id ", $scope.editedProject);
     };
+	
+	$scope.yes = function () {
+		
+		console.log($scope.projects);
+		
+		$scope.projects.splice($scope.projects.indexOf($scope.project), 1);
+		
+		console.log($scope.projects);
+		
+		if ($scope.project.activated) {
+			// Remove
+			$scope.project.$remove();
+			// sort to find latest added project
+			var projectToActivate =  getLatestAddedProject();
+			// and set another one to active
+			if (projectToActivate){
+				$scope.activateProject(projectToActivate);
+			}
+		} else {
+			$scope.project.$remove();
+		}
+		
+		$scope.dialog.close();
+	};
+	
+	$scope.no = function () {
+		$scope.dialog.dismiss('cancel');
+	};
 
     $scope.removeProject = function(project){
+		$scope.project = project;
+		
+		$scope.dialog = $modal.open({
+			templateUrl: '/assets/partials/deleteProjectDialog.html',
+			controller: 'ProjectsController',
+			scope: $scope,
+		});
+		
+		/*
         var msgbox = $dialog.messageBox('Delete project', 'Are you sure you want to delete project ' + '"' + project.title + '"' + '?', [{label:'Yes', result: 'yes', cssClass:'btn btn-primary'},{label:'No', result: 'no'}]);
         msgbox.open().then(function(result){
             if(result === 'yes') {
@@ -73,6 +110,7 @@ app.controller('ProjectsController', function ( $scope, $location, $dialog, Proj
                 }
             }
         });
+		*/
     };
 
     $scope.activateProject = function( project ) {
