@@ -21,7 +21,7 @@ app.config(function ($routeProvider) {
         otherwise({redirectTo:'/dashboard'});
 });
 
-app.run(function (segmentio, CurrentUser, $rootScope) {
+app.run(function (segmentio, CurrentUser, ProjectProperties, $rootScope) {
     // Load analytics with segmentio
     <% if Rails.env.production? %>
     segmentio.load('ph1stgzvwp');
@@ -40,6 +40,8 @@ app.run(function (segmentio, CurrentUser, $rootScope) {
         });
     });
 
+    // Register if there is at least 1 project
+    $rootScope.projectCreated = function() { return ProjectProperties.getProjectExists(); }
 
 });
 
