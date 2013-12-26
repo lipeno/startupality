@@ -2,10 +2,8 @@ app.controller('HeaderController', function ($rootScope, $scope, $location, Curr
     $scope.currentUser = {};
     $scope.currentUser.email = "";
     // To disable the links when there are no projects created
-    $scope.projectCreated = true;
-    $scope.projectCreated = function() { return ProjectProperties.getProjectExists(); }
     $scope.buildUrl = function(url) {
-      if ($scope.projectCreated()){
+      if ($rootScope.projectCreated){
         $location.path(url);
       }
       else{
