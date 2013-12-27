@@ -1,4 +1,4 @@
-app.controller('NewcanvasController', function ($scope, $dialog, $modal, $element, CurrentProject, Section, SectionType){
+app.controller('NewcanvasController', function ($scope, $modal, $element, CurrentProject, Section, SectionType){
     // TODO: inject this into $rootscope
     $scope.currentProject = {};
     $scope.sections = {};
@@ -66,20 +66,18 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
     $scope.disableEdit = function() { $scope.edit = false;  }
 
     $scope.openDialog = function(sections){
-        $scope.opts = {
-            backdrop: true,
-            keyboard: true,
-            backdropClick: true,
-            dialogClass: "modalSection",
-            templateUrl:  '/assets/partials/checklistDialog.html',
-            controller: 'ChecklistDialogController',
-            dialogFade: true,
-            backdropFade: true,
-            resolve: {selectedSections: function(){ return sections; }}
-        };
-
-        var d = $dialog.dialog($scope.opts);
-        d.open();
+		
+		var modalInstance = $modal.open({
+			windowClass: 'modalSection',
+			templateUrl: '/assets/partials/checklistDialog.html',
+			controller: 'ChecklistDialogController',
+			resolve: {
+				selectedSections: function () {
+					return sections;
+				}
+			}
+		});
+		
     };
 	
 	$scope.exportImage = function(businessCanvas, downloadLink, logo) {
@@ -104,11 +102,11 @@ app.controller('NewcanvasController', function ($scope, $dialog, $modal, $elemen
 
 });
 
-app.controller('ChecklistDialogController', function ($scope, dialog, selectedSections, CurrentProject, SectionType, ProjectChecklistStep){
+app.controller('ChecklistDialogController', function ($scope, $modalInstance, selectedSections, CurrentProject, SectionType, ProjectChecklistStep){
     $scope.currentSection = selectedSections[0];
 	
     $scope.close = function(result){
-        dialog.close();
+        $modalInstance.dismiss('cancel');
     };
 
     $scope.sectionTypes = SectionType.query(function () {

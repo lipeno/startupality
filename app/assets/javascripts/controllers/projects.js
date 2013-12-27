@@ -51,34 +51,6 @@ app.controller('ProjectsController', function ( $scope, $location, $modal, Proje
         }
         console.log("id ", $scope.editedProject);
     };
-	
-	$scope.yes = function () {
-		
-		console.log($scope.projects);
-		
-		$scope.projects.splice($scope.projects.indexOf($scope.project), 1);
-		
-		console.log($scope.projects);
-		
-		if ($scope.project.activated) {
-			// Remove
-			$scope.project.$remove();
-			// sort to find latest added project
-			var projectToActivate =  getLatestAddedProject();
-			// and set another one to active
-			if (projectToActivate){
-				$scope.activateProject(projectToActivate);
-			}
-		} else {
-			$scope.project.$remove();
-		}
-		
-		$scope.dialog.close();
-	};
-	
-	$scope.no = function () {
-		$scope.dialog.dismiss('cancel');
-	};
 
     $scope.removeProject = function(project){
 		$scope.project = project;
@@ -89,29 +61,33 @@ app.controller('ProjectsController', function ( $scope, $location, $modal, Proje
 			scope: $scope,
 		});
 		
-		/*
-        var msgbox = $dialog.messageBox('Delete project', 'Are you sure you want to delete project ' + '"' + project.title + '"' + '?', [{label:'Yes', result: 'yes', cssClass:'btn btn-primary'},{label:'No', result: 'no'}]);
-        msgbox.open().then(function(result){
-            if(result === 'yes') {
-                $scope.projects.splice($scope.projects.indexOf(project), 1);
-                console.log(project.id);
-                if (project.activated) {
-                    // Remove
-                    project.$remove();
-                    // sort to find latest added project
-                    var projectToActivate =  getLatestAddedProject();
-                    // and set another one to active
-                    if (projectToActivate){
-                        $scope.activateProject(projectToActivate);
-                    }
-                }
-                else {
-                    project.$remove();
-                }
-            }
-        });
-		*/
+		$scope.dialog.result.then(function () {
+			// delete project
+			$scope.projects.splice($scope.projects.indexOf(project), 1);
+			if (project.activated) {
+				// Remove
+				project.$remove();
+				// sort to find latest added project
+				var projectToActivate =  getLatestAddedProject();
+				// and set another one to active
+				if (projectToActivate){
+					$scope.activateProject(projectToActivate);
+				}
+			} else {
+				project.$remove();
+			}
+		}, function () {
+			//canceled
+		});
     };
+	
+	$scope.yes = function () {
+		$scope.dialog.close();
+	};
+	
+	$scope.no = function () {
+		$scope.dialog.dismiss();
+	};
 
     $scope.activateProject = function( project ) {
         $scope.projects.forEach(function( projectItem ) {

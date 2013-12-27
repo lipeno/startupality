@@ -1,4 +1,4 @@
-app.controller('VisionController', function ($scope, $dialog, $modal, CurrentProject, Section, SectionType){
+app.controller('VisionController', function ($scope, CurrentProject, Section, SectionType){
     $scope.currentView = 'canvas';
     $scope.isCurrentView = function(view){
         if (view === $scope.currentView){
