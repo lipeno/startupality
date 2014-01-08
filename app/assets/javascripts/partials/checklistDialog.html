@@ -1,14 +1,11 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close(result)">&times;</button>
 	<shortcut></shortcut>
-    <div class="row">
-        <div class="span1">
-            <h1><i class="icon-edit icon-2x"></i> </h1>
-        </div>
-        <div class="span11">
-              <div class="row">
-                  <div class="span4">
-                      <h1>{{currentSection.section_type.title}} </h1>
+    <div class="row-fluid">
+              <div class="row-fluid">
+                  <div class="span5">
+                      <h2>           <i class="icon-edit icon-2x"></i>
+                          {{currentSection.section_type.title}} </h2>
                   </div>
                   <div class="span7">
                       <div class="wizard-navigation" ng-keypress="handleArrowKeys()">
@@ -20,13 +17,10 @@
                   </div>
               </div>
             <div class="row">
-                <div class="span12">
+                <div class="span11 offset1">
                     <h4 style="color: #808080"> {{ currentSection.section_type.questions }} </h4>
                 </div>
             </div>
-        </div>
-
-
     </div>
 </div>
 <div class="modal-body">

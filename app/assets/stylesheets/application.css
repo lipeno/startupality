@@ -11,8 +11,6 @@
  *= require_self
  *= require angular-ui
  *= require select2
- *= require bootstrap
- *= require bootstrap-responsive
  *= require datepicker
  *= require font-awesome.min
  *= require font-awesome-ie7.min
