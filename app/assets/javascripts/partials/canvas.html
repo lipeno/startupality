@@ -12,20 +12,23 @@
                 </ul>
             </div>
 
-            <div class="span6">
-                <div class="row" style="text-align: center">
-                    <h2><a ng-click="">
-                        {{currentProject[0].title}}
-                    </a></h2>
+            <div class="span7">
+                <div class="breadcrumb nav nav-tabs">
+                        <div class="row" style="text-align: center">
+                            <h4>
+                                {{currentProject[0].title}} canvas
+                            </h4>
+                        </div>
                 </div>
+
 
             </div>
 
-            <div class="span3">
+            <div class="span2">
                 <ul class="breadcrumb nav nav-tabs pull-right">
                     <li>
                         <a id="printButton" ng-click="exportImage('bizcanvas', 'canvasDownloadLink', 'canvasLogo')">
-                            <i class="icon-print"></i> Export to image (.PNG)
+                            <i class="icon-print"></i> Export to image
                         </a>
                     </li>
 
@@ -37,50 +40,56 @@
 	<a class="hide" target="_blank" id="canvasDownloadLink" />
 	<img class="hide" src="/assets/startupalityLogoBig.png" id="canvasLogo" />
 
-    <table id="bizcanvas" border="1">
-            <tr>
-                <td colspan="2" rowspan="2">
-                    <h4>{{keypartners.section_type.title}} <i class="icon-trophy icon-2x" tooltip-placement="right" tooltip="{{keypartners.section_type.description}}"></i></h4>
-                    <tag-input class="canvasTagsLong" ng-model="keypartners.tags"/>
-                </td>
-                <td colspan="2">
-                    <h4>{{keyactivities.section_type.title}} <i class="icon-tasks icon-2x" tooltip-placement="right" tooltip="{{keyactivities.section_type.description}}"></i></h4>
-                    <tag-input class="canvasTagsShort" ng-model="keyactivities.tags"/>
-                </td>
-                <td colspan="2" rowspan="2">
-                    <h4>{{valueproposition.section_type.title}} <i class="icon-gift icon-2x" tooltip-placement="right" tooltip="{{valueproposition.section_type.description}}"></i></h4>
-                    <tag-input class="canvasTagsLong" ng-model="valueproposition.tags"/>
-                </td>
-                <td colspan="2">
-                    <h4>{{customerrelationships.section_type.title}} <i class="icon-heart icon-2x" tooltip-placement="right" tooltip="{{customerrelationships.section_type.description}}"></i></h4>
-                    <tag-input class="canvasTagsShort" ng-model="customerrelationships.tags"/>
-                </td>
-                <td colspan="2" rowspan="2">
-                    <h4>{{customersegments.section_type.title}} <i class="icon-sitemap icon-2x" tooltip-placement="right" tooltip="{{customersegments.section_type.description}}"></i></h4>
-                    <tag-input class="canvasTagsLong" ng-model="customersegments.tags"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <h4>{{keyresources.section_type.title}} <i class="icon-bolt icon-2x" tooltip-placement="right" tooltip="{{keyresources.section_type.description}}"></i></h4>
-                    <tag-input class="canvasTagsShort" ng-model="keyresources.tags"/>
-                </td>
-                <td colspan="2">
-                    <h4>{{channels.section_type.title}} <i class="icon-truck icon-2x" tooltip-placement="right" tooltip="{{channels.section_type.description}}"></i></h4>
-                    <tag-input class="canvasTagsShort" ng-model="channels.tags"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="5">
-                    <h4>{{coststructure.section_type.title}} <i class="icon-lightbulb icon-2x" tooltip-placement="right" tooltip="{{coststructure.section_type.description}}"></i></h4>
-                    <tag-input class="canvasTagsWide" ng-model="coststructure.tags"/>
-                </td>
-                <td colspan="5">
-                    <h4>{{revenuestreams.section_type.title}} <i class="icon-question-sign icon-2x" tooltip-placement="right" tooltip="{{revenuestreams.section_type.description}}"></i></h4>
-                    <tag-input class="canvasTagsWide" ng-model="revenuestreams.tags"/>
-                </td>
-            </tr>
-        </table>
+    <div class="row-fluid">
+        <div class="span12">
+            <table id="bizcanvas">
+                <tr>
+                    <td colspan="2" rowspan="2">
+                        <h4>{{keypartners.section_type.title}} <i class="icon-trophy icon-2x" tooltip-placement="right" tooltip="{{keypartners.section_type.description}}"></i></h4>
+                        <tag-input class="canvasTagsLong" ng-model="keypartners.tags"/>
+                    </td>
+                    <td colspan="2">
+                        <h4>{{keyactivities.section_type.title}} <i class="icon-tasks icon-2x" tooltip-placement="right" tooltip="{{keyactivities.section_type.description}}"></i></h4>
+                        <tag-input class="canvasTagsShort" ng-model="keyactivities.tags"/>
+                    </td>
+                    <td colspan="2" rowspan="2">
+                        <h4>{{valueproposition.section_type.title}} <i class="icon-gift icon-2x" tooltip-placement="right" tooltip="{{valueproposition.section_type.description}}"></i></h4>
+                        <tag-input class="canvasTagsLong" ng-model="valueproposition.tags"/>
+                    </td>
+                    <td colspan="2">
+                        <h4>{{customerrelationships.section_type.title}} <i class="icon-heart icon-2x" tooltip-placement="right" tooltip="{{customerrelationships.section_type.description}}"></i></h4>
+                        <tag-input class="canvasTagsShort" ng-model="customerrelationships.tags"/>
+                    </td>
+                    <td colspan="2" rowspan="2">
+                        <h4>{{customersegments.section_type.title}} <i class="icon-sitemap icon-2x" tooltip-placement="right" tooltip="{{customersegments.section_type.description}}"></i></h4>
+                        <tag-input class="canvasTagsLong" ng-model="customersegments.tags"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4>{{keyresources.section_type.title}} <i class="icon-bolt icon-2x" tooltip-placement="right" tooltip="{{keyresources.section_type.description}}"></i></h4>
+                        <tag-input class="canvasTagsShort" ng-model="keyresources.tags"/>
+                    </td>
+                    <td colspan="2">
+                        <h4>{{channels.section_type.title}} <i class="icon-truck icon-2x" tooltip-placement="right" tooltip="{{channels.section_type.description}}"></i></h4>
+                        <tag-input class="canvasTagsShort" ng-model="channels.tags"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <h4>{{coststructure.section_type.title}} <i class="icon-lightbulb icon-2x" tooltip-placement="right" tooltip="{{coststructure.section_type.description}}"></i></h4>
+                        <tag-input class="canvasTagsWide" ng-model="coststructure.tags"/>
+                    </td>
+                    <td colspan="5">
+                        <h4>{{revenuestreams.section_type.title}} <i class="icon-question-sign icon-2x" tooltip-placement="right" tooltip="{{revenuestreams.section_type.description}}"></i></h4>
+                        <tag-input class="canvasTagsWide" ng-model="revenuestreams.tags"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+    </div>
 
     The Canvas is adapted from businessmodelgeneration.com and is licensed under the Creative Commons Attribution-Share Alike 3.0 Unported License.
 
