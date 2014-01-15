@@ -11,7 +11,6 @@ gem "paperclip", "~> 3.0"
 gem "haml"
 gem "select2-rails"
 gem 'pg'
-#gem 'aws-sdk'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -28,7 +27,7 @@ group :assets do
   gem 'sass-rails', "~> 3.2.3"
   gem 'coffee-rails'
   gem 'compass-rails'
-  #gem 'compass_twitter_bootstrap'
+  gem 'compass_twitter_bootstrap'
   gem 'yui-compressor'
   gem 'uglifier', '>= 1.0.3'
 end
