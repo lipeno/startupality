@@ -1,4 +1,4 @@
-<div ng-controller="NewcanvasController">
+<div ng-controller="CanvasController">
 
     <secondaryheader id="secondaryheader">
         <div class="row-fluid">
@@ -15,8 +15,13 @@
             <div class="span7">
                 <div class="breadcrumb nav nav-tabs">
                         <div class="row" style="text-align: center">
-                            <h4>
-                                {{currentProject[0].title}} canvas
+
+                                    <a class="btn btn-primary" ng-click="openProjectsList()" tooltip-placement="right" tooltip="Click to switch to a different project or create a new one">
+                                        <h4><i class="icon-list"></i> {{currentProject[0].title}} canvas
+                                        <span class="caret"></span>
+                                        </h4>
+                                    </a>
+
                             </h4>
                         </div>
                 </div>
