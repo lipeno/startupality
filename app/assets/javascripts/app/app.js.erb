@@ -7,7 +7,6 @@ app.config(["$httpProvider", function (provider) {
 
 app.config(function ($routeProvider) {
     $routeProvider.
-        when('/dashboard', {templateUrl:"/assets/partials/projects.html", controller: 'ProjectsController'}).
         when('/vision', {templateUrl:"/assets/partials/vision.html", controller: 'VisionController'}).
         when('/experiments', {templateUrl:"/assets/partials/experiments.html", controller: 'ExperimentsController'}).
         when('/finance', {templateUrl:"/assets/partials/finance.html", controller: 'FinanceController'}).
@@ -18,10 +17,10 @@ app.config(function ($routeProvider) {
         when('/businessplan', {templateUrl:"/assets/partials/businessplan.html", controller: 'BusinessplanController'}).
         when('/canvas', {templateUrl:"/assets/partials/canvas.html", controller: 'CanvasController'}).
         when('/export', {templateUrl:"/assets/partials/export.html", controller: 'ExportController'}).
-        otherwise({redirectTo:'/dashboard'});
+        otherwise({redirectTo:'/vision'});
 });
 
-app.run(function (segmentio, CurrentUser, ProjectProperties, $rootScope) {
+app.run(function (segmentio, CurrentUser, ProjectProperties, $rootScope, Project) {
     // Load analytics with segmentio
     <% if Rails.env.production? %>
     segmentio.load('ph1stgzvwp');
@@ -38,6 +37,24 @@ app.run(function (segmentio, CurrentUser, ProjectProperties, $rootScope) {
             fullname: user.full_name,
             subscriptionPlan: user.role
         });
+
+        // If there are 0 projects, add the default one to avoid any potential errors
+        projects = Project.query(function(){
+            if (projects.length === 0) { // If it doesnt exist
+                var newProject = new Project();
+                newProject.title= "Default project";
+                newProject.activated = true;
+                // If it is first activate it
+                newProject.$save(newProject);
+                // Track project add event
+                segmentio.track('Added a Project', {
+                    projectTitle        : newProject.title,
+                    user_id             : $scope.currentUser.id
+                });
+            }
+        });
+
+
     });
 
     // Register if there is at least 1 project

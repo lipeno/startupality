@@ -1,24 +1,35 @@
-<section id="todoapp">
-    <header id="header">
-        <form id="todo-form" class="project-title" ng-submit="addProject(newProject)">
-            <input id="new-todo" placeholder="Type here an idea or a project..." ng-model="newProject" autofocus>
-        </form>
-    </header>
-
-    <section id="main" ng-show="projects.length" ng-cloak>
-        <ul class="todo-list project-list">
-            <li ng-repeat="project in projects | reverse" ng-class="{completed: !project.activated, editing: project == editedProject}" class="projects">
-                <div class="view">
-                    <input id="project{{$index}}" type="checkbox" ng-click="activateProject(project)" ng-model="project.activated" >
-
-                    <label for="project{{$index}}" ng-dblclick="editProject(project)" tooltip-placement="right" tooltip="Double click to rename"><span class="checkboxIcon" tooltip-placement="left" tooltip="Click to switch to project"></span>{{project.title}}</label>
-                    <button class="destroy" ng-click="removeProject(project)"></button>
-                </div>
-                <form ng-submit="doneEditing(project)">
-                    <input class="edit" ng-model="project.title" todo-blur="doneEditing(project)" todo-focus="project == editedProject">
+<div class="modal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close(result)">&times;</button>
+        <h1>Manage projects</h1>
+    </div>
+    <div class="modal-body">
+        <section id="todoapp">
+            <header id="header">
+                <form id="todo-form" class="project-title" ng-submit="addProject(newProject)">
+                    <input id="new-todo" placeholder="Type here an idea or a project..." ng-model="newProject" autofocus>
                 </form>
-            </li>
-        </ul>
-    </section>
+            </header>
 
-</section>
+            <section id="main" ng-show="projects.length" ng-cloak>
+                <ul class="todo-list project-list">
+                    <li ng-repeat="project in projects | reverse" ng-class="{completed: !project.activated, editing: project == editedProject}" class="projects">
+                        <div class="view">
+                            <input id="project{{$index}}" type="checkbox" ng-click="activateProject(project)" ng-model="project.activated" >
+
+                            <label for="project{{$index}}" ng-dblclick="editProject(project)" tooltip-placement="right" tooltip="Double click to rename"><span class="checkboxIcon" tooltip-placement="left" tooltip="Click to switch to project"></span>{{project.title}}</label>
+                            <button class="destroy" ng-click="removeProject(project)"></button>
+                        </div>
+                        <form ng-submit="doneEditing(project)">
+                            <input class="edit" ng-model="project.title" todo-blur="doneEditing(project)" todo-focus="project == editedProject">
+                        </form>
+                    </li>
+                </ul>
+            </section>
+
+        </section>
+
+    </div>
+
+</div>
+

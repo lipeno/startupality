@@ -1,15 +1,16 @@
-app.controller('ProjectsController', function ( $scope, $location, $modal, Project, ProjectProperties, segmentio) {
+app.controller('ProjectsController', function ( $scope, $modalInstance, $location, $modal, Project, ProjectProperties, segmentio) {
     // Define persisted object
     $scope.projects = Project.query();
 
     $scope.$watch('projects', function() {
         if ($scope.projects.length === 0) {ProjectProperties.unsetProjectExists();} else {ProjectProperties.setProjectExists();}
-//        $scope.remainingCount = $scope.projects.length;
-//        $scope.doneCount = $scope.projects.length - $scope.remainingCount;
-//        $scope.allChecked = !$scope.remainingCount;
     }, true);
 
     $scope.newProject = "";
+
+    $scope.close = function(result){
+      $modalInstance.dismiss('cancel');
+    };
 
     $scope.addProject = function(project) {
         if ( !project.length ) {
@@ -54,7 +55,7 @@ app.controller('ProjectsController', function ( $scope, $location, $modal, Proje
 
     $scope.removeProject = function(project){
       if ($scope.projects.length === 1) { // If there is only one project left
-        toastr.error('Try creating a new one and then deleting the old one!', 'You have to have at least one project.');
+        toastr.error('Try creating a new one and deleting the old one!', 'You need to have at least one project.');
       }
       else{
         $scope.project = project;
