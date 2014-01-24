@@ -472,11 +472,8 @@ body {
 }
 
 #todoapp {
-//  width: 80%;
-//  margin-left: 10%;
-//  margin-right: 10%;
-//  margin-bottom: 30px;
-//  margin-top: 30px;
+  margin-left: 6%;
+  margin-right: 6%;
   background: #fff;
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid #ccc;
@@ -496,15 +493,6 @@ body {
   top: 0;
   left: 40px;
   height: 100%;
-}
-
-#todoapp input::-webkit-input-placeholder {
-  font-style: italic;
-}
-
-#todoapp input:-moz-placeholder {
-  font-style: italic;
-  color: #a9a9a9;
 }
 
 #todoapp h1 {
@@ -676,6 +664,7 @@ label[for='toggle-all'] {
 }
 
 .todo-list li label {
+//  color: #a9a9a9;
   word-break: break-word;
   font-size: 24px;
   cursor: default;
@@ -689,8 +678,9 @@ label[for='toggle-all'] {
   transition: color 0.4s;
 }
 
-.todo-list li.completed label {
-  color: #a9a9a9;
+.todo-list li.activated label {
+//  color: #a9a9a9;
+  color: #00aeef;
 }
 
 .todo-list li .destroy {
@@ -822,4 +812,8 @@ label[for='toggle-all'] {
 
 .hidden{
   display:none;
+}
+
+#projectsModal{
+
 }

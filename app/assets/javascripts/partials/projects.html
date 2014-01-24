@@ -1,4 +1,4 @@
-<div class="modal">
+<div id="projectsModal" class="modal">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close(result)">&times;</button>
         <h1>Manage projects</h1>
@@ -13,11 +13,11 @@
 
             <section id="main" ng-show="projects.length" ng-cloak>
                 <ul class="todo-list project-list">
-                    <li ng-repeat="project in projects | reverse" ng-class="{completed: !project.activated, editing: project == editedProject}" class="projects">
+                    <li ng-repeat="project in projects | reverse" ng-class="{activated: project.activated, editing: project == editedProject}" class="projects">
                         <div class="view">
                             <input id="project{{$index}}" type="checkbox" ng-click="activateProject(project)" ng-model="project.activated" >
 
-                            <label for="project{{$index}}" ng-dblclick="editProject(project)" tooltip-placement="right" tooltip="Double click to rename"><span class="checkboxIcon" tooltip-placement="left" tooltip="Click to switch to project"></span>{{project.title}}</label>
+                            <label for="project{{$index}}" ng-dblclick="editProject(project)" tooltip-placement="top" tooltip="Double click to rename"><span class="checkboxIcon" tooltip-placement="top" tooltip="Click to switch to project"></span>{{project.title}}</label>
                             <button class="destroy" ng-click="removeProject(project)"></button>
                         </div>
                         <form ng-submit="doneEditing(project)">
