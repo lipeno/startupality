@@ -17,7 +17,7 @@
                                 {{item.title}}
                             </div>
                             <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" ng-model="item.title">
+                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
                                 <button ng-click="removeCard(board1, item)" class="removeCard btn" type="button">X</button>
                             </form>
                         </li>
@@ -35,7 +35,7 @@
                                 {{item.title}}
                             </div>
                             <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" placeholder="Edit Me" ng-model="item.title">
+                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
                                 <button ng-click="removeCard(board2, item)" class="removeCard btn" type="button">X</button>
                             </form>
                         </li>
@@ -53,7 +53,7 @@
                                 {{item.title}}
                             </div>
                             <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" ng-model="item.title">
+                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
                                 <button ng-click="removeCard(board3, item)" class="removeCard btn" type="button">X</button>
                             </form>
                         </li>
@@ -71,7 +71,7 @@
                                 {{item.title}}
                             </div>
                             <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" ng-model="item.title">
+                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
                                 <button ng-click="removeCard(board4, item)" class="removeCard btn" type="button">X</button>
                             </form>
                         </li>
