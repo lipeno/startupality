@@ -18,10 +18,12 @@ app.controller('FinanceController', function ($scope, RevenueOrExpense, CurrentP
           $scope.revenues = $scope.revenues.sort(function(a, b){return a.rowNumber-b.rowNumber});
           $scope.expenses = $scope.expenses.sort(function(a, b){return a.rowNumber-b.rowNumber});
 
-          if (Highcharts.charts[1])
-            $scope.redrawGraph();
-          else
-            $scope.drawGraph();
+          if ($scope.chartData) {
+			  $scope.redrawGraph();
+          } else {
+			  $scope.drawGraph();
+          }
+		  
         });
       });
     }
@@ -155,16 +157,20 @@ app.controller('FinanceController', function ($scope, RevenueOrExpense, CurrentP
 		Highcharts.getOptions().exporting.buttons.contextButton.menuItems.splice(5,1);
     };
 
-    $scope.redrawGraph = function (){
-      Highcharts.charts[1].series[0].setData([$scope.calculateRevenueForMonth($scope.months[0]), $scope.calculateRevenueForMonth($scope.months[1]), $scope.calculateRevenueForMonth($scope.months[2]), $scope.calculateRevenueForMonth($scope.months[3]), $scope.calculateRevenueForMonth($scope.months[4]), $scope.calculateRevenueForMonth($scope.months[5]), $scope.calculateRevenueForMonth($scope.months[6]), $scope.calculateRevenueForMonth($scope.months[7]), $scope.calculateRevenueForMonth($scope.months[8]), $scope.calculateRevenueForMonth($scope.months[9]), $scope.calculateRevenueForMonth($scope.months[10]), $scope.calculateRevenueForMonth($scope.months[11])],true);
-      Highcharts.charts[1].series[1].setData([$scope.calculateExpenseForMonth($scope.months[0]), $scope.calculateExpenseForMonth($scope.months[1]), $scope.calculateExpenseForMonth($scope.months[2]), $scope.calculateExpenseForMonth($scope.months[3]), $scope.calculateExpenseForMonth($scope.months[4]), $scope.calculateExpenseForMonth($scope.months[5]), $scope.calculateExpenseForMonth($scope.months[6]), $scope.calculateExpenseForMonth($scope.months[7]), $scope.calculateExpenseForMonth($scope.months[8]), $scope.calculateExpenseForMonth($scope.months[9]), $scope.calculateExpenseForMonth($scope.months[10]), $scope.calculateExpenseForMonth($scope.months[11])],true);
-      Highcharts.charts[1].series[2].setData([$scope.calculateRevenueForMonth($scope.months[0]) - $scope.calculateExpenseForMonth($scope.months[0]), $scope.calculateRevenueForMonth($scope.months[1]) - $scope.calculateExpenseForMonth($scope.months[1]), $scope.calculateRevenueForMonth($scope.months[2]) - $scope.calculateExpenseForMonth($scope.months[2]), $scope.calculateRevenueForMonth($scope.months[3]) - $scope.calculateExpenseForMonth($scope.months[3]), $scope.calculateRevenueForMonth($scope.months[4]) - $scope.calculateExpenseForMonth($scope.months[4]), $scope.calculateRevenueForMonth($scope.months[5]) - $scope.calculateExpenseForMonth($scope.months[5]), $scope.calculateRevenueForMonth($scope.months[6])  - $scope.calculateExpenseForMonth($scope.months[6]), $scope.calculateRevenueForMonth($scope.months[7]) - $scope.calculateExpenseForMonth($scope.months[7]), $scope.calculateRevenueForMonth($scope.months[8]) - $scope.calculateExpenseForMonth($scope.months[8]), $scope.calculateRevenueForMonth($scope.months[9]) - $scope.calculateExpenseForMonth($scope.months[9]), $scope.calculateRevenueForMonth($scope.months[10]) - $scope.calculateExpenseForMonth($scope.months[10]), $scope.calculateRevenueForMonth($scope.months[11]) - $scope.calculateExpenseForMonth($scope.months[11])],true);
+    $scope.redrawGraph = function () {
+		for (var i = 0; i < Highcharts.charts.length; i++) {
+			if (Highcharts.charts[i]) {
+      	  		Highcharts.charts[i].series[0].setData([$scope.calculateRevenueForMonth($scope.months[0]), $scope.calculateRevenueForMonth($scope.months[1]), $scope.calculateRevenueForMonth($scope.months[2]), $scope.calculateRevenueForMonth($scope.months[3]), $scope.calculateRevenueForMonth($scope.months[4]), $scope.calculateRevenueForMonth($scope.months[5]), $scope.calculateRevenueForMonth($scope.months[6]), $scope.calculateRevenueForMonth($scope.months[7]), $scope.calculateRevenueForMonth($scope.months[8]), $scope.calculateRevenueForMonth($scope.months[9]), $scope.calculateRevenueForMonth($scope.months[10]), $scope.calculateRevenueForMonth($scope.months[11])],true);
+      			Highcharts.charts[i].series[1].setData([$scope.calculateExpenseForMonth($scope.months[0]), $scope.calculateExpenseForMonth($scope.months[1]), $scope.calculateExpenseForMonth($scope.months[2]), $scope.calculateExpenseForMonth($scope.months[3]), $scope.calculateExpenseForMonth($scope.months[4]), $scope.calculateExpenseForMonth($scope.months[5]), $scope.calculateExpenseForMonth($scope.months[6]), $scope.calculateExpenseForMonth($scope.months[7]), $scope.calculateExpenseForMonth($scope.months[8]), $scope.calculateExpenseForMonth($scope.months[9]), $scope.calculateExpenseForMonth($scope.months[10]), $scope.calculateExpenseForMonth($scope.months[11])],true);
+      			Highcharts.charts[i].series[2].setData([$scope.calculateRevenueForMonth($scope.months[0]) - $scope.calculateExpenseForMonth($scope.months[0]), $scope.calculateRevenueForMonth($scope.months[1]) - $scope.calculateExpenseForMonth($scope.months[1]), $scope.calculateRevenueForMonth($scope.months[2]) - $scope.calculateExpenseForMonth($scope.months[2]), $scope.calculateRevenueForMonth($scope.months[3]) - $scope.calculateExpenseForMonth($scope.months[3]), $scope.calculateRevenueForMonth($scope.months[4]) - $scope.calculateExpenseForMonth($scope.months[4]), $scope.calculateRevenueForMonth($scope.months[5]) - $scope.calculateExpenseForMonth($scope.months[5]), $scope.calculateRevenueForMonth($scope.months[6])  - $scope.calculateExpenseForMonth($scope.months[6]), $scope.calculateRevenueForMonth($scope.months[7]) - $scope.calculateExpenseForMonth($scope.months[7]), $scope.calculateRevenueForMonth($scope.months[8]) - $scope.calculateExpenseForMonth($scope.months[8]), $scope.calculateRevenueForMonth($scope.months[9]) - $scope.calculateExpenseForMonth($scope.months[9]), $scope.calculateRevenueForMonth($scope.months[10]) - $scope.calculateExpenseForMonth($scope.months[10]), $scope.calculateRevenueForMonth($scope.months[11]) - $scope.calculateExpenseForMonth($scope.months[11])],true);
+			}
+		}
     };
 
     $scope.doneEditing = function( row ) {
         row.$update({projectId: $scope.currentProject.id});
         $scope.redrawGraph();
-		};
+	};
 
     $scope.addRevenueRow = function(rowsToAdd){
         var newRevenue = new RevenueOrExpense({isExpense: false, rowNumber:(rowsToAdd.length + 1) || 1, rowName: "", january: 0, february:0, march:0, april:0, may:0, june:0, july:0, august:0, september:0, october:0, november:0, december:0, year:$scope.activeYear});
@@ -186,6 +192,7 @@ app.controller('FinanceController', function ($scope, RevenueOrExpense, CurrentP
             rows[i].rowNumber = rows[i].rowNumber - 1;
             rows[i].$update({projectId: $scope.currentProject.id})
         }
+		$scope.redrawGraph();
     };
 
     $scope.calculateRevenueForMonth = function(month){
