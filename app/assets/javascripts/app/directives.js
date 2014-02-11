@@ -45,6 +45,18 @@ app.directive('todoFocus', function ($timeout) {
   };
 });
 
+// Automatically select all text when focusing on input box
+app.directive('selectOnClick', function () {
+  return {
+    restrict: 'A',
+    link: function (scope, element, attrs) {
+      element.on('click', function () {
+        this.select();
+      });
+    }
+  };
+});
+
 //// you can use it by calling tags-input
 //app.directive('tagsInput', function() {
 //    return {
@@ -60,7 +72,7 @@ app.directive('todoFocus', function ($timeout) {
 app.directive('tagInput', function () {
   return {
     restrict: 'E',
-    template: '<input type="hidden" placeholder="Input tags here...">',
+    template: '<input type="hidden" placeholder="Input ideas here...">',
     replace: true,
     require: '?ngModel',
     link: function (scope, element, attrs, ngModel) {

@@ -6,7 +6,7 @@
                 <div class="columnContainer tasksContainer">
 
                     <div class="columnHeader">
-                        <h2><i class="icon-rocket"></i> Backlog
+                        <h2><i class="icon-rocket"></i> <span tooltip-placement="top" tooltip="All work that needs to be taken care of starts here">Backlog</span>
                             <button class="btn" ng-click="addCard('board1')">Add Task</button>
                         </h2>
                     </div>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="columnContainer tasksContainer">
                     <div class="columnHeader">
-                        <h2><i class="icon-check-empty"></i> Todo
+                        <h2><i class="icon-check-empty"></i> <span tooltip-placement="top" tooltip="Work that needs to be done soon">To Do</span>
                         </h2>
                     </div>
                     <ul class="column todo" sortable-selector="ul.column" sortable ng-model="board2">
@@ -74,7 +74,7 @@
                 </div>
                 <div class="columnContainer tasksContainer">
                     <div class="columnHeader">
-                        <h2><i class="icon-check-minus"></i> Doing
+                        <h2><i class="icon-check-minus"></i> <span tooltip-placement="top" tooltip="Work that is in the process of doing right now">Doing</span>
                         </h2>
                     </div>
                     <ul class="column doing" sortable-selector="ul.column" sortable ng-model="board3">
@@ -99,7 +99,7 @@
                 </div>
                 <div class="columnContainer tasksContainer">
                     <div class="columnHeader">
-                        <h2><i class="icon-check"></i></i> Done
+                        <h2><i class="icon-check"></i></i> <span tooltip-placement="top" tooltip="Archive of already done work">Done</span>
                         </h2>
                     </div>
                     <ul class="column done" sortable-selector="ul.column" sortable ng-model="board4">
