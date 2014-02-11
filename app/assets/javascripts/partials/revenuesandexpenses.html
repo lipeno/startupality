@@ -109,12 +109,13 @@
  </div>
 
  <div class="finance" ng-controller="FinanceController">
-     <div class="row">
-         <div><br></div>
-         <div class="span8 offset1">
+     <div><br></div>
+
+     <div class="row-fluid">
+         <div class="span5 offset2">
              <chart value='{{chartData}}' type="area" style="width: 100%; height: 300px; margin: 0 auto"></chart>
          </div>
-         <div class="span4 offset1">
+         <div class="span3 offset1">
              <h4>Discount rate:</h4>
              <input name="discountRate" type="text" placeholder="{{discountRate}}" ng-model="discountRate">
              <h4>Net Present Value (NPV):</h4><p>{{calculateNpv(getIncomeArray())}}</p>
