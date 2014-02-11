@@ -13,13 +13,18 @@
 
                     <ul class="columnAdd">
                     <li ng-show="isBeingAdded()">
-                        <form ng-submit="doneAdding()">
-                            <input class="cardEditable" todo-focus="isBeingAdded()" todo-blur="doneAdding()"
-                                   placeholder="Some task" ng-model="cardBeingAdded.title">
-                            <button ng-click="removeCard(board1, item)" class="removeCard btn" type="button"><i
-                                    class="icon-trash"></i></button>
-                        </form>
-
+                        <div class="edit-card">
+                            <form ng-submit="doneAdding()">
+                                <input class="cardEditable" todo-focus="isBeingAdded()"
+                                       todo-blur="doneAdding()" placeholder="Some task" ng-model="cardBeingAdded.title">
+                                <div class="btn-group">
+                                    <button ng-click="removeCard(board1, item)" class="btn" type="button" tooltip-placement="top" tooltip="Delete"><i
+                                            class="icon-trash"></i></button>
+                                    <button ng-click="doneAdding(item)" class="btn" type="button" tooltip-placement="top" tooltip="Save"><i
+                                            class="icon-save"></i></button>
+                                </div>
+                            </form>
+                        </div>
                     </li>
                     </ul>
                     <ul class="column" sortable-selector="ul.column" sortable ng-model="board1">
@@ -27,13 +32,18 @@
                             <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)">
                                 {{item.title}}
                             </div>
-                            <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)"
-                                       todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
-                                <button ng-click="removeCard(board1, item)" class="removeCard btn" type="button"><i
-                                        class="icon-trash"></i></button>
-                            </form>
-
+                            <div class="edit-card" ng-show="isBeingEdited(item)">
+                                <form ng-submit="doneEditing(item)">
+                                    <input class="cardEditable" todo-focus="isBeingEdited(item)"
+                                           todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
+                                    <div class="btn-group">
+                                        <button ng-click="removeCard(board1, item)" class="btn" type="button" tooltip-placement="top" tooltip="Delete"><i
+                                                class="icon-trash"></i></button>
+                                        <button ng-click="doneEditing(item)" class="btn" type="button" tooltip-placement="top" tooltip="Save"><i
+                                                class="icon-save"></i></button>
+                                    </div>
+                                </form>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -47,12 +57,18 @@
                             <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)">
                                 {{item.title}}
                             </div>
-                            <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)"
-                                       todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
-                                <button ng-click="removeCard(board2, item)" class="removeCard btn" type="button"><i
-                                        class="icon-trash"></i></button>
-                            </form>
+                            <div class="edit-card" ng-show="isBeingEdited(item)">
+                                <form ng-submit="doneEditing(item)">
+                                    <input class="cardEditable" todo-focus="isBeingEdited(item)"
+                                           todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
+                                    <div class="btn-group">
+                                        <button ng-click="removeCard(board1, item)" class="btn" type="button" tooltip-placement="top" tooltip="Delete"><i
+                                                class="icon-trash"></i></button>
+                                        <button ng-click="doneEditing(item)" class="btn" type="button" tooltip-placement="top" tooltip="Save"><i
+                                                class="icon-save"></i></button>
+                                    </div>
+                                </form>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -66,12 +82,18 @@
                             <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)">
                                 {{item.title}}
                             </div>
-                            <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)"
-                                       todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
-                                <button ng-click="removeCard(board3, item)" class="removeCard btn" type="button"><i
-                                        class="icon-trash"></i></button>
-                            </form>
+                            <div class="edit-card" ng-show="isBeingEdited(item)">
+                                <form ng-submit="doneEditing(item)">
+                                    <input class="cardEditable" todo-focus="isBeingEdited(item)"
+                                           todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
+                                    <div class="btn-group">
+                                        <button ng-click="removeCard(board1, item)" class="btn" type="button" tooltip-placement="top" tooltip="Delete"><i
+                                                class="icon-trash"></i></button>
+                                        <button ng-click="doneEditing(item)" class="btn" type="button" tooltip-placement="top" tooltip="Save"><i
+                                                class="icon-save"></i></button>
+                                    </div>
+                                </form>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -85,12 +107,18 @@
                             <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)">
                                 {{item.title}}
                             </div>
-                            <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)"
-                                       todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
-                                <button ng-click="removeCard(board4, item)" class="removeCard btn" type="button"><i
-                                        class="icon-trash"></i></button>
-                            </form>
+                            <div class="edit-card" ng-show="isBeingEdited(item)">
+                                <form ng-submit="doneEditing(item)">
+                                    <input class="cardEditable" todo-focus="isBeingEdited(item)"
+                                           todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
+                                    <div class="btn-group">
+                                        <button ng-click="removeCard(board1, item)" class="btn" type="button" tooltip-placement="top" tooltip="Delete"><i
+                                                class="icon-trash"></i></button>
+                                        <button ng-click="doneEditing(item)" class="btn" type="button" tooltip-placement="top" tooltip="Save"><i
+                                                class="icon-save"></i></button>
+                                    </div>
+                                </form>
+                            </div>
                         </li>
                     </ul>
 
