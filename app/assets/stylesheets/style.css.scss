@@ -75,8 +75,8 @@ a{
   color: $bluedark;
 }
 
-#header .nav-tabs li a:hover{
-  color: $bluedark;
+#header .nav-tabs li i, #header .nav-tabs li a:hover{
+    color: $bluedark;
 }
 
 a:hover{
@@ -883,4 +883,10 @@ label[for='toggle-all'] {
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+//To increase the size of "manage projects" caret
+.big-caret{
+border-left: 8px solid transparent;
+border-right: 8px solid transparent;
+border-top: 8px solid #000000;
 }
