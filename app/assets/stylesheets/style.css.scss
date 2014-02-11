@@ -7,6 +7,10 @@
 // Variables to customize the look and feel of Bootstrap
 $startupalityBlue : #20B6CA;
 
+$successColor: #468847;
+$importantColor: #b94a48;
+$warningColor: #f89406;
+
 $bodyBackground: #f8f6ed;
 $linkColor : #222;
 
@@ -235,7 +239,7 @@ a:hover img.grayscale {
   text-align: left;
 }
 
-ul.column{
+.column{
   min-height: 35em;
   padding: 0;
   margin: 0;
@@ -251,6 +255,25 @@ ul.column{
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+
+.columnAdd{
+  height: 100%;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.column li{
+  margin: 5px;
+  list-style: none;
+  a { color: black; }
+}
+
+.columnAdd li {
+  margin: 5px;
+  list-style: none;
+  a { color: black; }
+}
+
 .columnContainer{
   float: left;
   margin-left: 10px;
@@ -268,8 +291,7 @@ ul.column{
   text-align: center;
 }
 
-ul.column li { margin: 5px; list-style: none;}
-ul.column li a { color: black; }
+
 
 .project-title {
 	margin: 0 0 5px;
@@ -817,3 +839,16 @@ label[for='toggle-all'] {
 #projectsModal{
 
 }
+
+.validated li div, .done li div{
+  border-color: $successColor;
+}
+
+.invalidated li div, .todo li div{
+  border-color: $importantColor;
+}
+
+.doing li div{
+  border-color: $warningColor;
+}
+

@@ -1,89 +1,106 @@
-<div ng-controller ="GoalsController">
+<div ng-controller="GoalsController">
     <div class='contentWrapper ng-cloak'>
-                <div class='content'>
+        <div class='content'>
 
-                <div class="row-fluid">
-                    <div class="columnContainer tasksContainer">
+            <div class="row-fluid">
+                <div class="columnContainer tasksContainer">
 
                     <div class="columnHeader">
-                        <h2><i class="icon-rocket"></i> Ideas
-                        <button class="btn" ng-click="addCard(board1, 'board1')">Add Task</button>
+                        <h2><i class="icon-rocket"></i> Backlog
+                            <button class="btn" ng-click="addCard('board1')">Add Task</button>
                         </h2>
                     </div>
-                    <ul class="column" sortable-selector="ul.column" sortable ng-model="board1">
 
+                    <ul class="columnAdd">
+                    <li ng-show="isBeingAdded()">
+                        <form ng-submit="doneAdding()">
+                            <input class="cardEditable" todo-focus="isBeingAdded()" todo-blur="doneAdding()"
+                                   placeholder="Some task" ng-model="cardBeingAdded.title">
+                            <button ng-click="removeCard(board1, item)" class="removeCard btn" type="button"><i
+                                    class="icon-trash"></i></button>
+                        </form>
+
+                    </li>
+                    </ul>
+                    <ul class="column" sortable-selector="ul.column" sortable ng-model="board1">
                         <li ng-repeat="item in board1" ng-dblclick="editCard(item)">
                             <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)">
                                 {{item.title}}
                             </div>
                             <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
-                                <button ng-click="removeCard(board1, item)" class="removeCard btn" type="button"><i class="icon-trash"></i></button>
+                                <input class="cardEditable" todo-focus="isBeingEdited(item)"
+                                       todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
+                                <button ng-click="removeCard(board1, item)" class="removeCard btn" type="button"><i
+                                        class="icon-trash"></i></button>
                             </form>
+
                         </li>
                     </ul>
                 </div>
-                    <div class="columnContainer tasksContainer">
+                <div class="columnContainer tasksContainer">
                     <div class="columnHeader">
                         <h2><i class="icon-check-empty"></i> Todo
-                            <!--<button class="btn" ng-click="addCard(board2, 'board2')">Add a card</button>-->
                         </h2>
                     </div>
-                    <ul class="column" sortable-selector="ul.column" sortable ng-model="board2">
+                    <ul class="column todo" sortable-selector="ul.column" sortable ng-model="board2">
                         <li ng-repeat="item in board2" ng-dblclick="editCard(item)">
                             <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)">
                                 {{item.title}}
                             </div>
                             <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
-                                <button ng-click="removeCard(board2, item)" class="removeCard btn" type="button"><i class="icon-trash"></i></button>
+                                <input class="cardEditable" todo-focus="isBeingEdited(item)"
+                                       todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
+                                <button ng-click="removeCard(board2, item)" class="removeCard btn" type="button"><i
+                                        class="icon-trash"></i></button>
                             </form>
                         </li>
                     </ul>
                 </div>
-                    <div class="columnContainer tasksContainer">
+                <div class="columnContainer tasksContainer">
                     <div class="columnHeader">
                         <h2><i class="icon-check-minus"></i> Doing
-                            <!--<button class="btn" ng-click="addCard(board3, 'board3')">Add a card</button>-->
                         </h2>
                     </div>
-                    <ul class="column" sortable-selector="ul.column" sortable ng-model="board3">
+                    <ul class="column doing" sortable-selector="ul.column" sortable ng-model="board3">
                         <li ng-repeat="item in board3" ng-dblclick="editCard(item)">
                             <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)">
                                 {{item.title}}
                             </div>
                             <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
-                                <button ng-click="removeCard(board3, item)" class="removeCard btn" type="button"><i class="icon-trash"></i></button>
+                                <input class="cardEditable" todo-focus="isBeingEdited(item)"
+                                       todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
+                                <button ng-click="removeCard(board3, item)" class="removeCard btn" type="button"><i
+                                        class="icon-trash"></i></button>
                             </form>
                         </li>
                     </ul>
-                    </div>
-                    <div class="columnContainer tasksContainer">
+                </div>
+                <div class="columnContainer tasksContainer">
                     <div class="columnHeader">
                         <h2><i class="icon-check"></i></i> Done
-                            <!--<button class="btn" ng-click="addCard(board4, 'board4')">Add a card</button>-->
                         </h2>
                     </div>
-                    <ul class="column" sortable-selector="ul.column" sortable ng-model="board4">
+                    <ul class="column done" sortable-selector="ul.column" sortable ng-model="board4">
                         <li ng-repeat="item in board4" ng-dblclick="editCard(item)">
                             <div class="btn btn-info btn-draggable" ng-hide="isBeingEdited(item)">
                                 {{item.title}}
                             </div>
                             <form ng-submit="doneEditing(item)" ng-show="isBeingEdited(item)">
-                                <input class="cardEditable" todo-focus="isBeingEdited(item)" todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
-                                <button ng-click="removeCard(board4, item)" class="removeCard btn" type="button"><i class="icon-trash"></i></button>
+                                <input class="cardEditable" todo-focus="isBeingEdited(item)"
+                                       todo-blur="doneEditing(item)" placeholder="Some task" ng-model="item.title">
+                                <button ng-click="removeCard(board4, item)" class="removeCard btn" type="button"><i
+                                        class="icon-trash"></i></button>
                             </form>
                         </li>
                     </ul>
-
-                    </div>
 
                 </div>
 
             </div>
 
+        </div>
+
     </div>
-	
-	
+
+
 </div>

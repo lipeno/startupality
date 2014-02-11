@@ -22,58 +22,71 @@ app.controller('GoalsController', function ($scope, CurrentProject, Card){
         });
     });
 
-    $scope.$watch('board1', function(newvalue) {
-      _.each($scope.board1, function(item) {
-        item.board = "board1";
+    $scope.updateOrders = function(boardName){
+      // Update target list with updated order of elements
+      _.each($scope[boardName], function (item) {
+        var currentIndex = _.indexOf($scope[boardName], item);
+        item.order = currentIndex + 1;
+      });
+
+    };
+
+    $scope.saveCards = function(boardName){
+      _.each($scope[boardName], function(item) {
+        item.board = boardName;
         item.$update({projectId: $scope.currentProject.id}, function(data) {
-          console.log("Received ", data)
+          console.log("Received ", data);
         });
       });
+    };
+
+
+    $scope.$watch('board1', function(newvalue) {
+      $scope.updateOrders('board1');
+      $scope.saveCards('board1');
     }, true);
 
     $scope.$watch('board2', function(newvalue) {
-      _.each($scope.board2, function(item) {
-        item.board = "board2";
-        item.$update({projectId: $scope.currentProject.id}, function(data) {
-          console.log("Received ", data)
-        });
-      });
+      $scope.updateOrders('board2');
+      $scope.saveCards('board2');
     }, true);
 
     $scope.$watch('board3', function(newvalue) {
-      _.each($scope.board3, function(item) {
-        item.board = "board3";
-        item.$update({projectId: $scope.currentProject.id}, function(data) {
-          console.log("Received ", data)
-        });
-      });
+      $scope.updateOrders('board3');
+      $scope.saveCards('board3');
     }, true);
 
     $scope.$watch('board4', function(newvalue) {
-      _.each($scope.board4, function(item) {
-        item.board = "board4";
-        item.$update({projectId: $scope.currentProject.id}, function(data) {
-          console.log("Received ", data)
-        });
-      });
+      $scope.updateOrders('board4');
+      $scope.saveCards('board4');
     }, true);
 
 
-    // Limit items to be dropped in board1
-    $scope.addCard = function(board, boardString){
-      var cardsWithNoTitle = _.where($scope.board1 , {title: null});
+    // Add
+    $scope.addCard = function(boardString){
+      var card = new Card({ 'title': null, board: boardString, order: 1});
+      $scope.cardBeingAdded = card;
+    };
 
-      if (cardsWithNoTitle.length > 0){
-        $scope.editCard(cardsWithNoTitle[0]);
+    $scope.cardBeingAdded = null;
+    $scope.isBeingAdded = function(){
+      return ($scope.cardBeingAdded);
+    };
+
+    $scope.doneAdding = function(){
+      var card = $scope.cardBeingAdded;
+      var boardString = card.board;
+      if (!card.title || card.title === ""){
+        $scope.cardBeingAdded = null;
       }
       else{
-        var newCard = new Card({ 'title': null, board: boardString, order: $scope[boardString].length + 1});
-        $scope[boardString].push(newCard);
-        newCard.$save({projectId: $scope.currentProject.id});
-        $scope.editCard(newCard);
+        card.$save({projectId: $scope.currentProject.id});
+        $scope[boardString].unshift(card); // Add to beginning of the board
+        $scope.cardBeingAdded = null;
       }
     };
 
+    // Remove
     $scope.removeCard = function(board, card){
           boardName = card.board;
           board = $scope[boardName];
@@ -82,18 +95,7 @@ app.controller('GoalsController', function ($scope, CurrentProject, Card){
           card.$delete({projectId: $scope.currentProject.id, id: card.id});
     };
 
-    // Limit items to be dropped in board3
-    $scope.optionsRestrictSize = {
-        accept: function(dragEl) {
-            if ($scope.board3.length >= 5) {
-                return false;
-            } else {
-                return true;
-            }
-        }
-    };
-
-
+    // Edit
     $scope.beingEdited = [];
     $scope.isBeingEdited = function(card){
         if ($scope.beingEdited.indexOf(card) !== -1){
@@ -102,15 +104,22 @@ app.controller('GoalsController', function ($scope, CurrentProject, Card){
         return false;
     };
 
-
     $scope.editCard = function(card){
         if (!$scope.isBeingEdited(card) && $scope.beingEdited.length < 1){
             $scope.beingEdited.push(card);
-                  card.$update({projectId: $scope.currentProject.id});
         }
     };
 
     $scope.doneEditing = function(card){
+        if (!card.title || card.title === ""){
+          var boardName = card.board;
+          var board = $scope[boardName];
+          board.splice(board.indexOf(card), 1);
+          card.$delete({projectId: $scope.currentProject.id, id: card.id});
+        }
+        else{
+          card.$update({projectId: $scope.currentProject.id});
+        }
         $scope.beingEdited.splice($scope.beingEdited.indexOf(card), 1);
     };
 
